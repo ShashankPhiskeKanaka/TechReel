@@ -206,3 +206,44 @@
 {"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 16:55:20"}
 {"level":"info","message":"GET /v1/github/ 2.702 ms","timestamp":"2026-03-16 16:55:27"}
 {"level":"info","message":"GET /v1/github/callback?code=fd16f404029c6643d93e 2138.066 ms","timestamp":"2026-03-16 16:55:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:30:23"}
+{"level":"info","message":"GET /v1/github 5.312 ms","timestamp":"2026-03-16 17:30:29"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-16 17:30:32","userId":"ce56d902-cdf9-4cb2-a85f-4a4aab997850"}
+{"level":"info","message":"GET /v1/github/callback?code=8421f2efe58ca820852f 2195.082 ms","timestamp":"2026-03-16 17:30:32"}
+{"level":"info","message":"GET /.well-known/appspecific/com.chrome.devtools.json 6.841 ms","timestamp":"2026-03-16 17:30:37"}
+{"level":"info","message":"GET /v1/google 1.674 ms","timestamp":"2026-03-16 17:30:48"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-16 17:30:49","userId":"43d91687-9368-4d97-a55f-d6dcaa68f41a"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepCaoBeIeC3Ky0BgUMy4aOS_WwilwbkE65mKmZWAbidivETtMG6ZiEI6Gdo5whvUiA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 394.952 ms","timestamp":"2026-03-16 17:30:49"}
+{"level":"info","message":"GET /.well-known/appspecific/com.chrome.devtools.json 4.009 ms","timestamp":"2026-03-16 17:30:55"}
+{"level":"info","message":"GET /v1/google 0.384 ms","timestamp":"2026-03-16 17:31:19"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-16 17:31:20","userId":"43d91687-9368-4d97-a55f-d6dcaa68f41a"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepA9Mek4luncXciCvmn2ezkYVGPY-_4ntbDymLWzas4OmLKdcAIeRVKiEVSOqGFMUA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 574.213 ms","timestamp":"2026-03-16 17:31:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:42:23"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:42:36"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepA9Mek4luncXciCvmn2ezkYVGPY-_4ntbDymLWzas4OmLKdcAIeRVKiEVSOqGFMUA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 604.342 ms","timestamp":"2026-03-16 17:42:36"}
+{"level":"info","message":"GET /v1/google 1.967 ms","timestamp":"2026-03-16 17:42:46"}
+{"level":"info","message":"GET /v1/google 0.562 ms","timestamp":"2026-03-16 17:42:46"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:42:47"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepDd5oIbbf78eKkRJwTJKwVkhUJE3ubiKq5Z_1g5tG5ZYeXKoFVuRgU3NVl9tj7CvQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none 505.183 ms","timestamp":"2026-03-16 17:42:47"}
+{"level":"info","message":"GET /v1/google 0.380 ms","timestamp":"2026-03-16 17:43:03"}
+{"level":"info","message":"GET /v1/github 0.551 ms","timestamp":"2026-03-16 17:43:06"}
+{"level":"info","message":"GET /v1/github/callback?code=1a8c3f66bd0e7249d588 - ms","timestamp":"2026-03-16 17:43:44"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:43:46"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepDd5oIbbf78eKkRJwTJKwVkhUJE3ubiKq5Z_1g5tG5ZYeXKoFVuRgU3NVl9tj7CvQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none 471.915 ms","timestamp":"2026-03-16 17:43:46"}
+{"level":"info","message":"GET /v1/google/ 0.635 ms","timestamp":"2026-03-16 17:43:59"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:44:00"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepDybmUDnQOgKpgY-i-AgZM6Cwg2kwS668YUXsMY_5vNR_fVCVvjQZvoKU1Dcur24Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none 475.045 ms","timestamp":"2026-03-16 17:44:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:44:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:45:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:46:12"}
+{"level":"info","message":"GET /v1/google 3.923 ms","timestamp":"2026-03-16 17:46:36"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-16 17:46:37","userId":"43d91687-9368-4d97-a55f-d6dcaa68f41a"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepBnmnTS6Zt0VVSBTk7f0kNZqSbyO7QNvt5XXuGI1_EZEUqbioa6ISVRAm0YSrAw-A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none 610.334 ms","timestamp":"2026-03-16 17:46:37"}
+{"level":"info","message":"GET /.well-known/appspecific/com.chrome.devtools.json 5.330 ms","timestamp":"2026-03-16 17:46:50"}

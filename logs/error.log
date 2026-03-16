@@ -23,3 +23,7 @@
 {"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:36:00"}
 {"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 15:12:55"}
 {"ip":"::1","level":"error","message":"Unknown authentication strategy \"google\"","timestamp":"2026-03-16 16:52:25"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:42:36"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:42:47"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:43:46"}
+{"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:44:00"}

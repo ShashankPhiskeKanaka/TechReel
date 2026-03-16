@@ -11,7 +11,12 @@ const repo = new AuthRepository();
 const userRepo = new UserRepository();
 const service = new AuthService(repo, userRepo);
 
-const authenticate = async (req: Request, res: Response, next: NextFunction) => {
+const authenticate = async (req: Request, res: Response, next: NextFunction) => {4
+
+    if(req.isAuthenticated && req.isAuthenticated()) {
+        return next();
+    }
+
     if(!req.cookies.refreshToken) throw new serverError(errorMessage.UNAUTHORIZED);
     if(!req.cookies.accessToken) {
 
@@ -23,7 +28,7 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
         res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000 });
         res.cookie("refreshToken", refreshToken.id, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
 
-        req.authUser = { id: refreshToken.user_id, role: refreshToken.role  };
+        req.user = { id: refreshToken.user_id, role: refreshToken.role  };
 
         logger.info("New user credentials generated", {
             ip: req.ip,
@@ -38,9 +43,9 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
     if(!id || !role) {
         throw new serverError(errorMessage.UNAUTHORIZED);
     }
-    req.authUser = { id, role };
+    req.user = { id, role };
 
     return next();
 }
 
-export { authenticate }
+export { authenticate, service as AuthService }

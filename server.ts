@@ -1,4 +1,5 @@
 import express from "express";
+import type { Request, Response } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -8,10 +9,14 @@ import { AuthRouter } from "./router/auth.router.js";
 import { globalErrorHandler } from "./factory/auth.factory.js";
 import { logger } from "./utils/logger.js";
 import morgan from "morgan";
-import { authenticate } from "./middleware/authenticate.js";
+import { authenticate, AuthService } from "./middleware/authenticate.js";
 import expressSession from "express-session"
 import passport from "passport"
 import { configurePassport } from "./config/passport.config.js";
+import { serverError } from "./utils/error.utils.js";
+import { errorMessage } from "./constants/error.messages.js";
+import { GoogleRouter } from "./router/google.router.js";
+import { GithubRouter } from "./router/github.router.js";
 dotenv.config();
 
 const app = express();
@@ -41,21 +46,8 @@ const stream = {
 
 app.use(morgan(`:method :url :response-time ms`, {stream}));
 
-app.get("/v1/google", passport.authenticate('google', { scope: ['profile', 'email'] }));
-app.get("/v1/google/callback", passport.authenticate('google', { failureRedirect: '/v1/auth/login' }), 
-    (req,res) => res.json({
-        success: true,
-        message: "Logged in"
-    })
-)
-
-app.get("/v1/github/", passport.authenticate("github", { scope: ['user:email'] }));
-app.get("/v1/github/callback", passport.authenticate('github', { failureRedirect: '/v1/auth/login' }), 
-    (req,res) => res.json({
-        success: true,
-        message: "Logged in"
-    })
-)
+app.use("/v1/google/", GoogleRouter);
+app.use("/v1/github/", GithubRouter )
 
 app.use("/v1/user", UserRouter);
 app.use("/v1/auth/", AuthRouter);

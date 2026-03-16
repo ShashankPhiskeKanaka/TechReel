@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import type { Role } from "../dto/user.dto.js";
 
 class AuthUtilsClass {
     comparePasswords = async (password: string, hashedPassword: string) => {
@@ -19,7 +20,7 @@ class AuthUtilsClass {
     }
 
     decodeAccesstoken = (token : string) => {
-        return jwt.verify(token, process.env.JWTSECRET as string) as { id: string, role: string }
+        return jwt.verify(token, process.env.JWTSECRET as string) as { id: string, role: Role }
     }
 
     hashPassword = async ( password : string ) => {

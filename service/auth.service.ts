@@ -53,6 +53,18 @@ class AuthService {
         return { accessToken, refreshToken : refreshTokenData };     
     }
 
+    generateNewCredentials = async (user: user) => {
+        const accessToken = authUtils.generateAccessToken(user.id, user.role);
+        const familyId = crypto.randomUUID();
+        const refreshToken = await this.AuthMethods.create(familyId, user.id, user.role);
+
+        logger.info("New refreshToken and accessToken created for user", {
+            userId: refreshToken.user_id
+        });
+
+        return { accessToken, refreshToken : refreshToken.id };     
+    }
+
     /**
      * Deletes refreshTokens based on flag, if true then delete token based on userId and if false then delete based on familyId
      * 

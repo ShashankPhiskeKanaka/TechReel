@@ -11,7 +11,7 @@ interface RefreshToken {
 
 interface user {
     id: string
-    role: string
+    role: Role
 }
 
 export type { RefreshToken, user }

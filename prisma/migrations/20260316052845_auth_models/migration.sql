@@ -50,8 +50,8 @@ CREATE TABLE "refresh_tokens" (
     "id" UUID NOT NULL,
     "family_id" UUID NOT NULL,
     "user_id" UUID NOT NULL,
-    "is_valid" BOOLEAN NOT NULL,
-    "created_at" TIMESTAMPTZ(6) NOT NULL,
+    "is_valid" BOOLEAN NOT NULL DEFAULT false,
+    "created_at" TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "refresh_tokens_pkey" PRIMARY KEY ("id")
 );
@@ -61,3 +61,27 @@ CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_username_key" ON "users"("username");
+
+-- CreateIndex
+CREATE INDEX "users_id_created_at_idx" ON "users"("id", "created_at");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "user_profiles_user_id_key" ON "user_profiles"("user_id");
+
+-- CreateIndex
+CREATE INDEX "user_profiles_user_id_idx" ON "user_profiles"("user_id");
+
+-- CreateIndex
+CREATE INDEX "audit_logs_id_created_at_idx" ON "audit_logs"("id", "created_at");
+
+-- CreateIndex
+CREATE INDEX "refresh_tokens_family_id_idx" ON "refresh_tokens"("family_id");
+
+-- CreateIndex
+CREATE INDEX "refresh_tokens_user_id_idx" ON "refresh_tokens"("user_id");
+
+-- AddForeignKey
+ALTER TABLE "user_profiles" ADD CONSTRAINT "user_profiles_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "refresh_tokens" ADD CONSTRAINT "refresh_tokens_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;

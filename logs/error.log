@@ -1,0 +1,23 @@
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:03:01"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:05:47"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:06:35"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:07:34"}
+{"level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 12:53:53"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 12:54:24"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42P01`. Message: `relation \"refres_tokens\" does not exist`","timestamp":"2026-03-16 14:05:34"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:05:49"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:06:30"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:08:20"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:09:30"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:10:51"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:12:12"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:15:37"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:19:06"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:20:58"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:21:26"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:23:22"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:24:18"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:27:49"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:31:45"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.refresh_tokens.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\auth.repository.ts:56:41\n\n  53 }\n  54 \n  55 // 5. Mark current token as used\n→ 56 await tx.refresh_tokens.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","status":500,"timestamp":"2026-03-16 14:33:09"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:36:00"}

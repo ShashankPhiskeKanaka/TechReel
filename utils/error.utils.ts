@@ -1,5 +1,6 @@
 import type { NextFunction, Request, Response } from "express"
 import { logUtil, type logError } from "./log.utils.js";
+import { logger } from "./logger.js";
 
 class ErrorHandlerClass {
     controllerWrapper = (fn : any) => {
@@ -11,16 +12,21 @@ class ErrorHandlerClass {
 
 class GlobalErrorHandlerClass {
     handleError = ( err: any, req: Request, res: Response, next: NextFunction ) => {
-        logUtil.logError({ status: err.status ?? 500, message : err.message });
+        logger.error(err.message, {
+            status: err.status,
+            ip: req.ip
+        });
 
         if(err.status == 403) {
             res.clearCookie("accessToken");
             res.clearCookie("refreshToken");
         }
 
-        return res.status(err.status ?? 500).json({
+        const status = err.status ?? 500
+
+        return res.status(status).json({
             success : false,
-            message : err.message
+            message : status == 500 ? "Internal Server Error" : err.message
         });
     }
 }

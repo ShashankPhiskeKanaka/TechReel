@@ -1,0 +1,176 @@
+{"level":"info","message":"Server started on PORT : 3000","service":"user-service","timestamp":"2026-03-16 11:54:43"}
+{"level":"info","message":"Server started on PORT : 3000","service":"user-service","timestamp":"2026-03-16 11:55:20"}
+{"level":"info","message":"GET / 3.477 ms","service":"user-service","timestamp":"2026-03-16 11:55:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 11:56:09"}
+{"level":"info","message":"GET / 6.332 ms","timestamp":"2026-03-16 11:56:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 11:56:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:02:43"}
+{"level":"info","message":"GET / 5.226 ms","timestamp":"2026-03-16 12:02:48"}
+{"level":"info","message":"POST /v1/auth/ 0.996 ms","timestamp":"2026-03-16 12:02:54"}
+{"ip":"::1","level":"info","message":"User creation process initiated","path":"/","timestamp":"2026-03-16 12:03:01"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:03:01"}
+{"level":"info","message":"POST /v1/user/ 370.861 ms","timestamp":"2026-03-16 12:03:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:04:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:04:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:05:44"}
+{"ip":"::1","level":"info","message":"User creation process initiated","path":"/","timestamp":"2026-03-16 12:05:47"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:05:47"}
+{"level":"info","message":"POST /v1/user/ 603.887 ms","timestamp":"2026-03-16 12:05:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:06:20"}
+{"level":"info","message":"GET / 5.813 ms","timestamp":"2026-03-16 12:06:27"}
+{"ip":"::1","level":"info","message":"User creation process initiated","path":"/","timestamp":"2026-03-16 12:06:35"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:06:35"}
+{"level":"info","message":"POST /v1/user/ 487.242 ms","timestamp":"2026-03-16 12:06:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:06:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:30"}
+{"ip":"::1","level":"info","message":"User creation process initiated","path":"/","timestamp":"2026-03-16 12:07:34"}
+{"level":"error","message":"\nInvalid `prisma.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:11:45\n\n   8 \n   9 create = async (data: any) => {\n  10     try {\n→ 11         const user = await prisma.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-03-16 12:07:34"}
+{"level":"info","message":"POST /v1/user/ 420.618 ms","timestamp":"2026-03-16 12:07:34"}
+{"level":"info","message":"","timestamp":"2026-03-16 12:07:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:07:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:48:18"}
+{"level":"info","message":"GET / 381.623 ms","timestamp":"2026-03-16 12:48:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:52:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:52:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:52:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:53:20"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 12:53:31"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-16 12:53:31","userId":"c5eccc6e-3ab9-4a27-8107-347db1fb59f0"}
+{"level":"info","message":"GET / 298.737 ms","timestamp":"2026-03-16 12:53:31"}
+{"level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 12:53:53"}
+{"level":"info","message":"GET / 2.608 ms","timestamp":"2026-03-16 12:53:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:54:21"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 12:54:24"}
+{"level":"info","message":"GET / 10.209 ms","timestamp":"2026-03-16 12:54:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 12:57:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:05:16"}
+{"level":"info","message":"POST /v1/auth/ 257.151 ms","timestamp":"2026-03-16 14:05:25"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:05:34"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42P01`. Message: `relation \"refres_tokens\" does not exist`","timestamp":"2026-03-16 14:05:34"}
+{"level":"info","message":"GET / 79.907 ms","timestamp":"2026-03-16 14:05:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:05:46"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:05:48"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:05:49"}
+{"level":"info","message":"GET / 201.303 ms","timestamp":"2026-03-16 14:05:49"}
+{"level":"info","message":"POST /v1/auth/ 87.081 ms","timestamp":"2026-03-16 14:06:18"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:06:30"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:06:30"}
+{"level":"info","message":"GET / 9.747 ms","timestamp":"2026-03-16 14:06:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:07:59"}
+{"level":"info","message":"POST /v1/auth/ 217.738 ms","timestamp":"2026-03-16 14:08:11"}
+{"level":"info","message":"GET / 5.656 ms","timestamp":"2026-03-16 14:08:15"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:08:20"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:08:20"}
+{"level":"info","message":"GET / 33.387 ms","timestamp":"2026-03-16 14:08:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:09:12"}
+{"level":"info","message":"POST /v1/auth/ 227.209 ms","timestamp":"2026-03-16 14:09:17"}
+{"level":"info","message":"GET / 4.101 ms","timestamp":"2026-03-16 14:09:24"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:09:30"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:09:30"}
+{"level":"info","message":"GET / 34.837 ms","timestamp":"2026-03-16 14:09:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:09:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:28"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:10:35"}
+{"level":"info","message":"POST /v1/auth/ 272.204 ms","timestamp":"2026-03-16 14:10:44"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:10:51"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:10:51"}
+{"level":"info","message":"GET / 21.651 ms","timestamp":"2026-03-16 14:10:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:11:45"}
+{"level":"info","message":"POST /v1/auth/ 189.107 ms","timestamp":"2026-03-16 14:11:51"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:12:12"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:12:12"}
+{"level":"info","message":"GET / 34.139 ms","timestamp":"2026-03-16 14:12:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:12:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:14:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:14:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:15:14"}
+{"level":"info","message":"POST /v1/auth/ 417.849 ms","timestamp":"2026-03-16 14:15:29"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:15:37"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:15:37"}
+{"level":"info","message":"GET / 32.975 ms","timestamp":"2026-03-16 14:15:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:16:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:17:12"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:17:25"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-16 14:17:25","userId":"c5eccc6e-3ab9-4a27-8107-347db1fb59f0"}
+{"level":"info","message":"GET / 320.625 ms","timestamp":"2026-03-16 14:17:25"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:19:06"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:19:06"}
+{"level":"info","message":"GET / 66.455 ms","timestamp":"2026-03-16 14:19:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:20:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:20:28"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:20:58"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:20:58"}
+{"level":"info","message":"GET / 183.507 ms","timestamp":"2026-03-16 14:20:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:21:20"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:21:26"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:21:26"}
+{"level":"info","message":"GET / 206.793 ms","timestamp":"2026-03-16 14:21:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:22:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:22:47"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:23:21"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:23:22"}
+{"level":"info","message":"GET / 204.570 ms","timestamp":"2026-03-16 14:23:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:24:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:24:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:24:14"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:24:18"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:24:18"}
+{"level":"info","message":"GET / 192.361 ms","timestamp":"2026-03-16 14:24:18"}
+{"level":"info","message":"POST /v1/auth/ 1.054 ms","timestamp":"2026-03-16 14:26:55"}
+{"level":"info","message":"POST /v1/auth/ 131.067 ms","timestamp":"2026-03-16 14:27:03"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:27:25"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-16 14:27:25","userId":"c5eccc6e-3ab9-4a27-8107-347db1fb59f0"}
+{"level":"info","message":"GET / 33.908 ms","timestamp":"2026-03-16 14:27:25"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:27:49"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:27:49"}
+{"level":"info","message":"GET / 14.590 ms","timestamp":"2026-03-16 14:27:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:29:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:29:43"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:31:45"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:31:45"}
+{"level":"info","message":"GET / 241.122 ms","timestamp":"2026-03-16 14:31:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:32:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:32:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:32:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:33:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:33:06"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:33:09"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.refresh_tokens.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\auth.repository.ts:56:41\n\n  53 }\n  54 \n  55 // 5. Mark current token as used\n→ 56 await tx.refresh_tokens.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","status":500,"timestamp":"2026-03-16 14:33:09"}
+{"level":"info","message":"GET / 359.039 ms","timestamp":"2026-03-16 14:33:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:33:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:33:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:33:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:34:15"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:34:20"}
+{"ip":"::1","level":"info","message":"New user credentials generated","timestamp":"2026-03-16 14:34:21"}
+{"level":"info","message":"GET / 451.127 ms","timestamp":"2026-03-16 14:34:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:34:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:34:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:34:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 14:35:13"}
+{"level":"info","message":"POST /v1/auth/ 284.970 ms","timestamp":"2026-03-16 14:35:24"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:35:41"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-16 14:35:41","userId":"c5eccc6e-3ab9-4a27-8107-347db1fb59f0"}
+{"level":"info","message":"GET / 36.987 ms","timestamp":"2026-03-16 14:35:41"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:36:00"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:36:00"}
+{"level":"info","message":"GET / 25.590 ms","timestamp":"2026-03-16 14:36:00"}

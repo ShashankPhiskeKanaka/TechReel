@@ -27,6 +27,12 @@ class UserController {
         });
     }
 
+    /**
+     * Handles the process of email verification
+     * 
+     * @param {Request} req - expects the email token in request parameters 
+     * @param {Response} res - success message
+     */
     verifyEmail = async (req: Request, res: Response) => {
         await this.UserService.verifyEmail(req.params.token?.toString() ?? "");
 
@@ -35,6 +41,40 @@ class UserController {
             message: "Email verified",
         });
     }
+
+    /**
+     * Handles the process of fetching an user based on id
+     * 
+     * @param req - expects id from user data in request
+     * @param res - fetched user data along with success message
+     */
+    getById = async (req: Request, res: Response) => {
+        const user = await this.UserService.getById(req.user?.id ?? "");
+
+        return res.json({
+            success: true,
+            message: "User data fetched",
+            data : user
+        });
+    }
+
+    /**
+     * Handles the process of updating user profile
+     * 
+     * @param {Request} req - expects user id from user data in request and data to update from body 
+     * @param {Response} res - updated user profile along with success message
+     * @returns 
+     */
+    updateProfile = async (req: Request, res: Response) => {
+        const profile = await this.UserService.updateProfile(req.user?.id ?? "", req.body);
+
+        return res.json({
+            success: true,
+            message: "Profile updated",
+            data: profile
+        });
+    }
+
 }
 
 export { UserController }

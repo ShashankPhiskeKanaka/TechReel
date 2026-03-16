@@ -174,3 +174,35 @@
 {"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 14:36:00"}
 {"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:36:00"}
 {"level":"info","message":"GET / 25.590 ms","timestamp":"2026-03-16 14:36:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:06:10"}
+{"level":"info","message":"POST /v1/auth/ 5.616 ms","timestamp":"2026-03-16 15:06:17"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-16 15:12:55"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 15:12:55"}
+{"level":"info","message":"GET /v1/user/ 144.166 ms","timestamp":"2026-03-16 15:12:55"}
+{"level":"info","message":"POST /v1/auth/ 156.334 ms","timestamp":"2026-03-16 15:13:00"}
+{"level":"info","message":"GET /v1/user/ 9.128 ms","timestamp":"2026-03-16 15:13:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:13:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:13:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:14:09"}
+{"level":"info","message":"GET /v1/user/ 357.209 ms","timestamp":"2026-03-16 15:14:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:16:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:16:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 15:19:19"}
+{"ip":"::1","level":"info","message":"User creation process initiated","path":"/","timestamp":"2026-03-16 15:19:44"}
+{"level":"info","message":"User created successfully","role":"USER","timestamp":"2026-03-16 15:19:44","userId":"eb947827-bed8-4011-8006-15d19ae4f10a"}
+{"level":"info","message":"POST /v1/user/ 498.335 ms","timestamp":"2026-03-16 15:19:44"}
+{"level":"info","message":"GET /v1/user/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViOTQ3ODI3LWJlZDgtNDAxMS04MDA2LTE1ZDE5YWU0ZjEwYSIsImlhdCI6MTc3MzY1NDU4NCwiZXhwIjoxNzczNjU1NDg0fQ.KXPd1vaEjQLG4IcdGuiYojk3QTMXcAh21pbqRMZhJ4w 56.910 ms","timestamp":"2026-03-16 15:20:09"}
+{"level":"info","message":"POST /v1/auth/ 0.870 ms","timestamp":"2026-03-16 15:20:13"}
+{"level":"info","message":"POST /v1/auth/ 38.982 ms","timestamp":"2026-03-16 15:20:22"}
+{"level":"info","message":"GET /v1/user/ 18.381 ms","timestamp":"2026-03-16 15:20:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 16:52:09"}
+{"ip":"::1","level":"error","message":"Unknown authentication strategy \"google\"","timestamp":"2026-03-16 16:52:25"}
+{"level":"info","message":"GET /v1/google 8.386 ms","timestamp":"2026-03-16 16:52:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 16:53:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 16:53:40"}
+{"level":"info","message":"GET /v1/google 6.759 ms","timestamp":"2026-03-16 16:53:44"}
+{"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepAdbVsaP6PbvhG_6aOmggtSoSvEpXX9NCq8RlwGFYpefhrSSBb6J-Hie6E7gfnlvQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent 1785.946 ms","timestamp":"2026-03-16 16:53:57"}
+{"level":"info","message":"GET /v1/github 1.129 ms","timestamp":"2026-03-16 16:54:28"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 16:55:20"}
+{"level":"info","message":"GET /v1/github/ 2.702 ms","timestamp":"2026-03-16 16:55:27"}
+{"level":"info","message":"GET /v1/github/callback?code=fd16f404029c6643d93e 2138.066 ms","timestamp":"2026-03-16 16:55:30"}

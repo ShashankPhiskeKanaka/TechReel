@@ -6,25 +6,48 @@ import { serverError } from "../utils/error.utils.js";
 
 class UserRepository {
 
+    /**
+     * created a new user record in db and based on user role creates user profile record
+     * 
+     * @param data 
+     * @returns 
+     */
     create = async (data: any) => {
-        try {
-            const user = await prisma.users.create({
-                data: {
-                    email: data.email,
-                    username: data.username,
-                    password: data.password,
-                    auth_provider: "default",
-                    role: Role.USER,
-                    verified: false
-                }
-            });
+        return await prisma.$transaction(async (tx) => {
+            try {
+                const user = await tx.users.create({
+                    data: {
+                        email: data.email,
+                        username: data.username,
+                        password: data.password,
+                        auth_provider: "default",
+                        role: Role.USER,
+                        verified: false
+                    }
+                });
 
-            return user;
-        }catch (err: any) {
-            throw new serverError({ status: err.status, message: err.message });
-        }
+                if(user.role == "USER") {
+                    await tx.user_profiles.create({
+                        data: {
+                            user_id: user.id,
+                            interests: {}
+                        }
+                    });
+                }
+
+                return user;
+            }catch (err: any) {
+                throw new serverError({ status: err.status, message: err.message });
+            }
+        })
     }
 
+    /**
+     * fetches user based on username, performs soft delete check
+     * 
+     * @param username 
+     * @returns 
+     */
     getByUsername = async (username: string) => {
         const user = await prisma.users.findMany({
             where : {
@@ -36,17 +59,32 @@ class UserRepository {
         return user[0] ?? <User>{};
     }
 
+    /**
+     * fetches user based on id, performs soft delete check and includes user profile when fetching data
+     * 
+     * @param id 
+     * @returns 
+     */
     getById = async (id: string) => {
         const user = await prisma.users.findMany({
             where: {
                 id: id,
                 deleted_at: null
+            },
+            include: {
+                profile : true
             }
         });
 
         return user[0] ?? <User>{};
     }
 
+    /**
+     * updates the verified field of the user, validates user existence
+     * 
+     * @param id 
+     * @returns 
+     */
     verified = async (id: string) => {
         return await prisma.$transaction(async (tx) => {
             const data = await tx.$queryRaw<any>`
@@ -67,6 +105,44 @@ class UserRepository {
             });
 
             return;
+        })
+    }
+
+    /**
+     * Updates user profile data, validates profile existence
+     * 
+     * @param id 
+     * @param data 
+     * @returns 
+     */
+    updateProfile = async ( id: string, data: any ) => {
+        return await prisma.$transaction(async (tx) => {
+            try {
+                const profiles = await tx.user_profiles.findMany({
+                    where: {
+                        user_id: id
+                    }
+                });
+                if(!profiles[0]) throw new serverError(errorMessage.NOTFOUND);
+
+                const profile = await tx.user_profiles.update({
+                    where: {
+                        user_id: id
+                    },
+                    data: {
+                        name: data.name,
+                        bio: data.bio,
+                        avatar_url: data.avatar_url,
+                        skills_summary: data.skills_summary,
+                        interests: data.interests
+                    }
+                });
+
+                return profile;
+            }
+            catch (err : any) {
+                throw new serverError({ status: err.status,message: err.message });
+            }
         })
     }
 

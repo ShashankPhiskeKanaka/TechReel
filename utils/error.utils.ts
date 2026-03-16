@@ -22,7 +22,7 @@ class GlobalErrorHandlerClass {
             res.clearCookie("refreshToken");
         }
 
-        const status = err.status ?? 500
+        const status = err.status ?? 500;
 
         return res.status(status).json({
             success : false,

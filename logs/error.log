@@ -21,3 +21,5 @@
 {"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:31:45"}
 {"ip":"::1","level":"error","message":"\nInvalid `tx.refresh_tokens.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\auth.repository.ts:56:41\n\n  53 }\n  54 \n  55 // 5. Mark current token as used\n→ 56 await tx.refresh_tokens.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","status":500,"timestamp":"2026-03-16 14:33:09"}
 {"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 14:36:00"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-16 15:12:55"}
+{"ip":"::1","level":"error","message":"Unknown authentication strategy \"google\"","timestamp":"2026-03-16 16:52:25"}

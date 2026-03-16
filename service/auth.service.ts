@@ -5,6 +5,7 @@ import type { AuthRepository } from "../repository/auth.repository.js";
 import type { UserRepository } from "../repository/user.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import crypto from "crypto";
+import { logger } from "../utils/logger.js";
 
 class AuthService {
     constructor ( private AuthMethods : AuthRepository, private UserMethods: UserRepository) {}
@@ -26,13 +27,28 @@ class AuthService {
         const familyId = crypto.randomUUID();
         const refreshToken = await this.AuthMethods.create(familyId, user.id, user.role);
 
+        logger.info("User logged in successfully", {
+            userId: user.id,
+            role: user.role
+        });
+
         return { accessToken, refreshToken : refreshToken.id };
     }
 
+    /**
+     * Generated new refreshToken and accessToken, validates old refreshToken
+     * 
+     * @param refreshToken 
+     * @returns 
+     */
     generateCredentials = async (refreshToken : string) => {
         const refreshTokenData = await this.AuthMethods.generateNewToken(refreshToken);
         if(!refreshTokenData.id) throw new serverError(errorMessage.UNAUTHORIZED);
         const accessToken = authUtils.generateAccessToken(refreshTokenData.user_id, refreshTokenData.role);
+
+        logger.info("New refreshToken and accessToken created for user", {
+            userId: refreshTokenData.user_id
+        });
 
         return { accessToken, refreshToken : refreshTokenData };     
     }
@@ -51,6 +67,11 @@ class AuthService {
         }else{
             await this.AuthMethods.deleteByFamily(refreshToken);
         }
+
+        logger.info("User logged out successfully", {
+            userId: user.id,
+            role: user.role
+        });
 
         return;
     }

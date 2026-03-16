@@ -9,9 +9,14 @@ import { globalErrorHandler } from "./factory/auth.factory.js";
 import { logger } from "./utils/logger.js";
 import morgan from "morgan";
 import { authenticate } from "./middleware/authenticate.js";
+import expressSession from "express-session"
+import passport from "passport"
+import { configurePassport } from "./config/passport.config.js";
 dotenv.config();
 
 const app = express();
+
+configurePassport();
 
 const corsOptions = {
   // Allows any origin while still supporting credentials/cookies
@@ -24,6 +29,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(expressSession({ secret: 'secret', resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 connectPrisma();
 
 const stream = {
@@ -31,6 +40,22 @@ const stream = {
 }
 
 app.use(morgan(`:method :url :response-time ms`, {stream}));
+
+app.get("/v1/google", passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get("/v1/google/callback", passport.authenticate('google', { failureRedirect: '/v1/auth/login' }), 
+    (req,res) => res.json({
+        success: true,
+        message: "Logged in"
+    })
+)
+
+app.get("/v1/github/", passport.authenticate("github", { scope: ['user:email'] }));
+app.get("/v1/github/callback", passport.authenticate('github', { failureRedirect: '/v1/auth/login' }), 
+    (req,res) => res.json({
+        success: true,
+        message: "Logged in"
+    })
+)
 
 app.use("/v1/user", UserRouter);
 app.use("/v1/auth/", AuthRouter);

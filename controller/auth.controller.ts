@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import type { AuthService } from "../service/auth.service.js";
+import type { user } from "../dto/auth.dto.js";
 
 class AuthController {
     constructor ( private AuthService : AuthService ) {}
@@ -44,7 +45,7 @@ class AuthController {
             });
         }
 
-        await this.AuthService.logout(req.user, req.params.flag?.toString() == "true" ? true : false, req.cookies.refreshToken);
+        await this.AuthService.logout(req.authUser ?? <user>{}, req.params.flag?.toString() == "true" ? true : false, req.cookies.refreshToken);
 
         res.clearCookie("accessToken");
         res.clearCookie("refreshToken");

@@ -23,7 +23,7 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
         res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000 });
         res.cookie("refreshToken", refreshToken.id, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
 
-        req.user = { id: refreshToken.user_id, role: refreshToken.role  };
+        req.authUser = { id: refreshToken.user_id, role: refreshToken.role  };
 
         logger.info("New user credentials generated", {
             ip: req.ip,
@@ -38,7 +38,7 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
     if(!id || !role) {
         throw new serverError(errorMessage.UNAUTHORIZED);
     }
-    req.user = { id, role };
+    req.authUser = { id, role };
 
     return next();
 }

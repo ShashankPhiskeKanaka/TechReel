@@ -9,7 +9,7 @@ import { AuthRouter } from "./router/auth.router.js";
 import { globalErrorHandler } from "./factory/auth.factory.js";
 import { logger } from "./utils/logger.js";
 import morgan from "morgan";
-import { authenticate, AuthService } from "./middleware/authenticate.js";
+import { authenticate, AuthService } from "./middleware/authenticate.middleware.js";
 import expressSession from "express-session"
 import passport from "passport"
 import { configurePassport } from "./config/passport.config.js";
@@ -17,6 +17,8 @@ import { serverError } from "./utils/error.utils.js";
 import { errorMessage } from "./constants/error.messages.js";
 import { GoogleRouter } from "./router/google.router.js";
 import { GithubRouter } from "./router/github.router.js";
+import { TokenRouter } from "./router/token.router.js";
+import { SkillRouter } from "./router/skill.router.js";
 dotenv.config();
 
 const app = express();
@@ -51,6 +53,8 @@ app.use("/v1/github/", GithubRouter )
 
 app.use("/v1/user", UserRouter);
 app.use("/v1/auth/", AuthRouter);
+app.use("/v1/token", TokenRouter);
+app.use("/v1/skill", SkillRouter);
 
 app.use(authenticate);
 app.get("/", (req, res) => {

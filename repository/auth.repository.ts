@@ -34,7 +34,7 @@ class AuthRepository {
      * @param token 
      * @returns 
      */
-    generateNewToken = async (token: string) => {
+    generateNewToken = async (token: string) : Promise<RefreshToken> => {
         return await prisma.$transaction(async (tx) => {
                 // 1. Fetch with Row Lock
                 const rows = await tx.$queryRaw<any>`
@@ -109,7 +109,7 @@ class AuthRepository {
      * @param refreshToken 
      * @returns 
      */
-    deleteByUser = async (refreshToken: string) => {
+    deleteByUser = async (refreshToken: string) : Promise<RefreshToken> => {
         return await prisma.$transaction(async (tx) => {
                 const tokensData = await tx.$queryRaw<any>`
                     SELECT * FROM refresh_tokens
@@ -145,7 +145,7 @@ class AuthRepository {
      * @param refreshToken 
      * @returns 
      */
-    deleteByFamily = async (refreshToken: string) => {
+    deleteByFamily = async (refreshToken: string) : Promise<RefreshToken> => {
         return await prisma.$transaction(async (tx) => {
                 const tokensData = await tx.$queryRaw<any>`
                     SELECT * from refresh_tokens

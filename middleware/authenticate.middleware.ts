@@ -53,4 +53,59 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
     return next();
 }
 
-export { authenticate, service as AuthService }
+const authenticateAdmin = async (req: Request, res: Response, next: NextFunction) => {
+    if(!req.cookies.refreshToken){
+        logger.warn("User Unauthorized", {
+            ip: req.ip
+        });
+
+        throw new serverError(errorMessage.UNAUTHORIZED);
+    }
+    if(!req.cookies.accessToken) {
+        logger.info("No access token found, creating new credentials", {
+            ip: req.ip
+        });
+
+        const { accessToken, refreshToken } = await service.generateCredentials(req.cookies.refreshToken);
+        if(refreshToken.role !== "ADMIN") {
+            logger.warn("User Unauthorized", {
+                ip: req.ip,
+                userId: refreshToken.user_id,
+                role: refreshToken.role
+            });
+
+            throw new serverError(errorMessage.UNAUTHORIZED);
+        }
+
+        res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000 });
+        res.cookie("refreshToken", refreshToken.id, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
+
+        req.user = { id: refreshToken.user_id, role: refreshToken.role  };
+
+        logger.info("New user credentials generated", {
+            ip: req.ip,
+            userId: refreshToken.user_id,
+            role: refreshToken.role
+        });
+
+        return next();
+    }
+
+    const { id, role } = authUtils.decodeAccesstoken(req.cookies.accessToken);
+    if(role !== "ADMIN") {
+        logger.warn("User Unauthorized", {
+            ip: req.ip,
+            userId: id,
+            role
+        });
+
+        throw new serverError(errorMessage.UNAUTHORIZED);  
+    }
+
+    req.user = { id, role };
+
+    return next();
+
+}
+
+export { authenticate, authenticateAdmin, service as AuthService }

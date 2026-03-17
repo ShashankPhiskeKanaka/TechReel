@@ -1,8 +1,8 @@
 import express from "express";
 import { AuthFactory, errorHandler } from "../factory/auth.factory.js";
-import { validate } from "../middleware/zod.validate.js";
+import { validate } from "../middleware/zod.middleware.js";
 import { LoginSchema, LogoutSchema } from "../schema/auth.schema.js";
-import { authenticate } from "../middleware/authenticate.js";
+import { authenticate } from "../middleware/authenticate.middleware.js";
 
 const router = express.Router();
 const controller = AuthFactory.create();

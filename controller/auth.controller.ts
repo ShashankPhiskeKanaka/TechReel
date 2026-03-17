@@ -83,7 +83,7 @@ class AuthController {
             ip: req.ip
         });
 
-        if(!req.cookies.refreshToken || !req.user) {
+        if(!req.cookies.refreshToken) {
 
             logger.warn("User already logged out", {
                 ip: req.ip

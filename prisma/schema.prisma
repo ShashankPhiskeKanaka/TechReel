@@ -81,3 +81,20 @@ model refresh_tokens {
   @@index([family_id])
   @@index([user_id])
 }
+
+model tokens {
+  id String @id @default(uuid()) @db.Uuid
+  name String @unique
+  token_url String?
+  created_at DateTime @default(now()) @db.Timestamptz
+  deleted_at DateTime? @db.Timestamptz
+}
+
+model skills {
+  id String @id @default(uuid()) @db.Uuid
+  name String @unique
+  category String?
+  description String?
+  created_at DateTime @default(now()) @db.Timestamptz
+  deleted_at DateTime? @db.Timestamptz
+}

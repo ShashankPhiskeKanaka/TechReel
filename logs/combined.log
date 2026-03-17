@@ -284,3 +284,102 @@
 {"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-17 11:12:11","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
 {"level":"info","message":"POST /v1/auth/ 62.216 ms","timestamp":"2026-03-17 11:12:11"}
 {"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 11:12:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 15:27:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 15:48:17"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-17 15:49:05"}
+{"familyId":"35ec1525-6059-45a4-8595-676f30ee6b7d","level":"info","message":"Token rotation successfull","timestamp":"2026-03-17 15:49:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-17 15:49:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"warn","message":"User Unauthorized","role":"USER","timestamp":"2026-03-17 15:49:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-17 15:49:05"}
+{"level":"info","message":"POST /v1/token 363.270 ms","timestamp":"2026-03-17 15:49:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 15:49:33"}
+{"level":"info","message":"User created successfully","role":"ADMIN","timestamp":"2026-03-17 15:49:53","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/user/ 430.960 ms","timestamp":"2026-03-17 15:49:53"}
+{"level":"warn","message":"Login failed: User not found or unverified","timestamp":"2026-03-17 15:50:25","username":"admin"}
+{"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-03-17 15:50:25"}
+{"level":"info","message":"POST /v1/auth/ 82.249 ms","timestamp":"2026-03-17 15:50:25"}
+{"level":"info","message":"Email verified successfully","timestamp":"2026-03-17 15:51:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/user/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxZTJmMjQ1LTg5YjEtNDBhNy04MDdlLTJiOTUzODUxMTRlZCIsImlhdCI6MTc3Mzc0Mjc5MywiZXhwIjoxNzczNzQzNjkzfQ.mmxoMZ1eKrIi3xlhoEX9IzigiGJGJFV8FL1fudXje28 127.715 ms","timestamp":"2026-03-17 15:51:06"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-17 15:51:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 13.610 ms","timestamp":"2026-03-17 15:51:10"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-17 15:51:15"}
+{"familyId":"d71747c3-5b93-40e6-9bbf-c30dc43bc990","level":"info","message":"Token rotation successfull","timestamp":"2026-03-17 15:51:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-17 15:51:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-17 15:51:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New token created","timestamp":"2026-03-17 15:51:15","tokenId":"429c795e-525e-4784-b99a-8c9c1d2ef99e"}
+{"level":"info","message":"POST /v1/token 30.539 ms","timestamp":"2026-03-17 15:51:15"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-17 15:52:29"}
+{"familyId":"d71747c3-5b93-40e6-9bbf-c30dc43bc990","level":"info","message":"Token rotation successfull","timestamp":"2026-03-17 15:52:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-17 15:52:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-17 15:52:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Token fetched","timestamp":"2026-03-17 15:52:29","tokenId":"429c795e-525e-4784-b99a-8c9c1d2ef99e"}
+{"level":"info","message":"GET /v1/token/429c795e-525e-4784-b99a-8c9c1d2ef99e 61.195 ms","timestamp":"2026-03-17 15:52:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 15:53:15"}
+{"level":"info","message":"Token fetched","timestamp":"2026-03-17 15:53:17","tokenId":"429c795e-525e-4784-b99a-8c9c1d2ef99e"}
+{"level":"info","message":"GET /v1/token/429c795e-525e-4784-b99a-8c9c1d2ef99e 157.580 ms","timestamp":"2026-03-17 15:53:17"}
+{"level":"info","message":"Token updated","timestamp":"2026-03-17 15:57:23","tokenId":"429c795e-525e-4784-b99a-8c9c1d2ef99e"}
+{"level":"info","message":"PATCH /v1/token 88.064 ms","timestamp":"2026-03-17 15:57:23"}
+{"level":"info","message":"Token soft deleted","timestamp":"2026-03-17 15:58:00","tokenId":"429c795e-525e-4784-b99a-8c9c1d2ef99e"}
+{"level":"info","message":"DELETE /v1/token/false 76.119 ms","timestamp":"2026-03-17 15:58:00"}
+{"level":"info","message":"Token hard deleted","timestamp":"2026-03-17 15:58:25","tokenId":"429c795e-525e-4784-b99a-8c9c1d2ef99e"}
+{"level":"info","message":"DELETE /v1/token/true 12.628 ms","timestamp":"2026-03-17 15:58:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 16:00:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 16:00:45"}
+{"ip":"::1","level":"http","message":"Logout request received","timestamp":"2026-03-17 16:00:49"}
+{"ip":"::1","level":"warn","message":"User already logged out","timestamp":"2026-03-17 16:00:49"}
+{"level":"info","message":"GET /v1/auth/false 18.079 ms","timestamp":"2026-03-17 16:00:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 16:02:07"}
+{"ip":"::1","level":"http","message":"Logout request received","timestamp":"2026-03-17 16:02:20"}
+{"level":"info","message":"User logged out successfully","role":"ADMIN","timestamp":"2026-03-17 16:02:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/auth/false 240.800 ms","timestamp":"2026-03-17 16:02:21"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-17 16:02:32","username":"admin"}
+{"familyId":"d616a1a6-9c3c-4c12-bc83-84f522df5dbc","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-17 16:02:32","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-17 16:02:32","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 72.789 ms","timestamp":"2026-03-17 16:02:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 16:03:18"}
+{"ip":"::1","level":"http","message":"Logout request received","timestamp":"2026-03-17 16:03:27"}
+{"level":"info","message":"User logged out successfully","role":"ADMIN","timestamp":"2026-03-17 16:03:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/auth/false 184.010 ms","timestamp":"2026-03-17 16:03:28"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-17 16:03:33","username":"admin"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-17 16:03:33","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-17 16:03:33","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 67.486 ms","timestamp":"2026-03-17 16:03:33"}
+{"level":"error","message":"","timestamp":"2026-03-17 16:39:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-17 16:39:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 16:39:45"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-17 16:40:28"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-17 16:40:29","tokenId":"4c6c82e9-f9e2-406b-affb-842270ee1076"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"info","message":"Token rotation successfull","timestamp":"2026-03-17 16:40:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-17 16:40:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-17 16:40:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Token creation request received","timestamp":"2026-03-17 16:40:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New token created","timestamp":"2026-03-17 16:40:29","tokenId":"5d611666-27fe-4b5a-92e4-3171ef672d5e"}
+{"level":"info","message":"POST /v1/token 297.257 ms","timestamp":"2026-03-17 16:40:29"}
+{"ip":"::1","key":"shashank","level":"info","message":"Idempotency 'Replay'","timestamp":"2026-03-17 16:40:32"}
+{"level":"info","message":"POST /v1/token 7.151 ms","timestamp":"2026-03-17 16:40:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-17 17:20:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 17:20:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-17 17:20:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 17:20:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-17 17:20:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-17 17:20:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-17 17:20:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 17:20:57"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-17 17:21:14"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-17 17:21:14","tokenId":"114fa34f-2f4b-48c9-b972-cb1bc6116ea8"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"info","message":"Token rotation successfull","timestamp":"2026-03-17 17:21:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-17 17:21:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-17 17:21:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/skills/ 276.211 ms","timestamp":"2026-03-17 17:21:14"}
+{"level":"info","message":"New skill created","skillId":"3a6a93a9-1869-468b-85be-361d0d46dbf1","timestamp":"2026-03-17 17:21:22"}
+{"level":"info","message":"POST /v1/skill/ 20.668 ms","timestamp":"2026-03-17 17:21:22"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.skills.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\skill.repository.ts:6:43\n\n  3 \n  4 class SkillRepository {\n  5     create = async (data: SkillData) : Promise<Skill> => {\n→ 6         const skill = await prisma.skills.create(\nUnique constraint failed on the fields: (`name`)","timestamp":"2026-03-17 17:21:49"}
+{"level":"info","message":"POST /v1/skill/ 73.133 ms","timestamp":"2026-03-17 17:21:49"}
+{"level":"info","message":"Skill fetched","skillId":"3a6a93a9-1869-468b-85be-361d0d46dbf1","timestamp":"2026-03-17 17:23:31"}
+{"level":"info","message":"GET /v1/skill/3a6a93a9-1869-468b-85be-361d0d46dbf1 76.207 ms","timestamp":"2026-03-17 17:23:31"}
+{"level":"info","message":"Skill updated","skillId":"3a6a93a9-1869-468b-85be-361d0d46dbf1","timestamp":"2026-03-17 17:24:43"}
+{"level":"info","message":"PATCH /v1/skill/ 47.105 ms","timestamp":"2026-03-17 17:24:43"}
+{"level":"info","message":"Skill soft deleted","skillId":"3a6a93a9-1869-468b-85be-361d0d46dbf1","timestamp":"2026-03-17 17:25:34"}
+{"level":"info","message":"DELETE /v1/skill/false 149.607 ms","timestamp":"2026-03-17 17:25:34"}
+{"level":"info","message":"Skill hard deleted","skillId":"3a6a93a9-1869-468b-85be-361d0d46dbf1","timestamp":"2026-03-17 17:25:40"}
+{"level":"info","message":"DELETE /v1/skill/true 10.782 ms","timestamp":"2026-03-17 17:25:40"}

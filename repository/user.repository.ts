@@ -1,6 +1,7 @@
 import { errorMessage } from "../constants/error.messages.js";
 import { prisma } from "../db/prisma.js"
-import type { User } from "../dto/user.dto.js";
+import type { User, UserData } from "../dto/user.dto.js";
+import type { UserProfile, UserProfileData } from "../dto/userProfile.dto.js";
 import { Role } from "../generated/prisma/enums.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
@@ -13,7 +14,7 @@ class UserRepository {
      * @param data 
      * @returns 
      */
-    create = async (data: any) => {
+    create = async (data: UserData) : Promise<User> => {
         return await prisma.$transaction(async (tx) => {
                 const user = await tx.users.create({
                     data: {
@@ -21,7 +22,7 @@ class UserRepository {
                         username: data.username,
                         password: data.password,
                         auth_provider: "default",
-                        role: Role.USER,
+                        role: Role.ADMIN,
                         verified: false
                     }
                 });
@@ -45,7 +46,7 @@ class UserRepository {
      * @param username 
      * @returns 
      */
-    getByUsername = async (username: string) => {
+    getByUsername = async (username: string) : Promise<User> => {
         const user = await prisma.users.findMany({
             where : {
                 username: username,
@@ -62,7 +63,7 @@ class UserRepository {
      * @param id 
      * @returns 
      */
-    getById = async (id: string) => {
+    getById = async (id: string) : Promise<User> => {
         const user = await prisma.users.findMany({
             where: {
                 id: id,
@@ -116,47 +117,37 @@ class UserRepository {
      * @param data 
      * @returns 
      */
-    updateProfile = async ( id: string, data: any ) => {
-        return await prisma.$transaction(async (tx) => {
-                const profiles = await tx.user_profiles.findMany({
-                    where: {
-                        user_id: id
-                    }
-                });
-                if(!profiles[0]){
-                    logger.warn("No user profile found");
-                    logger.info("Creating new user profile");
-                    
-                    const profile = await tx.user_profiles.create({
-                        data: {
-                            user_id : id,
-                            name: data.name,
-                            bio: data.bio,
-                            avatar_url: data.avatar_url,
-                            skills_summary: data.skills_summary,
-                            interests: data.interests
-                        }
-                    });
+    updateProfile = async ( id: string, data: UserProfileData ) : Promise<UserProfile> => {
+        const updateData = Object.fromEntries(
+            Object.entries({
+                name: data.name,
+                bio: data.bio,
+                avatar_url: data.avatar_url,
+                skills_summary: data.skills_summary,
+                interests: data.interests
+            }).filter(([_, value]) => value !== undefined)
+        );
+            const profile = await prisma.user_profiles.upsert({
+                where: { user_id: id },
+                update: updateData,
+                create: {
+                    user_id: id,
+                    name: data.name ?? "New User", 
+                    bio: data.bio ?? "",
+                    avatar_url: data.avatar_url ?? "",
+                    skills_summary: data.skills_summary ?? "",
+                    interests: data.interests ?? [],
+                },
+            });
 
-                    return profile;
-                }
+            logger.info("User profile synchronized", { 
+                userId: id, 
+                fieldsUpdated: Object.keys(updateData) 
+            });
 
-                const profile = await tx.user_profiles.update({
-                    where: {
-                        user_id: id
-                    },
-                    data: {
-                        name: data.name,
-                        bio: data.bio,
-                        avatar_url: data.avatar_url,
-                        skills_summary: data.skills_summary,
-                        interests: data.interests
-                    }
-                });
+            return profile;
+    };
 
-                return profile;
-        })
-    }
 
 }
 

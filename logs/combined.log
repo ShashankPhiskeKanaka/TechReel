@@ -247,3 +247,40 @@
 {"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-16 17:46:37","userId":"43d91687-9368-4d97-a55f-d6dcaa68f41a"}
 {"level":"info","message":"GET /v1/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AfrIepBnmnTS6Zt0VVSBTk7f0kNZqSbyO7QNvt5XXuGI1_EZEUqbioa6ISVRAm0YSrAw-A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none 610.334 ms","timestamp":"2026-03-16 17:46:37"}
 {"level":"info","message":"GET /.well-known/appspecific/com.chrome.devtools.json 5.330 ms","timestamp":"2026-03-16 17:46:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-16 17:49:47"}
+{"level":"info","message":"GET /v1/google 4.576 ms","timestamp":"2026-03-16 17:50:00"}
+{"level":"info","message":"GET /v1/google 1.230 ms","timestamp":"2026-03-16 17:50:34"}
+{"level":"info","message":"POST /v1/auth/ 3.862 ms","timestamp":"2026-03-16 17:51:32"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-16 17:51:42","userId":"ce56d902-cdf9-4cb2-a85f-4a4aab997850"}
+{"level":"info","message":"POST /v1/auth/ 279.219 ms","timestamp":"2026-03-16 17:51:42"}
+{"level":"info","message":"User fetched successfully using Id","timestamp":"2026-03-16 17:52:00","userId":"ce56d902-cdf9-4cb2-a85f-4a4aab997850"}
+{"level":"info","message":"GET /v1/user/ 21.210 ms","timestamp":"2026-03-16 17:52:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 10:49:48"}
+{"ip":"::1","level":"error","message":"jwt malformed","timestamp":"2026-03-17 10:50:03"}
+{"level":"info","message":"GET /v1/user/eyJhbGciOiJI 12.444 ms","timestamp":"2026-03-17 10:50:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 10:50:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 11:07:39"}
+{"level":"info","message":"User created successfully","role":"USER","timestamp":"2026-03-17 11:08:10","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/user/ 502.097 ms","timestamp":"2026-03-17 11:08:10"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-17 11:08:24"}
+{"level":"info","message":"POST /v1/user/ 6.101 ms","timestamp":"2026-03-17 11:08:24"}
+{"ip":"::1","level":"error","message":"jwt malformed","timestamp":"2026-03-17 11:08:30"}
+{"level":"info","message":"GET /v1/user/eyJhbGciOiJI 5.588 ms","timestamp":"2026-03-17 11:08:30"}
+{"level":"info","message":"Email verified successfully","timestamp":"2026-03-17 11:08:42","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"GET /v1/user/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIzZjQ2NTFkLWE4ZDgtNDUyYy1hZWVhLTRlNWU1ZDc5ZjU1NSIsImlhdCI6MTc3MzcyNTg5MCwiZXhwIjoxNzczNzI2NzkwfQ.eUVWkJCDPdADSyby1yFcI3dhZIh8nDgGzZtdpUAHsok 102.180 ms","timestamp":"2026-03-17 11:08:42"}
+{"ip":"::1","level":"error","message":"Invalid element at key \"error\": expected a Zod schema","timestamp":"2026-03-17 11:09:17"}
+{"level":"info","message":"POST /v1/auth/ 3.048 ms","timestamp":"2026-03-17 11:09:17"}
+{"ip":"::1","level":"error","message":"Invalid element at key \"error\": expected a Zod schema","timestamp":"2026-03-17 11:10:37"}
+{"level":"info","message":"POST /v1/auth/ 1.805 ms","timestamp":"2026-03-17 11:10:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 11:11:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 11:11:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 11:11:15"}
+{"level":"warn","message":"Login attempted when already authenticated","timestamp":"2026-03-17 11:11:18","username":"sample"}
+{"level":"info","message":"POST /v1/auth/ 11.422 ms","timestamp":"2026-03-17 11:11:18"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-17 11:11:27","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/auth/ 260.706 ms","timestamp":"2026-03-17 11:11:27"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-17 11:11:49"}
+{"level":"info","message":"GET /v1/auth/false 4.347 ms","timestamp":"2026-03-17 11:11:49"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-17 11:12:11","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/auth/ 62.216 ms","timestamp":"2026-03-17 11:12:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-17 11:12:47"}

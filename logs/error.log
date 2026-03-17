@@ -27,3 +27,8 @@
 {"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:42:47"}
 {"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:43:46"}
 {"ip":"::1","level":"error","message":"Failed to obtain access token","timestamp":"2026-03-16 17:44:00"}
+{"ip":"::1","level":"error","message":"jwt malformed","timestamp":"2026-03-17 10:50:03"}
+{"ip":"::1","level":"error","message":"jwt malformed","timestamp":"2026-03-17 11:08:30"}
+{"ip":"::1","level":"error","message":"Invalid element at key \"error\": expected a Zod schema","timestamp":"2026-03-17 11:09:17"}
+{"ip":"::1","level":"error","message":"Invalid element at key \"error\": expected a Zod schema","timestamp":"2026-03-17 11:10:37"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-17 11:11:49"}

@@ -3,6 +3,7 @@ import { prisma } from "../db/prisma.js"
 import type { RefreshToken } from "../dto/auth.dto.js";
 import type { Role } from "../dto/user.dto.js";
 import { serverError } from "../utils/error.utils.js";
+import { logger } from "../utils/logger.js";
 
 class AuthRepository {
 
@@ -22,12 +23,19 @@ class AuthRepository {
             }
         });
 
+        logger.debug("DB: Refresh token record persisted", { userId, familyId })
+
         return data;
     }
 
+    /**
+     * Creates new refreshToken record, validates old refresh token, created record for same session by keeping familyId same
+     * 
+     * @param token 
+     * @returns 
+     */
     generateNewToken = async (token: string) => {
         return await prisma.$transaction(async (tx) => {
-            try {
                 // 1. Fetch with Row Lock
                 const rows = await tx.$queryRaw<any>`
                     SELECT * FROM refresh_tokens 
@@ -39,6 +47,7 @@ class AuthRepository {
 
                 // 2. Immediate Guard
                 if (!tokenData) {
+                    logger.warn("Token rotation failed: Token not found in DB", { tokenId: token });
                     throw new serverError(errorMessage.UNAUTHORIZED);
                 }
 
@@ -47,8 +56,19 @@ class AuthRepository {
                 const isExpired = Date.now() > expiryTime;
                 // 4. Breach/Expiry Detection
                 if (tokenData.is_used || isExpired) {
+
+                    logger.warn(`Security Event: Refresh token ${tokenData.is_used ? "REUSE_DETECTED" : "TOKEN_EXPIRED"}`, {
+                        userId: tokenData.user_id,
+                        familyId: tokenData.family_id,
+                        reason: tokenData.is_used ? "REUSE_DETECTED" : "TOKEN_EXPIRED"
+                    });
+
                     const data = await tx.refresh_tokens.deleteMany({
                         where: { user_id: tokenData.user_id }
+                    });
+
+                    logger.info("Security Action: All user sessions invalidated", {
+                        userId: tokenData.user_id
                     });
                     return <RefreshToken>{};
                 }
@@ -57,6 +77,10 @@ class AuthRepository {
                 await tx.refresh_tokens.update({
                     where: { id: token },
                     data: { is_used: true }
+                });
+
+                logger.debug("Token Rotation: Old token marked as used", {
+                    tokenId: token
                 });
 
                 // 6. Create the replacement token in the same family
@@ -68,13 +92,12 @@ class AuthRepository {
                     }
                 });
 
-                return newToken;
+                logger.info("Token rotation successfull", {
+                    userId: tokenData.user_id,
+                    familyId: tokenData.family_id
+                });
 
-            } catch (err: any) {
-                // Preserve the custom error status if it's already a serverError
-                if (err instanceof serverError) throw err;
-                throw new serverError({ status: 500, message: err.message });
-            }
+                return newToken;
         });
     }
 
@@ -86,26 +109,33 @@ class AuthRepository {
      * @param refreshToken 
      * @returns 
      */
-    deleteByUser = async (userId: string, refreshToken: string) => {
+    deleteByUser = async (refreshToken: string) => {
         return await prisma.$transaction(async (tx) => {
-            try{
                 const tokensData = await tx.$queryRaw<any>`
                     SELECT * FROM refresh_tokens
-                    WHERE (id = ${refreshToken}) AND (user_id = ${userId})
+                    WHERE (id = ${refreshToken})
                     FOR UPDATE 
                 `
-                if(!tokensData[0]) throw new serverError(errorMessage.NOTFOUND);
+                if(!tokensData[0]){
+                    logger.warn("Token deletion failed: No token found with the id",{
+                        tokenId: refreshToken,
+                    })
+                    throw new serverError(errorMessage.NOTFOUND);
+                }
                 await tx.refresh_tokens.deleteMany({
                     where : {
-                        user_id: userId
+                        user_id: tokensData[0].user_id
                     }
                 });
-                if(tokensData[0].is_used) throw new serverError(errorMessage.UNAUTHORIZED);
-                return;
-            }
-            catch (err : any) {
-                throw new serverError({ status: err.status, message: err.message });
-            }
+                if(tokensData[0].is_used){
+                    logger.warn(`Security Event: Refresh token ${tokensData[0].is_used ? "REUSE_DETECTED" : "TOKEN_EXPIRED"}`, {
+                        userId: tokensData[0].user_id,
+                        familyId: tokensData[0].family_id,
+                        reason: tokensData[0].is_used ? "REUSE_DETECTED" : "TOKEN_EXPIRED"
+                    });
+                    throw new serverError(errorMessage.UNAUTHORIZED);
+                }
+                return tokensData[0];
         })
     }
 
@@ -117,19 +147,33 @@ class AuthRepository {
      */
     deleteByFamily = async (refreshToken: string) => {
         return await prisma.$transaction(async (tx) => {
-            try {
                 const tokensData = await tx.$queryRaw<any>`
                     SELECT * from refresh_tokens
                     WHERE id = ${refreshToken}
                     FOR UPDATE
                 `
-                if(!tokensData[0]) throw new serverError(errorMessage.NOTFOUND);
+                if(!tokensData[0]){
+                    logger.warn("Token deletion failed: No token found with the id", {
+                        tokenId: refreshToken
+                    });
+                    throw new serverError(errorMessage.NOTFOUND);
+                }
                 if(tokensData[0].is_used) {
+
+                    logger.warn(`Security Event: Refresh token ${tokensData[0].is_used ? "REUSE_DETECTED" : "TOKEN_EXPIRED"}`, {
+                        userId: tokensData[0].user_id,
+                        familyId: tokensData[0].family_id,
+                        reason: tokensData[0].is_used ? "REUSE_DETECTED" : "TOKEN_EXPIRED"
+                    });
                     await tx.refresh_tokens.deleteMany({
                         where : {
                             user_id : tokensData[0].user_id
                         }
                     })
+
+                    logger.info("Security Action: All user sessions invalidated", {
+                        userId: tokensData[0].user_id
+                    });
                     throw new serverError(errorMessage.UNAUTHORIZED);
                 }
 
@@ -139,11 +183,7 @@ class AuthRepository {
                     }
                 });
 
-                return;
-                
-            }catch (err: any) {
-                throw new serverError({ status: err.status, message: err.message })
-            }
+                return tokensData[0];
         })
     }
 }

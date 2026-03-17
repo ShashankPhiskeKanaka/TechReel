@@ -13,7 +13,8 @@ class UserController {
      */
     create = async (req: Request, res: Response) => {
 
-        logger.info("User creation process initiated", {
+
+        logger.http("User creation request recieved", {
             path: req.path,
             ip: req.ip
         });
@@ -34,6 +35,12 @@ class UserController {
      * @param {Response} res - success message
      */
     verifyEmail = async (req: Request, res: Response) => {
+
+        logger.http("Email verification request recieved", {
+            ip: req.ip,
+            token: req.params.token?.toString() ?? "NA"
+        });
+
         await this.UserService.verifyEmail(req.params.token?.toString() ?? "");
 
         return res.json({
@@ -49,6 +56,12 @@ class UserController {
      * @param res - fetched user data along with success message
      */
     getById = async (req: Request, res: Response) => {
+
+        logger.http("Fetch user by id request received", {
+            ip: req.ip,
+            userId: req.user?.id ?? "NA"
+        });
+
         const user = await this.UserService.getById(req.user?.id ?? "");
 
         return res.json({
@@ -66,6 +79,12 @@ class UserController {
      * @returns 
      */
     updateProfile = async (req: Request, res: Response) => {
+
+        logger.http("User profile update request received", {
+            ip: req.ip,
+            userId: req.user?.id ?? "NA"
+        });
+
         const profile = await this.UserService.updateProfile(req.user?.id ?? "", req.body);
 
         return res.json({

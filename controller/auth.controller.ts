@@ -3,6 +3,7 @@ import type { AuthService } from "../service/auth.service.js";
 import type { user } from "../dto/auth.dto.js";
 import { serverError } from "../utils/error.utils.js";
 import { errorMessage } from "../constants/error.messages.js";
+import { logger } from "../utils/logger.js";
 
 class AuthController {
     constructor ( private AuthService : AuthService ) {}
@@ -16,7 +17,11 @@ class AuthController {
      */
     login = async (req: Request, res: Response) => {
 
+        logger.http("Login request received", { username: req.body.username });
+
         if(req.cookies.refreshToken) {
+            logger.warn("Login attempted when already authenticated", { username: req.body.username });
+
             return res.json({
                 success: true,
                 message: "Already logged in"
@@ -42,10 +47,17 @@ class AuthController {
      * @returns 
      */
     SignIn = async (req: Request, res: Response) => {
-        try{
+
+        logger.http("User sign in with OAuth process initiated", {
+            ip: req.ip
+        })
+
             const user = req.user as Express.User;
 
             if(!user) {
+                logger.warn("User failed to authorize", {
+                    ip: req.ip
+                });
                 throw new serverError(errorMessage.UNAUTHORIZED);
             }
 
@@ -58,9 +70,6 @@ class AuthController {
                 success: true,
                 message: "Signed in"
             });
-        }catch(err : any) {
-            throw new serverError({ status: err.status, message: err.message });
-        }
     }
 
     /**
@@ -69,16 +78,24 @@ class AuthController {
      * @param {Response} res - cleared cookies
      */
     logout = async (req: Request, res: Response) => {
-        if(!req.cookies.refreshToken) {
+
+        logger.http("Logout request received", {
+            ip: req.ip
+        });
+
+        if(!req.cookies.refreshToken || !req.user) {
+
+            logger.warn("User already logged out", {
+                ip: req.ip
+            });
+
             return res.json({
                 success: true,
                 message: "Already logged out"
             });
         }
 
-        if(!req.user) throw new serverError(errorMessage.UNAUTHORIZED);
-
-        await this.AuthService.logout(req.user , req.params.flag?.toString() == "true" ? true : false, req.cookies.refreshToken);
+        await this.AuthService.logout(req.params.flag?.toString() == "true" ? true : false, req.cookies.refreshToken);
 
         res.clearCookie("accessToken");
         res.clearCookie("refreshToken");

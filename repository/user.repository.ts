@@ -3,6 +3,7 @@ import { prisma } from "../db/prisma.js"
 import type { User } from "../dto/user.dto.js";
 import { Role } from "../generated/prisma/enums.js";
 import { serverError } from "../utils/error.utils.js";
+import { logger } from "../utils/logger.js";
 
 class UserRepository {
 
@@ -14,7 +15,6 @@ class UserRepository {
      */
     create = async (data: any) => {
         return await prisma.$transaction(async (tx) => {
-            try {
                 const user = await tx.users.create({
                     data: {
                         email: data.email,
@@ -36,9 +36,6 @@ class UserRepository {
                 }
 
                 return user;
-            }catch (err: any) {
-                throw new serverError({ status: err.status, message: err.message });
-            }
         })
     }
 
@@ -93,8 +90,12 @@ class UserRepository {
                 FOR UPDATE 
             `
 
-            if(!data[0]) throw new serverError(errorMessage.NOTFOUND);
-
+            if(!data[0]){
+                logger.warn("No user found", {
+                    userId: id
+                });
+                throw new serverError(errorMessage.NOTFOUND);
+            }
             await tx.users.update({
                 data : {
                     verified: true,
@@ -117,13 +118,28 @@ class UserRepository {
      */
     updateProfile = async ( id: string, data: any ) => {
         return await prisma.$transaction(async (tx) => {
-            try {
                 const profiles = await tx.user_profiles.findMany({
                     where: {
                         user_id: id
                     }
                 });
-                if(!profiles[0]) throw new serverError(errorMessage.NOTFOUND);
+                if(!profiles[0]){
+                    logger.warn("No user profile found");
+                    logger.info("Creating new user profile");
+                    
+                    const profile = await tx.user_profiles.create({
+                        data: {
+                            user_id : id,
+                            name: data.name,
+                            bio: data.bio,
+                            avatar_url: data.avatar_url,
+                            skills_summary: data.skills_summary,
+                            interests: data.interests
+                        }
+                    });
+
+                    return profile;
+                }
 
                 const profile = await tx.user_profiles.update({
                     where: {
@@ -139,10 +155,6 @@ class UserRepository {
                 });
 
                 return profile;
-            }
-            catch (err : any) {
-                throw new serverError({ status: err.status,message: err.message });
-            }
         })
     }
 

@@ -19,10 +19,15 @@ class AuthService {
      */
     login = async (username : string, password: string) => {
         const user = await this.UserMethods.getByUsername(username);
-        if(!user.id || !user.verified) throw new serverError(errorMessage.INVALIDDATA);
+        if(!user.id || !user.verified){
+            logger.warn("Login failed: User not found or unverified", { username });
+            throw new serverError(errorMessage.INVALIDDATA);
+        }
 
-        if(!authUtils.comparePasswords(password, user.password)) throw new serverError(errorMessage.LOGINERROR);
-
+        if(!authUtils.comparePasswords(password, user.password)){
+            logger.warn("Login failed: Incorrect password", { userId: user.id });
+            throw new serverError(errorMessage.LOGINERROR);
+        }
         const accessToken = authUtils.generateAccessToken(user.id, user.role);
         const familyId = crypto.randomUUID();
         const refreshToken = await this.AuthMethods.create(familyId, user.id, user.role);
@@ -53,6 +58,12 @@ class AuthService {
         return { accessToken, refreshToken : refreshTokenData };     
     }
 
+    /**
+     * Generates new refreshTokens and accessTokens for OAuth users
+     * 
+     * @param user 
+     * @returns 
+     */
     generateNewCredentials = async (user: user) => {
         const accessToken = authUtils.generateAccessToken(user.id, user.role);
         const familyId = crypto.randomUUID();
@@ -73,16 +84,17 @@ class AuthService {
      * @param refreshToken 
      * @returns 
      */
-    logout = async (user: user, flag: boolean, refreshToken: string) => {
+    logout = async (flag: boolean, refreshToken: string) => {
+        let token;
         if(flag) {
-            await this.AuthMethods.deleteByUser(user.id, refreshToken);
+            token = await this.AuthMethods.deleteByUser(refreshToken);
         }else{
-            await this.AuthMethods.deleteByFamily(refreshToken);
+            token = await this.AuthMethods.deleteByFamily(refreshToken);
         }
 
         logger.info("User logged out successfully", {
-            userId: user.id,
-            role: user.role
+            userId: token.user_id,
+            role: token.role
         });
 
         return;

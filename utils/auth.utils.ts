@@ -1,6 +1,9 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import type { Role } from "../dto/user.dto.js";
+import { logger } from "./logger.js";
+import { serverError } from "./error.utils.js";
+import { errorMessage } from "../constants/error.messages.js";
 
 class AuthUtilsClass {
     comparePasswords = async (password: string, hashedPassword: string) => {
@@ -16,11 +19,28 @@ class AuthUtilsClass {
     }
 
     decodeForgetToken = (token : string) => {
-        return jwt.verify(token, process.env.JWTSECRET as string) as { id: string }
+        try{
+            return jwt.verify(token, process.env.JWTSECRET as string) as { id: string }
+        }catch (err) {
+            logger.warn("Invalid token provided", {
+                token: token
+            });
+
+            throw new serverError(errorMessage.INVALIDDATA);
+        }
+        
     }
 
     decodeAccesstoken = (token : string) => {
-        return jwt.verify(token, process.env.JWTSECRET as string) as { id: string, role: Role }
+        try{
+            return jwt.verify(token, process.env.JWTSECRET as string) as { id: string, role: Role }
+        }catch (err) {
+            logger.warn("Invalid token provided", {
+                token: token
+            });
+
+            throw new serverError(errorMessage.INVALIDDATA);
+        }
     }
 
     hashPassword = async ( password : string ) => {

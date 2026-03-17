@@ -59,8 +59,8 @@ model audit_logs {
   action       String
   old_data     Json?
   new_data     Json?
-  performed_by String   @db.Uuid
-  ip           String
+  performed_by String?   @db.Uuid
+  ip           String?
   created_at   DateTime @db.Timestamptz(6)
 
   @@map("audit_logs")

@@ -17,7 +17,12 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
         return next();
     }
 
-    if(!req.cookies.refreshToken) throw new serverError(errorMessage.UNAUTHORIZED);
+    if(!req.cookies.refreshToken){
+        logger.warn("User unauthorized", {
+            ip: req.ip
+        });
+        throw new serverError(errorMessage.UNAUTHORIZED);
+    }
     if(!req.cookies.accessToken) {
 
         logger.info("No access token found, creating new credentials", {

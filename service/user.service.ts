@@ -14,6 +14,7 @@ class UserService {
      * @returns 
      */
     create = async (data : any) => {
+
         const hashedPassword = await authUtils.hashPassword(data.password);
         const user = await this.UserMethods.create({
             ...data,
@@ -38,6 +39,7 @@ class UserService {
      */
     verifyEmail = async (token: string) => {
         const { id } = authUtils.decodeForgetToken(token);
+
         await this.UserMethods.verified(id);
 
         logger.info("Email verified successfully", {
@@ -55,7 +57,12 @@ class UserService {
      */
     getById = async (id: string) => {
         const user = await this.UserMethods.getById(id);
-        if(!user.id) throw new serverError(errorMessage.NOTFOUND);
+        if(!user.id){
+            logger.warn("User not found", {
+                userId: id
+            });
+            throw new serverError(errorMessage.NOTFOUND);
+        }
 
         logger.info("User fetched successfully using Id", {
             userId: id

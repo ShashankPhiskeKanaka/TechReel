@@ -1,0 +1,7 @@
+interface Tag {
+    id: string
+    name: string
+    created_at: Date
+}
+
+export type { Tag }

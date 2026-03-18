@@ -383,3 +383,14 @@
 {"level":"info","message":"DELETE /v1/skill/false 149.607 ms","timestamp":"2026-03-17 17:25:34"}
 {"level":"info","message":"Skill hard deleted","skillId":"3a6a93a9-1869-468b-85be-361d0d46dbf1","timestamp":"2026-03-17 17:25:40"}
 {"level":"info","message":"DELETE /v1/skill/true 10.782 ms","timestamp":"2026-03-17 17:25:40"}
+{"level":"error","message":"","timestamp":"2026-03-18 10:23:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-18 10:25:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-18 10:25:24"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-18 10:25:29"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-18 10:25:29","tokenId":"10e60329-cce0-42bb-9a86-c295d477bad8"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"info","message":"Token rotation successfull","timestamp":"2026-03-18 10:25:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-18 10:25:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-18 10:25:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/tag 508.380 ms","timestamp":"2026-03-18 10:25:29"}
+{"level":"info","message":"GET /v1/tag/df44b8ae-c6bc-4acb-b30b-bf7056cd8714 70.793 ms","timestamp":"2026-03-18 10:27:47"}
+{"level":"info","message":"DELETE /v1/tag/df44b8ae-c6bc-4acb-b30b-bf7056cd8714 165.597 ms","timestamp":"2026-03-18 10:28:23"}

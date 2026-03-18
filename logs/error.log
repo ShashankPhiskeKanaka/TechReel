@@ -36,3 +36,4 @@
 {"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-03-17 15:50:25"}
 {"level":"error","message":"","timestamp":"2026-03-17 16:39:03"}
 {"ip":"::1","level":"error","message":"\nInvalid `prisma.skills.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\skill.repository.ts:6:43\n\n  3 \n  4 class SkillRepository {\n  5     create = async (data: SkillData) : Promise<Skill> => {\n→ 6         const skill = await prisma.skills.create(\nUnique constraint failed on the fields: (`name`)","timestamp":"2026-03-17 17:21:49"}
+{"level":"error","message":"","timestamp":"2026-03-18 10:23:46"}

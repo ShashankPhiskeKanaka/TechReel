@@ -19,6 +19,7 @@ import { GoogleRouter } from "./router/google.router.js";
 import { GithubRouter } from "./router/github.router.js";
 import { TokenRouter } from "./router/token.router.js";
 import { SkillRouter } from "./router/skill.router.js";
+import { TagRouter } from "./router/tag.router.js";
 dotenv.config();
 
 const app = express();
@@ -55,6 +56,7 @@ app.use("/v1/user", UserRouter);
 app.use("/v1/auth/", AuthRouter);
 app.use("/v1/token", TokenRouter);
 app.use("/v1/skill", SkillRouter);
+app.use("/v1/tag", TagRouter);
 
 app.use(authenticate);
 app.get("/", (req, res) => {

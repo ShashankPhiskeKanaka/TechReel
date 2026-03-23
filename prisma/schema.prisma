@@ -30,7 +30,27 @@ model users {
   deleted_at    DateTime? @db.Timestamptz(6)
 
   profile user_profiles?
+  
   refresh_tokens refresh_tokens[]
+
+  token_ledger token_ledger[]
+  xp_ledger xp_ledger[]
+
+  reels reels[]
+  
+  token_balance user_token_balance?
+
+  skills user_skills[]
+
+  streak streaks?
+
+  reel_views reel_views[]
+  reel_likes reel_likes[]
+  reel_report reel_reports[]
+
+  badges user_badges[]
+
+  challenge_submission challenge_submissions[]
 
   @@map("users")
   @@index([id, created_at])
@@ -88,6 +108,11 @@ model tokens {
   token_url String?
   created_at DateTime @default(now()) @db.Timestamptz
   deleted_at DateTime? @db.Timestamptz
+
+  token_ledger token_ledger[]
+  user_token_balance user_token_balance[]
+
+  @@index([id, created_at])
 }
 
 model skills {
@@ -97,11 +122,306 @@ model skills {
   description String?
   created_at DateTime @default(now()) @db.Timestamptz
   deleted_at DateTime? @db.Timestamptz
+
+  reels reels[]
+  user_skills user_skills[]
+  roadmap skill_roadmaps[]
+
+  badges badges[]
+
+  @@index([id, created_at])
 }
 
 model tags {
   id String @id @default(uuid()) @db.Uuid
   name String @unique
   created_at DateTime @default(now()) @db.Timestamptz
+
+  @@index([id, created_at])
 }
 
+enum levels {
+  NOVICE
+  COMPETENT
+  PROFICIENT
+}
+
+enum status {
+  UPLOADED
+  PENDING
+  FAILED
+}
+
+model reels {
+  id String @id @default(uuid()) @db.Uuid
+  title String
+  description String?
+  video_url String? 
+  creator_id String @db.Uuid
+  skill_id String @db.Uuid
+  difficulty_level levels
+  created_at DateTime @default(now()) @db.Timestamptz
+  deleted_at DateTime? @db.Timestamptz
+  duration Int @default(0)
+  tags Json?
+  views Int @default(0)
+  status status
+  thumbnail_url String?
+  is_bonus Boolean @default(false)
+
+  user users @relation(fields: [creator_id], references: [id])
+  skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
+
+  reel_views reel_views[]
+  reel_likes reel_likes[]
+  reel_reports reel_reports[]
+
+  challenges challenges[]
+
+  @@index([id, created_at])
+}
+
+enum TransactionType{
+  DEBIT
+  CREDIT
+}
+
+model token_ledger {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  token_id String @db.Uuid
+  amount Int 
+  source String
+  created_at DateTime @default(now()) @db.Timestamptz
+  type TransactionType
+
+  user users @relation(fields: [user_id], references: [id])
+  token tokens @relation(fields: [token_id], references: [id])
+
+  @@index([id, created_at])
+  @@index([user_id])
+}
+
+model user_token_balance {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid @unique
+  token_id String @db.Uuid
+  amount Int
+  created_at DateTime @default(now()) @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id])
+  token tokens @relation(fields: [token_id], references: [id])
+
+  @@index([id, created_at])
+  @@index([user_id])
+}
+
+model xp_ledger {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  amount Int
+  source String
+  created_at DateTime @default(now()) @db.Timestamptz
+  deleted_at DateTime? @db.Timestamptz
+  type TransactionType
+
+  user users @relation(fields: [user_id], references: [id])
+
+  @@index([user_id])
+  @@index([id, created_at])
+}
+
+model streaks {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid @unique
+  current_streak Int
+  longest_streak Int
+  last_active DateTime @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([user_id])
+}
+
+model user_skills {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  skill_id String @db.Uuid
+  xp Int
+  difficulty_level levels
+  last_updated DateTime @db.Timestamptz
+  progress Int
+  completed_at DateTime @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  skill skills @relation(fields: [skill_id], references: [id])
+
+  @@index([user_id])
+  @@index([id, completed_at])
+}
+
+model skill_roadmaps {
+  id String @id @default(uuid()) @db.Uuid
+  skill_id String @db.Uuid
+  difficulty_level levels
+  title String
+  description String
+  created_at DateTime @default(now()) @db.Timestamptz
+
+  skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
+
+  roadmap_steps roadmap_steps[]
+
+  @@index([skill_id])
+}
+
+model reel_views {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  reel_id String @db.Uuid
+  watched_seconds Int @default(0)
+  completed Boolean
+  created_at DateTime @default(now()) @db.Timestamptz
+
+  user users @relation(fields: [user_id], references:[id])
+  reel reels @relation(fields: [reel_id], references:[id], onDelete: Cascade)
+
+  @@index([id, created_at])
+}
+
+model reel_likes {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  reel_id String @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id])
+  reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
+
+  @@index([id, created_at])
+}
+
+model reel_saves{
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  reel_id String @db.Uuid
+  folder_name String
+  saved_at DateTime @default(now()) @db.Timestamptz
+}
+
+enum reportStatus {
+  PENDING
+  APPROVED 
+  REJECTED
+}
+
+model reel_reports {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  reel_id String @db.Uuid
+  reason String
+  status reportStatus
+  created_at DateTime @default(now()) @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
+
+  @@index([id, created_at])
+}
+
+enum challenge_type {
+  MCQ
+  FIB
+  TF
+  OP
+}
+
+model challenges {
+  id String @id @default(uuid()) @db.Uuid
+  reel_id String @db.Uuid
+  question String
+  code_snippet String?
+  language String
+  challenge_type challenge_type
+  answer String
+  difficulty_level levels
+  created_at DateTime @default(now()) @db.Timestamptz
+  deleted_at DateTime? @db.Timestamptz
+
+  reels reels @relation(fields: [reel_id], references: [id])
+
+  challenge_submissions challenge_submissions[]
+
+  challenge_options challenge_options[]
+
+  @@index([id, created_at])
+}
+
+model badges {
+  id String @id @default(uuid()) @db.Uuid
+  skill_id String @db.Uuid
+  name String
+  description String?
+  icon_url String?
+  xp_reward Int
+  created_at DateTime @default(now()) @db.Timestamptz
+  deleted_at DateTime? @db.Timestamptz
+
+  skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
+
+  user_badges user_badges[]
+
+  @@index([id, created_at])
+}
+
+model user_badges {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  badge_id String @db.Uuid
+  created_at DateTime @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  badge badges @relation(fields: [badge_id], references: [id], onDelete: Cascade)
+
+  @@index([id, created_at])
+}
+
+model roadmap_steps {
+  id String @id @default(uuid()) @db.Uuid
+  roadmap_id String @db.Uuid
+  reel_id String @db.Uuid
+  challenge_id String @db.Uuid
+  step_order Int
+  title String
+  description String?
+
+  roadmap skill_roadmaps @relation(fields: [roadmap_id], references: [id], onDelete: Cascade)
+
+  challenge_submission challenge_submissions[]
+}
+
+model challenge_submissions {
+  id String @id @default(uuid()) @db.Uuid
+  user_id String @db.Uuid
+  challenge_id String @db.Uuid
+  answer String
+  is_correct Boolean
+  score Int
+  created_at DateTime @default(now()) @db.Timestamptz
+  roadmap_step_id String @db.Uuid
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  challenge challenges @relation(fields: [challenge_id], references: [id])
+  roadmap_step roadmap_steps @relation(fields: [roadmap_step_id], references: [id])
+
+  @@index([id, created_at])
+}
+
+model challenge_options {
+  id String @id @default(uuid()) @db.Uuid
+  challenge_id String @db.Uuid
+  is_correct Boolean
+  option String
+
+  challenge challenges @relation(fields: [challenge_id], references: [id], onDelete: Cascade)
+}

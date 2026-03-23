@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import type { UserService } from "../service/user.service.js";
 import { logger } from "../utils/logger.js";
+import { ApiResponse } from "../utils/api.utils.js";
 
 class UserController {
     constructor(private UserService: UserService) {}
@@ -43,10 +44,7 @@ class UserController {
 
         await this.UserService.verifyEmail(req.params.token?.toString() ?? "");
 
-        return res.json({
-            success: true,
-            message: "Email verified",
-        });
+        return ApiResponse.success(res, "Email verified");
     }
 
     /**
@@ -64,11 +62,7 @@ class UserController {
 
         const user = await this.UserService.getById(req.user?.id ?? "");
 
-        return res.json({
-            success: true,
-            message: "User data fetched",
-            data : user
-        });
+        return ApiResponse.success(res, "User fetched", user);
     }
 
     /**
@@ -87,11 +81,7 @@ class UserController {
 
         const profile = await this.UserService.updateProfile(req.user?.id ?? "", req.body);
 
-        return res.json({
-            success: true,
-            message: "Profile updated",
-            data: profile
-        });
+        return ApiResponse.success(res, "User profile updated", profile);
     }
 
 }

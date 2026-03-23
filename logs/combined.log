@@ -394,3 +394,187 @@
 {"level":"info","message":"POST /v1/tag 508.380 ms","timestamp":"2026-03-18 10:25:29"}
 {"level":"info","message":"GET /v1/tag/df44b8ae-c6bc-4acb-b30b-bf7056cd8714 70.793 ms","timestamp":"2026-03-18 10:27:47"}
 {"level":"info","message":"DELETE /v1/tag/df44b8ae-c6bc-4acb-b30b-bf7056cd8714 165.597 ms","timestamp":"2026-03-18 10:28:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 11:19:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 11:19:40"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 11:33:26"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-20 11:33:26","tokenId":"9f27530c-22bd-4f89-9b29-3b79214e84e8"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"info","message":"Token rotation successfull","timestamp":"2026-03-20 11:33:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-20 11:33:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-20 11:33:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New skill created","skillId":"61ae1e2f-8fcd-4466-a42e-a8855cf7a820","timestamp":"2026-03-20 11:33:26"}
+{"level":"info","message":"POST /v1/skill/ 338.094 ms","timestamp":"2026-03-20 11:33:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 11:35:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 11:35:08"}
+{"level":"info","message":"POST /v1/reel/ 12.189 ms","timestamp":"2026-03-20 11:35:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 11:35:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 11:35:27"}
+{"level":"info","message":"POST /v1/reel/ 246.240 ms","timestamp":"2026-03-20 11:35:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:07:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:07:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:07:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:07:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:08:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:08:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:08:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:08:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:08:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:08:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:08:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:08:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:08:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:08:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:08:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:08:49"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 12:09:27"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-20 12:09:27","tokenId":"a9954df9-a98e-4dc3-9fea-3033fc1d35fc"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"info","message":"Token rotation successfull","timestamp":"2026-03-20 12:09:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-20 12:09:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-20 12:09:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 12:09:27"}
+{"familyId":"ba49e5be-4ce0-46f3-b330-c6ae89aa456b","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-20 12:09:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-20 12:09:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 12:09:27"}
+{"level":"info","message":"POST /v1/reel/ 307.988 ms","timestamp":"2026-03-20 12:09:27"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-20 12:09:45","username":"admin"}
+{"familyId":"dddbd6e8-8a71-4485-aa98-ff1ab6ebb4ff","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-20 12:09:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-20 12:09:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 37.921 ms","timestamp":"2026-03-20 12:09:45"}
+{"level":"info","message":"POST /v1/reel/ 57.697 ms","timestamp":"2026-03-20 12:09:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:11:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:11:45"}
+{"level":"info","message":"POST /v1/reel/ 183.990 ms","timestamp":"2026-03-20 12:12:04"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-03-20 12:36:20"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 12:36:20"}
+{"level":"info","message":"PATCH /reels/status 9.136 ms","timestamp":"2026-03-20 12:36:20"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-03-20 12:40:55"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 12:40:55"}
+{"level":"info","message":"PATCH /reel/status 6.094 ms","timestamp":"2026-03-20 12:40:55"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:42:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:42:08"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-03-20 12:45:50"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 12:45:50"}
+{"level":"info","message":"PATCH /reel/status 15.597 ms","timestamp":"2026-03-20 12:45:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:46:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:46:37"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:46:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:46:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:46:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:46:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:28"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:47:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:47:57"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-03-20 12:51:00"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 12:51:00"}
+{"level":"info","message":"PATCH /reel/status 17.715 ms","timestamp":"2026-03-20 12:51:00"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reels.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\reel.repository.ts:18:41\n\n  15 }\n  16 \n  17 updateStatus = async (status: status, id: string) : Promise<Reel> => {\n→ 18     const reel = await prisma.reels.update({\n           where: {\n             id: \"1773988924482-sample\",\n             deleted_at: null\n           },\n           data: {\n             status: \"READY\"\n                     ~~~~~~~\n           }\n         })\n\nInvalid value for argument `status`. Expected status.","timestamp":"2026-03-20 12:56:26"}
+{"level":"info","message":"PATCH /v1/reel/status 142.726 ms","timestamp":"2026-03-20 12:56:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 12:58:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 12:58:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:05:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:05:05"}
+{"ip":"::1","level":"error","message":"[\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"UPLOADED\",\n      \"PENDING\",\n      \"FAILED\"\n    ],\n    \"path\": [\n      \"status\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"UPLOADED\\\"|\\\"PENDING\\\"|\\\"FAILED\\\"\"\n  }\n]","timestamp":"2026-03-20 14:08:08"}
+{"level":"info","message":"PATCH /v1/reel/status 20.567 ms","timestamp":"2026-03-20 14:08:08"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reels.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\reel.repository.ts:18:41\n\n  15 }\n  16 \n  17 updateStatus = async (status: status, id: string) : Promise<Reel> => {\n→ 18     const reel = await prisma.reels.update(\nInvalid input value: invalid input syntax for type uuid: \"1773988924482-sample\"","timestamp":"2026-03-20 14:12:09"}
+{"level":"info","message":"PATCH /v1/reel/status 156.535 ms","timestamp":"2026-03-20 14:12:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:18:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:18:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:18:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:18:06"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:18:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:18:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:18:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:18:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:20:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:20:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:31:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:31:35"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 14:48:02"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-20 14:48:03","tokenId":"5ea59da1-5ed9-4dc2-a286-2dfb3c2deee7"}
+{"familyId":"dddbd6e8-8a71-4485-aa98-ff1ab6ebb4ff","level":"info","message":"Token rotation successfull","timestamp":"2026-03-20 14:48:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-20 14:48:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-20 14:48:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 14:48:03"}
+{"familyId":"dddbd6e8-8a71-4485-aa98-ff1ab6ebb4ff","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-20 14:48:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-20 14:48:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 14:48:03"}
+{"level":"info","message":"POST /v1/reel/ 288.624 ms","timestamp":"2026-03-20 14:48:03"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-20 14:48:10","username":"admin"}
+{"familyId":"d16b4a60-4582-4fa3-993f-1de7810f3173","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-20 14:48:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-20 14:48:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 52.358 ms","timestamp":"2026-03-20 14:48:10"}
+{"level":"info","message":"POST /v1/reel/ 60.299 ms","timestamp":"2026-03-20 14:48:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 14:59:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 14:59:35"}
+{"level":"info","message":"POST /v1/reel/ 301.267 ms","timestamp":"2026-03-20 15:00:47"}
+{"ip":"::1","level":"error","message":"[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reelId\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]","timestamp":"2026-03-20 15:10:40"}
+{"level":"info","message":"PATCH /v1/reel/status 8.759 ms","timestamp":"2026-03-20 15:10:40"}
+{"ip":"::1","level":"error","message":"[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reelId\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]","timestamp":"2026-03-20 15:15:32"}
+{"level":"info","message":"PATCH /v1/reel/status 5.116 ms","timestamp":"2026-03-20 15:15:32"}
+{"ip":"::1","level":"error","message":"[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reelId\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]","timestamp":"2026-03-20 15:21:56"}
+{"level":"info","message":"PATCH /v1/reel/status 4.209 ms","timestamp":"2026-03-20 15:21:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 15:25:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 15:25:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 15:25:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 15:25:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 15:25:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 15:25:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 15:25:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 15:25:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 15:25:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 15:25:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 15:41:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 15:41:38"}
+{"ip":"::1","level":"error","message":"[\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"UPLOADED\",\n      \"PENDING\",\n      \"FAILED\"\n    ],\n    \"path\": [\n      \"status\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"UPLOADED\\\"|\\\"PENDING\\\"|\\\"FAILED\\\"\"\n  }\n]","timestamp":"2026-03-20 15:45:33"}
+{"level":"info","message":"PATCH /v1/reel/status 14.989 ms","timestamp":"2026-03-20 15:45:33"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-03-20 15:52:53"}
+{"ip":"::1","level":"error","message":"[\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"UPLOADED\",\n      \"PENDING\",\n      \"FAILED\"\n    ],\n    \"path\": [\n      \"status\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"UPLOADED\\\"|\\\"PENDING\\\"|\\\"FAILED\\\"\"\n  }\n]","timestamp":"2026-03-20 15:57:39"}
+{"level":"info","message":"PATCH /v1/reel/status 5.941 ms","timestamp":"2026-03-20 15:57:39"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-03-20 16:03:58"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 17:04:56"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-20 17:04:56","tokenId":"fba4754c-e098-418f-876c-8916adefc6b2"}
+{"familyId":"d16b4a60-4582-4fa3-993f-1de7810f3173","level":"info","message":"Token rotation successfull","timestamp":"2026-03-20 17:04:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-20 17:04:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-20 17:04:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-20 17:04:57"}
+{"familyId":"d16b4a60-4582-4fa3-993f-1de7810f3173","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-20 17:04:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-20 17:04:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-20 17:04:57"}
+{"level":"info","message":"POST /v1/reel/ 374.325 ms","timestamp":"2026-03-20 17:04:57"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-20 17:05:01","username":"admin"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-20 17:05:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-20 17:05:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 64.390 ms","timestamp":"2026-03-20 17:05:01"}
+{"level":"info","message":"POST /v1/reel/ 96.915 ms","timestamp":"2026-03-20 17:05:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-20 17:47:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-20 17:47:09"}
+{"ip":"::1","level":"http","message":"Updating reel metadata record request from aws received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-20 17:48:40"}
+{"level":"info","message":"Reel metadata updated","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-20 17:48:40"}
+{"ip":"::1","level":"http","message":"Updating reel metadata record request from aws received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-20 17:49:30"}
+{"level":"info","message":"Reel metadata updated","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-20 17:49:30"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-03-20 17:53:40"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-03-20 17:54:30"}

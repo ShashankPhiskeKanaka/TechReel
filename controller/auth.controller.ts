@@ -4,6 +4,7 @@ import type { user } from "../dto/auth.dto.js";
 import { serverError } from "../utils/error.utils.js";
 import { errorMessage } from "../constants/error.messages.js";
 import { logger } from "../utils/logger.js";
+import { ApiResponse } from "../utils/api.utils.js";
 
 class AuthController {
     constructor ( private AuthService : AuthService ) {}
@@ -22,10 +23,7 @@ class AuthController {
         if(req.cookies.refreshToken) {
             logger.warn("Login attempted when already authenticated", { username: req.body.username });
 
-            return res.json({
-                success: true,
-                message: "Already logged in"
-            });
+            return ApiResponse.success(res, "Already logged in");
         }
 
         const { accessToken, refreshToken } = await this.AuthService.login(req.body.username, req.body.password);
@@ -33,10 +31,7 @@ class AuthController {
         res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000 });
         res.cookie("refreshToken", refreshToken, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
 
-        return res.json({
-            success: true,
-            message: "Logged in"
-        });
+        return ApiResponse.success(res, "Logged in");
     }
 
     /**
@@ -66,10 +61,7 @@ class AuthController {
             res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000});
             res.cookie("refreshToken", refreshToken, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
 
-            return res.json({
-                success: true,
-                message: "Signed in"
-            });
+            return ApiResponse.success(res, "User signed in");
     }
 
     /**
@@ -89,10 +81,7 @@ class AuthController {
                 ip: req.ip
             });
 
-            return res.json({
-                success: true,
-                message: "Already logged out"
-            });
+            return ApiResponse.success(res, "Already logged out");
         }
 
         await this.AuthService.logout(req.params.flag?.toString() == "true" ? true : false, req.cookies.refreshToken);
@@ -100,10 +89,7 @@ class AuthController {
         res.clearCookie("accessToken");
         res.clearCookie("refreshToken");
 
-        return res.json({
-            success: true,
-            message: "Logged out"
-        });
+        return ApiResponse.success(res, "Logged out");
     }
 }
 

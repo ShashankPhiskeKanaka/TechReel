@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import type { TagService } from "../service/tag.service.js";
 import { logger } from "../utils/logger.js";
+import { ApiResponse } from "../utils/api.utils.js";
 
 class TagController {
     constructor ( private TagService : TagService ) {}
@@ -13,11 +14,7 @@ class TagController {
 
         const tag = await this.TagService.create(req.body.name);
 
-        return res.json({
-            success: true,
-            message: "New tag created",
-            data: tag
-        });
+        return ApiResponse.success(res, "Tag created", tag);
     }
 
     get = async (req: Request, res: Response) => {
@@ -30,11 +27,7 @@ class TagController {
 
         const tag = await this.TagService.get(req.params.id?.toString() ?? "");
 
-        return res.json({
-            success: true,
-            message: "Tag fetched",
-            data: tag
-        });
+        return ApiResponse.success(res, "Tag fetched", tag);
     }
 
     delete = async (req: Request, res: Response) => {
@@ -46,11 +39,7 @@ class TagController {
 
         const tag = await this.TagService.delete(req.params.id?.toString() ?? "");
 
-        return res.json({
-            success: true,
-            message: "Tag deleted",
-            data: tag
-        });
+        return ApiResponse.success(res, "Tag deleted", tag);
     }
 }
 

@@ -2,7 +2,7 @@ import express from "express";
 import { SkillFactory } from "../factory/skill.factory.js";
 import { SkillRepository } from "../repository/skill.repository.js";
 import { SkillService } from "../service/skills.service.js";
-import { SkillController } from "../controller/skills.controller.js";
+import { SkillController } from "../controller/skill.controller.js";
 import { errorHandler } from "../factory/auth.factory.js";
 import { authenticateAdmin } from "../middleware/authenticate.middleware.js";
 import { idempotencyMiddleware } from "../middleware/idempotency.middleware.js";

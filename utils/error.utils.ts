@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from "express"
 import { logUtil, type logError } from "./log.utils.js";
 import { logger } from "./logger.js";
+import { ApiResponse } from "./api.utils.js";
 
 class ErrorHandlerClass {
     controllerWrapper = (fn : any) => {
@@ -24,10 +25,7 @@ class GlobalErrorHandlerClass {
 
         const status = err.status ?? 500;
 
-        return res.status(status).json({
-            success : false,
-            message : status == 500 ? "Internal Server Error" : err.message
-        });
+        return ApiResponse.error(res, status == 500 ? "Internal Server Error" : err.message, status);
     }
 }
 

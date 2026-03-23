@@ -47,6 +47,7 @@ model users {
   reel_views reel_views[]
   reel_likes reel_likes[]
   reel_report reel_reports[]
+  reel_saves reel_saves[]
 
   badges user_badges[]
 
@@ -175,6 +176,7 @@ model reels {
   reel_views reel_views[]
   reel_likes reel_likes[]
   reel_reports reel_reports[]
+  reel_saves reel_saves[]
 
   challenges challenges[]
 
@@ -206,7 +208,7 @@ model user_token_balance {
   id String @id @default(uuid()) @db.Uuid
   user_id String @db.Uuid @unique
   token_id String @db.Uuid
-  amount Int
+  amount Int @default(0)
   created_at DateTime @default(now()) @db.Timestamptz
 
   user users @relation(fields: [user_id], references: [id])
@@ -307,6 +309,12 @@ model reel_saves{
   reel_id String @db.Uuid
   folder_name String
   saved_at DateTime @default(now()) @db.Timestamptz
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
+
+  @@index([folder_name])
+  @@index([id, saved_at])
 }
 
 enum reportStatus {
@@ -378,7 +386,7 @@ model user_badges {
   id String @id @default(uuid()) @db.Uuid
   user_id String @db.Uuid
   badge_id String @db.Uuid
-  created_at DateTime @db.Timestamptz
+  created_at DateTime @default(now()) @db.Timestamptz
 
   user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
   badge badges @relation(fields: [badge_id], references: [id], onDelete: Cascade)
@@ -408,11 +416,11 @@ model challenge_submissions {
   is_correct Boolean
   score Int
   created_at DateTime @default(now()) @db.Timestamptz
-  roadmap_step_id String @db.Uuid
+  roadmap_step_id String? @db.Uuid
 
   user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
   challenge challenges @relation(fields: [challenge_id], references: [id])
-  roadmap_step roadmap_steps @relation(fields: [roadmap_step_id], references: [id])
+  roadmap_step roadmap_steps? @relation(fields: [roadmap_step_id], references: [id])
 
   @@index([id, created_at])
 }

@@ -67,7 +67,8 @@ const authenticateAdmin = async (req: Request, res: Response, next: NextFunction
         });
 
         const { accessToken, refreshToken } = await service.generateCredentials(req.cookies.refreshToken);
-        if(refreshToken.role !== "ADMIN") {
+        const { id, role } = authUtils.decodeAccesstoken(accessToken);
+        if(role !== "ADMIN") {
             logger.warn("User Unauthorized", {
                 ip: req.ip,
                 userId: refreshToken.user_id,

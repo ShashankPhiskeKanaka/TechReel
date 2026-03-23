@@ -614,3 +614,181 @@
 {"ip":"::1","level":"http","message":"Unlike reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:28:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
 {"level":"info","message":"Reel like record deleted","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:28:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
 {"level":"info","message":"DELETE /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 92.599 ms","timestamp":"2026-03-23 15:28:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 16:19:18"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 16:19:18"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 16:19:20"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-23 16:19:21","tokenId":"10ba64cd-2d69-4635-bba2-d65e19b93893"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"info","message":"Token rotation successfull","timestamp":"2026-03-23 16:19:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-23 16:19:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-23 16:19:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Like reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 16:19:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel like record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 16:19:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 315.668 ms","timestamp":"2026-03-23 16:19:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:24:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:24:09"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 17:24:12"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-23 17:24:12","tokenId":"98622baf-2912-4c7e-8796-b0e56f09062c"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"info","message":"Token rotation successfull","timestamp":"2026-03-23 17:24:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-23 17:24:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-23 17:24:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:24:12"}
+{"level":"info","message":"POST /v1/interaction/view 205.477 ms","timestamp":"2026-03-23 17:24:13"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:25:20"}
+{"level":"info","message":"POST /v1/interaction/view 9.197 ms","timestamp":"2026-03-23 17:25:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:25:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:25:35"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:25:38"}
+{"level":"info","message":"POST /v1/interaction/view 45.432 ms","timestamp":"2026-03-23 17:25:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:25:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:25:49"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:25:52"}
+{"level":"info","message":"POST /v1/interaction/view 76.619 ms","timestamp":"2026-03-23 17:25:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:26:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:26:03"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:26:05"}
+{"level":"info","message":"POST /v1/interaction/view 8.434 ms","timestamp":"2026-03-23 17:26:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:26:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:26:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:28:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:28:32"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:28:34"}
+{"level":"info","message":"POST /v1/interaction/view 14.739 ms","timestamp":"2026-03-23 17:28:34"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:32:16"}
+{"level":"info","message":"GET /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 10.027 ms","timestamp":"2026-03-23 17:32:17"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:33:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:33:26"}
+{"ip":"::1","level":"http","message":"Fetch reel likes count request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:33:29"}
+{"level":"info","message":"Reel likes count fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:33:29"}
+{"level":"info","message":"GET /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 161.107 ms","timestamp":"2026-03-23 17:33:29"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:33:33","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reel_views.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:28:56\n\n  25     }\n  26 });\n  27 \n→ 28 const viewRecord = await prisma.reel_views.create({\n       data: {\n         reel_id: \"62b269d1-0272-4730-b28f-2c1793790e70\",\n         user_id: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         completed: \"true\",\n                    ~~~~~~\n         watched_seconds: undefined\n       }\n     })\n\nArgument `completed`: Invalid value provided. Expected Boolean, provided String.","timestamp":"2026-03-23 17:33:33"}
+{"level":"info","message":"POST /v1/interaction/view 103.239 ms","timestamp":"2026-03-23 17:33:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:33:48"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:33:48"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:33:50","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reel_views.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:28:56\n\n  25     }\n  26 });\n  27 \n→ 28 const viewRecord = await prisma.reel_views.create({\n       data: {\n         reel_id: \"62b269d1-0272-4730-b28f-2c1793790e70\",\n         user_id: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         completed: \"true\",\n                    ~~~~~~\n         watched_seconds: undefined\n       }\n     })\n\nArgument `completed`: Invalid value provided. Expected Boolean, provided String.","timestamp":"2026-03-23 17:33:50"}
+{"level":"info","message":"POST /v1/interaction/view 232.917 ms","timestamp":"2026-03-23 17:33:50"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:34:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New view record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:34:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed","viewId":"6df56b6c-235f-4aed-9565-2f3f93582e6e"}
+{"level":"info","message":"POST /v1/interaction/view 154.891 ms","timestamp":"2026-03-23 17:34:19"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:35:11","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New view record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:35:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed","viewId":"6951fce8-e680-4e8f-8136-711a5da09f5d"}
+{"level":"info","message":"POST /v1/interaction/view 212.677 ms","timestamp":"2026-03-23 17:35:12"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"6951fce8-e680-4e8f-8136-711a5da09f5d","timestamp":"2026-03-23 17:35:32"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"6951fce8-e680-4e8f-8136-711a5da09f5d","timestamp":"2026-03-23 17:35:32"}
+{"level":"info","message":"GET /v1/interaction/view/6951fce8-e680-4e8f-8136-711a5da09f5d 26.497 ms","timestamp":"2026-03-23 17:35:32"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:36:34"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:36:34"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 51.141 ms","timestamp":"2026-03-23 17:36:34"}
+{"ip":"::1","level":"http","message":"Fetch view record request received","timestamp":"2026-03-23 17:37:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed","viewId":"6951fce8-e680-4e8f-8136-711a5da09f5d"}
+{"level":"info","message":"View record fetched","timestamp":"2026-03-23 17:37:51","viewId":"6951fce8-e680-4e8f-8136-711a5da09f5d"}
+{"level":"info","message":"GET /v1/interaction/view-record/6951fce8-e680-4e8f-8136-711a5da09f5d 56.415 ms","timestamp":"2026-03-23 17:37:51"}
+{"ip":"::1","level":"http","message":"Fetch view records by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:38:36"}
+{"level":"info","message":"View records by reelId fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:38:36"}
+{"level":"info","message":"GET /v1/interaction/view-reel/62b269d1-0272-4730-b28f-2c1793790e70 48.485 ms","timestamp":"2026-03-23 17:38:36"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:39:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New view record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:39:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed","viewId":"92c171a7-1942-491d-9f0f-e403821a7c33"}
+{"level":"info","message":"POST /v1/interaction/view 93.809 ms","timestamp":"2026-03-23 17:39:10"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 17:39:14"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-23 17:39:14","tokenId":"1fc4f27d-4f44-4b3e-a85e-dff2a7516f3a"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"info","message":"Token rotation successfull","timestamp":"2026-03-23 17:39:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-23 17:39:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-23 17:39:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Fetch view records by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:39:14"}
+{"level":"info","message":"View records by reelId fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:39:14"}
+{"level":"info","message":"GET /v1/interaction/view-reel/62b269d1-0272-4730-b28f-2c1793790e70 34.687 ms","timestamp":"2026-03-23 17:39:14"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:39:38"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:39:38"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 3.973 ms","timestamp":"2026-03-23 17:39:38"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:35","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reel_views.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:28:56\n\n  25     }\n  26 });\n  27 \n→ 28 const viewRecord = await prisma.reel_views.create({\n       data: {\n         reel_id: \"62b269d1-0272-4730-b28f-2c1793790e70\",\n         user_id: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         completed: \"true\",\n                    ~~~~~~\n         watched_seconds: 100\n       }\n     })\n\nArgument `completed`: Invalid value provided. Expected Boolean, provided String.","timestamp":"2026-03-23 17:40:35"}
+{"level":"info","message":"POST /v1/interaction/view 54.960 ms","timestamp":"2026-03-23 17:40:35"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:42"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:42"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 4.849 ms","timestamp":"2026-03-23 17:40:42"}
+{"ip":"::1","level":"http","message":"Fetch view records by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:45"}
+{"level":"info","message":"View records by reelId fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:45"}
+{"level":"info","message":"GET /v1/interaction/view-reel/62b269d1-0272-4730-b28f-2c1793790e70 5.199 ms","timestamp":"2026-03-23 17:40:45"}
+{"ip":"::1","level":"http","message":"View record creation request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:55","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New view record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:40:55","userId":"51e2f245-89b1-40a7-807e-2b95385114ed","viewId":"14401754-488a-4f67-918a-e96637a76a0b"}
+{"level":"info","message":"POST /v1/interaction/view 56.963 ms","timestamp":"2026-03-23 17:40:55"}
+{"level":"info","message":"GET /v1/interaction/view-user/51e2f245-89b1-40a7-807e-2b95385114ed 3.001 ms","timestamp":"2026-03-23 17:42:09"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:42:29"}
+{"level":"info","message":"GET /v1/interaction/view-user 2.473 ms","timestamp":"2026-03-23 17:42:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:43:48"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:43:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:43:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:43:51"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:43:55"}
+{"level":"info","message":"GET /v1/interaction/view-user 22.736 ms","timestamp":"2026-03-23 17:43:55"}
+{"ip":"::1","level":"http","message":"Fetch view records by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:45:24"}
+{"level":"info","message":"View records by reelId fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:45:25"}
+{"level":"info","message":"GET /v1/interaction/view-reel/62b269d1-0272-4730-b28f-2c1793790e70 340.261 ms","timestamp":"2026-03-23 17:45:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:46:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:46:58"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-23 17:47:02"}
+{"level":"info","message":"GET /v1/interaction/view-user 14.548 ms","timestamp":"2026-03-23 17:47:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:47:10"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:47:11"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:47:28"}
+{"level":"info","message":"GET /v1/interaction/view-user 15.028 ms","timestamp":"2026-03-23 17:47:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:47:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:47:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:47:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:47:52"}
+{"ip":"::1","level":"http","message":"Fetch view records by reel request received","timestamp":"2026-03-23 17:47:53"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reel_views.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:65:53\n\n  62  * @returns {Promise<View[]>} An array of view records, including durations and completion status.\n  63  */\n  64 fetchViewRecordsByReel = async (reelId: string): Promise<View[]> => {\n→ 65     const viewRecords = await prisma.reel_views.findMany(\nInvalid input value: invalid input syntax for type uuid: \"\"","timestamp":"2026-03-23 17:47:53"}
+{"level":"info","message":"GET /v1/interaction/view-user 285.602 ms","timestamp":"2026-03-23 17:47:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:48:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:48:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:48:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:48:22"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-23 17:48:27"}
+{"level":"info","message":"GET /v1/interaction/view-user 18.834 ms","timestamp":"2026-03-23 17:48:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:48:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:48:41"}
+{"ip":"::1","level":"http","message":"Fetch view records by user request received","timestamp":"2026-03-23 17:48:42","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"View records by userId fetched","timestamp":"2026-03-23 17:48:43","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/interaction/view-user 281.866 ms","timestamp":"2026-03-23 17:48:43"}
+{"ip":"::1","level":"http","message":"Fetch view records by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:49:03"}
+{"level":"info","message":"View records by reelId fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:49:03"}
+{"level":"info","message":"GET /v1/interaction/view-reel/62b269d1-0272-4730-b28f-2c1793790e70 11.836 ms","timestamp":"2026-03-23 17:49:03"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:49:11"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:49:11"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 12.611 ms","timestamp":"2026-03-23 17:49:11"}
+{"ip":"::1","level":"http","message":"View record delete request received","timestamp":"2026-03-23 17:50:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed","viewId":"6df56b6c-235f-4aed-9565-2f3f93582e6e"}
+{"level":"info","message":"View record deleted","timestamp":"2026-03-23 17:50:47","viewId":"6df56b6c-235f-4aed-9565-2f3f93582e6e"}
+{"level":"info","message":"DELETE /v1/interaction/view/6df56b6c-235f-4aed-9565-2f3f93582e6e 87.806 ms","timestamp":"2026-03-23 17:50:47"}
+{"ip":"::1","level":"http","message":"Fetch view records by user request received","timestamp":"2026-03-23 17:50:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"View records by userId fetched","timestamp":"2026-03-23 17:50:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/interaction/view-user 8.059 ms","timestamp":"2026-03-23 17:50:51"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:50:56"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:50:56"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 5.543 ms","timestamp":"2026-03-23 17:50:56"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:50:58"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:50:58"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 5.911 ms","timestamp":"2026-03-23 17:50:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:54:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:54:58"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 17:55:00"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-23 17:55:01","tokenId":"2da4e93e-1953-40ad-8ede-55e9d02771b2"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"info","message":"Token rotation successfull","timestamp":"2026-03-23 17:55:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-23 17:55:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-23 17:55:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 17:55:01"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-23 17:55:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-23 17:55:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-23 17:55:01"}
+{"level":"info","message":"DELETE /v1/interaction/view 284.148 ms","timestamp":"2026-03-23 17:55:01"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-23 17:55:28","username":"admin"}
+{"familyId":"e532a9b7-1d5d-494e-b0c4-a8ca75cc8483","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-23 17:55:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-23 17:55:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 58.261 ms","timestamp":"2026-03-23 17:55:29"}
+{"ip":"::1","level":"http","message":"View record delete request received","timestamp":"2026-03-23 17:55:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"View record deleted","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:55:34","viewId":"14401754-488a-4f67-918a-e96637a76a0b"}
+{"level":"info","message":"DELETE /v1/interaction/view 70.765 ms","timestamp":"2026-03-23 17:55:34"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:55:54"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 17:55:54"}
+{"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 10.863 ms","timestamp":"2026-03-23 17:55:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:56:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:56:50"}

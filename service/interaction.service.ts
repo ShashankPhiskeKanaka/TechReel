@@ -1,10 +1,12 @@
 import { errorMessage } from "../constants/error.messages.js";
+import type { ViewData } from "../dto/view.dto.js";
 import type { LikesRepository } from "../repository/likes.repository.js";
+import type { ViewRepository } from "../repository/view.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 
 class InteractionService {
-    constructor (private LikeMethods: LikesRepository) {}
+    constructor (private LikeMethods: LikesRepository, private ViewMethods: ViewRepository) {}
     /**
      * Creates a new like record for a specific reel.
      * 
@@ -17,6 +19,7 @@ class InteractionService {
         const like = await this.LikeMethods.create({ user_id: userId, reel_id: reelId });
 
         logger.info("Reel like record created", {
+            likeId: like.id,
             reelId,
             userId
         });
@@ -51,7 +54,7 @@ class InteractionService {
      * @returns {Promise<Like>} The verified like record.
      * @throws {ServerError} 404 (Not Found) if the user has not liked this reel.
      */
-    fetchLikeRecord = async (reelId: string, userId: string) => {
+    fetchLikeRecord = async (userId: string, reelId: string) => {
         const like = await this.LikeMethods.fetch(reelId, userId);
 
         if(!like.id) {
@@ -64,6 +67,7 @@ class InteractionService {
         }
 
         logger.info("Reel like record fetched", {
+            likeId: like.id,
             reelId,
             userId
         });
@@ -112,6 +116,119 @@ class InteractionService {
         });
 
         return likes;
+    }
+
+    /**
+     * Records a new view event and updates the reel's global view counter.
+     * 
+     * @param {ViewData} data - Object containing reelId, userId, duration, and completion status.
+     * @returns {Promise<Views>} The newly created view transaction record.
+     * @note This handles both the detailed history log and the denormalized counter increment.
+     */
+    createViewRecord = async (data: ViewData) => {
+        const view = await this.ViewMethods.createViewRecord(data);
+
+        logger.info("New view record created", {
+            viewId: view.id,
+            reelId: data.reelId,
+            userId: data.userId
+        });
+
+        return view;
+    }
+
+    /**
+     * Retrieves all detailed viewing records for a specific reel.
+     * 
+     * @param {string} reelId - The unique identifier of the reel.
+     * @returns {Promise<Views[]>} A collection of view records including user IDs and watch durations.
+     * @note Typically used for creator analytics or administrative review of video performance.
+     */
+    fetchViewRecordsByReel = async (reelId: string) => {
+        const views = await this.ViewMethods.fetchViewRecordsByReel(reelId);
+
+        logger.info("View records by reelId fetched", {
+            reelId
+        });
+
+        return views;
+    }
+
+    /**
+     * Retrieves the full viewing history for a specific user.
+     * 
+     * @param {string} userId - The unique identifier of the user.
+     * @returns {Promise<Views[]>} A list of all view records associated with the user.
+     * @note Typically used to populate the "Watch History" or "Library" section of the app.
+     */
+    fetchViewRecordsByUser = async (userId: string) => {
+        const views = await this.ViewMethods.fetchViewRecordsByUser(userId);
+
+        logger.info("View records by userId fetched", {
+            userId
+        });
+
+        return views;
+    }
+
+    /**
+     * Retrieves the total view count for a specific reel.
+     * 
+     * @param {string} reelId - The unique identifier of the reel.
+     * @returns {Promise<number>} The total number of views recorded for the reel.
+     * @note This utilizes the denormalized counter for high-performance retrieval.
+     */
+    fetchViews = async (reelId: string) => {
+        const views = await this.ViewMethods.fetchTotalViews(reelId);
+
+        logger.info("Total views for a reel fetched", {
+            reelId
+        });
+
+        return views;
+    }
+
+    /**
+     * Retrieves a single view record and validates its existence.
+     * 
+     * @param {string} id - The unique identifier (UUID) of the view record.
+     * @returns {Promise<Views>} The validated view record object.
+     * @throws {ServerError} 404 (Not Found) if the record does not exist or is malformed.
+     */
+    fetchViewRecord = async (id: string) => {
+        const view = await this.ViewMethods.fetchViewRecord(id);
+
+        if(!view.id) {
+            logger.warn("No view record found", {
+                viewId: id
+            });
+
+            throw new serverError(errorMessage.NOTFOUND);
+        }
+
+        logger.info("View record fetched", {
+            viewId: id
+        });
+
+        return view;
+    }
+
+    /**
+     * Removes a specific view record from the database.
+     * 
+     * @param {string} id - The unique identifier of the view record to be deleted.
+     * @returns {Promise<Views>} The deleted view record details.
+     * @throws {Error} If the deletion fails or the record does not exist.
+     */
+    deleteView = async (id: string, reelId: string) => {
+        const view = await this.ViewMethods.deleteView(id, reelId);
+
+        logger.info("View record deleted", {
+            viewId: id,
+            reelId
+        });
+
+        return view;
     }
 
 }

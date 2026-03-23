@@ -578,3 +578,39 @@
 {"level":"info","message":"Reel metadata updated","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-20 17:49:30"}
 {"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-03-20 17:53:40"}
 {"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-03-20 17:54:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 15:19:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 15:19:09"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 15:20:50"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-23 15:20:51","tokenId":"925a42bc-c9d7-4ae3-960c-bac5cc32fe91"}
+{"familyId":"a2865111-2999-4fbe-835e-0416ab2ec735","level":"info","message":"Token rotation successfull","timestamp":"2026-03-23 15:20:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-23 15:20:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-23 15:20:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Like reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:20:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reel_likes.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\likes.repository.ts:6:46\n\n  3 \n  4 class LikesRepository {\n  5     create = async (data: LikeData ) : Promise<Like> => {\n→ 6         const like = await prisma.reel_likes.create(\nForeign key constraint violated on the constraint: `reel_likes_user_id_fkey`","timestamp":"2026-03-23 15:20:51"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 325.774 ms","timestamp":"2026-03-23 15:20:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 15:22:18"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 15:22:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 15:22:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 15:22:23"}
+{"ip":"::1","level":"http","message":"Like reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:22:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel like record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:22:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 216.575 ms","timestamp":"2026-03-23 15:22:25"}
+{"ip":"::1","level":"http","message":"Fetch reel likes count request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:23:37"}
+{"level":"info","message":"Reel likes count fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:23:37"}
+{"level":"info","message":"GET /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 106.818 ms","timestamp":"2026-03-23 15:23:37"}
+{"level":"info","message":"POST /v1/interaction/like-status/62b269d1-0272-4730-b28f-2c1793790e70 4.001 ms","timestamp":"2026-03-23 15:24:40"}
+{"ip":"::1","level":"http","likeRecordId":"62b269d1-0272-4730-b28f-2c1793790e70","message":"Fetch like record request received","timestamp":"2026-03-23 15:24:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","likeRecordId":"62b269d1-0272-4730-b28f-2c1793790e70","message":"Reel like record fetched","timestamp":"2026-03-23 15:24:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/interaction/like-status/62b269d1-0272-4730-b28f-2c1793790e70 64.519 ms","timestamp":"2026-03-23 15:24:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 15:26:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 15:26:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 15:26:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 15:26:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 15:27:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 15:27:06"}
+{"ip":"::1","level":"http","likeRecordId":"62b269d1-0272-4730-b28f-2c1793790e70","message":"Fetch like record request received","timestamp":"2026-03-23 15:27:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel like record fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:27:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"GET /v1/interaction/like-status/62b269d1-0272-4730-b28f-2c1793790e70 226.471 ms","timestamp":"2026-03-23 15:27:09"}
+{"ip":"::1","level":"http","message":"Unlike reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:28:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel like record deleted","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-23 15:28:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"DELETE /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 92.599 ms","timestamp":"2026-03-23 15:28:19"}

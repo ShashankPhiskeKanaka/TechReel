@@ -169,6 +169,7 @@ model reels {
   status status
   thumbnail_url String?
   is_bonus Boolean @default(false)
+  likes Int @default(0)
 
   user users @relation(fields: [creator_id], references: [id])
   skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
@@ -300,6 +301,7 @@ model reel_likes {
   user users @relation(fields: [user_id], references: [id])
   reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
 
+  @@unique([user_id, reel_id])
   @@index([id, created_at])
 }
 

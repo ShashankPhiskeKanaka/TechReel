@@ -21,6 +21,7 @@ import { TokenRouter } from "./router/token.router.js";
 import { SkillRouter } from "./router/skill.router.js";
 import { TagRouter } from "./router/tag.router.js";
 import { ReelRouter } from "./router/reel.router.js";
+import { InteractionRouter } from "./router/interaction.router.js";
 dotenv.config();
 
 const app = express();
@@ -59,6 +60,7 @@ app.use("/v1/token", TokenRouter);
 app.use("/v1/skill", SkillRouter);
 app.use("/v1/tag", TagRouter);
 app.use("/v1/reel", ReelRouter);
+app.use("/v1/interaction", InteractionRouter);
 
 app.use(authenticate);
 app.get("/", (req, res) => {

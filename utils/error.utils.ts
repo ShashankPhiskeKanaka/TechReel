@@ -22,7 +22,6 @@ class GlobalErrorHandlerClass {
             res.clearCookie("accessToken");
             res.clearCookie("refreshToken");
         }
-
         const status = err.status ?? 500;
         return ApiResponse.error(res, status == 500 ? "Internal Server Error" : err.message, status);
     }

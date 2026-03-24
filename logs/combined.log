@@ -974,3 +974,106 @@
 {"ip":"::1","level":"http","message":"Like reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:38:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
 {"ip":"::1","level":"error","message":"\nInvalid `tx.reel_likes.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\likes.repository.ts:27:46\n\n  24     }\n  25 });\n  26 \n→ 27 const like = await tx.reel_likes.create(\nUnique constraint failed on the fields: (`user_id`, `reel_id`)","timestamp":"2026-03-24 11:38:25"}
 {"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 333.555 ms","timestamp":"2026-03-24 11:38:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:43:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:43:44"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-24 11:43:46"}
+{"level":"info","message":"POST /v1/challenge/ 13.855 ms","timestamp":"2026-03-24 11:43:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:45:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:45:49"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-24 11:45:52"}
+{"level":"info","message":"POST /v1/challenge/ 5.684 ms","timestamp":"2026-03-24 11:45:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:46:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:46:20"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-24 11:46:22"}
+{"level":"info","message":"POST /v1/challenge/ 17.351 ms","timestamp":"2026-03-24 11:46:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:46:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:46:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:47:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:47:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:47:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:47:27"}
+{"ip":"::1","level":"http","message":"Challenge creation request received","timestamp":"2026-03-24 11:47:30","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"fbdbbd8f-bc39-4beb-910b-e9412615aaff","level":"info","message":"New challenge created","timestamp":"2026-03-24 11:47:30"}
+{"level":"info","message":"POST /v1/challenge/ 376.191 ms","timestamp":"2026-03-24 11:47:30"}
+{"challengeId":"fbdbbd8f-bc39-4beb-910b-e9412615aaff","ip":"::1","level":"http","message":"Fetch challenge request recieved","timestamp":"2026-03-24 11:48:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"fbdbbd8f-bc39-4beb-910b-e9412615aaff","level":"info","message":"Challenge fetched by id","timestamp":"2026-03-24 11:48:12"}
+{"level":"info","message":"GET /v1/challenge/fbdbbd8f-bc39-4beb-910b-e9412615aaff 89.278 ms","timestamp":"2026-03-24 11:48:12"}
+{"challengeId":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Fetch challenge request recieved","timestamp":"2026-03-24 11:48:46","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"62b269d1-0272-4730-b28f-2c1793790e70","level":"warn","message":"No challenge with the provided id found","timestamp":"2026-03-24 11:48:47"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-24 11:48:47"}
+{"level":"info","message":"GET /v1/challenge/62b269d1-0272-4730-b28f-2c1793790e70 71.424 ms","timestamp":"2026-03-24 11:48:47"}
+{"challengeId":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Fetch challenge request recieved","timestamp":"2026-03-24 11:48:59","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"62b269d1-0272-4730-b28f-2c1793790e70","level":"warn","message":"No challenge with the provided id found","timestamp":"2026-03-24 11:48:59"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-24 11:48:59"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 9.110 ms","timestamp":"2026-03-24 11:48:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:49:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:49:16"}
+{"ip":"::1","level":"http","message":"Fetch challenge by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:49:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Challenges fetched by reelId","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:49:19"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 169.458 ms","timestamp":"2026-03-24 11:49:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:50:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:50:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:50:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:50:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:50:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:50:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:50:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:50:54"}
+{"ip":"::1","level":"http","message":"Fetch challenge by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:50:55","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Challenges fetched by reelId","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:50:55"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 249.046 ms","timestamp":"2026-03-24 11:50:55"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:07"}
+{"ip":"::1","level":"http","message":"Fetch challenge by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:51:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Challenges fetched by reelId","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:51:10"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 185.294 ms","timestamp":"2026-03-24 11:51:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:18"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:48"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:51:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:51:55"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:52:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:52:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:52:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:52:13"}
+{"ip":"::1","level":"http","message":"Fetch challenge by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:52:16","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Challenges fetched by reelId","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:52:16"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 184.628 ms","timestamp":"2026-03-24 11:52:16"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 11:53:26"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 11:53:26","tokenId":"6ed9551b-7193-4d03-9ec7-a79126556e8e"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 11:53:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 11:53:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-24 11:53:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Challenge creation request received","timestamp":"2026-03-24 11:53:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","level":"info","message":"New challenge created","timestamp":"2026-03-24 11:53:26"}
+{"level":"info","message":"POST /v1/challenge/ 290.129 ms","timestamp":"2026-03-24 11:53:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:55:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:55:32"}
+{"ip":"::1","level":"http","message":"Fetch challenge by reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:55:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Challenges fetched by reelId","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:55:34"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 232.629 ms","timestamp":"2026-03-24 11:55:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:56:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:56:31"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","ip":"::1","level":"http","message":"Challenge update request received","timestamp":"2026-03-24 11:57:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","level":"info","message":"Challenge updated","timestamp":"2026-03-24 11:57:27"}
+{"level":"info","message":"PATCH /v1/challenge/32a0930d-87df-4629-9ef5-e823abfc3840 234.025 ms","timestamp":"2026-03-24 11:57:27"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-24 11:58:07","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'flag')","timestamp":"2026-03-24 11:58:07"}
+{"level":"info","message":"DELETE /v1/challenge/32a0930d-87df-4629-9ef5-e823abfc3840 8.422 ms","timestamp":"2026-03-24 11:58:07"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-24 11:58:24","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","level":"info","message":"Challenge soft deleted","timestamp":"2026-03-24 11:58:24"}
+{"level":"info","message":"DELETE /v1/challenge/32a0930d-87df-4629-9ef5-e823abfc3840 75.299 ms","timestamp":"2026-03-24 11:58:24"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:58:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:58:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:59:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:59:05"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-24 11:59:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.challenges.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\challenge.repository.ts:69:51\n\n  66 }\n  67 \n  68 softDelete = async (id: string): Promise<Challenge> => {\n→ 69     const challenge = await prisma.challenges.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-24 11:59:08"}
+{"level":"info","message":"DELETE /v1/challenge/32a0930d-87df-4629-9ef5-e823abfc3840 281.011 ms","timestamp":"2026-03-24 11:59:08"}

@@ -7,6 +7,13 @@ import { logger } from "../utils/logger.js";
 class ChallengeService {
     constructor (private ChallengeMethods: ChallengeRepository) {}
 
+    /**
+     * Orchestrates the creation of a new challenge and its associated options.
+     * 
+     * @param {ChallengeData} data - The validated challenge payload from the controller.
+     * @returns {Promise<Challenge>} The successfully persisted challenge record.
+     * @throws {Error} If the repository operation fails or data is inconsistent.
+     */
     create = async (data: ChallengeData) => {
         const challenge = await this.ChallengeMethods.create(data);
 
@@ -17,6 +24,13 @@ class ChallengeService {
         return challenge;
     }
 
+    /**
+     * Retrieves a challenge by its ID and validates its existence.
+     * 
+     * @param {string} id - The unique identifier of the challenge.
+     * @returns {Promise<Challenge>} The found challenge record.
+     * @throws {ServerError} 404 (Not Found) if no active challenge matches the ID.
+     */
     fetch = async (id: string) => {
         const challenge = await this.ChallengeMethods.find(id);
 
@@ -35,10 +49,18 @@ class ChallengeService {
         return challenge;
     }
 
+    /**
+     * Retrieves the challenge associated with a specific reel and validates its existence.
+     * 
+     * @param {string} reelId - The unique identifier of the reel.
+     * @returns {Promise<Challenge>} The found challenge record.
+     * @throws {ServerError} 404 (Not Found) if no active challenge is linked to the reelId.
+     * @note Used to populate the interaction layer of the video player.
+     */
     fetchByReel = async (reelId: string) => {
-        const challenges = await this.ChallengeMethods.findByReel(reelId);
+        const challenge = await this.ChallengeMethods.findByReel(reelId);
 
-        if(challenges.length = 0){
+        if(!challenge?.id){
             logger.warn("No challenges with the provided reelId found", {
                 reelId
             });
@@ -50,9 +72,17 @@ class ChallengeService {
             reelId
         });
 
-        return challenges;
+        return challenge;
     }   
     
+    /**
+     * Updates an existing challenge's details and validates the operation.
+     * 
+     * @param {any} data - The partial data object containing fields to be updated.
+     * @param {string} id - The unique identifier of the challenge.
+     * @returns {Promise<Challenge>} The updated challenge record.
+     * @throws {ServerError} 404 (Not Found) if the challenge does not exist or is deleted.
+     */
     update = async (data: any, id: string) => {
         const challenge = await this.ChallengeMethods.update(data, id);
 
@@ -62,6 +92,15 @@ class ChallengeService {
 
         return challenge;
     }
+
+    /**
+     * Handles the removal of a challenge record using either soft or hard deletion.
+     * 
+     * @param {boolean} flag - If true, performs a permanent hard delete; otherwise, performs a soft delete.
+     * @param {string} id - The unique identifier of the challenge to remove.
+     * @returns {Promise<Challenge>} The deleted challenge record data.
+     * @throws {ServerError} 404 (Not Found) if the challenge does not exist or is already deleted.
+     */
 
     delete = async (flag: boolean, id: string) => {
         let challenge;

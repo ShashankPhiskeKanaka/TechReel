@@ -9,10 +9,10 @@ const GetData = z.object({
 
 const DeleteData = z.object({
     body: z.object({
-        id: z.string({ error: errorMessage.INVALIDDATA.message })
+        flag: z.boolean({ error: errorMessage.INVALIDDATA.message })
     }),
     params: z.object({
-        flag: z.string({ error: errorMessage.INVALIDDATA.message })
+        id: z.string({ error: errorMessage.INVALIDDATA.message })
     })
 });
 

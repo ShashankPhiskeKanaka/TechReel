@@ -177,7 +177,7 @@ model reels {
   reelReports     reel_reports[]
   reelSaves       reel_saves[]
 
-  challenges      challenges[]
+  challenges      challenges?
 
   @@map("reels")
   @@index([id, createdAt])
@@ -359,7 +359,7 @@ enum challenge_type {
 
 model challenges {
   id              String         @id @default(uuid()) @db.Uuid
-  reelId          String         @map("reel_id") @db.Uuid
+  reelId          String         @map("reel_id") @db.Uuid @unique
   question        String
   codeSnippet     String?        @map("code_snippet")
   language        String

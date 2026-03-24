@@ -45,4 +45,16 @@ interface ChallengeSubmissionData {
     roadmapStepId: string | null
 }
 
-export type { Challenge, ChallengeData, ChallengeSubmission, ChallengeSubmissionData }
+interface ChallengeOption {
+    id: string
+    challengeId: string
+    isCorrect: boolean
+    option: string
+}
+
+interface ChallengeOptionData {
+    isCorrect?: boolean
+    options?: string
+}
+
+export type { Challenge, ChallengeData, ChallengeSubmission, ChallengeSubmissionData, ChallengeOptionData, ChallengeOption }

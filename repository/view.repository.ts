@@ -26,12 +26,7 @@ class ViewRepository {
             });
             
             const viewRecord = await prisma.reel_views.create({
-                data: {
-                    reel_id: data.reelId,
-                    user_id: data.userId,
-                    completed: data.completed,
-                    watched_seconds: data.watchedSeconds
-                }
+                data: data
             });
 
             return viewRecord;
@@ -64,7 +59,7 @@ class ViewRepository {
     fetchViewRecordsByReel = async (reelId: string): Promise<View[]> => {
         const viewRecords = await prisma.reel_views.findMany({
             where: {
-                reel_id: reelId
+                reelId
             }
         });
 
@@ -80,7 +75,7 @@ class ViewRepository {
     fetchViewRecordsByUser = async (userId: string): Promise<View[]> => {
         const viewRecords = await prisma.reel_views.findMany({
             where: {
-                user_id: userId
+                userId
             }
         });
 
@@ -98,7 +93,7 @@ class ViewRepository {
         const reel = await prisma.reels.findFirst({
             where: {
                 id: reelId,
-                deleted_at: null
+                deletedAt: null
             },
             select: {
                 views: true
@@ -120,7 +115,7 @@ class ViewRepository {
             await tx.reels.update({
                 where: {
                     id: reelId,
-                    deleted_at: null
+                    deletedAt: null
                 },
                 data: {
                     views : {
@@ -128,7 +123,7 @@ class ViewRepository {
                     }
                 }
             });
-            
+
             const view = await prisma.reel_views.delete({
                 where: {
                     id

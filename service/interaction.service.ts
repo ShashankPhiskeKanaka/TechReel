@@ -16,7 +16,7 @@ class InteractionService {
      * @throws {Error} If the database operation fails (e.g., duplicate like if unique constraint exists).
      */
     likeReel = async (userId: string, reelId: string) => {
-        const like = await this.LikeMethods.create({ user_id: userId, reel_id: reelId });
+        const like = await this.LikeMethods.create({ userId, reelId });
 
         logger.info("Reel like record created", {
             likeId: like.id,

@@ -5,9 +5,9 @@ interface User {
     email: string
     username: string
     password: string
-    auth_provider: string
-    created_at: Date
-    deleted_at: Date | null
+    authProvider: string
+    createdAt: Date
+    deletedAt: Date | null
     role: Role
     verified: boolean
 }

@@ -1,19 +1,19 @@
 import { reportStatus } from "../generated/prisma/enums.js"
 
 interface ReportData{ 
-    user_id: string
-    reel_id: string
+    userId: string
+    reelId: string
     reason: string
     status: reportStatus 
 }
 
 interface Report {
     id: string
-    user_id: string
-    reel_id: string
+    userId: string
+    reelId: string
     reason: string
     status: reportStatus 
-    created_at: Date   
+    createdAt: Date   
 }
 
 export type { Report, ReportData }

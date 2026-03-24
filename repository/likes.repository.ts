@@ -14,8 +14,8 @@ class LikesRepository {
         return await prisma.$transaction(async (tx) => {
             await tx.reels.update({
                 where: {
-                    id: data.reel_id,
-                    deleted_at: null
+                    id: data.reelId,
+                    deletedAt: null
                 },
                 data: {
                     likes: {
@@ -42,8 +42,8 @@ class LikesRepository {
     fetch = async (reelId: string, userId: string) : Promise<Like> => {
         const like = await prisma.reel_likes.findFirst({
             where: {
-                reel_id: reelId,
-                user_id: userId
+                reelId,
+                userId
             }
         });
 
@@ -61,7 +61,7 @@ class LikesRepository {
         const reel = await prisma.reels.findUnique({
             where: {
                 id: reelId,
-                deleted_at: null
+                deletedAt: null
             },
             select: {
                 likes: true
@@ -81,7 +81,7 @@ class LikesRepository {
     fetchLikesRecords = async (reelId: string) => {
         const likes = await prisma.reel_likes.findMany({
             where: {
-                reel_id: reelId
+                reelId
             }
         });
 
@@ -101,7 +101,7 @@ class LikesRepository {
             await tx.reels.update({
                 where: {
                     id: reelId,
-                    deleted_at: null
+                    deletedAt: null
                 },
                 data: {
                     likes: {
@@ -112,8 +112,8 @@ class LikesRepository {
 
             const like = await prisma.reel_likes.deleteMany({
                 where: {
-                    user_id: userId,
-                    reel_id: reelId
+                    userId,
+                    reelId
                 }
             });
 

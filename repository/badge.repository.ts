@@ -14,7 +14,7 @@ class BadgeRepository {
         const badge = await prisma.badges.findFirst({
             where: {
                 id,
-                deleted_at: null
+                deletedAt: null
             }
         });
 
@@ -24,8 +24,8 @@ class BadgeRepository {
     findBySkill = async (skillId: string): Promise<Badge[]> => {
         const badges = await prisma.badges.findMany({
             where: {
-                skill_id: skillId,
-                deleted_at: null
+                skillId,
+                deletedAt: null
             }
         });
 
@@ -36,7 +36,7 @@ class BadgeRepository {
         const badge = await prisma.badges.update({
             where: {
                 id: data.id,
-                deleted_at: null
+                deletedAt: null
             },
             data: data
         });
@@ -48,10 +48,10 @@ class BadgeRepository {
         const badge = await prisma.badges.update({
             where: {
                 id,
-                deleted_at: null
+                deletedAt: null
             },
             data: {
-                deleted_at: new Date()
+                deletedAt: new Date()
             }
         });
 

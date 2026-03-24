@@ -1,7 +1,7 @@
 interface Tag {
     id: string
     name: string
-    created_at: Date
+    createdAt: Date
 }
 
 export type { Tag }

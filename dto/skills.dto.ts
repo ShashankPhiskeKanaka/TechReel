@@ -11,41 +11,41 @@ interface Skill {
     name: string,
     category : string | null
     description: string | null,
-    created_at: Date,
-    deleted_at: Date | null
+    createdAt: Date,
+    deletedAt: Date | null
 }
 
 interface SkillRoadmap {
     id: string
-    skill_id: string
-    difficulty_level: Difficulty
+    skillId: string
+    difficultyLevel: Difficulty
     title: string
     description: string
-    created_at: Date
+    createdAt: Date
 }
 
 interface SkillRoadmapData {
-    skill_id: string
-    difficulty_level: Difficulty
+    skillId: string
+    difficultyLevel: Difficulty
     title: string
     description: string
 }
 
 interface SkillRoadmapStep {
     id: string
-    roadmap_id: string
-    reel_id: string
-    challenge_id: string
-    step_order: number
+    roadmapId: string
+    reelId: string
+    challengeId: string
+    stepOrder: number
     title: string
     description: string | null
 }
 
 interface SkillRoadmapStepData {
-    roadmap_id: string
-    reel_id: string
-    challenge_id: string
-    step_order: number
+    roadmapId: string
+    reelId: string
+    challengeId: string
+    stepOrder: number
     title: string
     description: string | null
 }

@@ -21,7 +21,7 @@ class ReelService {
 
         logger.info("Reel metadata record created", {
             reelId: reel.id,
-            creatorId: data.creator_id
+            creatorId: data.creatorId
         });
 
         const key = `uploads/${Date.now()}-${reel.id}-${data.title}`;
@@ -40,7 +40,7 @@ class ReelService {
 
         logger.info("Pre signed url generated for uploading reel", {
             reelId: reel.id,
-            creatorId: data.creator_id
+            creatorId: data.creatorId
         });
 
         return { uploadUrl, key, reel };
@@ -93,7 +93,7 @@ class ReelService {
         return reel;
     }
 
-    delete = async (id: string, flag: boolean) => {
+    delete = async (flag: boolean, id: string) => {
         let reel;
         if(flag) {
             reel = await this.ReelMethods.hardDelete(id);

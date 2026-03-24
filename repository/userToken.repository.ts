@@ -23,7 +23,7 @@ class UserTokenRepository {
     fetchByUser = async (userId: string): Promise<UserToken> => {
         const userTokenBalance = await prisma.user_token_balance.findFirst({
             where: {
-                user_id: userId
+                userId
             }
         });
 

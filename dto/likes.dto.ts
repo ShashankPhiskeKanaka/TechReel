@@ -1,13 +1,13 @@
 interface LikeData {
-    user_id: string
-    reel_id: string
+    userId: string
+    reelId: string
 }
 
 interface Like { 
     id: string
-    user_id: string
-    reel_id: string
-    created_at: Date
+    userId: string
+    reelId: string
+    createdAt: Date
 }
 
 export type { Like, LikeData }

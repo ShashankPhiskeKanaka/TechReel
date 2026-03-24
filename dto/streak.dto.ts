@@ -1,16 +1,16 @@
 interface StreakData {
-    user_id: string
-    current_streak: number
-    longest_streak: number
-    last_active: Date
+    userId: string
+    currentStreak: number
+    longestStreak: number
+    lastActive: Date
 }
 
 interface Streak {
     id: string
-    user_id: string
-    current_streak: number
-    longest_streak: number
-    last_active: Date
+    userId: string
+    currentStreak: number
+    longestStreak: number
+    lastActive: Date
 }
 
 export type { Streak, StreakData }

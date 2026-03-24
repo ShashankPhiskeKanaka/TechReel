@@ -75,7 +75,7 @@ class ReelController {
             reelId: req.body.id
         });
 
-        const reel = await this.ReelService.delete(req.body.id, req.params.flag?.toString() == "true" ? true : false);
+        const reel = await this.ReelService.delete(req.body.flag, req.params.id?.toString() ?? "");
 
         return ApiResponse.success(res, "Reel deleted", reel);
     }

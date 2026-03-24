@@ -18,12 +18,12 @@ class ReelRespository {
         const reel = await prisma.reels.update({
             where: {
                 id,
-                deleted_at: null
+                deletedAt: null
             },
             data: {
                 status: status,
-                video_url: data.url,
-                thumbnail_url: data.thumbnailUrl,
+                videoUrl: data.url,
+                thumbnailUrl: data.thumbnailUrl,
                 duration: data.duration
             }
         });
@@ -35,7 +35,7 @@ class ReelRespository {
         const reel = await prisma.reels.update({
             where: {
                 id,
-                deleted_at: null
+                deletedAt: null
             },
             data
         });
@@ -47,7 +47,7 @@ class ReelRespository {
         const reel = await prisma.reels.findUnique({
             where: {
                 id,
-                deleted_at: null
+                deletedAt: null
             }
         });
 
@@ -58,10 +58,10 @@ class ReelRespository {
         const reel = await prisma.reels.update({
             where: {
                 id,
-                deleted_at: null
+                deletedAt: null
             },
             data: {
-                deleted_at: new Date()
+                deletedAt: new Date()
             }
         });
 

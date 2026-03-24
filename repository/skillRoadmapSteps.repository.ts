@@ -23,7 +23,7 @@ class SkillsRoadmapStepsRepository {
     fetchByRoadmap = async (id: string): Promise<SkillRoadmapStep[]> => {
         const steps = await prisma.roadmap_steps.findMany({
             where: {
-                roadmap_id: id
+                roadmapId: id
             }
         });
 
@@ -33,7 +33,7 @@ class SkillsRoadmapStepsRepository {
     fetchByReel = async (id: string): Promise<SkillRoadmapStep> => {
         const step = await prisma.roadmap_steps.findFirst({
             where: {
-                reel_id: id
+                reelId: id
             }
         });
 

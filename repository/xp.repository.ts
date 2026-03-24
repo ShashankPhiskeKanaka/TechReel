@@ -23,7 +23,7 @@ class XpRepository {
     fetchByUser = async (userId: string): Promise<Xp[]> => {
         const allxp = await prisma.xp_ledger.findMany({
             where: {
-                user_id: userId
+                userId
             }
         });
 

@@ -23,7 +23,7 @@ class UserBadgesRepository {
     fetchByUser = async (userId: string): Promise<UserBadge> => {
         const userBadge = await prisma.user_badges.findFirst({
             where: {
-                user_id: userId
+                userId
             }
         });
 

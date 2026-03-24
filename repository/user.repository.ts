@@ -21,8 +21,8 @@ class UserRepository {
                         email: data.email,
                         username: data.username,
                         password: data.password,
-                        auth_provider: "default",
-                        role: Role.ADMIN,
+                        authProvider: "default",
+                        role: Role.USER,
                         verified: false
                     }
                 });
@@ -30,7 +30,7 @@ class UserRepository {
                 if(user.role == "USER") {
                     await tx.user_profiles.create({
                         data: {
-                            user_id: user.id,
+                            userId: user.id,
                             interests: {}
                         }
                     });
@@ -50,7 +50,7 @@ class UserRepository {
         const user = await prisma.users.findMany({
             where : {
                 username: username,
-                deleted_at: null
+                deletedAt: null
             }
         });
 
@@ -67,7 +67,7 @@ class UserRepository {
         const user = await prisma.users.findMany({
             where: {
                 id: id,
-                deleted_at: null
+                deletedAt: null
             },
             include: {
                 profile : true
@@ -122,20 +122,20 @@ class UserRepository {
             Object.entries({
                 name: data.name,
                 bio: data.bio,
-                avatar_url: data.avatar_url,
-                skills_summary: data.skills_summary,
+                avatarUrl: data.avatarUrl,
+                skillsSummary: data.skillsSummary,
                 interests: data.interests
             }).filter(([_, value]) => value !== undefined)
         );
             const profile = await prisma.user_profiles.upsert({
-                where: { user_id: id },
+                where: { userId: id },
                 update: updateData,
                 create: {
-                    user_id: id,
+                    userId: id,
                     name: data.name ?? "New User", 
                     bio: data.bio ?? "",
-                    avatar_url: data.avatar_url ?? "",
-                    skills_summary: data.skills_summary ?? "",
+                    avatarUrl: data.avatarUrl ?? "",
+                    skills_summary: data.skillsSummary ?? "",
                     interests: data.interests ?? [],
                 },
             });

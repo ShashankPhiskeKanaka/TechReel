@@ -7,11 +7,11 @@ interface ViewData {
 
 interface View {
     id: string
-    user_id: string
-    reel_id: string
-    watched_seconds: number
+    userId: string
+    reelId: string
+    watchedSeconds: number
     completed: boolean
-    created_at: Date
+    createdAt: Date
 }
 
 export type { View, ViewData }

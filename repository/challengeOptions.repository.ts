@@ -1,3 +1,5 @@
 class ChallengeOptionsRepository {
     
 }
+
+export { ChallengeOptionsRepository }

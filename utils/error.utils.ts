@@ -24,7 +24,6 @@ class GlobalErrorHandlerClass {
         }
 
         const status = err.status ?? 500;
-        console.log(err);
         return ApiResponse.error(res, status == 500 ? "Internal Server Error" : err.message, status);
     }
 }

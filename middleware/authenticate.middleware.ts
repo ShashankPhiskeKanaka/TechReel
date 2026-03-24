@@ -32,12 +32,14 @@ const authenticate = async (req: Request, res: Response, next: NextFunction) => 
         const { accessToken, refreshToken } = await service.generateCredentials(req.cookies.refreshToken);
         res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000 });
         res.cookie("refreshToken", refreshToken.id, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
+        req.cookies.accessToken = accessToken;
+        req.cookies.refreshToken = refreshToken.id;
 
-        req.user = { id: refreshToken.user_id, role: refreshToken.role  };
+        req.user = { id: refreshToken.userId, role: refreshToken.role  };
 
         logger.info("New user credentials generated", {
             ip: req.ip,
-            userId: refreshToken.user_id,
+            userId: refreshToken.userId,
             role: refreshToken.role
         });
 
@@ -67,11 +69,10 @@ const authenticateAdmin = async (req: Request, res: Response, next: NextFunction
         });
 
         const { accessToken, refreshToken } = await service.generateCredentials(req.cookies.refreshToken);
-        const { id, role } = authUtils.decodeAccesstoken(accessToken);
-        if(role !== "ADMIN") {
+        if(refreshToken.role != "ADMIN") {
             logger.warn("User Unauthorized", {
                 ip: req.ip,
-                userId: refreshToken.user_id,
+                userId: refreshToken.userId,
                 role: refreshToken.role
             });
 
@@ -81,11 +82,11 @@ const authenticateAdmin = async (req: Request, res: Response, next: NextFunction
         res.cookie("accessToken", accessToken, { sameSite: "strict", httpOnly: true, maxAge: 15*60*1000 });
         res.cookie("refreshToken", refreshToken.id, { sameSite: "strict", httpOnly: true, maxAge: 7*24*60*60*1000 });
 
-        req.user = { id: refreshToken.user_id, role: refreshToken.role  };
+        req.user = { id: refreshToken.userId, role: refreshToken.role  };
 
         logger.info("New user credentials generated", {
             ip: req.ip,
-            userId: refreshToken.user_id,
+            userId: refreshToken.userId,
             role: refreshToken.role
         });
 

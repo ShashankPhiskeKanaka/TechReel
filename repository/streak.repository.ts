@@ -23,7 +23,7 @@ class StreakRepository {
     findByUser = async (userId: string): Promise<Streak> => {
         const streak = await prisma.streaks.findFirst({
             where: {
-                user_id: userId
+                userId: userId
             }
         });
 

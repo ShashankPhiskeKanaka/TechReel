@@ -19,127 +19,125 @@ enum Role {
 }
 
 model users {
-  id            String    @id @default(uuid()) @db.Uuid
-  email         String    @unique
-  username      String    @unique
-  password      String
-  role          Role
-  verified      Boolean
-  auth_provider String
-  created_at    DateTime  @default(now()) @db.Timestamptz(6)
-  deleted_at    DateTime? @db.Timestamptz(6)
+  id           String    @id @default(uuid()) @db.Uuid
+  email        String    @unique
+  username     String    @unique
+  password     String
+  role         Role
+  verified     Boolean
+  authProvider String    @map("auth_provider") // Mapped
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6) // Mapped
+  deletedAt    DateTime? @map("deleted_at") @db.Timestamptz(6) // Mapped
 
-  profile user_profiles?
-  
-  refresh_tokens refresh_tokens[]
+  profile      user_profiles?
+  refreshTokens refresh_tokens[]
 
-  token_ledger token_ledger[]
-  xp_ledger xp_ledger[]
+  tokenLedger  token_ledger[]
+  xpLedger     xp_ledger[]
+  reels        reels[]
+  tokenBalance user_token_balance?
+  skills       user_skills[]
+  streak       streaks?
 
-  reels reels[]
-  
-  token_balance user_token_balance?
+  reelViews    reel_views[]
+  reelLikes    reel_likes[]
+  reelReport   reel_reports[]
+  reelSaves    reel_saves[]
 
-  skills user_skills[]
-
-  streak streaks?
-
-  reel_views reel_views[]
-  reel_likes reel_likes[]
-  reel_report reel_reports[]
-  reel_saves reel_saves[]
-
-  badges user_badges[]
-
-  challenge_submission challenge_submissions[]
+  badges       user_badges[]
+  challengeSubmissions challenge_submissions[]
 
   @@map("users")
-  @@index([id, created_at])
+  @@index([id, createdAt])
 }
 
 model user_profiles {
-  id             String @id @default(uuid()) @db.Uuid
-  user_id        String @unique @db.Uuid 
-  name           String?
-  bio            String?
-  avatar_url     String?
-  skills_summary String?
-  xp             Int    @default(0)
-  interests      Json
+  id            String  @id @default(uuid()) @db.Uuid
+  userId        String  @unique @map("user_id") @db.Uuid // Mapped
+  name          String?
+  bio           String?
+  avatarUrl     String? @map("avatar_url") // Mapped
+  skillsSummary String? @map("skills_summary") // Mapped
+  xp            Int     @default(0)
+  interests     Json
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user          users   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("user_profiles")
-  @@index([user_id])
+  @@index([userId])
 }
 
 model audit_logs {
-  id           String   @id @default(uuid()) @db.Uuid
-  model        String
-  model_id     String   @db.Uuid
-  action       String
-  old_data     Json?
-  new_data     Json?
-  performed_by String?   @db.Uuid
-  ip           String?
-  created_at   DateTime @db.Timestamptz(6)
+  id          String   @id @default(uuid()) @db.Uuid
+  model       String
+  modelId     String   @map("model_id") @db.Uuid // Mapped
+  action      String
+  oldData     Json?    @map("old_data") // Mapped
+  newData     Json?    @map("new_data") // Mapped
+  performedBy String?  @map("performed_by") @db.Uuid // Mapped
+  ip          String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6) // Mapped
 
   @@map("audit_logs")
-  @@index([id, created_at])
+  @@index([id, createdAt])
 }
 
 model refresh_tokens {
-  id         String   @id @default(uuid()) @db.Uuid
-  family_id  String   @db.Uuid
-  user_id    String   @db.Uuid
-  role       Role     @default(USER)
-  is_used   Boolean  @default(false)
-  created_at DateTime @default(now()) @db.Timestamptz(6)
+  id        String   @id @default(uuid()) @db.Uuid
+  familyId  String   @map("family_id") @db.Uuid // Mapped
+  userId    String   @map("user_id") @db.Uuid   // Mapped
+  role      Role     @default(USER)
+  isUsed    Boolean  @default(false) @map("is_used") // Mapped
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6) // Mapped
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("refresh_tokens")
-  @@index([family_id])
-  @@index([user_id])
+  @@index([familyId])
+  @@index([userId])
 }
 
 model tokens {
-  id String @id @default(uuid()) @db.Uuid
-  name String @unique
-  token_url String?
-  created_at DateTime @default(now()) @db.Timestamptz
-  deleted_at DateTime? @db.Timestamptz
+  id        String    @id @default(uuid()) @db.Uuid
+  name      String    @unique
+  tokenUrl  String?   @map("token_url") // Mapped
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz // Mapped
+  deletedAt DateTime? @map("deleted_at") @db.Timestamptz // Mapped
 
-  token_ledger token_ledger[]
-  user_token_balance user_token_balance[]
+  tokenLedger      token_ledger[]
+  userTokenBalance user_token_balance[]
 
-  @@index([id, created_at])
+  @@map("tokens")
+  @@index([id, createdAt])
 }
 
 model skills {
-  id String @id @default(uuid()) @db.Uuid
-  name String @unique
-  category String?
+  id          String    @id @default(uuid()) @db.Uuid
+  name        String    @unique
+  category    String?
   description String?
-  created_at DateTime @default(now()) @db.Timestamptz
-  deleted_at DateTime? @db.Timestamptz
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz // Mapped
+  deletedAt   DateTime? @map("deleted_at") @db.Timestamptz // Mapped
 
-  reels reels[]
-  user_skills user_skills[]
-  roadmap skill_roadmaps[]
+  reels      reels[]
+  userSkills user_skills[]
+  roadmap    skill_roadmaps[]
+  badges     badges[]
 
-  badges badges[]
-
-  @@index([id, created_at])
+  @@map("skills")
+  @@index([id, createdAt])
 }
+
 
 model tags {
-  id String @id @default(uuid()) @db.Uuid
-  name String @unique
-  created_at DateTime @default(now()) @db.Timestamptz
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @unique
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
 
-  @@index([id, created_at])
+  @@map("tags")
+  @@index([id, createdAt])
 }
+
 
 enum levels {
   NOVICE
@@ -154,34 +152,35 @@ enum status {
 }
 
 model reels {
-  id String @id @default(uuid()) @db.Uuid
-  title String
-  description String?
-  video_url String? 
-  creator_id String @db.Uuid
-  skill_id String @db.Uuid
-  difficulty_level levels
-  created_at DateTime @default(now()) @db.Timestamptz
-  deleted_at DateTime? @db.Timestamptz
-  duration Int @default(0)
-  tags Json?
-  views Int @default(0)
-  status status
-  thumbnail_url String?
-  is_bonus Boolean @default(false)
-  likes Int @default(0)
+  id              String    @id @default(uuid()) @db.Uuid
+  title           String
+  description     String?
+  videoUrl        String?   @map("video_url") // Mapped
+  creatorId       String    @map("creator_id") @db.Uuid // Mapped
+  skillId         String    @map("skill_id") @db.Uuid // Mapped
+  difficultyLevel levels    @map("difficulty_level") // Mapped
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz // Mapped
+  deletedAt       DateTime? @map("deleted_at") @db.Timestamptz // Mapped
+  duration        Int       @default(0)
+  tags            Json?
+  views           Int       @default(0)
+  status          status
+  thumbnailUrl    String?   @map("thumbnail_url") // Mapped
+  isBonus         Boolean   @default(false) @map("is_bonus") // Mapped
+  likes           Int       @default(0)
 
-  user users @relation(fields: [creator_id], references: [id])
-  skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
+  user            users     @relation(fields: [creatorId], references: [id])
+  skill           skills    @relation(fields: [skillId], references: [id], onDelete: Cascade)
 
-  reel_views reel_views[]
-  reel_likes reel_likes[]
-  reel_reports reel_reports[]
-  reel_saves reel_saves[]
+  reelViews       reel_views[]
+  reelLikes       reel_likes[]
+  reelReports     reel_reports[]
+  reelSaves       reel_saves[]
 
-  challenges challenges[]
+  challenges      challenges[]
 
-  @@index([id, created_at])
+  @@map("reels")
+  @@index([id, createdAt])
 }
 
 enum TransactionType{
@@ -190,154 +189,166 @@ enum TransactionType{
 }
 
 model token_ledger {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  token_id String @db.Uuid
-  amount Int 
-  source String
-  created_at DateTime @default(now()) @db.Timestamptz
-  type TransactionType
+  id        String          @id @default(uuid()) @db.Uuid
+  userId    String          @map("user_id") @db.Uuid
+  tokenId   String          @map("token_id") @db.Uuid
+  amount    Int
+  source    String
+  createdAt DateTime        @default(now()) @map("created_at") @db.Timestamptz
+  type      TransactionType
 
-  user users @relation(fields: [user_id], references: [id])
-  token tokens @relation(fields: [token_id], references: [id])
+  user  users  @relation(fields: [userId], references: [id])
+  token tokens @relation(fields: [tokenId], references: [id])
 
-  @@index([id, created_at])
-  @@index([user_id])
+  @@map("token_ledger")
+  @@index([id, createdAt])
+  @@index([userId])
 }
 
 model user_token_balance {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid @unique
-  token_id String @db.Uuid
-  amount Int @default(0)
-  created_at DateTime @default(now()) @db.Timestamptz
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @unique @map("user_id") @db.Uuid
+  tokenId   String   @map("token_id") @db.Uuid
+  amount    Int      @default(0)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id])
-  token tokens @relation(fields: [token_id], references: [id])
+  user  users  @relation(fields: [userId], references: [id])
+  token tokens @relation(fields: [tokenId], references: [id])
 
-  @@index([id, created_at])
-  @@index([user_id])
+  @@map("user_token_balance")
+  @@index([id, createdAt])
+  @@index([userId])
 }
 
 model xp_ledger {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  amount Int
-  source String
-  created_at DateTime @default(now()) @db.Timestamptz
-  deleted_at DateTime? @db.Timestamptz
-  type TransactionType
+  id        String          @id @default(uuid()) @db.Uuid
+  userId    String          @map("user_id") @db.Uuid
+  amount    Int
+  source    String
+  createdAt DateTime        @default(now()) @map("created_at") @db.Timestamptz
+  deletedAt DateTime?       @map("deleted_at") @db.Timestamptz
+  type      TransactionType
 
-  user users @relation(fields: [user_id], references: [id])
+  user users @relation(fields: [userId], references: [id])
 
-  @@index([user_id])
-  @@index([id, created_at])
+  @@map("xp_ledger")
+  @@index([userId])
+  @@index([id, createdAt])
 }
 
+
 model streaks {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid @unique
-  current_streak Int
-  longest_streak Int
-  last_active DateTime @db.Timestamptz
+  id            String   @id @default(uuid()) @db.Uuid
+  userId        String   @unique @map("user_id") @db.Uuid
+  currentStreak Int      @map("current_streak")
+  longestStreak Int      @map("longest_streak")
+  lastActive    DateTime @map("last_active") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([user_id])
+  @@map("streaks")
+  @@index([userId])
 }
 
 model user_skills {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  skill_id String @db.Uuid
-  xp Int
-  difficulty_level levels
-  last_updated DateTime @db.Timestamptz
-  progress Int
-  completed_at DateTime @db.Timestamptz
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @map("user_id") @db.Uuid
+  skillId         String   @map("skill_id") @db.Uuid
+  xp              Int
+  difficultyLevel levels   @map("difficulty_level")
+  lastUpdated     DateTime @map("last_updated") @db.Timestamptz
+  progress        Int
+  completedAt     DateTime @map("completed_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  skill skills @relation(fields: [skill_id], references: [id])
+  user  users  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill skills @relation(fields: [skillId], references: [id])
 
-  @@index([user_id])
-  @@index([id, completed_at])
+  @@map("user_skills")
+  @@index([userId])
+  @@index([id, completedAt])
 }
 
 model skill_roadmaps {
-  id String @id @default(uuid()) @db.Uuid
-  skill_id String @db.Uuid
-  difficulty_level levels
-  title String
-  description String
-  created_at DateTime @default(now()) @db.Timestamptz
+  id              String   @id @default(uuid()) @db.Uuid
+  skillId         String   @map("skill_id") @db.Uuid
+  difficultyLevel levels   @map("difficulty_level")
+  title           String
+  description     String
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz
 
-  skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
+  skill skills @relation(fields: [skillId], references: [id], onDelete: Cascade)
 
-  roadmap_steps roadmap_steps[]
+  roadmapSteps roadmap_steps[]
 
-  @@index([skill_id])
+  @@map("skill_roadmaps")
+  @@index([skillId])
 }
 
 model reel_views {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  reel_id String @db.Uuid
-  watched_seconds Int @default(0)
-  completed Boolean
-  created_at DateTime @default(now()) @db.Timestamptz
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String   @map("user_id") @db.Uuid
+  reelId         String   @map("reel_id") @db.Uuid
+  watchedSeconds Int      @default(0) @map("watched_seconds")
+  completed      Boolean
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references:[id])
-  reel reels @relation(fields: [reel_id], references:[id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id])
+  reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
 
-  @@index([id, created_at])
+  @@map("reel_views")
+  @@index([id, createdAt])
 }
 
 model reel_likes {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  reel_id String @db.Uuid
-  created_at DateTime @default(now()) @db.Timestamptz
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  reelId    String   @map("reel_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id])
-  reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id])
+  reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
 
-  @@unique([user_id, reel_id])
-  @@index([id, created_at])
+  @@unique([userId, reelId])
+  @@map("reel_likes")
+  @@index([id, createdAt])
 }
 
-model reel_saves{
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  reel_id String @db.Uuid
-  folder_name String
-  saved_at DateTime @default(now()) @db.Timestamptz
+model reel_saves {
+  id         String   @id @default(uuid()) @db.Uuid
+  userId     String   @map("user_id") @db.Uuid
+  reelId     String   @map("reel_id") @db.Uuid
+  folderName String   @map("folder_name")
+  savedAt    DateTime @default(now()) @map("saved_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
 
-  @@index([folder_name])
-  @@index([id, saved_at])
+  @@map("reel_saves")
+  @@index([folderName])
+  @@index([id, savedAt])
 }
+
 
 enum reportStatus {
   PENDING
   APPROVED 
   REJECTED
 }
-
 model reel_reports {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  reel_id String @db.Uuid
-  reason String
-  status reportStatus
-  created_at DateTime @default(now()) @db.Timestamptz
+  id        String       @id @default(uuid()) @db.Uuid
+  userId    String       @map("user_id") @db.Uuid
+  reelId    String       @map("reel_id") @db.Uuid
+  reason    String
+  status    reportStatus
+  createdAt DateTime     @default(now()) @map("created_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  reel reels @relation(fields: [reel_id], references: [id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
 
-  @@index([id, created_at])
+  @@map("reel_reports")
+  @@index([id, createdAt])
 }
+
 
 enum challenge_type {
   MCQ
@@ -347,91 +358,96 @@ enum challenge_type {
 }
 
 model challenges {
-  id String @id @default(uuid()) @db.Uuid
-  reel_id String @db.Uuid
-  question String
-  code_snippet String?
-  language String
-  challenge_type challenge_type
-  answer String
-  difficulty_level levels
-  created_at DateTime @default(now()) @db.Timestamptz
-  deleted_at DateTime? @db.Timestamptz
+  id              String         @id @default(uuid()) @db.Uuid
+  reelId          String         @map("reel_id") @db.Uuid
+  question        String
+  codeSnippet     String?        @map("code_snippet")
+  language        String
+  challengeType   challenge_type @map("challenge_type")
+  answer          String
+  difficultyLevel levels         @map("difficulty_level")
+  createdAt       DateTime       @default(now()) @map("created_at") @db.Timestamptz
+  deletedAt       DateTime?      @map("deleted_at") @db.Timestamptz
 
-  reels reels @relation(fields: [reel_id], references: [id])
+  reels                reels                  @relation(fields: [reelId], references: [id])
+  challengeSubmissions challenge_submissions[]
+  challengeOptions     challenge_options[]
 
-  challenge_submissions challenge_submissions[]
-
-  challenge_options challenge_options[]
-
-  @@index([id, created_at])
+  @@map("challenges")
+  @@index([id, createdAt])
 }
 
 model badges {
-  id String @id @default(uuid()) @db.Uuid
-  skill_id String @db.Uuid
-  name String
+  id          String    @id @default(uuid()) @db.Uuid
+  skillId     String    @map("skill_id") @db.Uuid
+  name        String
   description String?
-  icon_url String?
-  xp_reward Int
-  created_at DateTime @default(now()) @db.Timestamptz
-  deleted_at DateTime? @db.Timestamptz
+  iconUrl     String?   @map("icon_url")
+  xpReward    Int       @map("xp_reward")
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  deletedAt   DateTime? @map("deleted_at") @db.Timestamptz
 
-  skill skills @relation(fields: [skill_id], references: [id], onDelete: Cascade)
+  skill      skills        @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  userBadges user_badges[]
 
-  user_badges user_badges[]
-
-  @@index([id, created_at])
+  @@map("badges")
+  @@index([id, createdAt])
 }
 
 model user_badges {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  badge_id String @db.Uuid
-  created_at DateTime @default(now()) @db.Timestamptz
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  badgeId   String   @map("badge_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  badge badges @relation(fields: [badge_id], references: [id], onDelete: Cascade)
+  user  users  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge badges @relation(fields: [badgeId], references: [id], onDelete: Cascade)
 
-  @@index([id, created_at])
+  @@map("user_badges")
+  @@index([id, createdAt])
 }
 
+
 model roadmap_steps {
-  id String @id @default(uuid()) @db.Uuid
-  roadmap_id String @db.Uuid
-  reel_id String @db.Uuid
-  challenge_id String @db.Uuid
-  step_order Int
-  title String
+  id          String  @id @default(uuid()) @db.Uuid
+  roadmapId   String  @map("roadmap_id") @db.Uuid
+  reelId      String  @map("reel_id") @db.Uuid
+  challengeId String  @map("challenge_id") @db.Uuid
+  stepOrder   Int     @map("step_order")
+  title       String
   description String?
 
-  roadmap skill_roadmaps @relation(fields: [roadmap_id], references: [id], onDelete: Cascade)
+  roadmap             skill_roadmaps         @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  challengeSubmissions challenge_submissions[]
 
-  challenge_submission challenge_submissions[]
+  @@map("roadmap_steps")
 }
 
 model challenge_submissions {
-  id String @id @default(uuid()) @db.Uuid
-  user_id String @db.Uuid
-  challenge_id String @db.Uuid
-  answer String
-  is_correct Boolean
-  score Int
-  created_at DateTime @default(now()) @db.Timestamptz
-  roadmap_step_id String? @db.Uuid
+  id            String         @id @default(uuid()) @db.Uuid
+  userId        String         @map("user_id") @db.Uuid
+  challengeId   String         @map("challenge_id") @db.Uuid
+  answer        String
+  isCorrect     Boolean        @map("is_correct")
+  score         Int
+  createdAt     DateTime       @default(now()) @map("created_at") @db.Timestamptz
+  roadmapStepId String?        @map("roadmap_step_id") @db.Uuid
 
-  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  challenge challenges @relation(fields: [challenge_id], references: [id])
-  roadmap_step roadmap_steps? @relation(fields: [roadmap_step_id], references: [id])
+  user        users          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge   challenges     @relation(fields: [challengeId], references: [id])
+  roadmapStep roadmap_steps? @relation(fields: [roadmapStepId], references: [id])
 
-  @@index([id, created_at])
+  @@map("challenge_submissions")
+  @@index([id, createdAt])
 }
 
 model challenge_options {
-  id String @id @default(uuid()) @db.Uuid
-  challenge_id String @db.Uuid
-  is_correct Boolean
-  option String
+  id          String     @id @default(uuid()) @db.Uuid
+  challengeId String     @map("challenge_id") @db.Uuid
+  isCorrect   Boolean    @map("is_correct")
+  option      String
 
-  challenge challenges @relation(fields: [challenge_id], references: [id], onDelete: Cascade)
+  challenge   challenges @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@map("challenge_options")
 }

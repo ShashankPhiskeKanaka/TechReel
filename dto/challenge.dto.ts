@@ -3,45 +3,46 @@ import type { Difficulty } from "./reel.dto.js"
 
 interface Challenge {
     id: string
-    reel_id: string
+    reelId: string
     question: string
-    code_snippet: string | null
+    codeSnippet: string | null
     language: string
-    challenge_type: challenge_type
+    challengeType: challenge_type
     answer: string
-    difficulty_level: Difficulty
-    created_at: Date
-    deleted_at: Date | null
+    difficultyLevel: Difficulty
+    createdAt: Date
+    deletedAt: Date | null
 }
 
 interface ChallengeData {
-    reel_id: string
+    reelId: string
     question: string
-    code_snippet: string | null
+    codeSnippet: string | null
     language: string
-    challenge_type: challenge_type
+    challengeType: challenge_type
     answer: string
-    difficulty_level: Difficulty
+    difficultyLevel: Difficulty
+    options: any
 }
 
 interface ChallengeSubmission {
     id: string
-    user_id: string
-    challenge_id: string
+    userId: string
+    challengeId: string
     answer: string
-    is_correct: boolean
+    isCorrect: boolean
     score: number
-    roadmap_step_id: string | null
-    created_at: Date
+    roadmapStepId: string | null
+    createdAt: Date
 }
 
 interface ChallengeSubmissionData {
-    user_id: string
-    challenge_id: string
+    userId: string
+    challengeId: string
     answer: string
-    is_correct: boolean
+    isCorrect: boolean
     score: number
-    roadmap_step_id: string | null
+    roadmapStepId: string | null
 }
 
 export type { Challenge, ChallengeData, ChallengeSubmission, ChallengeSubmissionData }

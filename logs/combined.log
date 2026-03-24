@@ -792,3 +792,185 @@
 {"level":"info","message":"GET /v1/interaction/view/62b269d1-0272-4730-b28f-2c1793790e70 10.863 ms","timestamp":"2026-03-23 17:55:54"}
 {"level":"info","message":"Redis connected","timestamp":"2026-03-23 17:56:50"}
 {"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 17:56:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-23 18:14:18"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-23 18:14:18"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 18:14:26"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-23 18:14:26","tokenId":"2633b2c7-a101-4f6c-9f72-384a6277ab37"}
+{"familyId":"e532a9b7-1d5d-494e-b0c4-a8ca75cc8483","level":"info","message":"Token rotation successfull","timestamp":"2026-03-23 18:14:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-23 18:14:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-23 18:14:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-23 18:14:26"}
+{"familyId":"e532a9b7-1d5d-494e-b0c4-a8ca75cc8483","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-23 18:14:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-23 18:14:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-23 18:14:26"}
+{"level":"info","message":"DELETE /v1/interaction/view 316.421 ms","timestamp":"2026-03-23 18:14:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:43:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:43:22"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 09:43:37","username":"admin"}
+{"familyId":"d0fa241f-6af6-4d7d-b42a-a190e5bfc7cc","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 09:43:37","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-24 09:43:37","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 296.755 ms","timestamp":"2026-03-24 09:43:37"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:44:02"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 09:44:02","tokenId":"01cc4de9-e6f5-4a3c-a5b9-c10ba81f9551"}
+{"familyId":"d0fa241f-6af6-4d7d-b42a-a190e5bfc7cc","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 09:44:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 09:44:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-24 09:44:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:44:02"}
+{"familyId":"d0fa241f-6af6-4d7d-b42a-a190e5bfc7cc","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-24 09:44:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-24 09:44:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-24 09:44:02"}
+{"level":"info","message":"DELETE /v1/interaction/view 70.702 ms","timestamp":"2026-03-24 09:44:02"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 09:48:21","username":"sample"}
+{"familyId":"8d3844bc-bbf0-441c-8f6e-1a93d7523de0","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 09:48:21","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-24 09:48:21","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/auth/ 58.975 ms","timestamp":"2026-03-24 09:48:21"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:48:45"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 09:48:45","tokenId":"9f89832a-6c8b-49c3-bfee-2d5699566eed"}
+{"familyId":"8d3844bc-bbf0-441c-8f6e-1a93d7523de0","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 09:48:45","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 09:48:45","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-24 09:48:45","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:48:45"}
+{"familyId":"8d3844bc-bbf0-441c-8f6e-1a93d7523de0","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-24 09:48:45","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-24 09:48:45","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-24 09:48:45"}
+{"level":"info","message":"DELETE /v1/interaction/view 35.912 ms","timestamp":"2026-03-24 09:48:45"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 09:50:05","username":"sample"}
+{"familyId":"5a7d30fa-f707-4843-bf90-1e7965876386","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 09:50:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-24 09:50:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/auth/ 68.552 ms","timestamp":"2026-03-24 09:50:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:51:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:51:24"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:51:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:51:29"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:51:39"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 09:51:39","tokenId":"5d8927e3-8d85-46a9-80ae-8896bae6d4c6"}
+{"familyId":"5a7d30fa-f707-4843-bf90-1e7965876386","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 09:51:39","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 09:51:39","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-24 09:51:39","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:51:39"}
+{"familyId":"5a7d30fa-f707-4843-bf90-1e7965876386","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-24 09:51:39","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-24 09:51:39","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-24 09:51:39"}
+{"level":"info","message":"DELETE /v1/interaction/view 280.265 ms","timestamp":"2026-03-24 09:51:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:52:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:52:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:52:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:52:43"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 09:52:54","username":"sample"}
+{"familyId":"9ea2cb9c-058f-4565-8ff5-cc972847c29d","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 09:52:54","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-24 09:52:54","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/auth/ 185.844 ms","timestamp":"2026-03-24 09:52:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:53:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:53:05"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:53:12"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 09:53:13","tokenId":"f81b1d3d-81c2-4ccb-bbb9-35d30cae5a19"}
+{"familyId":"9ea2cb9c-058f-4565-8ff5-cc972847c29d","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 09:53:13","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 09:53:13","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-24 09:53:13","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 09:53:13"}
+{"familyId":"9ea2cb9c-058f-4565-8ff5-cc972847c29d","level":"warn","message":"Security Event: Refresh token REUSE_DETECTED","reason":"REUSE_DETECTED","timestamp":"2026-03-24 09:53:13","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"Security Action: All user sessions invalidated","timestamp":"2026-03-24 09:53:13","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-24 09:53:13"}
+{"level":"info","message":"DELETE /v1/interaction/view 407.722 ms","timestamp":"2026-03-24 09:53:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:53:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:53:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:57:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:57:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:57:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:57:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:57:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:57:24"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:57:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:57:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 09:57:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 09:57:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:00:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:00:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:00:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:00:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:00:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:00:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:00:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:00:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:00:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:00:43"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 10:02:04","username":"sample"}
+{"familyId":"39bb0ab7-ad75-41cf-9e6b-0a008d7c65ef","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 10:02:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"User logged in successfully","role":"USER","timestamp":"2026-03-24 10:02:05","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"POST /v1/auth/ 265.928 ms","timestamp":"2026-03-24 10:02:05"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 10:02:12"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 10:02:12","tokenId":"7d9d1d28-9d5c-4eb0-9942-44ceef1699cf"}
+{"familyId":"39bb0ab7-ad75-41cf-9e6b-0a008d7c65ef","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 10:02:12","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 10:02:12","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"USER","timestamp":"2026-03-24 10:02:12","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"warn","message":"User Unauthorized","role":"USER","timestamp":"2026-03-24 10:02:12","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-24 10:02:12"}
+{"level":"info","message":"DELETE /v1/interaction/view 68.540 ms","timestamp":"2026-03-24 10:02:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:02:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:02:59"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 10:03:09","username":"admin"}
+{"familyId":"4d86878c-54f7-4099-a350-21a91148fcfe","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 10:03:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-24 10:03:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 291.331 ms","timestamp":"2026-03-24 10:03:09"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 10:03:18"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 10:03:18","tokenId":"a820a5e7-70f0-4f96-9562-d8737ea9795e"}
+{"familyId":"4d86878c-54f7-4099-a350-21a91148fcfe","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 10:03:18","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 10:03:18","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-24 10:03:18","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"View record delete request received","timestamp":"2026-03-24 10:03:18","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.reel_views.delete()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:132:50\n\n  129     }\n  130 });\n  131 \n→ 132 const view = await prisma.reel_views.delete(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for a delete.","timestamp":"2026-03-24 10:03:18"}
+{"level":"info","message":"DELETE /v1/interaction/view 324.830 ms","timestamp":"2026-03-24 10:03:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 10:58:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 10:58:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:01:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:01:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:01:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:01:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:28:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:28:31"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 11:30:57"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 11:30:57","tokenId":"1749b995-78e6-45ce-b885-bd69e2e3b3fc"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.refresh_tokens.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\auth.repository.ts:87:58\n\n  84 });\n  85 \n  86 // 6. Create the replacement token in the same family\n→ 87 const newToken = await tx.refresh_tokens.create({\n       data: {\n         userId: undefined,\n         role: \"ADMIN\",\n     +   familyId: String\n       }\n     })\n\nArgument `familyId` is missing.","timestamp":"2026-03-24 11:30:57"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 364.088 ms","timestamp":"2026-03-24 11:30:57"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 11:32:01","username":"admin"}
+{"level":"warn","message":"Login attempted when already authenticated","timestamp":"2026-03-24 11:32:01","username":"admin"}
+{"level":"info","message":"POST /v1/auth/ 10.617 ms","timestamp":"2026-03-24 11:32:01"}
+{"level":"http","message":"Login request received","timestamp":"2026-03-24 11:32:11","username":"admin"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-03-24 11:32:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-03-24 11:32:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/auth/ 247.224 ms","timestamp":"2026-03-24 11:32:12"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 11:32:24"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 11:32:24","tokenId":"d9cb14b0-0b3c-4883-add8-dc652631d563"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.refresh_tokens.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\auth.repository.ts:87:58\n\n  84 });\n  85 \n  86 // 6. Create the replacement token in the same family\n→ 87 const newToken = await tx.refresh_tokens.create({\n       data: {\n         userId: undefined,\n         role: \"ADMIN\",\n     +   familyId: String\n       }\n     })\n\nArgument `familyId` is missing.","timestamp":"2026-03-24 11:32:24"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 20.757 ms","timestamp":"2026-03-24 11:32:24"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:35:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:35:25"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 11:35:27"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 11:35:27","tokenId":"d9cb14b0-0b3c-4883-add8-dc652631d563"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.refresh_tokens.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\auth.repository.ts:87:58\n\n  84 });\n  85 console.log(tokenData);\n  86 // 6. Create the replacement token in the same family\n→ 87 const newToken = await tx.refresh_tokens.create({\n       data: {\n         userId: undefined,\n         role: \"ADMIN\",\n     +   familyId: String\n       }\n     })\n\nArgument `familyId` is missing.","timestamp":"2026-03-24 11:35:27"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 278.858 ms","timestamp":"2026-03-24 11:35:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:37:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:37:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:37:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:37:37"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:37:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:37:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:37:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:37:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:37:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:37:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:38:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:38:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:38:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:38:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:38:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-24 11:38:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-24 11:38:20"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-24 11:38:25"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-24 11:38:25","tokenId":"d9cb14b0-0b3c-4883-add8-dc652631d563"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-24 11:38:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-24 11:38:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-24 11:38:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Like reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-24 11:38:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.reel_likes.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\likes.repository.ts:27:46\n\n  24     }\n  25 });\n  26 \n→ 27 const like = await tx.reel_likes.create(\nUnique constraint failed on the fields: (`user_id`, `reel_id`)","timestamp":"2026-03-24 11:38:25"}
+{"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 333.555 ms","timestamp":"2026-03-24 11:38:25"}

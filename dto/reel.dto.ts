@@ -7,41 +7,41 @@ interface ReelData {
     id: string
     title: string
     description : string | null
-    video_url : string | null
-    creator_id : string
-    skill_id: string
-    difficulty_level: Difficulty
+    videoUrl : string | null
+    creatorId : string
+    skillId: string
+    difficultyLevel: Difficulty
     tags: NullableJsonNullValueInput | InputJsonValue
-    is_bonus: boolean
+    isBonus: boolean
 }
 
 interface ReelUpdateData {
     title: string | null
     description : string | null
-    video_url : string | null
-    creator_id : string | null
-    skill_id: string | null
-    difficulty_level: Difficulty | null
+    videoUrl : string | null
+    creatorId : string | null
+    skillId: string | null
+    difficultyLevel: Difficulty | null
     tags: NullableJsonNullValueInput | InputJsonValue
-    is_bonus: boolean | null
+    isBonus: boolean | null
 }
 
 interface Reel {
     id: string
     title: string
     description: string | null
-    video_url: string | null
-    creator_id: string
-    skill_id: string
-    difficulty_level: Difficulty
-    created_at: Date
-    deleted_at: Date | null
+    videoUrl: string | null
+    creatorId: string
+    skillId: string
+    difficultyLevel: Difficulty
+    createdAt: Date
+    deletedAt: Date | null
     duration: Number
     tags: JsonValue | null
     views: Number
     status: Status
-    thumbnail_url: string | null
-    is_bonus: boolean
+    thumbnailUrl: string | null
+    isBonus: boolean
 }
 
 export type { Reel, ReelData, Status, Difficulty, ReelUpdateData };

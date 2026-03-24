@@ -23,7 +23,7 @@ class ReelReportRepository {
     fetchByReel = async (reelId: string): Promise<Report[]> => {
         const reports = await prisma.reel_reports.findMany({
             where: {
-                reel_id: reelId
+                reelId
             }
         });
 
@@ -33,7 +33,7 @@ class ReelReportRepository {
     fetchByUser = async (userId: string): Promise<Report[]> => {
         const reports = await prisma.reel_reports.findMany({
             where: {
-                user_id: userId
+                userId
             }
         });
 

@@ -2,11 +2,11 @@ import type { JsonValue } from "@prisma/client/runtime/client"
 
 interface UserProfile {
     id: string
-    user_id: string,
+    userId: string,
     name: string | null,
     bio: string | null,
-    avatar_url: string | null,
-    skills_summary: string | null,
+    avatarUrl: string | null,
+    skillsSummary: string | null,
     xp: number,
     interests: JsonValue,
 }
@@ -14,8 +14,8 @@ interface UserProfile {
 interface UserProfileData {
     name?: string,
     bio?: string,
-    avatar_url?: string,
-    skills_summary?: string,
+    avatarUrl?: string,
+    skillsSummary?: string,
     interests?: JsonValue
 }
 

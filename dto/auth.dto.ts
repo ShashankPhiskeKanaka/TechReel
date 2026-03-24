@@ -2,10 +2,10 @@ import type { Role } from "./user.dto.js"
 
 interface RefreshToken {
     id : string
-    family_id: string
-    user_id : string
-    is_used : boolean
-    created_at : Date
+    familyId: string
+    userId : string
+    isUsed : boolean
+    createdAt : Date
     role: Role
 }
 

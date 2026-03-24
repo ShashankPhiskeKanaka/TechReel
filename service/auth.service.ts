@@ -49,10 +49,10 @@ class AuthService {
     generateCredentials = async (refreshToken : string) => {
         const refreshTokenData = await this.AuthMethods.generateNewToken(refreshToken);
         if(!refreshTokenData.id) throw new serverError(errorMessage.UNAUTHORIZED);
-        const accessToken = authUtils.generateAccessToken(refreshTokenData.user_id, refreshTokenData.role);
+        const accessToken = authUtils.generateAccessToken(refreshTokenData.userId, refreshTokenData.role);
 
         logger.info("New refreshToken and accessToken created for user", {
-            userId: refreshTokenData.user_id
+            userId: refreshTokenData.userId
         });
 
         return { accessToken, refreshToken : refreshTokenData };     
@@ -70,7 +70,7 @@ class AuthService {
         const refreshToken = await this.AuthMethods.create(familyId, user.id, user.role);
 
         logger.info("New refreshToken and accessToken created for user", {
-            userId: refreshToken.user_id
+            userId: refreshToken.userId
         });
 
         return { accessToken, refreshToken : refreshToken.id };     
@@ -93,7 +93,7 @@ class AuthService {
         }
 
         logger.info("User logged out successfully", {
-            userId: token.user_id,
+            userId: token.userId,
             role: token.role
         });
 

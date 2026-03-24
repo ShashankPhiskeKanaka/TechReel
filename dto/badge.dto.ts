@@ -1,32 +1,32 @@
 interface Badge {
     id: string
-    skill_id: string
+    skillId: string
     name: string
     description: string | null
-    icon_url: string | null
-    xp_reward: number
-    created_at: Date
-    deleted_at: Date | null
+    iconUrl: string | null
+    xpReward: number
+    createdAt: Date
+    deletedAt: Date | null
 }
 
 interface BadgeData {
-    skill_id: string
+    skillId: string
     name: string
     description: string | null
-    icon_url: string | null
-    xp_reward: number
+    iconUrl: string | null
+    xpReward: number
 }
 
 interface UserBadge {
     id: string
-    user_id: string
-    badge_id: string
-    created_at: Date
+    userId: string
+    badgeId: string
+    createdAt: Date
 }
 
 interface UserBadgeData {
-    user_id: string
-    badge_id: string
+    userId: string
+    badgeId: string
 }
 
 export type { Badge, BadgeData, UserBadge, UserBadgeData };

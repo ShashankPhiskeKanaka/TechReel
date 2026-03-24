@@ -3,6 +3,8 @@ import type { ChallengeData } from "../dto/challenge.dto.js";
 import type { ChallengeRepository } from "../repository/challenge.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
+import { redisUtils } from "../utils/redis.utils.js";
+import { Action, Resource } from "../dto/redis.dto.js";
 
 class ChallengeService {
     constructor (private ChallengeMethods: ChallengeRepository) {}
@@ -16,10 +18,12 @@ class ChallengeService {
      */
     create = async (data: ChallengeData) => {
         const challenge = await this.ChallengeMethods.create(data);
-
+        
         logger.info("New challenge created", {
             challengeId: challenge.id
         });
+
+        await redisUtils.invalidateKey("PUBLIC", Resource.CHALLENGE, Action.CREATE );
 
         return challenge;
     }
@@ -90,6 +94,8 @@ class ChallengeService {
             challengeId: id
         });
 
+        await redisUtils.invalidateKey("PUBLIC", Resource.CHALLENGE, Action.UPDATE);
+
         return challenge;
     }
 
@@ -115,6 +121,8 @@ class ChallengeService {
                 challengeId: id
             });
         }
+
+        await redisUtils.invalidateKey("PUBLIC", Resource.CHALLENGE, Action.DELETE);
 
         return challenge;
     }

@@ -8,11 +8,20 @@ import { logger } from "../utils/logger.js";
 import { serverError } from "../utils/error.utils.js";
 import { errorMessage } from "../constants/error.messages.js";
 import { uuidv4 } from "zod";
+import { redisUtils } from "../utils/redis.utils.js";
+import { Resource } from "../dto/redis.dto.js";
 
 class ReelService {
 
     constructor(private ReelMethods: ReelRespository) {}
 
+    /**
+     * Initializes the reel upload process by creating a metadata record and S3 signed URL.
+     * 
+     * @param {ReelData} data - The initial reel metadata (title, creator, etc.).
+     * @returns {Promise<{uploadUrl: string, key: string, reel: reels}>} 
+     * @note Creates the DB record first to ensure the S3 object can be tagged with a reelId.
+     */
     createPresignedUrl = async (data: ReelData) => {
 
         const reel = await this.ReelMethods.create({
@@ -43,8 +52,19 @@ class ReelService {
             creatorId: data.creatorId
         });
 
+        await redisUtils.invalidateKey("PUBLIC", Resource.REEL, "CREATE");
+
         return { uploadUrl, key, reel };
     }
+
+    /**
+     * Updates reel metadata and invalidates the associated cache.
+     * 
+     * @param {any} data - Partial update payload.
+     * @param {string} id - The unique Reel ID.
+     * @returns {Promise<reels>} The updated reel record.
+     * @throws {ServerError} 404 if the reel is not found.
+     */
 
     updateStatus = async (status: status, id: string, data: any) => {
 
@@ -65,6 +85,15 @@ class ReelService {
         return reel;
     }
 
+    /**
+     * Updates reel metadata and invalidates the associated cache.
+     * 
+     * @param {any} data - Partial update payload.
+     * @param {string} id - The unique Reel ID.
+     * @returns {Promise<reels>} The updated reel record.
+     * @throws {ServerError} 404 if the reel is not found.
+     */
+
     update = async (data: any, id: string) => {
         const reel = await this.ReelMethods.update(data, id);
 
@@ -74,6 +103,14 @@ class ReelService {
 
         return reel;
     }
+
+    /**
+     * Retrieves a single reel's metadata by ID.
+     * 
+     * @param {string} id - The unique Reel ID.
+     * @returns {Promise<reels>}
+     * @throws {ServerError} 404 if missing or soft-deleted.
+     */
 
     get = async (id: string) => {
         const reel = await this.ReelMethods.get(id);
@@ -92,6 +129,13 @@ class ReelService {
 
         return reel;
     }
+
+    /**
+     * Removes reel metadata and triggers cleanup for related S3 assets and caches.
+     * 
+     * @param {boolean} flag - True for hard delete, false for soft.
+     * @param {string} id - The unique Reel ID.
+     */
 
     delete = async (flag: boolean, id: string) => {
         let reel;

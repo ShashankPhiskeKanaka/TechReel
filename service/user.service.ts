@@ -1,8 +1,10 @@
 import { errorMessage } from "../constants/error.messages.js";
+import { Action, Resource } from "../dto/redis.dto.js";
 import { authUtils } from "../factory/auth.factory.js";
 import type { UserRepository } from "../repository/user.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
+import { redisUtils } from "../utils/redis.utils.js";
 
 class UserService {
     constructor(private UserMethods: UserRepository) {}
@@ -27,6 +29,8 @@ class UserService {
             userId: user.id,
             role: user.role
         });
+
+        await redisUtils.invalidateKey(user.id, Resource.USER, Action.CREATE);
 
         return { user, emailToken };
     }
@@ -86,7 +90,37 @@ class UserService {
             profileId: profile.id
         });
 
+        await redisUtils.invalidateKey(id, Resource.USER, Action.UPDATE);
+
         return profile;
+    }
+
+    /**
+     * Orchestrates the deletion of a user profile using either a soft or hard delete strategy.
+     * 
+     * @param {boolean} flag - If true, permanently removes the user; if false, marks the user as deleted.
+     * @param {string} id - The unique identifier (UUID) of the user to be deleted.
+     * @returns {Promise<User>} The result of the deletion operation (deleted user record).
+     * @throws {Error} If the repository operation fails or the user is not found.
+     */
+    delete = async (flag: boolean, id: string) => {
+        let user;
+
+        if(flag) {
+            user = await this.UserMethods.hardDelete(id);
+            logger.info("User hard deleted successfully", {
+                userId: id
+            });
+        }else{
+            user = await this.UserMethods.softDelete(id);
+            logger.info("User soft deleted successfully", {
+                userId: id
+            });
+        }
+
+        await redisUtils.invalidateKey(user.id, Resource.USER, Action.DELETE);
+    
+        return user;
     }
 }
 

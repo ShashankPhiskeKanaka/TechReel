@@ -2,6 +2,8 @@ import type { Request, Response } from "express";
 import type { UserService } from "../service/user.service.js";
 import { logger } from "../utils/logger.js";
 import { ApiResponse } from "../utils/api.utils.js";
+import { errorMessage } from "../constants/error.messages.js";
+import { serverError } from "../utils/error.utils.js";
 
 class UserController {
     constructor(private UserService: UserService) {}
@@ -14,13 +16,16 @@ class UserController {
      */
     create = async (req: Request, res: Response) => {
 
-
         logger.http("User creation request recieved", {
             path: req.path,
-            ip: req.ip
+            ip: req.ip,
+            idempotencyKey: req.headers['x-idempotency-key'] ?? "NA"
         });
+
         const data = await this.UserService.create(req.body);
 
+
+        
         return res.json({
             success: true,
             message: "New User Created",
@@ -39,7 +44,8 @@ class UserController {
 
         logger.http("Email verification request recieved", {
             ip: req.ip,
-            token: req.params.token?.toString() ?? "NA"
+            token: req.params.token?.toString() ?? "NA",
+            idmepotencyKey: req.headers['x-idempotency-key'] ?? "NA"
         });
 
         await this.UserService.verifyEmail(req.params.token?.toString() ?? "");
@@ -57,7 +63,7 @@ class UserController {
 
         logger.http("Fetch user by id request received", {
             ip: req.ip,
-            userId: req.user?.id ?? "NA"
+            userId: req.user?.id ?? "NA",
         });
 
         const user = await this.UserService.getById(req.user?.id ?? "");
@@ -76,12 +82,42 @@ class UserController {
 
         logger.http("User profile update request received", {
             ip: req.ip,
-            userId: req.user?.id ?? "NA"
+            userId: req.user?.id ?? "NA",
+            idmepotencyKey: req.headers['x-idempotency-key'] ?? "NA"
         });
 
         const profile = await this.UserService.updateProfile(req.user?.id ?? "", req.body);
 
         return ApiResponse.success(res, "User profile updated", profile);
+    }
+
+    /**
+     * Handles the HTTP request to delete a user profile.
+     * 
+     * @param {Request} req - Express request; expects 'id' in path params, 'flag' (soft/hard) in body, and idempotency key in headers.
+     * @param {Response} res - Express response; returns the deleted user metadata.
+     * @returns {Promise<Response>} A standardized API response.
+     * @throws {ServerError} 403 (Unauthorized) if the caller is not an Admin or the profile owner.
+     */
+    delete = async (req: Request, res: Response) => {
+        logger.http("User profile delete request received", {
+            ip: req.ip,
+            userId: req.user?.id ?? "NA",
+            idmepotencyKey: req.headers['x-idempotency-key'] ?? "NA"
+        });
+
+        if(req.user?.role != "ADMIN" || req.user?.id != req.params.id?.toString()) {
+            logger.warn(errorMessage.UNAUTHORIZED.message, {
+                ip: req.ip,
+                userId: req.user?.id
+            });
+
+            throw new serverError(errorMessage.UNAUTHORIZED);
+        }
+
+        const user = await this.UserService.delete(req.body.flag, req.params.id?.toString() ?? "");
+
+        return ApiResponse.success(res, "User deleted", user);
     }
 
 }

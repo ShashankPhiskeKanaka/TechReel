@@ -1,12 +1,12 @@
 import { errorMessage } from "../constants/error.messages.js";
 import type { ViewData } from "../dto/view.dto.js";
-import type { LikesRepository } from "../repository/likes.repository.js";
+import type { LikeRepository } from "../repository/like.repository.js";
 import type { ViewRepository } from "../repository/view.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 
 class InteractionService {
-    constructor (private LikeMethods: LikesRepository, private ViewMethods: ViewRepository) {}
+    constructor (private LikeMethods: LikeRepository, private ViewMethods: ViewRepository) {}
     /**
      * Creates a new like record for a specific reel.
      * 

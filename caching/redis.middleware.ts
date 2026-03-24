@@ -6,13 +6,13 @@ import { serverError } from "../utils/error.utils.js";
 class CacheMiddlewareClass {
     constructor ( private cacheClient: any ) {}
 
-    cacheRequest = (ttl: number) => {
+    cacheRequest = (ttl: number, type: "PUBLIC" | "PRIVATE" = "PUBLIC") => {
         return async (req: Request, res: Response, next: NextFunction) => {
             if(req.method === "GET") {
                 return next();
             }
 
-            const key = redisUtils.generateKey(req);
+            const key = redisUtils.generateKey(req, type);
 
             try{
                 const cachedResponse = await this.cacheClient.get(key);

@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import type { SkillService } from "../service/skills.service.js";
+import type { SkillService } from "../service/skill.service.js";
 import { ApiResponse } from "../utils/api.utils.js";
 import { logger } from "../utils/logger.js";
 

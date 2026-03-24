@@ -5,6 +5,13 @@ import { logger } from "../utils/logger.js";
 class SkillService {
     constructor (private SkillMethods: SkillRepository) {}
 
+    /**
+     * Persists new skill metadata and returns the created record.
+     * 
+     * @param {SkillData} data - The skill payload (name, category, etc.).
+     * @returns {Promise<skills>} The created skill record.
+     */
+
     create = async (data: SkillData) => {
         const skill = await this.SkillMethods.create(data);
 
@@ -14,6 +21,14 @@ class SkillService {
 
         return skill;
     }
+
+    /**
+     * Retrieves a specific skill by its ID.
+     * 
+     * @param {string} id - The unique Skill ID.
+     * @returns {Promise<skills>} The found skill record.
+     * @throws {ServerError} 404 if the record is missing or soft-deleted.
+     */
 
     get = async (id: string) => {
         const skill = await this.SkillMethods.get(id);
@@ -25,6 +40,14 @@ class SkillService {
         return skill;
     }
 
+    /**
+     * Updates an existing skill's metadata
+     * 
+     * @param {SkillData} data - Partial or full skill metadata to update.
+     * @param {string} id - The unique identifier of the skill.
+     * @returns {Promise<skills>} The updated skill record.
+     * @throws {ServerError} 404 if the skill does not exist or is soft-deleted.
+     */
     update = async (data: SkillData, id: string) => {
         const skill = await this.SkillMethods.update(data,id);
 
@@ -34,6 +57,14 @@ class SkillService {
 
         return skill;
     }
+
+    /**
+     * Removes a skill record using the specified deletion strategy.
+     * 
+     * @param {string} id - The unique Skill ID.
+     * @param {boolean} flag - True for permanent removal (hard), false for soft delete.
+     * @returns {Promise<skills>} The result of the deletion.
+     */
 
     delete = async (id: string, flag: boolean) => {
         let skill;

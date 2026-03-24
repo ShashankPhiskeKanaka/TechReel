@@ -1,8 +1,10 @@
 import { errorMessage } from "../constants/error.messages.js";
 import type { ChallengeOptionData } from "../dto/challenge.dto.js";
+import { Resource } from "../dto/redis.dto.js";
 import type { ChallengeOptionsRepository } from "../repository/challengeOptions.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
+import { redisUtils } from "../utils/redis.utils.js";
 
 class ChallengeOptionService {
     constructor ( private ChallengeOptionMethods: ChallengeOptionsRepository ) {}
@@ -21,6 +23,8 @@ class ChallengeOptionService {
         logger.info("Challenge option updated", {
             challengeOptionId: id
         });
+
+        await redisUtils.invalidateKey("PUBLIC", Resource.CHALLENGE, "UPDATE");
 
         return challengeOption;
     }

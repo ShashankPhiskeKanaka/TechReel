@@ -1,6 +1,6 @@
 import express from "express";
 import { ControllerFactory } from "../factory/general.factory.js";
-import { LikesRepository } from "../repository/likes.repository.js";
+import { LikeRepository } from "../repository/like.repository.js";
 import { InteractionService } from "../service/interaction.service.js";
 import { InteractionController } from "../controller/interaction.controller.js";
 import { authenticate, authenticateAdmin } from "../middleware/authenticate.middleware.js";
@@ -12,7 +12,7 @@ import { ViewRepository } from "../repository/view.repository.js";
 import { CreateViewRecord, DeleteViewRecord } from "../schema/interaction.schema.js";
 
 const router = express.Router();
-const controller = InteractionFactory.create(LikesRepository, ViewRepository, InteractionService, InteractionController);
+const controller = InteractionFactory.create(LikeRepository, ViewRepository, InteractionService, InteractionController);
 
 router.get("/like/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchLikeCount));
 router.get("/view/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchViews));

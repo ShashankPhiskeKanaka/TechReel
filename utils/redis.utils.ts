@@ -4,9 +4,9 @@ import { logger } from "./logger.js";
 import crypto from "crypto";
 
 class RedisUtilsClass {
-    generateKey = (req: Request): String => {
-        const userId = req.user?.id || "public";
-        const resource = req.baseUrl.split("/").pop() || "global";
+    generateKey = (req: Request, type: string): String => {
+        const userId = type == "PRIVATE" ? req.user?.id : "PUBLIC";
+        const resource = (req.baseUrl.split("/").pop() || "GLOBAL").toUpperCase();
 
         const sortedQuery = Object.keys(req.query).sort().map(key => `${key.toLocaleLowerCase()}=${String(req.query[key])}`).join("&");
 
@@ -15,38 +15,42 @@ class RedisUtilsClass {
         return `v1:cache:${userId}:${resource}:${path}:${sortedQuery ? "?" + sortedQuery : ""}`;
     }
 
-    invalidateKey = async (userId: string, resource: string) => {
-        const pattern = `v1:cache:${userId}:${resource}:*`;
+    invalidateKey = async (userId: string, resource: string, action: string) => {
+        const normalizedResource = resource.toUpperCase();
+        const pattern = `v1:cache:${userId}:${normalizedResource}:*`;
 
-        try{
-            if(!pattern.includes("*")) {
-                await client.del(pattern);
-                return;
-            }
-
-            const keys: string[] = [];
-
-            for await (const key of client.scanIterator({
-                MATCH: pattern,
-                COUNT: 100
-            })){
-                keys.push(...key);
-            }
-
-            if(keys.length > 0) {
-                await client.del(keys);
-            }
-
-            logger.info("Redis cache cleared", {
-                pattern
+        try {
+            const stream = client.scanStream({
+                match: pattern,
+                count: 100,
             });
-        }catch (err: any) {
+
+            stream.on("data", async (keys: string[]) => {
+                if (keys.length > 0) {
+                    await client.del(...keys);
+                }
+            });
+
+            stream.on("end", () => {
+                logger.info("Redis cache invalidation completed", {
+                    pattern,
+                    resource: normalizedResource,
+                    userId,
+                    action
+                });
+            });
+
+            stream.on("error", (err) => {
+                throw err;
+            });
+
+        } catch (err: any) {
             logger.error("Error while invalidating redis keys", {
                 message: err.message,
-                status: err.status
+                resource: normalizedResource
             });
-        } 
-    }
+        }
+    };
 
     generatePayloadHash = (req: Request) => {
         crypto.createHash('sha256').update(JSON.stringify({

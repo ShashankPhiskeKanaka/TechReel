@@ -148,7 +148,43 @@ class UserRepository {
             return profile;
     };
 
+    /**
+     * Marks an user as deleted by setting a timestamp without removing the record.
+     * 
+     * @param {string} id - The unique ID of the user.
+     * @returns {Promise<User>} The updated user record with the 'deletedAt' value.
+     * @note Filters for 'deletedAt: null' to prevent re-deleting already inactive users.
+     */
+    softDelete = async (id: string): Promise<User> => {
+        const user = await prisma.users.update({
+            where: {
+                id,
+                deletedAt: null
+            },
+            data: {
+                deletedAt: new Date()
+            }
+        });
 
+        return user;
+    }
+
+    /**
+     * Permanently removes an user record from the database.
+     * 
+     * @param {string} id - The unique ID of the user.
+     * @returns {Promise<User>} The deleted user record metadata.
+     * @throws {PrismaClientKnownRequestError} P2025 if the record does not exist.
+     */
+    hardDelete = async (id: string): Promise<User> => {
+        const user = await prisma.users.delete({
+            where: {
+                id
+            }
+        });
+
+        return user;
+    }
 }
 
 export { UserRepository }

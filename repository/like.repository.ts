@@ -1,7 +1,7 @@
 import { prisma } from "../db/prisma.js";
 import type { Like, LikeData } from "../dto/likes.dto.js";
 
-class LikesRepository {
+class LikeRepository {
 
     /**
      * Atomically creates a like record and increments the reel's like counter.
@@ -122,4 +122,4 @@ class LikesRepository {
     }
 }
 
-export { LikesRepository }
+export { LikeRepository }

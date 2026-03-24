@@ -2,14 +2,18 @@ import { createClient } from "redis";
 import { serverError } from "../utils/error.utils.js";
 import dotenv from "dotenv";
 import { logger } from "../utils/logger.js";
+import { Redis } from "ioredis";
 
 dotenv.config();
 
-const client = createClient({
-    url: process.env.REDIS_URL || ""
-});
+const redisOptions = {
+    maxRetriesPerRequest: null,
+    enableReadyCheck: false
+}
 
-client.on("error", (err) => {
+const client = new Redis(process.env.REDIS_URL || "", redisOptions);
+
+client.on("error", (err: any) => {
     logger.error(err.message);
 
     throw new serverError(err);

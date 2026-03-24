@@ -57,7 +57,7 @@ app.use("/v1/google/", GoogleRouter);
 app.use("/v1/github/", GithubRouter )
 
 app.use("/v1/user", UserRouter);
-app.use("/v1/auth/", AuthRouter);
+app.use("/v1/auth", AuthRouter);
 app.use("/v1/token", TokenRouter);
 app.use("/v1/skill", SkillRouter);
 app.use("/v1/tag", TagRouter);

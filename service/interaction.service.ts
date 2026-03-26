@@ -1,12 +1,14 @@
 import { errorMessage } from "../constants/error.messages.js";
 import type { ViewData } from "../dto/view.dto.js";
+import { interactionQueue } from "../jobs/queues/interaction.queue.js";
+import { addInteractionTask } from "../jobs/producers/interaction.producer.js";
 import type { LikeRepository } from "../repository/like.repository.js";
 import type { ViewRepository } from "../repository/view.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 
 class InteractionService {
-    constructor (private LikeMethods: LikeRepository, private ViewMethods: ViewRepository) {}
+    constructor(private LikeMethods: LikeRepository, private ViewMethods: ViewRepository) { }
     /**
      * Creates a new like record for a specific reel.
      * 
@@ -16,15 +18,18 @@ class InteractionService {
      * @throws {Error} If the database operation fails (e.g., duplicate like if unique constraint exists).
      */
     likeReel = async (userId: string, reelId: string) => {
-        const like = await this.LikeMethods.create({ userId, reelId });
 
-        logger.info("Reel like record created", {
-            likeId: like.id,
+        await addInteractionTask({ reelId, userId, process: "INCREMENT" }, "LIKE");
+
+        logger.info("Reel like record create job added to the queue", {
             reelId,
-            userId
+            userId,
+            type: "LIKE",
+            process: "INCREMENT"
         });
 
-        return like;
+        return;
+
     }
 
     /**
@@ -36,14 +41,17 @@ class InteractionService {
      * @throws {Error} If the record does not exist or the database operation fails.
      */
     unlikeReel = async (userId: string, reelId: string) => {
-        const like = await this.LikeMethods.delete(userId, reelId);
 
-        logger.info("Reel like record deleted", {
+        await addInteractionTask({ reelId, userId, process: "DECREMENT" }, "LIKE");
+
+        logger.info("Reel like record delete job added to the queue", {
             reelId,
-            userId
+            userId,
+            type: "LIKE",
+            process: "DECREMENT"
         });
 
-        return like;
+        return;
     }
 
     /**
@@ -57,7 +65,7 @@ class InteractionService {
     fetchLikeRecord = async (userId: string, reelId: string) => {
         const like = await this.LikeMethods.fetch(reelId, userId);
 
-        if(!like.id) {
+        if (!like.id) {
             logger.warn("No like record found", {
                 reelId,
                 userId
@@ -86,7 +94,7 @@ class InteractionService {
     fetchLikeRecords = async (reelId: string) => {
         const likes = await this.LikeMethods.fetchLikesRecords(reelId);
 
-        if(likes.length == 0) {
+        if (likes.length == 0) {
             logger.warn("No like records found", {
                 reelId
             });
@@ -126,15 +134,17 @@ class InteractionService {
      * @note This handles both the detailed history log and the denormalized counter increment.
      */
     createViewRecord = async (data: ViewData) => {
-        const view = await this.ViewMethods.createViewRecord(data);
 
-        logger.info("New view record created", {
-            viewId: view.id,
+        await addInteractionTask({ ...data, process: "INCREMENT" }, "VIEW");
+
+        logger.info("New view record create job added to the queue", {
             reelId: data.reelId,
-            userId: data.userId
+            userId: data.userId,
+            type: "VIEw",
+            process: "INCREMENT"
         });
 
-        return view;
+        return;
     }
 
     /**
@@ -198,7 +208,7 @@ class InteractionService {
     fetchViewRecord = async (id: string) => {
         const view = await this.ViewMethods.fetchViewRecord(id);
 
-        if(!view.id) {
+        if (!view.id) {
             logger.warn("No view record found", {
                 viewId: id
             });
@@ -211,6 +221,19 @@ class InteractionService {
         });
 
         return view;
+    }
+
+    updateViewRecord = async (data: ViewData) => {
+        await addInteractionTask({ ...data, process: "REWATCHED" }, "VIEW");
+
+        logger.info("View record update job added to the queue", {
+            userId: data.userId,
+            reelId: data.reelId,
+            type: "VIEW",
+            process: "REWATCHED"
+        });
+
+        return;
     }
 
     /**

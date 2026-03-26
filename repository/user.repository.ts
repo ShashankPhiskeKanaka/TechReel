@@ -1,10 +1,12 @@
 import { errorMessage } from "../constants/error.messages.js";
 import { prisma } from "../db/prisma.js"
+import { PaginationConstants, type PaginationData } from "../dto/pagination.dto.js";
 import type { User, UserData } from "../dto/user.dto.js";
 import type { UserProfile, UserProfileData } from "../dto/userProfile.dto.js";
 import { Role } from "../generated/prisma/enums.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
+import { serverUtils } from "../utils/server.utils.js";
 
 class UserRepository {
 
@@ -46,7 +48,7 @@ class UserRepository {
      * @param username 
      * @returns 
      */
-    getByUsername = async (username: string) : Promise<User> => {
+    fetchByUsername = async (username: string) : Promise<User> => {
         const user = await prisma.users.findMany({
             where : {
                 username: username,
@@ -63,7 +65,7 @@ class UserRepository {
      * @param id 
      * @returns 
      */
-    getById = async (id: string) : Promise<User> => {
+    fetchById = async (id: string) : Promise<User> => {
         const user = await prisma.users.findMany({
             where: {
                 id: id,
@@ -75,6 +77,51 @@ class UserRepository {
         });
 
         return user[0] ?? <User>{};
+    }
+
+    /**
+     * Retrieves a paginated list of active users with optional search and filtering.
+     * Searches across both username and email using case-insensitive matching.
+     * @param {PaginationData} data - Pagination settings, including limit, sort order, and search string.
+     * @param {Object} filters - Additional criteria to filter the user results.
+     * @returns {Promise<User[]>} A list of users matching the search and filter conditions.
+     */
+    fetchAll = async (data: PaginationData, filters: {}): Promise<User[]> => {
+
+        let where: any = {
+            deletedAt: null,
+            AND: [
+                ...(data.search ? [
+                    {
+                        OR: [
+                            {
+                                username: {
+                                    contains: data.search,
+                                    case: 'insensitive'
+                                },
+                                email: {
+                                    contains: data.search,
+                                    case: 'insensitive'
+                                }
+                            }
+                        ]
+                    }
+                ] : [])
+            ]
+        }
+
+        where = serverUtils.buildWhere(where, filters, data);
+
+        const users = await prisma.users.findMany({
+            take: data.limit ?? PaginationConstants.limit,
+            where,
+            orderBy: [
+                { createdAt: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' },
+                { id: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' }
+            ]
+        });
+
+        return users;
     }
 
     /**

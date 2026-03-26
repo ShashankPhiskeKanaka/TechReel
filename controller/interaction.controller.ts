@@ -20,9 +20,9 @@ class InteractionController {
             ip: req.ip
         });
 
-        const like = await this.InteractionService.likeReel(req.user?.id ?? "", req.params.id?.toString() ?? "");
+        await this.InteractionService.likeReel(req.user?.id ?? "", req.params.id?.toString() ?? "");
 
-        return ApiResponse.success(res, "Reel liked", like);
+        return ApiResponse.success(res, "Reel liked");
     }
 
     /**
@@ -39,9 +39,9 @@ class InteractionController {
             ip: req.ip
         });
 
-        const like = await this.InteractionService.unlikeReel(req.user?.id ?? "", req.params.id?.toString() ?? "");
+        await this.InteractionService.unlikeReel(req.user?.id ?? "", req.params.id?.toString() ?? "");
 
-        return ApiResponse.success(res, "Reel unliked", like);
+        return ApiResponse.success(res, "Reel unliked");
     }
 
     /**
@@ -95,12 +95,32 @@ class InteractionController {
             ip: req.ip
         });
 
-        const view = await this.InteractionService.createViewRecord({
+        await this.InteractionService.createViewRecord({
             ...req.body,
             userId: req.user?.id ?? ""
         });
 
-        return ApiResponse.success(res, "View record created", view);
+        return ApiResponse.success(res, "View record created");
+    }
+
+    /**
+     * Handles the HTTP request to update a reel view record.
+     * 
+     * @param {Request} req - Express request; expects `reelId` in body and `userId` from session.
+     * @param {Response} res - Express response; returns a 200 status once the job is queued.
+     * @returns {Promise<Response>} A standardized API response confirming the request was received.
+     */
+
+    updateViewRecord = async (req: Request, res: Response) => {
+        logger.http("View record update request received", {
+            ip: req.ip,
+            userId: req.user?.id,
+            reelId: req.body.reelId
+        });
+
+        await this.InteractionService.updateViewRecord({...req.body, userId: req.user?.id ?? ""});
+
+        return ApiResponse.success(res, "View record updated");
     }
 
     /**

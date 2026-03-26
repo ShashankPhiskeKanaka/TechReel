@@ -87,3 +87,4 @@
 {"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-24 11:48:59"}
 {"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'flag')","timestamp":"2026-03-24 11:58:07"}
 {"ip":"::1","level":"error","message":"\nInvalid `prisma.challenges.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\challenge.repository.ts:69:51\n\n  66 }\n  67 \n  68 softDelete = async (id: string): Promise<Challenge> => {\n→ 69     const challenge = await prisma.challenges.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-24 11:59:08"}
+{"level":"error","message":"read ECONNRESET","timestamp":"2026-03-25 11:11:26"}

@@ -22,6 +22,7 @@ interface SkillRoadmap {
     title: string
     description: string
     createdAt: Date
+    tokenId: string
 }
 
 interface SkillRoadmapData {
@@ -29,6 +30,7 @@ interface SkillRoadmapData {
     difficultyLevel: Difficulty
     title: string
     description: string
+    tokenId: string
 }
 
 interface SkillRoadmapStep {

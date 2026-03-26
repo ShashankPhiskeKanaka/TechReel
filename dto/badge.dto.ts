@@ -26,7 +26,7 @@ interface UserBadge {
 
 interface UserBadgeData {
     userId: string
-    badgeId: string
+    skillId: string
 }
 
 export type { Badge, BadgeData, UserBadge, UserBadgeData };

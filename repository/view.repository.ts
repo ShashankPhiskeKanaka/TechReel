@@ -1,5 +1,7 @@
 import { prisma } from "../db/prisma.js";
+import { PaginationConstants, type PaginationData } from "../dto/pagination.dto.js";
 import type { View, ViewData } from "../dto/view.dto.js";
+import { serverUtils } from "../utils/server.utils.js";
 
 class ViewRepository {
 
@@ -51,32 +53,29 @@ class ViewRepository {
     }
 
     /**
-     * Retrieves the complete viewing history for a specific reel.
-     * 
-     * @param {string} reelId - The unique identifier of the reel (UUID).
-     * @returns {Promise<View[]>} An array of view records, including durations and completion status.
+     * Retrieves a paginated list of reel views with optional filtering by user or reel.
+     * @param {PaginationData} data - Pagination and sorting settings.
+     * @param {Object} filters - Dynamic filters processed by serverUtils.
+     * @param {string} [userId] - Optional filter for views by a specific user.
+     * @param {string} [reelId] - Optional filter for views on a specific reel.
+     * @returns {Promise<View[]>} A list of matching reel view records.
      */
-    fetchViewRecordsByReel = async (reelId: string): Promise<View[]> => {
-        const viewRecords = await prisma.reel_views.findMany({
-            where: {
-                reelId
-            }
-        });
+    fetchAll = async (data: PaginationData, filters: {}, userId?: string, reelId?: string): Promise<View[]> => {
+        let where: any = {
+            ...(reelId ? {reelId} : {}),
+            ...(userId ? {userId} : {}),
+            AND: []
+        }
 
-        return viewRecords;
-    }
+        where = serverUtils.buildWhere(where, filters, data);
 
-    /**
-     * Retrieves the complete viewing history for a specific user.
-     * 
-     * @param {string} userId - The unique identifier of the user (UUID).
-     * @returns {Promise<View[]>} An array of view records, including durations and completion status.
-     */
-    fetchViewRecordsByUser = async (userId: string): Promise<View[]> => {
         const viewRecords = await prisma.reel_views.findMany({
-            where: {
-                userId
-            }
+            take: data.limit ?? PaginationConstants.limit,
+            where,
+            orderBy: [
+                { createdAt: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' },
+                { id: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' }
+            ]
         });
 
         return viewRecords;

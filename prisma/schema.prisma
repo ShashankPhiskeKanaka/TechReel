@@ -47,6 +47,8 @@ model users {
   badges       user_badges[]
   challengeSubmissions challenge_submissions[]
 
+  userRoadmapSteps user_roadmap_steps[]
+
   @@map("users")
   @@index([id, createdAt])
 }
@@ -97,6 +99,11 @@ model refresh_tokens {
   @@index([userId])
 }
 
+enum TokenType {
+  PRIMARY
+  EXCLUSIVE
+}
+
 model tokens {
   id        String    @id @default(uuid()) @db.Uuid
   name      String    @unique
@@ -106,9 +113,10 @@ model tokens {
 
   tokenLedger      token_ledger[]
   userTokenBalance user_token_balance[]
+  skillRoadmap skill_roadmaps[]
 
   @@map("tokens")
-  @@index([id, createdAt])
+  @@index([id, createdAt]) 
 }
 
 model skills {
@@ -271,14 +279,17 @@ model user_skills {
 model skill_roadmaps {
   id              String   @id @default(uuid()) @db.Uuid
   skillId         String   @map("skill_id") @db.Uuid
+  tokenId         String   @map("token_id") @db.Uuid
   difficultyLevel levels   @map("difficulty_level")
   title           String
   description     String
   createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz
 
   skill skills @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  token tokens @relation(fields: [tokenId], references: [id])
 
   roadmapSteps roadmap_steps[]
+  userRoadmapSteps user_roadmap_steps[]
 
   @@map("skill_roadmaps")
   @@index([skillId])
@@ -296,6 +307,7 @@ model reel_views {
   reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
 
   @@map("reel_views")
+  @@unique([reelId, userId])
   @@index([id, createdAt])
 }
 
@@ -324,12 +336,22 @@ model reel_saves {
   reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
 
   @@map("reel_saves")
+  @@unique([reelId, userId])
   @@index([folderName])
   @@index([id, savedAt])
 }
 
+enum ReportReason {
+  HARRASSMENT
+  HATESPEECH
+  SCAM
+  VIOLENCE
+  MISINFORMATION
+  NSFW
+  SPAM
+}
 
-enum reportStatus {
+enum ReportStatus {
   PENDING
   APPROVED 
   REJECTED
@@ -338,8 +360,8 @@ model reel_reports {
   id        String       @id @default(uuid()) @db.Uuid
   userId    String       @map("user_id") @db.Uuid
   reelId    String       @map("reel_id") @db.Uuid
-  reason    String
-  status    reportStatus
+  reason    ReportReason
+  status    ReportStatus
   createdAt DateTime     @default(now()) @map("created_at") @db.Timestamptz
 
   user users @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -416,11 +438,31 @@ model roadmap_steps {
   stepOrder   Int     @map("step_order")
   title       String
   description String?
+  createdAt   DateTime @default(now()) @db.Timestamptz
 
   roadmap             skill_roadmaps         @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
   challengeSubmissions challenge_submissions[]
+  userRoadmapSteps user_roadmap_steps[]
 
   @@map("roadmap_steps")
+}
+
+model user_roadmap_steps {
+  id String @id @default(uuid()) @db.Uuid
+  roadmapStepId String @map("roadmap_step_id") @db.Uuid
+  userId String @db.Uuid @map("user_id")
+  roadmapId String @db.Uuid @map("roadmap_id")
+  stepOrder Int @map("step_order")
+  createdAt DateTime @default(now()) @db.Timestamptz @map("created_at")
+
+  roadmapStep roadmap_steps @relation(fields: [roadmapStepId], references: [id], onDelete: Cascade)
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roadmap skill_roadmaps @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, roadmapStepId])
+  @@index([userId, roadmapId, createdAt])
+  @@index([userId, createdAt])
+  @@map("user_roadmap_steps")
 }
 
 model challenge_submissions {

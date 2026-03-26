@@ -7,6 +7,25 @@ class ChallengeController {
     constructor ( private ChallengeService: ChallengeService ) {}
 
     /**
+     * Handles HTTP request to enqueue a new challenge submission.
+     * 
+     * @param {Request} req - Express request; expects `challengeId` and `answer` in body.
+     * @param {Response} res - Express response; confirms task has been queued.
+     * @returns {Promise<Response>} 200 OK with confirmation message.
+     */
+    createChallengeSubmissionJob = async (req: Request, res: Response) => {
+        logger.http("Challenge submit request recieved", {
+            ip: req.ip,
+            userId: req.user?.id,
+            challengeId: req.body.challengeId
+        });
+
+        await this.ChallengeService.createChallengeSubmissionJob({ ...req.body, userId: req.user?.id });
+
+        return ApiResponse.success(res, "Challenge submitted");
+    }
+
+    /**
      * Handles the HTTP request to create a new challenge.
      * 
      * @param {Request} req - Express request; expects challenge metadata and options in the body.

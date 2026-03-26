@@ -30,14 +30,30 @@ class ChallengeOptionsRepository {
      * @note Uses findFirst for the primary key lookup.
      */
     fetch = async (id: string): Promise<ChallengeOption> => {
-        const challenge = await prisma.challenge_options.findFirst({
+        const challengeOption = await prisma.challenge_options.findFirst({
             where: {
                 id
             }
         });
 
-        return challenge ?? <ChallengeOption>{};
+        return challengeOption ?? <ChallengeOption>{};
     }
+
+    /**
+     * Retrieves all options associated with a specific challenge.
+     * @param {string} challengeId - The unique identifier of the challenge.
+     * @returns {Promise<ChallengeOption[]>} A list of options belonging to the challenge.
+     */
+    fetchAll = async (challengeId: string): Promise<ChallengeOption[]> => {
+        const challengeOptions = await prisma.challenge_options.findMany({
+            where: {
+                challengeId
+            }
+        });
+
+        return challengeOptions
+    }
+
 }
 
 export { ChallengeOptionsRepository }

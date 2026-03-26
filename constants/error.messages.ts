@@ -26,6 +26,10 @@ const errorMessage = {
     NOTBALANCE : {
         status : 400,
         message : "Not enough balance"
+    },
+    EXHAUSTED: {
+        status: 400,
+        message: "Retries exhausted"
     }
 }
 

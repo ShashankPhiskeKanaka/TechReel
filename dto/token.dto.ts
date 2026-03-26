@@ -25,10 +25,10 @@ interface TokenLedger {
 
 interface TokenLedgerData {
     userId: string
-    tokenId: string
     amount: number
     source: string
     type: TransactionType
+    tokenId: string
 }
 
 interface UserToken {

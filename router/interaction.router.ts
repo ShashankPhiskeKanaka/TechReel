@@ -26,6 +26,7 @@ router.post("/view", errorHandler.controllerWrapper(validate(CreateViewRecord)),
 router.get("/view-record/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchViewRecord));
 router.get("/view-reel/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchViewRecordsByReel));
 router.get("/view-user", errorHandler.controllerWrapper(controller.fetchViewRecordsByUser));
+router.patch("/view", errorHandler.controllerWrapper(validate(CreateViewRecord)), errorHandler.controllerWrapper(controller.updateViewRecord));
 
 router.use(authenticateAdmin);
 router.delete("/view", errorHandler.controllerWrapper(validate(DeleteViewRecord)), errorHandler.controllerWrapper(controller.deleteView))

@@ -24,6 +24,8 @@ import { ReelRouter } from "./router/reel.router.js";
 import { InteractionRouter } from "./router/interaction.router.js";
 import { ChallengeRouter } from "./router/challenge.router.js";
 import { ChallengeOptionRouter } from "./router/challengeOption.router.js";
+import { interactionWorker } from "./jobs/workers/interaction.worker.js";
+import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
 dotenv.config();
 
 const app = express();
@@ -31,11 +33,11 @@ const app = express();
 configurePassport();
 
 const corsOptions = {
-  // Allows any origin while still supporting credentials/cookies
-  origin: "*",
-  methods: 'GET,POST,PUT,PATCH,DELETE',
-  credentials: true,
-  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+    // Allows any origin while still supporting credentials/cookies
+    origin: "*",
+    methods: 'GET,POST,PUT,PATCH,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -48,13 +50,13 @@ app.use(passport.session());
 connectPrisma();
 
 const stream = {
-    write : (message: string) => logger.info(message.trim())
+    write: (message: string) => logger.info(message.trim())
 }
 
-app.use(morgan(`:method :url :response-time ms`, {stream}));
+app.use(morgan(`:method :url :response-time ms`, { stream }));
 
 app.use("/v1/google/", GoogleRouter);
-app.use("/v1/github/", GithubRouter )
+app.use("/v1/github/", GithubRouter)
 
 app.use("/v1/user", UserRouter);
 app.use("/v1/auth", AuthRouter);

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "roadmap_steps" ADD COLUMN     "createdAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP;

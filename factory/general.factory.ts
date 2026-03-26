@@ -6,6 +6,13 @@ class ControllerFactory {
 
         return controller;
     }
+
+    static createService (Repository: any, Service: any) {
+        const repo = new Repository();
+        const service = new Service(repo);
+
+        return service;
+    }
 }
 
 export { ControllerFactory }

@@ -1,5 +1,7 @@
 import { prisma } from "../db/prisma.js";
-import type { Like, LikeData } from "../dto/likes.dto.js";
+import type { Like, LikeData } from "../dto/like.dto.js";
+import { PaginationConstants, type PaginationData } from "../dto/pagination.dto.js";
+import { serverUtils } from "../utils/server.utils.js";
 
 class LikeRepository {
 
@@ -51,6 +53,40 @@ class LikeRepository {
     }
 
     /**
+     * Retrieves a paginated list of reel likes with flexible scoping.
+     * 
+     * @description Supports multi-dimensional filtering by user, reel, or both. 
+     * Implements keyset pagination (id + createdAt) to ensure stable ordering 
+     * across high-volume interaction data.
+     * 
+     * @param {PaginationData} data - Pagination metadata including limit, sort, and cursors.
+     * @param {string} [userId] - Optional ID to filter likes by a specific user.
+     * @param {string} [reelId] - Optional ID to filter likes for a specific reel.
+     * @returns {Promise<Like[]>} A collection of like records matching the criteria.
+     */
+    fetchLikes = async (data: PaginationData, filters: {}, userId?: string, reelId?: string): Promise<Like[]> => {
+
+        let where: any = {
+            ...(userId ? { userId } : {}),
+            ...(reelId ? { reelId } : {}),
+            AND:[]
+        }
+
+        where = serverUtils.buildWhere(where, filters, data);
+
+        const likes = await prisma.reel_likes.findMany({
+            take: data.limit ?? PaginationConstants.limit,
+            where,
+            orderBy: [
+                { id: data.sort as 'asc' | 'desc' },
+                { createdAt: data.sort as 'asc' | 'desc' }
+            ]
+        });
+
+        return likes;
+    }
+
+    /**
      * Retrieves the denormalized likes count from the reels table.
      * 
      * @param {string} reelId - The unique identifier of the reel.
@@ -69,23 +105,6 @@ class LikeRepository {
         });
 
         return reel?.likes ?? 0;
-    }
-
-    /**
-     * Retrieves all individual like records associated with a specific reel.
-     * 
-     * @param {string} reelId - The unique identifier of the reel.
-     * @returns {Promise<reel_likes[]>} An array of like records containing user IDs and timestamps.
-     * @note Use this for "liked by" lists; for simple counts, use the denormalized column instead.
-     */
-    fetchLikesRecords = async (reelId: string) => {
-        const likes = await prisma.reel_likes.findMany({
-            where: {
-                reelId
-            }
-        });
-
-        return likes;
     }
 
     /**

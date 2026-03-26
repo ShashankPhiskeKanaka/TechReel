@@ -1,6 +1,8 @@
 import { prisma } from "../db/prisma.js";
 import type { Challenge, ChallengeData } from "../dto/challenge.dto.js";
+import type { PaginationData } from "../dto/pagination.dto.js";
 import { challenge_type } from "../generated/prisma/enums.js";
+import { serverUtils } from "../utils/server.utils.js";
 
 class ChallengeRepository {
 
@@ -40,7 +42,7 @@ class ChallengeRepository {
      * @returns {Promise<Challenge>} The challenge object with nested MCQ options, or an empty object if not found.
      * @note Excludes records where 'deletedAt' is set (soft-delete) and eagerly loads 'challengeOptions'.
      */
-    find = async (id: string) => {
+    fetch = async (id: string) => {
         const challenge = await prisma.challenges.findFirst({
             where: {
                 id,
@@ -55,13 +57,56 @@ class ChallengeRepository {
     }
 
     /**
+     * Retrieves a paginated list of challenges with search and cursor-based navigation.
+     * 
+     * @description Utilizes keyset pagination via a composite cursor (id + createdAt) 
+     * to maintain high performance and stable sort orders across large datasets.
+     * 
+     * @param {PaginationData} data - Filtering and pagination parameters.
+     * @returns {Promise<Challenge[]>} A collection of challenge records matching the criteria.
+     */
+    fetchAll = async (data: PaginationData, filters: {}): Promise<Challenge[]> => {
+        let where: any = {
+            deletedAt: null,
+            AND: [
+                ...(data.search ? [
+                    {
+                        OR: [
+                            {
+                                question: {
+                                    contains: data.search,
+                                    mode: 'insensitive'
+                                }
+                            }
+                        ]
+                    }
+                ] : [])
+            ]
+        }
+
+        where = serverUtils.buildWhere(where, filters, data);
+
+        const challenges = await prisma.challenges.findMany({
+            take: data.limit ?? 10,
+            where,
+            orderBy: [
+                { createdAt: data.sort as 'asc' | 'desc' },
+                { id: data.sort as 'asc' | 'desc' }
+            ]
+        });
+
+        return challenges;
+    }
+
+
+    /**
      * Retrieves the active challenge associated with a specific reel.
      * 
      * @param {string} reelId - The unique identifier of the parent reel.
      * @returns {Promise<challenges | null>} The challenge record with nested options, or null if not found.
      * @note Filters out soft-deleted records and performs an eager load of 'challengeOptions'.
      */
-    findByReel = async (reelId: string) => {
+    fetchByReel = async (reelId: string) => {
         const challenge = await prisma.challenges.findFirst({
             where: {
                 reelId,

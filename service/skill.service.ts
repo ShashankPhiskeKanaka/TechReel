@@ -1,9 +1,9 @@
-import type { SkillData } from "../dto/skills.dto.js";
+import type { SkillData } from "../dto/skill.dto.js";
 import type { SkillRepository } from "../repository/skill.repository.js";
 import { logger } from "../utils/logger.js";
 
 class SkillService {
-    constructor (private SkillMethods: SkillRepository) {}
+    constructor(private SkillMethods: SkillRepository) { }
 
     /**
      * Persists new skill metadata and returns the created record.
@@ -49,7 +49,7 @@ class SkillService {
      * @throws {ServerError} 404 if the skill does not exist or is soft-deleted.
      */
     update = async (data: SkillData, id: string) => {
-        const skill = await this.SkillMethods.update(data,id);
+        const skill = await this.SkillMethods.update(data, id);
 
         logger.info("Skill updated", {
             skillId: skill.id
@@ -68,12 +68,12 @@ class SkillService {
 
     delete = async (id: string, flag: boolean) => {
         let skill;
-        if(flag) {
+        if (flag) {
             skill = await this.SkillMethods.hardDelete(id);
             logger.info("Skill hard deleted", {
                 skillId: id
             });
-        }else{
+        } else {
             skill = await this.SkillMethods.softDelete(id);
             logger.info("Skill soft deleted", {
                 skillId: id

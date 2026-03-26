@@ -19,15 +19,6 @@ client.on("error", (err: any) => {
     throw new serverError(err);
 });
 
-try{
-    await client.connect();
-}
-catch (err: any) {
-    logger.error("Error while connecting to redis");
-
-    throw new serverError(err);
-}
-
 const pubClient = client.duplicate();
 const subClient = client.duplicate();
 

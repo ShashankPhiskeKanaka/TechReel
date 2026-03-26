@@ -1,5 +1,7 @@
 import { prisma } from "../db/prisma.js"
-import type { SkillRoadmapStep, SkillRoadmapStepData } from "../dto/skills.dto.js"
+import { PaginationConstants, type PaginationData } from "../dto/pagination.dto.js";
+import type { SkillRoadmapStep, SkillRoadmapStepData } from "../dto/skill.dto.js"
+import { serverUtils } from "../utils/server.utils.js";
 
 class SkillsRoadmapStepsRepository {
     create = async (data: SkillRoadmapStepData): Promise<SkillRoadmapStep> => {
@@ -20,24 +22,37 @@ class SkillsRoadmapStepsRepository {
         return step ?? <SkillRoadmapStep>{};
     }
 
-    fetchByRoadmap = async (id: string): Promise<SkillRoadmapStep[]> => {
-        const steps = await prisma.roadmap_steps.findMany({
-            where: {
-                roadmapId: id
-            }
+    fetchAll = async (data: PaginationData, filters: {}): Promise<SkillRoadmapStep[]> => {
+
+        let where: any = {
+            AND: [
+                ...(data.search ? [
+                    {
+                        OR: [
+                            {
+                                title: {
+                                    contains: data.search,
+                                    mode: 'insensitive'
+                                }
+                            }
+                        ]
+                    }
+                ] : [])
+            ]
+        }
+
+        where = serverUtils.buildWhere(where, filters, data);
+
+        const skillRoadmapSteps = prisma.roadmap_steps.findMany({
+            take: data.limit ?? PaginationConstants.limit,
+            where,
+            orderBy: [
+                {createdAt: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc'},
+                {id: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' }
+            ]
         });
 
-        return steps;
-    }
-
-    fetchByReel = async (id: string): Promise<SkillRoadmapStep> => {
-        const step = await prisma.roadmap_steps.findFirst({
-            where: {
-                reelId: id
-            }
-        });
-
-        return step ?? <SkillRoadmapStep>{};
+        return skillRoadmapSteps;
     }
 
     update = async (data: any, id: string): Promise<SkillRoadmapStep> => {

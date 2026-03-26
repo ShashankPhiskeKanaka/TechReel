@@ -1,13 +1,31 @@
 import { errorMessage } from "../constants/error.messages.js";
-import type { ChallengeData } from "../dto/challenge.dto.js";
+import type { ChallengeData, ChallengeSubmissionData } from "../dto/challenge.dto.js";
 import type { ChallengeRepository } from "../repository/challenge.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 import { redisUtils } from "../utils/redis.utils.js";
 import { Action, Resource } from "../dto/redis.dto.js";
+import { addGamificationTask } from "../jobs/producers/gamification.producer.js";
 
 class ChallengeService {
     constructor (private ChallengeMethods: ChallengeRepository) {}
+
+    /**
+     * Dispatches a challenge submission task to the background worker.
+     * 
+     * @param {ChallengeSubmissionData} data - The payload containing userId, challengeId, and submission details.
+     * @returns {Promise<void>} Resolves as soon as the job is successfully stored in Redis.
+     */
+    createChallengeSubmissionJob = async (data: ChallengeSubmissionData) => {
+        await addGamificationTask(data);
+
+        logger.info("Challenge submission job added to queue", {
+            userId: data.userId,
+            challengeId: data.challengeId
+        });
+
+        return;
+    }
 
     /**
      * Orchestrates the creation of a new challenge and its associated options.

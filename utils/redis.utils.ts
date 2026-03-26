@@ -2,9 +2,10 @@ import type { Request } from "express";
 import { client } from "../caching/redis.client.js";
 import { logger } from "./logger.js";
 import crypto from "crypto";
+import { serverError } from "./error.utils.js";
 
 class RedisUtilsClass {
-    generateKey = (req: Request, type: string): String => {
+    generateKey = (req: Request, type: string): string => {
         const userId = type == "PRIVATE" ? req.user?.id : "PUBLIC";
         const resource = (req.baseUrl.split("/").pop() || "GLOBAL").toUpperCase();
 
@@ -58,6 +59,31 @@ class RedisUtilsClass {
             url: req.originalUrl,
             method: req.method
         })).digest("hex");
+    }
+
+    updateLike = async (req: Request, process: "INCREMENT" | "DECREMENT") => {
+        try {
+            const key = this.generateKey(req, "PUBLIC");
+            const exists = await client.exists(key);
+            if(exists){
+                const value = process == "INCREMENT" ? 1 : -1;
+
+                await client.call(
+                    `JSON.NUMINCRBY`,
+                    key,
+                    '$.likes',
+                    value
+                );
+
+                logger.info(`Cache updated for reel`, {
+                    cacheKey: key,
+                    type: "LIKE",
+                    process
+                });
+            }
+        }catch (err: any) {
+            throw new serverError(err);
+        }
     }
 }
 

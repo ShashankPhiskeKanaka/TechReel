@@ -17,6 +17,8 @@ router.use(authenticate);
 router.get("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetch));
 router.get("/reel/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchByReel));
 
+router.post("/submit", errorHandler.controllerWrapper(controller.createChallengeSubmissionJob));
+
 router.use(authenticateAdmin);
 router.post("/", errorHandler.controllerWrapper(validate(ChallengeData)), errorHandler.controllerWrapper(controller.create));
 router.patch("/:id", errorHandler.controllerWrapper(validate(ChallengeUpdateData)), errorHandler.controllerWrapper(controller.update));

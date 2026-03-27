@@ -1,10 +1,15 @@
 import { errorMessage } from "../constants/error.messages.js";
+import { ServiceMessages } from "../constants/service.messages.js";
+import type { PaginationData } from "../dto/pagination.dto.js";
 import { Action, Resource } from "../dto/redis.dto.js";
+import type { UserUpdateData } from "../dto/user.dto.js";
 import { authUtils } from "../factory/auth.factory.js";
 import type { UserRepository } from "../repository/user.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 import { redisUtils } from "../utils/redis.utils.js";
+
+const serviceMessages = new ServiceMessages("User");
 
 class UserService {
     constructor(private UserMethods: UserRepository) {}
@@ -25,7 +30,7 @@ class UserService {
 
         const emailToken = authUtils.generateForgetToken(user.id);
 
-        logger.info("User created successfully", {
+        logger.info(serviceMessages.CREATE.message, {
             userId: user.id,
             role: user.role
         });
@@ -59,40 +64,43 @@ class UserService {
      * @param id 
      * @returns 
      */
-    getById = async (id: string) => {
-        const user = await this.UserMethods.getById(id);
+    fetch = async (id: string) => {
+        const user = await this.UserMethods.fetch(id);
         if(!user.id){
-            logger.warn("User not found", {
+            logger.warn(serviceMessages.FETCH.error, {
                 userId: id
             });
             throw new serverError(errorMessage.NOTFOUND);
         }
 
-        logger.info("User fetched successfully using Id", {
+        logger.info(serviceMessages.FETCH.message, {
             userId: id
         });
 
         return user;
     }
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]) => {
+        const records = await this.UserMethods.fetchAll(data, filters, searchFields);
 
-    /**
-     * updates profile data
-     * 
-     * @param id 
-     * @param data 
-     * @returns 
-     */
-    updateProfile = async ( id: string, data: any ) => {
-        const profile = await this.UserMethods.updateProfile(id, data);
+        if (records.length == 0) {
+            logger.warn(`No user records found`);
 
-        logger.info("User profile updated successfully", {
-            userId: id,
-            profileId: profile.id
+            throw new serverError(errorMessage.NOTFOUND);
+        }
+
+        logger.info(`User records fetched`);
+
+        return records;
+    }
+
+    update = async (data: UserUpdateData, id: string) => {
+        const user = await this.UserMethods.update(data, id);
+
+        logger.info("User record updated", {
+            userId: id
         });
 
-        await redisUtils.invalidateKey(id, Resource.USER, Action.UPDATE);
-
-        return profile;
+        return user;
     }
 
     /**

@@ -1,20 +1,27 @@
 import express from "express";
-import { UserFactory } from "../factory/user.factory.js";
 import { errorHandler } from "../factory/auth.factory.js";
-import { authenticate } from "../middleware/authenticate.middleware.js";
+import { authenticate, authenticateAdmin } from "../middleware/authenticate.middleware.js";
 import { validate } from "../middleware/zod.middleware.js";
-import { UserSchema, VerifyMailSchema } from "../schema/user.schema.js";
-import { UserProfileSchema } from "../schema/userProfile.schema.js";
-import { idempotencyMiddleware } from "../middleware/idempotency.middleware.js";
+import { UpdateUserData, UserSchema, VerifyMailSchema } from "../schema/user.schema.js";
+import { ControllerFactory } from "../factory/general.factory.js";
+import { UserRepository } from "../repository/user.repository.js";
+import { UserService } from "../service/user.service.js";
+import { UserController } from "../controller/user.controller.js";
+import { DeleteData } from "../schema/general.schema.js";
 
 const router = express.Router();
-const controller = UserFactory.create();
+const controller = ControllerFactory.create(UserRepository, UserService, UserController);
 
 router.post("/", errorHandler.controllerWrapper(validate(UserSchema)), errorHandler.controllerWrapper(controller.create));
 router.get("/:token", errorHandler.controllerWrapper(validate(VerifyMailSchema)), errorHandler.controllerWrapper(controller.verifyEmail));
 
+router.use(authenticate);
 // router.post("/info", errorHandler.controllerWrapper(controller.));
-router.get("/", errorHandler.controllerWrapper(authenticate), errorHandler.controllerWrapper(controller.getById));
-router.patch("/", errorHandler.controllerWrapper(authenticate), idempotencyMiddleware, errorHandler.controllerWrapper(validate(UserProfileSchema)), errorHandler.controllerWrapper(controller.updateProfile));
+router.get("/:id", errorHandler.controllerWrapper(authenticate), errorHandler.controllerWrapper(controller.fetch));
+router.delete("/:id", errorHandler.controllerWrapper(DeleteData), errorHandler.controllerWrapper(controller.delete));
+
+router.use(authenticateAdmin);
+router.get("/", errorHandler.controllerWrapper(controller.fetchAll));
+router.patch("/:id", errorHandler.controllerWrapper(validate(UpdateUserData)), errorHandler.controllerWrapper(controller.update));
 
 export { router as UserRouter };

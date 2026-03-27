@@ -18,4 +18,12 @@ interface UserData {
     password: string
 }
 
-export type { User, Role, UserData };
+interface UserUpdateData {
+    email?: string,
+    username?: string,
+    authProvider?: string
+    role?: Role
+    verified?: boolean
+}
+
+export type { User, Role, UserData, UserUpdateData };

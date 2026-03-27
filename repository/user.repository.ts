@@ -1,7 +1,7 @@
 import { errorMessage } from "../constants/error.messages.js";
 import { prisma } from "../db/prisma.js"
 import { PaginationConstants, type PaginationData } from "../dto/pagination.dto.js";
-import type { User, UserData } from "../dto/user.dto.js";
+import type { User, UserData, UserUpdateData } from "../dto/user.dto.js";
 import type { UserProfile, UserProfileData } from "../dto/userProfile.dto.js";
 import { Role } from "../generated/prisma/enums.js";
 import { serverError } from "../utils/error.utils.js";
@@ -65,8 +65,8 @@ class UserRepository {
      * @param id 
      * @returns 
      */
-    fetchById = async (id: string) : Promise<User> => {
-        const user = await prisma.users.findMany({
+    fetch = async (id: string) : Promise<User> => {
+        const user = await prisma.users.findFirst({
             where: {
                 id: id,
                 deletedAt: null
@@ -76,7 +76,7 @@ class UserRepository {
             }
         });
 
-        return user[0] ?? <User>{};
+        return user ?? <User>{};
     }
 
     /**
@@ -86,31 +86,14 @@ class UserRepository {
      * @param {Object} filters - Additional criteria to filter the user results.
      * @returns {Promise<User[]>} A list of users matching the search and filter conditions.
      */
-    fetchAll = async (data: PaginationData, filters: {}): Promise<User[]> => {
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<User[]> => {
 
         let where: any = {
             deletedAt: null,
-            AND: [
-                ...(data.search ? [
-                    {
-                        OR: [
-                            {
-                                username: {
-                                    contains: data.search,
-                                    case: 'insensitive'
-                                },
-                                email: {
-                                    contains: data.search,
-                                    case: 'insensitive'
-                                }
-                            }
-                        ]
-                    }
-                ] : [])
-            ]
+            AND: []
         }
 
-        where = serverUtils.buildWhere(where, filters, data);
+        where = serverUtils.buildWhere(where, filters, data, searchFields);
 
         const users = await prisma.users.findMany({
             take: data.limit ?? PaginationConstants.limit,
@@ -157,44 +140,17 @@ class UserRepository {
         })
     }
 
-    /**
-     * Updates user profile data, validates profile existence
-     * 
-     * @param id 
-     * @param data 
-     * @returns 
-     */
-    updateProfile = async ( id: string, data: UserProfileData ) : Promise<UserProfile> => {
-        const updateData = Object.fromEntries(
-            Object.entries({
-                name: data.name,
-                bio: data.bio,
-                avatarUrl: data.avatarUrl,
-                skillsSummary: data.skillsSummary,
-                interests: data.interests
-            }).filter(([_, value]) => value !== undefined)
-        );
-            const profile = await prisma.user_profiles.upsert({
-                where: { userId: id },
-                update: updateData,
-                create: {
-                    userId: id,
-                    name: data.name ?? "New User", 
-                    bio: data.bio ?? "",
-                    avatarUrl: data.avatarUrl ?? "",
-                    skills_summary: data.skillsSummary ?? "",
-                    interests: data.interests ?? [],
-                },
-            });
+    update = async (data: UserUpdateData, id: string): Promise<User> => {
+        const user = await prisma.users.update({
+            where: {
+                id,
+                deletedAt: null
+            },
+            data
+        });
 
-            logger.info("User profile synchronized", { 
-                userId: id, 
-                fieldsUpdated: Object.keys(updateData) 
-            });
-
-            return profile;
-    };
-
+        return user;
+    }
     /**
      * Marks an user as deleted by setting a timestamp without removing the record.
      * 

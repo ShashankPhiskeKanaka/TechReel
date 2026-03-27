@@ -2,60 +2,86 @@ import type { Request, Response } from "express";
 import type { SkillService } from "../service/skill.service.js";
 import { ApiResponse } from "../utils/api.utils.js";
 import { logger } from "../utils/logger.js";
+import { ControllerMessages } from "../constants/controller.messages.js";
+import { BaseController } from "./base.controller.js";
 
-class SkillController {
-    constructor (private SkillService : SkillService) {}
+const controllerMessage = new ControllerMessages("Skill");
 
-    create = async (req: Request, res: Response) => {
+class SkillController extends BaseController<SkillService> {
+    constructor (service : SkillService) {
+        super(service, "Skill");
+    }
 
-        logger.http("New skill create request received", {
+    // create = async (req: Request, res: Response) => {
+
+    //     logger.http(controllerMessage.CREATE.req, {
+    //         ip: req.ip,
+    //         userId: req.user?.id
+    //     });
+
+    //     const skill = await this.SkillService.create(req.body);
+
+    //     return ApiResponse.success(res, controllerMessage.CREATE.res, skill);
+    // }
+
+    // fetch = async (req: Request, res: Response) => {
+
+    //     logger.http(controllerMessage.FETCH.req, {
+    //         ip: req.ip,
+    //         skillId: req.params.id?.toString(),
+    //         userId: req.user?.id
+    //     });
+
+    //     const skill = await this.SkillService.fetch(req.params.id?.toString() ?? "");
+
+    //     return ApiResponse.success(res, controllerMessage.FETCH.res, skill);
+    // }
+
+    fetchAll = async (req: Request, res: Response) => {
+        logger.http(controllerMessage.FETCHALL.req, {
             ip: req.ip,
             userId: req.user?.id
         });
 
-        const skill = await this.SkillService.create(req.body);
+        const skills = await this.service.fetchAll(
+            this.getPagination(req),
+            {
+                category: req.query.category?.toString()
+            },
+            [
+                "name",
+                "category"
+            ]
+        )
 
-        return ApiResponse.success(res, "New skill created", skill);
+        return ApiResponse.success(res, controllerMessage.FETCHALL.res, skills);
     }
 
-    get = async (req: Request, res: Response) => {
+    // update = async (req: Request, res: Response) => {
 
-        logger.http("Skill fetch request received", {
-            ip: req.ip,
-            skillId: req.params.id?.toString(),
-            userId: req.user?.id
-        });
+    //     logger.http(controllerMessage.UPDATE.req, {
+    //         ip: req.ip,
+    //         userId: req.user?.id,
+    //         skillId: req.body.id
+    //     });
 
-        const skill = await this.SkillService.get(req.params.id?.toString() ?? "");
+    //     const skill = await this.SkillService.update(req.body, req.params.id?.toString() ?? "");
 
-        return ApiResponse.success(res, "Skill fetched", skill);
-    }
+    //     return ApiResponse.success(res, controllerMessage.UPDATE.res, skill);
+    // }
 
-    update = async (req: Request, res: Response) => {
+    // delete = async (req: Request, res: Response) => {
 
-        logger.http("Skill update request received", {
-            ip: req.ip,
-            userId: req.user?.id,
-            skillId: req.body.id
-        });
+    //     logger.http(controllerMessage.DELETE.req, {
+    //         ip: req.ip,
+    //         userId: req.user?.id,
+    //         skillId: req.body.id
+    //     });
 
-        const skill = await this.SkillService.update({ name: req.body.name, category: req.body.category, description: req.body.description }, req.body.id);
+    //     const skill = await this.SkillService.delete(req.params.id?.toString() ?? "" , req.body.flag);
 
-        return ApiResponse.success(res, "Skill updated", skill);
-    }
-
-    delete = async (req: Request, res: Response) => {
-
-        logger.http("Skill delete request received", {
-            ip: req.ip,
-            userId: req.user?.id,
-            skillId: req.body.id
-        });
-
-        const skill = await this.SkillService.delete(req.body.id, req.params.flag?.toString() === "true" ? true : false);
-
-        return ApiResponse.success(res, "Skill deleted", skill);
-    }
+    //     return ApiResponse.success(res, controllerMessage.DELETE.res, skill);
+    // }
 }
 
 export { SkillController };

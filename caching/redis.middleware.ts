@@ -8,7 +8,7 @@ class CacheMiddlewareClass {
 
     cacheRequest = (ttl: number, type: "PUBLIC" | "PRIVATE" = "PUBLIC") => {
         return async (req: Request, res: Response, next: NextFunction) => {
-            if(req.method === "GET") {
+            if(req.method != "GET") {
                 return next();
             }
 
@@ -32,9 +32,10 @@ class CacheMiddlewareClass {
                 const originalJson = res.json.bind(res);
 
                 res.json = (body: any): Response => {
-                    this.cacheClient.setEx(key, ttl, JSON.stringify(body));
+                    // Set the cache and continue with original response
+                    this.cacheClient.setex(key, ttl, JSON.stringify(body));
                     return originalJson(body);
-                }
+                };
 
                 return next();
             }catch (err: any) {

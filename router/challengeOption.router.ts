@@ -8,11 +8,15 @@ import { errorHandler } from "../factory/auth.factory.js";
 import { validate } from "../middleware/zod.middleware.js";
 import { GetData } from "../schema/general.schema.js";
 import { UpdateChallengeOptionData } from "../schema/challengeOptions.schema.js";
+import { cacheMiddleware } from "../factory/cache.factory.js";
 
 const router = express.Router();
 const controller = ControllerFactory.create(ChallengeOptionsRepository, ChallengeOptionService, ChallengeOptionController);
 
 router.use(authenticate);
+
+router.use(cacheMiddleware.cacheRequest(Number(process.env.CACHE_TTL_SHORT), "PUBLIC"));
+
 router.get("/options/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchAllOptions));
 
 router.use(authenticateAdmin);

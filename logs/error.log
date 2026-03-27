@@ -150,3 +150,9 @@
 {"ip":"::1","level":"error","message":"\nInvalid `tx.reels.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:112:28\n\n  109  */\n  110 deleteView = async (id: string, reelId: string): Promise<View> => {\n  111     return await prisma.$transaction(async (tx) => {\n→ 112         await tx.reels.update({\n                where: {\n                  id: true,\n                      ~~~~\n                  deletedAt: null\n                },\n                data: {\n                  views: {\n                    decrement: 1\n                  }\n                }\n              })\n\nArgument `id`: Invalid value provided. Expected String, provided Boolean.","timestamp":"2026-03-27 15:57:49"}
 {"ip":"::1","level":"error","message":"this.methods.fetch is not a function","timestamp":"2026-03-27 16:04:06"}
 {"ip":"::1","level":"error","message":"this.methods.fetch is not a function","timestamp":"2026-03-27 16:04:52"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 16:40:01"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 16:42:25"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:42:31"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:42:47"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:44:05"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:46:02"}

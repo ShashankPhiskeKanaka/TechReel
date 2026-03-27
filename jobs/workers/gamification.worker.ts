@@ -38,14 +38,7 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
                 throw new serverError(errorMessage.EXHAUSTED);
             }
 
-            await xpService.awardXp({
-                userId: data.userId,
-                amount: challengeData.score,
-                source: "CHALLENGE_SUBMISSION",
-                type: challengeData.score < 0 ? "DEBIT" : "CREDIT"
-            }, tx);
-
-
+            let xpScore = challengeData.score;
 
             if (challengeData.score == 10 && data.roadmapStepId) {
                 let amount = 1;
@@ -57,10 +50,12 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
                 }, tx)
 
                 if (highestStep?.stepOrder == currentStep.stepOrder) {
-                    await userBadgeService.awardBadge({
+                    const badge = await userBadgeService.awardBadge({
                         userId: data.userId,
                         skillId: currentStep.roadmap.skillId
                     }, tx)
+
+                    xpScore += badge.xpReward
 
                     amount++;
                 }
@@ -74,6 +69,13 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
                 }, tx)
 
             }
+
+            await xpService.awardXp({
+                userId: data.userId,
+                amount: challengeData.score,
+                source: "CHALLENGE_SUBMISSION",
+                type: xpScore < 0 ? "DEBIT" : "CREDIT"
+            }, tx);
         })
     } catch (err: any) {
         throw new serverError(err);

@@ -2349,3 +2349,111 @@
 {"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View delete request received","timestamp":"2026-03-27 16:07:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
 {"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","level":"info","message":"View record hard deleted","timestamp":"2026-03-27 16:07:31"}
 {"level":"info","message":"DELETE /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 23.714 ms","timestamp":"2026-03-27 16:07:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:21:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:21:16"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 16:21:51"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 16:21:51","tokenId":"f63ee06c-4787-467d-b8a7-17719bac8acb"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 16:21:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 16:21:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 16:21:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Skill fetch all request received","timestamp":"2026-03-27 16:21:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Skill records fetched","timestamp":"2026-03-27 16:21:51"}
+{"level":"info","message":"GET /v1/skill 464.382 ms","timestamp":"2026-03-27 16:21:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:22:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:22:13"}
+{"ip":"::1","level":"http","message":"Skill fetch all request received","timestamp":"2026-03-27 16:22:13","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Skill records fetched","timestamp":"2026-03-27 16:22:14"}
+{"level":"info","message":"GET /v1/skill 237.516 ms","timestamp":"2026-03-27 16:22:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:38:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:38:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:39:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:39:45"}
+{"key":"v1:cache:PUBLIC:BADGE:/:?search=sam","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:40:01"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 16:40:01"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 16:40:01","tokenId":"a29789bb-dc30-4645-a2ce-55a8fe594eea"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 16:40:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 16:40:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 16:40:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:40:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 16:40:01"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 16:40:01"}
+{"level":"info","message":"GET /v1/badge/?search=sam 298.039 ms","timestamp":"2026-03-27 16:40:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:41:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:41:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:42:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:42:21"}
+{"key":"v1:cache:PUBLIC:BADGE:/:?search=sam","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:42:25"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:42:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 16:42:25"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 16:42:25"}
+{"level":"info","message":"GET /v1/badge/?search=sam 246.885 ms","timestamp":"2026-03-27 16:42:25"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:42:31"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:42:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 16:42:31"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:42:31"}
+{"level":"info","message":"GET /v1/badge/ 18.581 ms","timestamp":"2026-03-27 16:42:31"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-03-27 16:42:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"4bdf541d-af8c-4a9d-b0c9-7f5fea6a51a9","level":"info","message":"Badge created","timestamp":"2026-03-27 16:42:39"}
+{"level":"info","message":"POST /v1/badge 140.599 ms","timestamp":"2026-03-27 16:42:39"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:42:46"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:42:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 16:42:47"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:42:47"}
+{"level":"info","message":"GET /v1/badge/ 12.454 ms","timestamp":"2026-03-27 16:42:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:43:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:43:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:44:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:44:03"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:44:05"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:44:05","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 16:44:05"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:44:05"}
+{"level":"info","message":"GET /v1/badge/ 332.764 ms","timestamp":"2026-03-27 16:44:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:45:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:45:56"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:46:02"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:46:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 16:46:02"}
+{"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:46:02"}
+{"level":"info","message":"GET /v1/badge/ 179.834 ms","timestamp":"2026-03-27 16:46:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:47:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:47:21"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:47:25"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:47:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 16:47:25"}
+{"level":"info","message":"GET /v1/badge/ 221.457 ms","timestamp":"2026-03-27 16:47:25"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-03-27 16:47:30"}
+{"level":"info","message":"GET /v1/badge/ 3.881 ms","timestamp":"2026-03-27 16:47:30"}
+{"id":"4bdf541d-af8c-4a9d-b0c9-7f5fea6a51a9","ip":"::1","level":"http","message":"Badge update request received","timestamp":"2026-03-27 16:47:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"4bdf541d-af8c-4a9d-b0c9-7f5fea6a51a9","level":"info","message":"Badge record updated","timestamp":"2026-03-27 16:47:56"}
+{"level":"info","message":"PATCH /v1/badge/4bdf541d-af8c-4a9d-b0c9-7f5fea6a51a9 76.506 ms","timestamp":"2026-03-27 16:47:56"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:BADGE:*","resource":"BADGE","timestamp":"2026-03-27 16:47:56","userId":"PUBLIC"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 16:48:03"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 16:48:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 16:48:03"}
+{"level":"info","message":"GET /v1/badge/ 11.520 ms","timestamp":"2026-03-27 16:48:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 17:08:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 17:08:16"}
+{"key":"v1:cache:undefined:USER-PROFILE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 17:08:39"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 17:08:39"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 17:08:40","tokenId":"3f4fe680-12ee-4c17-ba50-19e0ee498a5a"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 17:08:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 17:08:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 17:08:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 17:08:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User profile records fetched","timestamp":"2026-03-27 17:08:40"}
+{"level":"info","message":"GET /v1/user-profile/ 240.627 ms","timestamp":"2026-03-27 17:08:40"}
+{"key":"v1:cache:undefined:USER-PROFILE:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-03-27 17:08:59"}
+{"level":"info","message":"GET /v1/user-profile/ 3.173 ms","timestamp":"2026-03-27 17:08:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 17:09:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 17:09:14"}
+{"key":"v1:cache:undefined:USER-PROFILE:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-03-27 17:09:20"}
+{"level":"info","message":"GET /v1/user-profile/ 7.193 ms","timestamp":"2026-03-27 17:09:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 17:10:10"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 17:10:11"}
+{"key":"v1:cache:ADMIN:USER-PROFILE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-03-27 17:10:13"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 17:10:13","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User profile records fetched","timestamp":"2026-03-27 17:10:13"}
+{"level":"info","message":"GET /v1/user-profile/ 288.385 ms","timestamp":"2026-03-27 17:10:13"}
+{"key":"v1:cache:ADMIN:USER-PROFILE:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-03-27 17:10:18"}
+{"level":"info","message":"GET /v1/user-profile/ 4.366 ms","timestamp":"2026-03-27 17:10:18"}

@@ -9,11 +9,15 @@ import { idempotencyMiddleware } from "../middleware/idempotency.middleware.js";
 import { validate } from "../middleware/zod.middleware.js";
 import { SkillsSchema, UpdateSkillData } from "../schema/skill.schema.js";
 import { DeleteData, GetData } from "../schema/general.schema.js";
+import { cacheMiddleware } from "../factory/cache.factory.js";
 
 const router = express.Router();
 const controller = SkillFactory.create(SkillRepository, SkillService, SkillController);
 
 router.use(authenticate);
+
+router.use(cacheMiddleware.cacheRequest(Number(process.env.CACHE_TTL_SHORT), "PUBLIC"));
+
 router.get("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetch));
 router.get("/", errorHandler.controllerWrapper(controller.fetchAll));
 

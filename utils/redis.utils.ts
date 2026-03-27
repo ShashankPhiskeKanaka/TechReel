@@ -6,7 +6,7 @@ import { serverError } from "./error.utils.js";
 
 class RedisUtilsClass {
     generateKey = (req: Request, type: string): string => {
-        const userId = type == "PRIVATE" ? req.user?.id : "PUBLIC";
+        const userId = type == "PRIVATE" ? req.user?.role == "ADMIN" ? "ADMIN" : req.user?.id : "PUBLIC";
         const resource = (req.baseUrl.split("/").pop() || "GLOBAL").toUpperCase();
 
         const sortedQuery = Object.keys(req.query).sort().map(key => `${key.toLocaleLowerCase()}=${String(req.query[key])}`).join("&");

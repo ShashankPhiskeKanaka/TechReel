@@ -2,6 +2,7 @@ import { errorMessage } from "../constants/error.messages.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
+import { redisUtils } from "../utils/redis.utils.js";
 
 abstract class BaseService<T, TData, TMethods> {
     constructor (protected methods: TMethods, protected modelName: string) {}
@@ -29,7 +30,6 @@ abstract class BaseService<T, TData, TMethods> {
         //@ts-ignore
 
         const record = await this.methods.fetch(id, userId);
-        console.log(record);
         if(!record || !record.id) {
             logger.warn(`No ${this.modelName} found`, {
                 id
@@ -45,7 +45,7 @@ abstract class BaseService<T, TData, TMethods> {
         return record;
     }
 
-    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<T[]> => {
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]) => {
         //@ts-ignore
 
         const records = await this.methods.fetchAll(data, filters, searchFields);
@@ -56,9 +56,14 @@ abstract class BaseService<T, TData, TMethods> {
             throw new serverError(errorMessage.NOTFOUND);
         }
 
+        const lastRecord = records[records.length - 1] as any;
+
         logger.warn(`${this.modelName} records fetched`);
 
-        return records;
+        return { records, nextCursor: {
+            lastId: lastRecord.id,
+            lastCreatedAt: lastRecord.createdAt
+        } };
     }
 
     update = async (data: any, id: string): Promise<T> => {
@@ -69,6 +74,8 @@ abstract class BaseService<T, TData, TMethods> {
         logger.info(`${this.modelName} record updated`, {
             id
         });
+
+        redisUtils.invalidateKey(record.userId ? record.userId : "PUBLIC", this.modelName, "UPDATE");
 
         return record;
     }
@@ -84,6 +91,8 @@ abstract class BaseService<T, TData, TMethods> {
             record = await this.methods.softDelete(id);
             logger.info(`${this.modelName} record soft deleted`, {id})
         }
+
+        redisUtils.invalidateKey(record.userId ? record.userId : "PUBLIC", this.modelName, "UPDATE");
 
         return record;
     }

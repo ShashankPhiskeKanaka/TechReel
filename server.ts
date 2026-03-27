@@ -20,8 +20,6 @@ import { TagRouter } from "./router/tag.router.js";
 import { ReelRouter } from "./router/reel.router.js";
 import { ChallengeRouter } from "./router/challenge.router.js";
 import { ChallengeOptionRouter } from "./router/challengeOption.router.js";
-import { interactionWorker } from "./jobs/workers/interaction.worker.js";
-import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
 import { ViewRouter } from "./router/view.router.js";
 import { LikeRouter } from "./router/like.router.js";
 import { BadgeRouter } from "./router/badge.router.js";
@@ -30,6 +28,7 @@ import { SkillRoadmapRouter } from "./router/skillRoadmap.router.js";
 import { SkillRoadmapStepRouter } from "./router/skillRoadmapStep.router.js";
 import { UserProfileRouter } from "./router/userProfile.router.js";
 import { AdminRouter } from "./router/admin.router.js";
+
 dotenv.config();
 
 const app = express();

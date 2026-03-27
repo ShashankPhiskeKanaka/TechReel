@@ -17,6 +17,14 @@ interface BadgeData {
     xpReward: number
 }
 
+interface BadgeUpdateData {
+    skillId?: string
+    name?: string
+    description?: string
+    iconUrl?: string
+    xpReward?: number
+}
+
 interface UserBadge {
     id: string
     userId: string
@@ -29,4 +37,4 @@ interface UserBadgeData {
     skillId: string
 }
 
-export type { Badge, BadgeData, UserBadge, UserBadgeData };
+export type { Badge, BadgeData, UserBadge, UserBadgeData, BadgeUpdateData };

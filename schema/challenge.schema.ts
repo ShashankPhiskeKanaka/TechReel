@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { errorMessage } from "../constants/error.messages.js";
 
-const ChallengeData = z.object({
+const CreateChallengeData = z.object({
     body: z.object({
         reelId: z.string({ error: errorMessage.INVALIDDATA.message }),
         question: z.string({ error: errorMessage.INVALIDDATA.message }),
@@ -9,14 +9,16 @@ const ChallengeData = z.object({
         challengeType: z.string({ error: errorMessage.INVALIDDATA.message }),
         answer: z.string({ error: errorMessage.INVALIDDATA.message }),
         difficutlyLevel: z.string({ error: errorMessage.INVALIDDATA.message }),
-        options: z.object({
-            option: z.string({error: errorMessage.INVALIDDATA.message}),
-            isCorrect: z.boolean({ error: errorMessage.INVALIDDATA.message })
-        })
+        options: z.array(
+            z.object({
+                option: z.string({ error: errorMessage.INVALIDDATA.message }),
+                isCorrect: z.boolean({ error: errorMessage.INVALIDDATA.message })
+            })
+        ).optional()
     })
 });
 
-const ChallengeUpdateData = z.object({
+const UpdateChallengeData = z.object({
     body: z.object({
         question: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
         language: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
@@ -28,14 +30,6 @@ const ChallengeUpdateData = z.object({
     })
 });
 
-const ChallengeOptionUpdateData = z.object({
-    body: z.object({
-        isCorrect: z.boolean({ error: errorMessage.INVALIDDATA.message }),
-        option: z.string({ error: errorMessage.INVALIDDATA.message })
-    }),
-    params: z.object({
-        id: z.string({ error: errorMessage.INVALIDDATA.message })
-    })   
-})
 
-export { ChallengeData, ChallengeUpdateData, ChallengeOptionUpdateData }
+
+export { CreateChallengeData, UpdateChallengeData }

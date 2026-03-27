@@ -62,11 +62,13 @@ model user_profiles {
   skillsSummary String? @map("skills_summary") // Mapped
   xp            Int     @default(0)
   interests     Json
+  createdAt     DateTime @default(now()) @map("createdAt") @db.Timestamptz
 
   user          users   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("user_profiles")
   @@index([userId])
+  @@index([id, createdAt])
 }
 
 model audit_logs {
@@ -172,7 +174,7 @@ model reels {
   duration        Int       @default(0)
   tags            Json?
   views           Int       @default(0)
-  status          status
+  status          status    @default(PENDING)
   thumbnailUrl    String?   @map("thumbnail_url") // Mapped
   isBonus         Boolean   @default(false) @map("is_bonus") // Mapped
   likes           Int       @default(0)
@@ -185,7 +187,7 @@ model reels {
   reelReports     reel_reports[]
   reelSaves       reel_saves[]
 
-  challenges      challenges?
+  challenges      challenges[]
 
   @@map("reels")
   @@index([id, createdAt])
@@ -381,7 +383,7 @@ enum challenge_type {
 
 model challenges {
   id              String         @id @default(uuid()) @db.Uuid
-  reelId          String         @map("reel_id") @db.Uuid @unique
+  reelId          String         @map("reel_id") @db.Uuid
   question        String
   codeSnippet     String?        @map("code_snippet")
   language        String
@@ -488,6 +490,7 @@ model challenge_options {
   challengeId String     @map("challenge_id") @db.Uuid
   isCorrect   Boolean    @map("is_correct")
   option      String
+  createdAt   DateTime   @default(now()) @db.Timestamptz @map("created_at")
 
   challenge   challenges @relation(fields: [challengeId], references: [id], onDelete: Cascade)
 

@@ -6,7 +6,7 @@ import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 import { serverUtils } from "../utils/server.utils.js";
 
-class UserRoadmapStepsRepository {
+class UserRoadmapStepRepository {
 
     /**
      * Records a user's progress on a roadmap step after validating the sequence.
@@ -63,7 +63,8 @@ class UserRoadmapStepsRepository {
             data: {
                 userId: data.userId,
                 roadmapStepId: data.roadmapStepId,
-                stepOrder: currentStep.stepOrder
+                stepOrder: currentStep.stepOrder,
+                roadmapId: currentStep.roadmapId
             }
         });
 
@@ -95,15 +96,13 @@ class UserRoadmapStepsRepository {
      * @param {string} [roadmapStepId] - Optional filter for a specific roadmap step.
      * @returns {Promise<UserRoadmapStep[]>} A list of matching roadmap completion records.
      */
-    fetchAll = async (data: PaginationData, filters: {}, userId?: string, roadmapStepId?: string): Promise<UserRoadmapStep[]> => {
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<UserRoadmapStep[]> => {
 
         let where: any = {
-            ...(userId ? {userId} : {}),
-            ...(roadmapStepId ? {roadmapStepId} : {}),
             AND: []
         }
 
-        where = serverUtils.buildWhere(where, filters, data);
+        where = serverUtils.buildWhere(where, filters, data, searchFields);
 
         const userRoadmapSteps = await prisma.user_roadmap_steps.findMany({
             take: data.limit ?? PaginationConstants.limit,
@@ -133,4 +132,4 @@ class UserRoadmapStepsRepository {
     }
 }
 
-export { UserRoadmapStepsRepository }
+export { UserRoadmapStepRepository }

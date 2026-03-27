@@ -1167,3 +1167,1185 @@
 {"level":"info","message":"Reel like record create job added to the queue","process":"INCREMENT","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-25 11:22:08","type":"LIKE","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
 {"level":"info","message":"POST /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 7.588 ms","timestamp":"2026-03-25 11:22:08"}
 {"level":"info","message":"Like record created","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-25 11:22:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 17:38:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 17:38:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 17:38:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 17:38:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 17:54:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 17:54:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 17:57:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 17:57:41"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-26 18:00:31"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-26 18:00:31","tokenId":"f3030be9-d5cb-4e3a-bfa0-e640e4054979"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-26 18:00:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-26 18:00:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-26 18:00:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-03-26 18:00:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"this.model.create is not a function","timestamp":"2026-03-26 18:00:31"}
+{"level":"info","message":"POST /v1/badge 303.994 ms","timestamp":"2026-03-26 18:00:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:07:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:07:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:12:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:12:15"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-03-26 18:12:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"this.model.create is not a function","timestamp":"2026-03-26 18:12:19"}
+{"level":"info","message":"POST /v1/badge 21.471 ms","timestamp":"2026-03-26 18:12:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:13:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:13:16"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-03-26 18:13:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"this.model.create is not a function","timestamp":"2026-03-26 18:13:25"}
+{"level":"info","message":"POST /v1/badge 58.030 ms","timestamp":"2026-03-26 18:13:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:13:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:13:39"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-03-26 18:13:43","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","level":"info","message":"Badge created","timestamp":"2026-03-26 18:13:43"}
+{"level":"info","message":"POST /v1/badge 233.417 ms","timestamp":"2026-03-26 18:13:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:29:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:29:37"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-26 18:29:48"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-26 18:29:49","tokenId":"eeadcdcb-0d7a-440a-a93c-5c7614e2609f"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-26 18:29:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-26 18:29:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-26 18:29:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-26 18:29:49"}
+{"level":"info","message":"POST /v1/challenge/ 276.882 ms","timestamp":"2026-03-26 18:29:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:30:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:30:44"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-26 18:30:47"}
+{"level":"info","message":"POST /v1/challenge/ 18.514 ms","timestamp":"2026-03-26 18:30:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:31:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:31:06"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-26 18:31:10"}
+{"level":"info","message":"POST /v1/challenge/ 21.709 ms","timestamp":"2026-03-26 18:31:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:31:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:31:51"}
+{"ip":"::1","level":"http","message":"Challenge create request received","timestamp":"2026-03-26 18:31:55","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:22:33\n\n  19 }\n  20 \n  21 create = async (data: TCreateData): Promise<T> => {\n→ 22     return await this.model.create(\nUnique constraint failed on the fields: (`reel_id`)","timestamp":"2026-03-26 18:31:56"}
+{"level":"info","message":"POST /v1/challenge/ 286.730 ms","timestamp":"2026-03-26 18:31:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:33:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:33:58"}
+{"ip":"::1","level":"http","message":"Challenge create request received","timestamp":"2026-03-26 18:34:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:22:33\n\n  19 }\n  20 \n  21 create = async (data: TCreateData): Promise<T> => {\n→ 22     return await this.model.create(\nUnique constraint failed on the fields: (`reel_id`)","timestamp":"2026-03-26 18:34:03"}
+{"level":"info","message":"POST /v1/challenge/ 402.578 ms","timestamp":"2026-03-26 18:34:03"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-26 18:34:36"}
+{"level":"info","message":"GET /v1/challenge/reel/62b269d1-0272-4730-b28f-2c1793790e70 7.648 ms","timestamp":"2026-03-26 18:34:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:36:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:36:24"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-26 18:36:35","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"32a0930d-87df-4629-9ef5-e823abfc3840","level":"info","message":"Challenge hard deleted","timestamp":"2026-03-26 18:36:35"}
+{"level":"info","message":"DELETE /v1/challenge/32a0930d-87df-4629-9ef5-e823abfc3840 236.124 ms","timestamp":"2026-03-26 18:36:35"}
+{"action":"DELETE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:CHALLENGE:*","resource":"CHALLENGE","timestamp":"2026-03-26 18:36:35","userId":"PUBLIC"}
+{"ip":"::1","level":"http","message":"Challenge create request received","timestamp":"2026-03-26 18:36:41","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","level":"info","message":"New challenge created","timestamp":"2026-03-26 18:36:41"}
+{"level":"info","message":"POST /v1/challenge/ 39.381 ms","timestamp":"2026-03-26 18:36:41"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:CHALLENGE:*","resource":"CHALLENGE","timestamp":"2026-03-26 18:36:41","userId":"PUBLIC"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","ip":"::1","level":"http","message":"Challenge fetch request received","timestamp":"2026-03-26 18:37:00","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","level":"info","message":"Challenge fetched by id","timestamp":"2026-03-26 18:37:00"}
+{"level":"info","message":"GET /v1/challenge/d919c0c4-301c-4082-9073-2f0007c15559 43.390 ms","timestamp":"2026-03-26 18:37:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:37:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:37:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:37:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:37:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:38:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:38:06"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:38:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:38:53"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-26 18:39:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:40:33\n\n  37 \n  38 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  39 \n→ 40 return await this.model.findMany({\n       where: {\n         deletedAt: null\n       },\n       orderBy: [\n         {\n           createdAt: \"desc\"\n         },\n         {\n           id: \"desc\"\n         }\n       ],\n     + take: Int\n     })\n\nArgument `take` is missing.","timestamp":"2026-03-26 18:39:21"}
+{"level":"info","message":"GET /v1/challenge 183.125 ms","timestamp":"2026-03-26 18:39:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:39:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:39:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:40:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:40:35"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-26 18:40:35","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Challenges fetched","timestamp":"2026-03-26 18:40:36"}
+{"level":"info","message":"GET /v1/challenge 380.292 ms","timestamp":"2026-03-26 18:40:36"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","ip":"::1","level":"http","message":"Challenge update request received","timestamp":"2026-03-26 18:41:18","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:51:33\n\n  48 };\n  49 \n  50 update = async (id: string, data: TUpdateData): Promise<T> => {\n→ 51     return await this.model.update({\n           where: {\n             id: {\n               difficultyLevel: \"COMPETENT\"\n             },\n             deletedAt: null\n           },\n           data: \"d919c0c4-301c-4082-9073-2f0007c15559\"\n                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n         })\n\nArgument `data`: Invalid value provided. Expected challengesUpdateInput or challengesUncheckedUpdateInput, provided String.","timestamp":"2026-03-26 18:41:19"}
+{"level":"info","message":"PATCH /v1/challenge/d919c0c4-301c-4082-9073-2f0007c15559 113.585 ms","timestamp":"2026-03-26 18:41:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:41:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:41:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-26 18:41:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-26 18:41:58"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","ip":"::1","level":"http","message":"Challenge update request received","timestamp":"2026-03-26 18:42:00","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","level":"info","message":"Challenge updated","timestamp":"2026-03-26 18:42:00"}
+{"level":"info","message":"PATCH /v1/challenge/d919c0c4-301c-4082-9073-2f0007c15559 278.672 ms","timestamp":"2026-03-26 18:42:00"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:CHALLENGE:*","resource":"CHALLENGE","timestamp":"2026-03-26 18:42:00","userId":"PUBLIC"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-26 18:42:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","level":"info","message":"Challenge hard deleted","timestamp":"2026-03-26 18:42:20"}
+{"level":"info","message":"DELETE /v1/challenge/d919c0c4-301c-4082-9073-2f0007c15559 22.486 ms","timestamp":"2026-03-26 18:42:20"}
+{"action":"DELETE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:CHALLENGE:*","resource":"CHALLENGE","timestamp":"2026-03-26 18:42:20","userId":"PUBLIC"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 00:24:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 00:24:47"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 00:24:56"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 00:24:56","tokenId":"50b0afb8-6de4-4345-9083-e3274da09eae"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 00:24:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 00:24:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 00:24:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 00:24:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge records found","timestamp":"2026-03-27 00:24:56"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 00:24:56"}
+{"level":"info","message":"GET /v1/challenge 328.591 ms","timestamp":"2026-03-27 00:24:56"}
+{"ip":"::1","level":"http","message":"Challenge create request received","timestamp":"2026-03-27 00:25:05","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","level":"info","message":"Challenge created","timestamp":"2026-03-27 00:25:05"}
+{"level":"info","message":"POST /v1/challenge/ 20.378 ms","timestamp":"2026-03-27 00:25:06"}
+{"challengeId":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","ip":"::1","level":"http","message":"Challenge fetch request received","timestamp":"2026-03-27 00:25:22","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","level":"info","message":"Challenge fetched","timestamp":"2026-03-27 00:25:22"}
+{"level":"info","message":"GET /v1/challenge/b1083af4-ce58-4ba0-bd4a-f52a0349d1de 11.011 ms","timestamp":"2026-03-27 00:25:22"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 00:25:33","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 00:25:33"}
+{"level":"info","message":"GET /v1/challenge 7.306 ms","timestamp":"2026-03-27 00:25:33"}
+{"challengeId":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","ip":"::1","level":"http","message":"Challenge update request received","timestamp":"2026-03-27 00:25:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","level":"info","message":"Challenge record updated","timestamp":"2026-03-27 00:25:51"}
+{"level":"info","message":"PATCH /v1/challenge/b1083af4-ce58-4ba0-bd4a-f52a0349d1de 12.047 ms","timestamp":"2026-03-27 00:25:51"}
+{"challengeId":"d919c0c4-301c-4082-9073-2f0007c15559","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-27 00:26:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:58:33\n\n  55 };\n  56 \n  57 softDelete = async (id: string): Promise<T> => {\n→ 58     return await this.model.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 00:26:01"}
+{"level":"info","message":"DELETE /v1/challenge/d919c0c4-301c-4082-9073-2f0007c15559 83.845 ms","timestamp":"2026-03-27 00:26:01"}
+{"challengeId":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-27 00:26:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","level":"info","message":"Challenge record soft deleted","timestamp":"2026-03-27 00:26:21"}
+{"level":"info","message":"DELETE /v1/challenge/b1083af4-ce58-4ba0-bd4a-f52a0349d1de 10.382 ms","timestamp":"2026-03-27 00:26:21"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 00:26:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge records found","timestamp":"2026-03-27 00:26:29"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 00:26:29"}
+{"level":"info","message":"GET /v1/challenge 6.420 ms","timestamp":"2026-03-27 00:26:29"}
+{"challengeId":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","ip":"::1","level":"http","message":"Challenge delete request received","timestamp":"2026-03-27 00:26:36","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"b1083af4-ce58-4ba0-bd4a-f52a0349d1de","level":"info","message":"Challenge record hard deleted","timestamp":"2026-03-27 00:26:36"}
+{"level":"info","message":"DELETE /v1/challenge/b1083af4-ce58-4ba0-bd4a-f52a0349d1de 15.212 ms","timestamp":"2026-03-27 00:26:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 00:33:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 00:33:41"}
+{"ip":"::1","level":"http","message":"Challenge create request received","timestamp":"2026-03-27 00:33:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge created","timestamp":"2026-03-27 00:33:47"}
+{"level":"info","message":"POST /v1/challenge/ 178.898 ms","timestamp":"2026-03-27 00:33:47"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge fetch request received","timestamp":"2026-03-27 00:34:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge fetched","timestamp":"2026-03-27 00:34:01"}
+{"level":"info","message":"GET /v1/challenge/e8bb094c-3915-4690-8c71-f306793816b3 37.914 ms","timestamp":"2026-03-27 00:34:01"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 00:34:58","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 00:34:58"}
+{"level":"info","message":"GET /v1/challenge?search=sample 86.403 ms","timestamp":"2026-03-27 00:34:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 00:35:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 00:35:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 00:35:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 00:35:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 00:36:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 00:36:14"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 00:36:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 00:36:15"}
+{"level":"info","message":"GET /v1/challenge?search=sample 189.917 ms","timestamp":"2026-03-27 00:36:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:06:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:06:25"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 10:06:33"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 10:06:34","tokenId":"dfbe775c-b664-49cb-acbc-4b5acfaaf9ec"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 10:06:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 10:06:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 10:06:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 10:06:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 10:06:34"}
+{"level":"info","message":"GET /v1/challenge?search=sample 330.392 ms","timestamp":"2026-03-27 10:06:34"}
+{"level":"info","message":"GET /v1/badge/ 7.055 ms","timestamp":"2026-03-27 10:07:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:07:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:07:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:07:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:07:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:08:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:08:16"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:08:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 10:08:19"}
+{"level":"info","message":"GET /v1/badge/ 167.707 ms","timestamp":"2026-03-27 10:08:19"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:08:36","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:08:36"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:08:36"}
+{"level":"info","message":"GET /v1/badge/?search=%22ssp%22 23.841 ms","timestamp":"2026-03-27 10:08:36"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:08:43","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:08:43"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:08:43"}
+{"level":"info","message":"GET /v1/badge/?search=%22sam%22 7.317 ms","timestamp":"2026-03-27 10:08:43"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:08:48","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:08:48"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:08:48"}
+{"level":"info","message":"GET /v1/badge/?search=%22sample%22 7.169 ms","timestamp":"2026-03-27 10:08:48"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:09:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 10:09:15"}
+{"level":"info","message":"GET /v1/badge/ 6.843 ms","timestamp":"2026-03-27 10:09:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:10:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:10:18"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:10:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:10:25"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:10:25"}
+{"level":"info","message":"GET /v1/badge/?search=%22samp%22 348.153 ms","timestamp":"2026-03-27 10:10:25"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:10:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:10:45"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:10:45"}
+{"level":"info","message":"GET /v1/badge/?search=%22sample%22 10.270 ms","timestamp":"2026-03-27 10:10:45"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:15:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:15:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:15:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:15:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:15:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:15:21"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:15:26","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:15:26"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:15:26"}
+{"level":"info","message":"GET /v1/badge/?search=%22sample%22 188.668 ms","timestamp":"2026-03-27 10:15:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:15:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:15:38"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:15:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:40:33\n\n  37 \n  38 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  39 \n→ 40 return await this.model.findMany({\n       take: 10,\n       where: {\n         deletedAt: null,\n         AND: [\n           {\n             OR: [\n               {\n                 name: {\n                   contains: \"\\\"sample\\\"\",\n                   case: \"insensitive\"\n                 }\n               }\n             ]\n           }\n         ]\n       },\n       orderBy: [\n         {\n           createdAt: \"desc\"\n         },\n         {\n           id: \"desc\"\n         }\n       ]\n     })\n\nUnknown argument `case`. Did you mean `lte`? Available options are marked with ?.","timestamp":"2026-03-27 10:15:39"}
+{"level":"info","message":"GET /v1/badge/?search=%22sample%22 129.426 ms","timestamp":"2026-03-27 10:15:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:15:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:15:54"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:15:59","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Badge records found","timestamp":"2026-03-27 10:15:59"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:15:59"}
+{"level":"info","message":"GET /v1/badge/?search=%22Sample%22 199.966 ms","timestamp":"2026-03-27 10:15:59"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:16:28","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 10:16:28"}
+{"level":"info","message":"GET /v1/badge/ 23.019 ms","timestamp":"2026-03-27 10:16:28"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:17:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 10:17:12"}
+{"level":"info","message":"GET /v1/badge/?search=sample 67.686 ms","timestamp":"2026-03-27 10:17:12"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-03-27 10:17:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Badge records fetched","timestamp":"2026-03-27 10:17:15"}
+{"level":"info","message":"GET /v1/badge/?search=sam 5.886 ms","timestamp":"2026-03-27 10:17:15"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","ip":"::1","level":"http","message":"Badge fetch request received","timestamp":"2026-03-27 10:17:50","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","level":"info","message":"Badge fetched","timestamp":"2026-03-27 10:17:50"}
+{"level":"info","message":"GET /v1/badge/50dfad86-b295-4ef7-bbb6-3a4597edba27 55.141 ms","timestamp":"2026-03-27 10:17:50"}
+{"level":"info","message":"GET /v1/token/ 3.239 ms","timestamp":"2026-03-27 10:19:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:19:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:19:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:19:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:19:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:20:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:20:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:20:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:20:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:20:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:20:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:21:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:21:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:21:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:21:24"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-27 10:21:27"}
+{"level":"info","message":"GET /v1/token/ 16.077 ms","timestamp":"2026-03-27 10:21:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:21:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:21:51"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 10:21:52"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 10:21:52","tokenId":"0922f382-d6bc-45f3-bf60-d2d1af1a1dd7"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 10:21:52","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 10:21:52","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 10:21:52","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 10:21:52"}
+{"level":"info","message":"GET /v1/token/ 267.956 ms","timestamp":"2026-03-27 10:21:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:22:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:22:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:23:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:23:56"}
+{"ip":"::1","level":"http","message":"Token fetch all request received","timestamp":"2026-03-27 10:23:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Token records fetched","timestamp":"2026-03-27 10:23:58"}
+{"level":"info","message":"GET /v1/token/ 302.616 ms","timestamp":"2026-03-27 10:23:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:24:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:24:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:24:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:24:15"}
+{"ip":"::1","level":"http","message":"Token fetch all request received","timestamp":"2026-03-27 10:24:17","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Token records fetched","timestamp":"2026-03-27 10:24:17"}
+{"level":"info","message":"GET /v1/token/ 229.659 ms","timestamp":"2026-03-27 10:24:17"}
+{"ip":"::1","level":"http","message":"Token fetch all request received","timestamp":"2026-03-27 10:25:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Token records fetched","timestamp":"2026-03-27 10:25:06"}
+{"level":"info","message":"GET /v1/token/ 161.102 ms","timestamp":"2026-03-27 10:25:06"}
+{"id":"429c795e-525e-4784-b99a-8c9c1d2ef99e","ip":"::1","level":"http","message":"Token fetch request received","timestamp":"2026-03-27 10:25:13","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"429c795e-525e-4784-b99a-8c9c1d2ef99e","level":"warn","message":"No Token found","timestamp":"2026-03-27 10:25:13"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 10:25:13"}
+{"level":"info","message":"GET /v1/token/429c795e-525e-4784-b99a-8c9c1d2ef99e 17.197 ms","timestamp":"2026-03-27 10:25:13"}
+{"id":"5d611666-27fe-4b5a-92e4-3171ef672d5e","ip":"::1","level":"http","message":"Token fetch request received","timestamp":"2026-03-27 10:25:28","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"5d611666-27fe-4b5a-92e4-3171ef672d5e","level":"info","message":"Token fetched","timestamp":"2026-03-27 10:25:28"}
+{"level":"info","message":"GET /v1/token/5d611666-27fe-4b5a-92e4-3171ef672d5e 6.981 ms","timestamp":"2026-03-27 10:25:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:29:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:29:21"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 10:31:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 10:31:10"}
+{"level":"info","message":"GET /v1/challenge?search=sample 170.652 ms","timestamp":"2026-03-27 10:31:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:34:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:34:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:34:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:34:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:34:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:34:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:34:39"}
+{"ip":"::1","level":"http","message":"Skill fetch all request received","timestamp":"2026-03-27 10:34:41","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Skill records fetched","timestamp":"2026-03-27 10:34:41"}
+{"level":"info","message":"GET /v1/skill 167.731 ms","timestamp":"2026-03-27 10:34:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:41:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:41:06"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 10:41:08"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 10:41:08","tokenId":"8575d7d2-8610-4972-a2dc-8b0cc525f1c8"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 10:41:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 10:41:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 10:41:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:41:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:22:33\n\n  19 }\n  20 \n  21 create = async (data: TCreateData): Promise<T> => {\n→ 22     return await this.model.create({\n           data: {\n             skillId: \"61ae1e2f-8fcd-4466-a42e-a8855cf7a820\",\n             name: \"sample\",\n             xpReward: 10,\n         +   difficultyLevel: levels\n           }\n         })\n\nArgument `difficultyLevel` is missing.","timestamp":"2026-03-27 10:41:08"}
+{"level":"info","message":"POST /v1/skill-roadmap 468.253 ms","timestamp":"2026-03-27 10:41:08"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:41:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:22:33\n\n  19 }\n  20 \n  21 create = async (data: TCreateData): Promise<T> => {\n→ 22     return await this.model.create({\n           data: {\n             skillId: \"61ae1e2f-8fcd-4466-a42e-a8855cf7a820\",\n             name: \"sample\",\n             xpReward: 10,\n             difficultyLevel: \"NOVICE\",\n         +   title: String\n           }\n         })\n\nArgument `title` is missing.","timestamp":"2026-03-27 10:41:31"}
+{"level":"info","message":"POST /v1/skill-roadmap 13.133 ms","timestamp":"2026-03-27 10:41:31"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:42:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:22:33\n\n  19 }\n  20 \n  21 create = async (data: TCreateData): Promise<T> => {\n→ 22     return await this.model.create({\n           data: {\n             skillId: \"61ae1e2f-8fcd-4466-a42e-a8855cf7a820\",\n             title: \"sample\",\n             difficultyLevel: \"NOVICE\",\n         +   description: String\n           }\n         })\n\nArgument `description` is missing.","timestamp":"2026-03-27 10:42:15"}
+{"level":"info","message":"POST /v1/skill-roadmap 10.456 ms","timestamp":"2026-03-27 10:42:15"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:42:32","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:22:33\n\n  19 }\n  20 \n  21 create = async (data: TCreateData): Promise<T> => {\n→ 22     return await this.model.create({\n           data: {\n             skillId: \"61ae1e2f-8fcd-4466-a42e-a8855cf7a820\",\n             title: \"sample\",\n             difficultyLevel: \"NOVICE\",\n             description: \"sample\",\n         +   skill: {\n         +     create: skillsCreateWithoutRoadmapInput | skillsUncheckedCreateWithoutRoadmapInput,\n         +     connectOrCreate: skillsCreateOrConnectWithoutRoadmapInput,\n         +     connect: skillsWhereUniqueInput\n         +   }\n           }\n         })\n\nArgument `skill` is missing.","timestamp":"2026-03-27 10:42:32"}
+{"level":"info","message":"POST /v1/skill-roadmap 7.448 ms","timestamp":"2026-03-27 10:42:32"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:45:32","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"87420367-0b9f-4190-a4a5-ed9e21656c8e","level":"info","message":"Skill roadmap created","timestamp":"2026-03-27 10:45:33"}
+{"level":"info","message":"POST /v1/skill-roadmap 87.056 ms","timestamp":"2026-03-27 10:45:33"}
+{"level":"info","message":"GET /v1/reel 4.308 ms","timestamp":"2026-03-27 10:47:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:47:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:47:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:47:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:47:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:47:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:47:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:47:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:47:51"}
+{"ip":"::1","level":"http","message":"Reel fetch all request received","timestamp":"2026-03-27 10:48:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reels fetched","timestamp":"2026-03-27 10:48:01"}
+{"level":"info","message":"GET /v1/reel 177.988 ms","timestamp":"2026-03-27 10:48:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:51:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:51:43"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:51:44","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"d4a1bfce-66dd-41dd-8116-8b846aa00b33","level":"info","message":"Skill roadmap created","timestamp":"2026-03-27 10:51:44"}
+{"level":"info","message":"POST /v1/skill-roadmap 152.400 ms","timestamp":"2026-03-27 10:51:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:52:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:52:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:54:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:54:34"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 10:54:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"07e78e6f-d267-4ded-90f6-b953cc57938b","level":"info","message":"Skill roadmap step created","timestamp":"2026-03-27 10:54:40"}
+{"level":"info","message":"POST /v1/skill-roadmap-step 165.756 ms","timestamp":"2026-03-27 10:54:40"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 10:56:20"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 10:56:20","tokenId":"7bf49b4e-8937-4f7d-b30c-6b08995e8e81"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 10:56:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 10:56:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 10:56:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 10:56:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 10:56:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 136.169 ms","timestamp":"2026-03-27 10:56:20"}
+{"level":"warn","message":"Job 1 failed: challengeSubmissionService.submitChallenge is not a function","timestamp":"2026-03-27 10:56:20"}
+{"level":"warn","message":"Job 1 failed: challengeSubmissionService.submitChallenge is not a function","timestamp":"2026-03-27 10:56:21"}
+{"level":"warn","message":"Job 1 failed: challengeSubmissionService.submitChallenge is not a function","timestamp":"2026-03-27 10:56:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:56:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:56:50"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 10:56:53","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 10:56:53","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 20.552 ms","timestamp":"2026-03-27 10:56:53"}
+{"level":"warn","message":"Job 2 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 10:56:53"}
+{"level":"warn","message":"Job 2 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 10:56:54"}
+{"level":"warn","message":"Job 2 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 10:56:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 10:58:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 10:58:45"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 10:59:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 10:59:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 18.851 ms","timestamp":"2026-03-27 10:59:09"}
+{"level":"warn","message":"Job 3 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 10:59:09"}
+{"level":"warn","message":"Job 3 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 10:59:10"}
+{"level":"warn","message":"Job 3 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 10:59:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:00:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:00:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:00:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:00:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:00:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:00:58"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:01:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:01:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 22.774 ms","timestamp":"2026-03-27 11:01:03"}
+{"level":"warn","message":"Job 4 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 11:01:03"}
+{"level":"warn","message":"Job 4 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 11:01:05"}
+{"level":"warn","message":"Job 4 failed: \nInvalid `client.user_roadmap_steps.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userRoadmapStep.repository.ts:62:41\n\n  59     throw new serverError(errorMessage.INVALIDDATA);\n  60 }\n  61 \n→ 62 await client.user_roadmap_steps.create({\n       data: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         roadmapStepId: \"07e78e6f-d267-4ded-90f6-b953cc57938b\",\n         stepOrder: 1,\n     +   roadmapStep: {\n     +     create: roadmap_stepsCreateWithoutUserRoadmapStepsInput | roadmap_stepsUncheckedCreateWithoutUserRoadmapStepsInput,\n     +     connectOrCreate: roadmap_stepsCreateOrConnectWithoutUserRoadmapStepsInput,\n     +     connect: roadmap_stepsWhereUniqueInput\n     +   }\n       }\n     })\n\nArgument `roadmapStep` is missing.","timestamp":"2026-03-27 11:01:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:02:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:02:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:03:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:03:39"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:03:42","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:03:42","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 18.088 ms","timestamp":"2026-03-27 11:03:42"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:05:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:05:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:11:48"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:11:49"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 11:11:53"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 11:11:53","tokenId":"5566521f-32f7-4804-9eac-557e98a9cddf"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 11:11:54","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 11:11:54","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 11:11:54","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 11:11:54"}
+{"level":"info","message":"GET /v1/user-profile/ 202.293 ms","timestamp":"2026-03-27 11:11:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:12:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:12:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:12:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:12:45"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:12:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:12:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:12:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:12:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:13:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:13:18"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 11:13:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:40:33\n\n  37 \n  38 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  39 \n→ 40 return await this.model.findMany({\n       take: 10,\n       where: {\n         deletedAt: null,\n         ~~~~~~~~~\n     ?   AND?: user_profilesWhereInput | user_profilesWhereInput[],\n     ?   OR?: user_profilesWhereInput[],\n     ?   NOT?: user_profilesWhereInput | user_profilesWhereInput[],\n     ?   id?: UuidFilter | String,\n     ?   userId?: UuidFilter | String,\n     ?   name?: StringNullableFilter | String | Null,\n     ?   bio?: StringNullableFilter | String | Null,\n     ?   avatarUrl?: StringNullableFilter | String | Null,\n     ?   skillsSummary?: StringNullableFilter | String | Null,\n     ?   xp?: IntFilter | Int,\n     ?   interests?: JsonFilter,\n     ?   user?: UsersScalarRelationFilter | usersWhereInput\n       },\n       orderBy: [\n         {\n           createdAt: \"desc\"\n         },\n         {\n           id: \"desc\"\n         }\n       ]\n     })\n\nUnknown argument `deletedAt`. Available options are marked with ?.","timestamp":"2026-03-27 11:13:27"}
+{"level":"info","message":"GET /v1/user-profile/ 145.736 ms","timestamp":"2026-03-27 11:13:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:14:10"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:14:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:14:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:14:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:19:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:19:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:19:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:19:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:19:28"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:19:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:19:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:19:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:19:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:19:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:21:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:21:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:21:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:21:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:21:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:21:35"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:21:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:21:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:21:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:21:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:19"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:26"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:22:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:22:42"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 11:22:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:65:33\n\n  62 \n  63 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  64 \n→ 65 return await this.model.findMany({\n       take: 10,\n       where: {\n         deletedAt: null,\n         ~~~~~~~~~\n     ?   AND?: user_profilesWhereInput | user_profilesWhereInput[],\n     ?   OR?: user_profilesWhereInput[],\n     ?   NOT?: user_profilesWhereInput | user_profilesWhereInput[],\n     ?   id?: UuidFilter | String,\n     ?   userId?: UuidFilter | String,\n     ?   name?: StringNullableFilter | String | Null,\n     ?   bio?: StringNullableFilter | String | Null,\n     ?   avatarUrl?: StringNullableFilter | String | Null,\n     ?   skillsSummary?: StringNullableFilter | String | Null,\n     ?   xp?: IntFilter | Int,\n     ?   interests?: JsonFilter,\n     ?   user?: UsersScalarRelationFilter | usersWhereInput\n       },\n       orderBy: [\n         {\n           createdAt: \"desc\"\n         },\n         {\n           id: \"desc\"\n         }\n       ]\n     })\n\nUnknown argument `deletedAt`. Available options are marked with ?.","timestamp":"2026-03-27 11:22:47"}
+{"level":"info","message":"GET /v1/user-profile/ 115.001 ms","timestamp":"2026-03-27 11:22:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:23:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:23:15"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 11:23:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:65:33\n\n  62 \n  63 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  64 \n→ 65 return await this.model.findMany({\n       take: 10,\n       where: {},\n       orderBy: [\n         {\n           createdAt: \"desc\"\n         },\n         {\n           id: \"desc\"\n         }\n       ]\n     })\n\nUnknown argument `createdAt`. Available options are marked with ?.","timestamp":"2026-03-27 11:23:19"}
+{"level":"info","message":"GET /v1/user-profile/ 105.283 ms","timestamp":"2026-03-27 11:23:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:24:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:24:42"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:26:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:26:55"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 11:26:57"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 11:26:57","tokenId":"09ee8d24-1472-4be9-87a5-20e75fb13153"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 11:26:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 11:26:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 11:26:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 11:26:57","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User profile records fetched","timestamp":"2026-03-27 11:26:57"}
+{"level":"info","message":"GET /v1/user-profile/ 278.282 ms","timestamp":"2026-03-27 11:26:57"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:27:48","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:27:48","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 14.349 ms","timestamp":"2026-03-27 11:27:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:30:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:30:57"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:34:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:34:16"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:34:58","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:34:58","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 26.250 ms","timestamp":"2026-03-27 11:34:58"}
+{"level":"warn","message":"Job 7 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:34:59"}
+{"level":"warn","message":"Job 7 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:35:00"}
+{"level":"warn","message":"Job 7 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:35:02"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:36:59","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:36:59","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 8.658 ms","timestamp":"2026-03-27 11:36:59"}
+{"level":"warn","message":"Job 8 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:36:59"}
+{"level":"warn","message":"Job 8 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:37:00"}
+{"level":"warn","message":"Job 8 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:37:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:37:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:37:12"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:37:17","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:37:17","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 13.616 ms","timestamp":"2026-03-27 11:37:17"}
+{"level":"warn","message":"Job 9 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:37:17"}
+{"level":"warn","message":"Job 9 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:37:18"}
+{"level":"warn","message":"Job 9 failed: \nInvalid `client.user_profiles.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 11:37:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:37:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:38:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:38:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:38:07"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:38:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:38:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 71.603 ms","timestamp":"2026-03-27 11:38:19"}
+{"level":"warn","message":"Job 10 failed: \nInvalid `client.user_profiles.upsert()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.upsert({\n       where: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\"\n       },\n       update: {\n         xp: {\n           increment: 10\n         }\n       },\n       create: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         xp: 10,\n     +   interests: JsonNullValueInput | Json\n       }\n     })\n\nArgument `interests` is missing.","timestamp":"2026-03-27 11:38:19"}
+{"level":"warn","message":"Job 10 failed: \nInvalid `client.user_profiles.upsert()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.upsert({\n       where: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\"\n       },\n       update: {\n         xp: {\n           increment: 10\n         }\n       },\n       create: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         xp: 10,\n     +   interests: JsonNullValueInput | Json\n       }\n     })\n\nArgument `interests` is missing.","timestamp":"2026-03-27 11:38:21"}
+{"level":"warn","message":"Job 10 failed: \nInvalid `client.user_profiles.upsert()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\xp.repository.ts:20:36\n\n  17     data\n  18 });\n  19 \n→ 20 await client.user_profiles.upsert({\n       where: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\"\n       },\n       update: {\n         xp: {\n           increment: 10\n         }\n       },\n       create: {\n         userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n         xp: 10,\n     +   interests: JsonNullValueInput | Json\n       }\n     })\n\nArgument `interests` is missing.","timestamp":"2026-03-27 11:38:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:38:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:38:36"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 11:38:37","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 11:38:37","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 18.703 ms","timestamp":"2026-03-27 11:38:37"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-03-27 11:38:46","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User profile records fetched","timestamp":"2026-03-27 11:38:46"}
+{"level":"info","message":"GET /v1/user-profile/ 11.712 ms","timestamp":"2026-03-27 11:38:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:39:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:39:26"}
+{"id":"a3c8b72f-8f5a-4601-9860-05e97472506e","ip":"::1","level":"http","message":"User profile fetch request received","timestamp":"2026-03-27 11:39:35","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"a3c8b72f-8f5a-4601-9860-05e97472506e","level":"info","message":"User profile fetched","timestamp":"2026-03-27 11:39:35"}
+{"level":"info","message":"GET /v1/user-profile/a3c8b72f-8f5a-4601-9860-05e97472506e 247.622 ms","timestamp":"2026-03-27 11:39:35"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 11:42:10"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 11:42:10","tokenId":"24efeb94-eb16-4cd4-b294-7a2e962fcb2b"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 11:42:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 11:42:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 11:42:10","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"PATCH /v1/user-profile/a3c8b72f-8f5a-4601-9860-05e97472506e 268.839 ms","timestamp":"2026-03-27 11:42:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:42:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:42:59"}
+{"id":"a3c8b72f-8f5a-4601-9860-05e97472506e","ip":"::1","level":"http","message":"User profile update request received","timestamp":"2026-03-27 11:43:00","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.user_profiles.upsert()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userProfile.repository.ts:28:52\n\n  25         interests: data.interests\n  26     }).filter(([_, value]) => value !== undefined)\n  27 );\n→ 28 const profile = await prisma.user_profiles.upsert({\n       where: {\n         userId: \"a3c8b72f-8f5a-4601-9860-05e97472506e\"\n       },\n       update: {\n         name: \"shashank\"\n       },\n       create: {\n         userId: \"a3c8b72f-8f5a-4601-9860-05e97472506e\",\n         name: \"shashank\",\n         bio: \"\",\n         avatarUrl: \"\",\n         skills_summary: \"\",\n         ~~~~~~~~~~~~~~\n         interests: [],\n     ?   id?: String,\n     ?   skillsSummary?: String | Null,\n     ?   xp?: Int,\n     ?   createdAt?: DateTime\n       }\n     })\n\nUnknown argument `skills_summary`. Did you mean `skillsSummary`? Available options are marked with ?.","timestamp":"2026-03-27 11:43:00"}
+{"level":"info","message":"PATCH /v1/user-profile/a3c8b72f-8f5a-4601-9860-05e97472506e 132.370 ms","timestamp":"2026-03-27 11:43:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:43:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:43:31"}
+{"id":"a3c8b72f-8f5a-4601-9860-05e97472506e","ip":"::1","level":"http","message":"User profile update request received","timestamp":"2026-03-27 11:43:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.user_profiles.upsert()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userProfile.repository.ts:28:52\n\n  25         interests: data.interests\n  26     }).filter(([_, value]) => value !== undefined)\n  27 );\n→ 28 const profile = await prisma.user_profiles.upsert(\nForeign key constraint violated on the constraint: `user_profiles_user_id_fkey`","timestamp":"2026-03-27 11:43:34"}
+{"level":"info","message":"PATCH /v1/user-profile/a3c8b72f-8f5a-4601-9860-05e97472506e 245.792 ms","timestamp":"2026-03-27 11:43:34"}
+{"id":"51e2f245-89b1-40a7-807e-2b95385114ed","ip":"::1","level":"http","message":"User profile update request received","timestamp":"2026-03-27 11:45:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"51e2f245-89b1-40a7-807e-2b95385114ed","level":"info","message":"User profile record updated","timestamp":"2026-03-27 11:45:16"}
+{"level":"info","message":"PATCH /v1/user-profile/51e2f245-89b1-40a7-807e-2b95385114ed 194.227 ms","timestamp":"2026-03-27 11:45:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:46:24"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:46:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:46:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:46:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:48:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:48:34"}
+{"id":"51e2f245-89b1-40a7-807e-2b95385114ed","ip":"::1","level":"http","message":"User profile update request received","timestamp":"2026-03-27 11:48:37","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"51e2f245-89b1-40a7-807e-2b95385114ed","level":"info","message":"User profile record updated","timestamp":"2026-03-27 11:48:37"}
+{"level":"info","message":"PATCH /v1/user-profile/51e2f245-89b1-40a7-807e-2b95385114ed 251.378 ms","timestamp":"2026-03-27 11:48:37"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:50:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:50:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:51:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:51:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:51:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:51:45"}
+{"id":"a3c8b72f-8f5a-4601-9860-05e97472506e","ip":"::1","level":"http","message":"User profile delete request received","timestamp":"2026-03-27 11:51:48","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"a3c8b72f-8f5a-4601-9860-05e97472506e","level":"info","message":"User profile record hard deleted","timestamp":"2026-03-27 11:51:48"}
+{"level":"info","message":"DELETE /v1/user-profile/a3c8b72f-8f5a-4601-9860-05e97472506e 151.792 ms","timestamp":"2026-03-27 11:51:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:54:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:54:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:55:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:55:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:55:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:55:53"}
+{"idempotencyKey":"NA","ip":"::1","level":"http","message":"User creation request recieved","path":"/","timestamp":"2026-03-27 11:55:55"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-03-27 11:55:55","userId":"169a91bd-168b-4334-8740-a7068d410eab"}
+{"level":"info","message":"POST /v1/admin/ 488.591 ms","timestamp":"2026-03-27 11:55:55"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:169a91bd-168b-4334-8740-a7068d410eab:USER:*","resource":"USER","timestamp":"2026-03-27 11:55:55","userId":"169a91bd-168b-4334-8740-a7068d410eab"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:57:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:57:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:57:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:57:33"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 11:57:40"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 11:57:40","tokenId":"f755f43e-9459-4c2b-827f-f38453f62303"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 11:57:41","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 11:57:41","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 11:57:41","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 11:57:41"}
+{"level":"info","message":"GET /v1/user/ 247.971 ms","timestamp":"2026-03-27 11:57:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:58:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:58:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:58:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:58:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:58:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:58:42"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 11:59:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 11:59:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:03:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:03:41"}
+{"id":"","ip":"::1","level":"http","message":"User fetch request received","timestamp":"2026-03-27 12:03:43","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.users.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:69:41\n\n  66  * @returns \n  67  */\n  68 fetch = async (id: string) : Promise<User> => {\n→ 69     const user = await prisma.users.findMany(\nInvalid input value: invalid input syntax for type uuid: \"\"","timestamp":"2026-03-27 12:03:43"}
+{"level":"info","message":"GET /v1/user/ 235.357 ms","timestamp":"2026-03-27 12:03:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:05:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:05:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:05:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:05:44"}
+{"id":"","ip":"::1","level":"http","message":"User fetch request received","timestamp":"2026-03-27 12:05:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.users.findFirst()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:69:41\n\n  66  * @returns \n  67  */\n  68 fetch = async (id: string) : Promise<User> => {\n→ 69     const user = await prisma.users.findFirst(\nInvalid input value: invalid input syntax for type uuid: \"\"","timestamp":"2026-03-27 12:05:56"}
+{"level":"info","message":"GET /v1/user/ 236.473 ms","timestamp":"2026-03-27 12:05:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:06:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:06:27"}
+{"ip":"::1","level":"http","message":"User fetch all request received","timestamp":"2026-03-27 12:06:28","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User records fetched","timestamp":"2026-03-27 12:06:29"}
+{"level":"info","message":"GET /v1/user/ 170.666 ms","timestamp":"2026-03-27 12:06:29"}
+{"ip":"::1","level":"http","message":"User fetch all request received","timestamp":"2026-03-27 12:06:50","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User records fetched","timestamp":"2026-03-27 12:06:50"}
+{"level":"info","message":"GET /v1/user/?limit=1 10.536 ms","timestamp":"2026-03-27 12:06:50"}
+{"ip":"::1","level":"http","message":"User fetch all request received","timestamp":"2026-03-27 12:06:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User records fetched","timestamp":"2026-03-27 12:06:56"}
+{"level":"info","message":"GET /v1/user/ 8.449 ms","timestamp":"2026-03-27 12:06:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:10:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:10:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:10:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:10:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:11:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:11:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:13:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:13:38"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 12:13:39"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 12:13:39","tokenId":"b0a6f50a-ab5c-4a10-88ce-9c7d13380997"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 12:13:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 12:13:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 12:13:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"User fetch all request received","timestamp":"2026-03-27 12:13:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"User records fetched","timestamp":"2026-03-27 12:13:39"}
+{"level":"info","message":"GET /v1/user/ 265.461 ms","timestamp":"2026-03-27 12:13:39"}
+{"level":"info","message":"DELETE /v1/user/43d91687-9368-4d97-a55f-d6dcaa68f41a 5.775 ms","timestamp":"2026-03-27 12:14:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:14:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:14:44"}
+{"id":"43d91687-9368-4d97-a55f-d6dcaa68f41a","ip":"::1","level":"http","message":"User delete request received","timestamp":"2026-03-27 12:14:46","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User soft deleted successfully","timestamp":"2026-03-27 12:14:46","userId":"43d91687-9368-4d97-a55f-d6dcaa68f41a"}
+{"level":"info","message":"DELETE /v1/user/43d91687-9368-4d97-a55f-d6dcaa68f41a 239.207 ms","timestamp":"2026-03-27 12:14:46"}
+{"action":"DELETE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:43d91687-9368-4d97-a55f-d6dcaa68f41a:USER:*","resource":"USER","timestamp":"2026-03-27 12:14:46","userId":"43d91687-9368-4d97-a55f-d6dcaa68f41a"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:22:28"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:22:28"}
+{"id":"43d91687-9368-4d97-a55f-d6dcaa68f41a","ip":"::1","level":"http","message":"User update request received","timestamp":"2026-03-27 12:22:42","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.users.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\user.repository.ts:144:41\n\n  141 }\n  142 \n  143 update = async (data: UserUpdateData, id: string): Promise<User> => {\n→ 144     const user = await prisma.users.update(\nAn operation failed because it depends on one or more records that were required but not found. No record was found for an update.","timestamp":"2026-03-27 12:22:42"}
+{"level":"info","message":"PATCH /v1/user/43d91687-9368-4d97-a55f-d6dcaa68f41a 308.428 ms","timestamp":"2026-03-27 12:22:42"}
+{"ip":"::1","level":"http","message":"User fetch all request received","timestamp":"2026-03-27 12:23:00","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User records fetched","timestamp":"2026-03-27 12:23:00"}
+{"level":"info","message":"GET /v1/user/ 44.709 ms","timestamp":"2026-03-27 12:23:00"}
+{"id":"23f4651d-a8d8-452c-aeea-4e5e5d79f555","ip":"::1","level":"http","message":"User update request received","timestamp":"2026-03-27 12:23:19","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User record updated","timestamp":"2026-03-27 12:23:19","userId":"23f4651d-a8d8-452c-aeea-4e5e5d79f555"}
+{"level":"info","message":"PATCH /v1/user/23f4651d-a8d8-452c-aeea-4e5e5d79f555 13.101 ms","timestamp":"2026-03-27 12:23:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:23:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:23:37"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:23:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:23:43"}
+{"ip":"::1","level":"http","message":"Reel fetch all request received","timestamp":"2026-03-27 12:25:17","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reels fetched","timestamp":"2026-03-27 12:25:17"}
+{"level":"info","message":"GET /v1/reel/ 254.516 ms","timestamp":"2026-03-27 12:25:17"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Reel fetch request received","timestamp":"2026-03-27 12:25:38","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel metadata fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 12:25:38"}
+{"level":"info","message":"GET /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 34.262 ms","timestamp":"2026-03-27 12:25:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:32:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:32:21"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 12:32:24"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 12:32:24","tokenId":"17cc0fe4-58e2-4ba4-801c-feb64b2d6f23"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 12:32:24","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 12:32:24","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 12:32:24","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"PATCH /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 268.641 ms","timestamp":"2026-03-27 12:32:24"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:32:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:32:43"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-27 12:32:44"}
+{"level":"info","message":"PATCH /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 17.623 ms","timestamp":"2026-03-27 12:32:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:32:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:32:59"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Reel update request received","timestamp":"2026-03-27 12:33:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel metadata updated","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 12:33:06"}
+{"level":"info","message":"PATCH /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 210.029 ms","timestamp":"2026-03-27 12:33:06"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-27 12:33:31"}
+{"level":"info","message":"DELETE /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 6.904 ms","timestamp":"2026-03-27 12:33:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:33:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:33:50"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Reel delete request received","timestamp":"2026-03-27 12:33:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.delete()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:98:33\n\n  95 };\n  96 \n  97 hardDelete = async (id: string): Promise<T> => {\n→ 98     return await this.model.delete({\n           where: {\n             id: false\n                 ~~~~~\n           }\n         })\n\nArgument `id`: Invalid value provided. Expected String, provided Boolean.","timestamp":"2026-03-27 12:33:56"}
+{"level":"info","message":"DELETE /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 274.503 ms","timestamp":"2026-03-27 12:33:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:34:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:34:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:34:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:34:43"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Reel delete request received","timestamp":"2026-03-27 12:34:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"Reel metadata soft deleted","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 12:34:45"}
+{"level":"info","message":"DELETE /v1/reel/62b269d1-0272-4730-b28f-2c1793790e70 226.655 ms","timestamp":"2026-03-27 12:34:45"}
+{"level":"info","message":"POST /v1/interaction/view 2.844 ms","timestamp":"2026-03-27 12:36:31"}
+{"level":"info","message":"POST /v1/view 1.247 ms","timestamp":"2026-03-27 12:36:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 12:39:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 12:39:53"}
+{"ip":"::1","level":"http","message":"View create request received","reelId":"0ab3e292-2ffb-40e3-b180-5bbcd7a11daa","timestamp":"2026-03-27 12:39:54","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New view record create job added to the queue","process":"INCREMENT","reelId":"0ab3e292-2ffb-40e3-b180-5bbcd7a11daa","timestamp":"2026-03-27 12:39:54","type":"VIEw","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/view 20.898 ms","timestamp":"2026-03-27 12:39:54"}
+{"level":"info","message":"View record created","reelId":"0ab3e292-2ffb-40e3-b180-5bbcd7a11daa","timestamp":"2026-03-27 12:39:54","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"View fetch all request received","timestamp":"2026-03-27 12:43:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"View records fetched","timestamp":"2026-03-27 12:43:08"}
+{"level":"info","message":"GET /v1/view 90.665 ms","timestamp":"2026-03-27 12:43:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:02:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:02:42"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 13:02:44"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 13:02:44","tokenId":"ed720716-323c-4d64-9574-ff426fc263b7"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 13:02:44","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 13:02:44","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 13:02:44","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","ip":"::1","level":"http","message":"Badge update request received","timestamp":"2026-03-27 13:02:44","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","level":"info","message":"Badge record updated","timestamp":"2026-03-27 13:02:44"}
+{"level":"info","message":"PATCH /v1/badge/50dfad86-b295-4ef7-bbb6-3a4597edba27 262.751 ms","timestamp":"2026-03-27 13:02:44"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","ip":"::1","level":"http","message":"Badge delete request received","timestamp":"2026-03-27 13:03:33","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"50dfad86-b295-4ef7-bbb6-3a4597edba27","level":"info","message":"Badge record soft deleted","timestamp":"2026-03-27 13:03:33"}
+{"level":"info","message":"DELETE /v1/badge/50dfad86-b295-4ef7-bbb6-3a4597edba27 85.466 ms","timestamp":"2026-03-27 13:03:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:05:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:05:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:28:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:28:47"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 13:29:02"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 13:29:02","tokenId":"edc229d4-8585-4ab3-97f0-aa3ee4e69d7d"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 13:29:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 13:29:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 13:29:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge fetch request received","timestamp":"2026-03-27 13:29:02","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge fetched","timestamp":"2026-03-27 13:29:02"}
+{"level":"info","message":"GET /v1/challenge/e8bb094c-3915-4690-8c71-f306793816b3 300.240 ms","timestamp":"2026-03-27 13:29:02"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:29:08","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:29:08"}
+{"level":"info","message":"GET /v1/challenge?search=sample 31.748 ms","timestamp":"2026-03-27 13:29:08"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:29:21","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:29:21"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c1793790e70 8.027 ms","timestamp":"2026-03-27 13:29:21"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:29:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:29:27"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c1793790e 5.733 ms","timestamp":"2026-03-27 13:29:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:30:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:30:09"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:30:11","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:30:11"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c1793790e 236.244 ms","timestamp":"2026-03-27 13:30:11"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:30:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:30:14"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c179379 12.066 ms","timestamp":"2026-03-27 13:30:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:33:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:33:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:33:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:33:42"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:33:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:33:45"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c1793790e 145.169 ms","timestamp":"2026-03-27 13:33:45"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:33:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:33:47"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c179379 10.141 ms","timestamp":"2026-03-27 13:33:47"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:34:47","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:34:47"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-0272-4730-b28f-2c179379 55.240 ms","timestamp":"2026-03-27 13:34:47"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:34:51","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:34:51"}
+{"level":"info","message":"GET /v1/challenge?reelId=62b269d1-027 5.790 ms","timestamp":"2026-03-27 13:34:51"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:35:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:35:01"}
+{"level":"info","message":"GET /v1/challenge 7.365 ms","timestamp":"2026-03-27 13:35:01"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:35:15","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:35:15"}
+{"level":"info","message":"GET /v1/challenge/?reelId=e8bb094c-3915-4690-8c71-f306793816b3 4.791 ms","timestamp":"2026-03-27 13:35:15"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:35:27","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:35:27"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e70 6.995 ms","timestamp":"2026-03-27 13:35:27"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:35:29","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:35:29"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e 5.062 ms","timestamp":"2026-03-27 13:35:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:36:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:36:54"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:37:01","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:37:01"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e70 193.218 ms","timestamp":"2026-03-27 13:37:01"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:37:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:37:03"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790 10.072 ms","timestamp":"2026-03-27 13:37:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:37:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:37:17"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:37:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:37:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:37:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:37:58"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:38:05","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:64:33\n\n  61 \n  62 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  63 \n→ 64 return await this.model.findMany({\n       take: 10,\n       where: {\n         baseWhere: {\n         ~~~~~~~~~\n           AND: []\n         },\n     ?   AND?: challengesWhereInput | challengesWhereInput[],\n     ?   OR?: challengesWhereInput[],\n     ?   NOT?: challengesWhereInput | challengesWhereInput[],\n     ?   id?: UuidFilter | String,\n     ?   reelId?: UuidFilter | String,\n     ?   question?: StringFilter | String,\n     ?   codeSnippet?: StringNullableFilter | String | Null,\n     ?   language?: StringFilter | String,\n     ?   challengeType?: Enumchallenge_typeFilter | challenge_type,\n     ?   answer?: StringFilter | String,\n     ?   difficultyLevel?: EnumlevelsFilter | levels,\n     ?   createdAt?: DateTimeFilter | DateTime,\n     ?   deletedAt?: DateTimeNullableFilter | DateTime | Null,\n     ?   reels?: ReelsScalarRelationFilter | reelsWhereInput,\n     ?   challengeSubmissions?: Challenge_submissionsListRelationFilter,\n     ?   challengeOptions?: Challenge_optionsListRelationFilter\n       },\n       orderBy: [\n         {\n           createdAt: \"desc\"\n         },\n         {\n           id: \"desc\"\n         }\n       ]\n     })\n\nUnknown argument `baseWhere`. Available options are marked with ?.","timestamp":"2026-03-27 13:38:05"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e70 102.135 ms","timestamp":"2026-03-27 13:38:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:38:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:38:28"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:38:30","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:38:30"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e70 242.478 ms","timestamp":"2026-03-27 13:38:30"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:38:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:38:34"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e 11.547 ms","timestamp":"2026-03-27 13:38:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:40:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:40:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:40:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:40:41"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:40:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:40:45"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e70 199.767 ms","timestamp":"2026-03-27 13:40:45"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:40:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:40:49"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c17937 8.584 ms","timestamp":"2026-03-27 13:40:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:41:18"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:41:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:41:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:41:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:41:48"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:41:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:41:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:41:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:42:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:42:07"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:42:09","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:64:33\n\n  61 \n  62 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  63 \n→ 64 return await this.model.findMany(\nInvalid input value: invalid input syntax for type uuid: \"62b269d1-0272-4730-b28f-2c17937\"","timestamp":"2026-03-27 13:42:09"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c17937 231.766 ms","timestamp":"2026-03-27 13:42:09"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:42:24","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.findMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:64:33\n\n  61 \n  62 where = serverUtils.buildWhere(where, filters, data, searchFields);\n  63 \n→ 64 return await this.model.findMany(\nInvalid input value: invalid input syntax for type uuid: \"62b269d1-0272-4730-b28f-2c1793790e7\"","timestamp":"2026-03-27 13:42:24"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e7 55.686 ms","timestamp":"2026-03-27 13:42:24"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-03-27 13:42:30","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge records fetched","timestamp":"2026-03-27 13:42:30"}
+{"level":"info","message":"GET /v1/challenge/?reelId=62b269d1-0272-4730-b28f-2c1793790e70 57.238 ms","timestamp":"2026-03-27 13:42:30"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge update request received","timestamp":"2026-03-27 13:42:55","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge record updated","timestamp":"2026-03-27 13:42:55"}
+{"level":"info","message":"PATCH /v1/challenge/e8bb094c-3915-4690-8c71-f306793816b3 31.292 ms","timestamp":"2026-03-27 13:42:55"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:52:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:52:23"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 13:53:12"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 13:53:12","tokenId":"72dddeaa-d699-41b6-8338-4979821fbf6b"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 13:53:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 13:53:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 13:53:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Challenge Option fetch all request received","timestamp":"2026-03-27 13:53:12","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge options records found","timestamp":"2026-03-27 13:53:12"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 13:53:12"}
+{"level":"info","message":"GET /v1/challenge-option/ 249.344 ms","timestamp":"2026-03-27 13:53:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:54:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:54:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:54:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:54:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:54:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:54:57"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:55:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:55:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:57:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:57:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 13:57:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 13:57:35"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:11:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:11:01"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 14:11:20"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 14:11:20","tokenId":"66f31fea-1033-42af-b975-d32830195058"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 14:11:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 14:11:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 14:11:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 14:11:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 14:11:20","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 258.965 ms","timestamp":"2026-03-27 14:11:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:13:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:13:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:14:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:14:06"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:14:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:14:26"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-03-27 14:14:38","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-03-27 14:14:38","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"POST /v1/challenge-submission/ 17.169 ms","timestamp":"2026-03-27 14:14:38"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-03-27 14:14:38","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Job 13 failed: Retries exhausted","timestamp":"2026-03-27 14:14:38"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-03-27 14:14:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Job 13 failed: Retries exhausted","timestamp":"2026-03-27 14:14:39"}
+{"challengeId":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-03-27 14:14:41","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Job 13 failed: Retries exhausted","timestamp":"2026-03-27 14:14:41"}
+{"ip":"::1","level":"http","message":"Challenge Submission fetch all request received","timestamp":"2026-03-27 14:15:11","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge submission records found","timestamp":"2026-03-27 14:15:11"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:15:11"}
+{"level":"info","message":"GET /v1/challenge-submission/ 25.620 ms","timestamp":"2026-03-27 14:15:11"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge submission fetch request received","timestamp":"2026-03-27 14:18:42","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"No Challenge submission found","timestamp":"2026-03-27 14:18:42"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:18:42"}
+{"level":"info","message":"GET /v1/challenge-submission/e8bb094c-3915-4690-8c71-f306793816b3 69.473 ms","timestamp":"2026-03-27 14:18:42"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:20:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:20:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:24:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:24:46"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge submission fetch request received","timestamp":"2026-03-27 14:24:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"No Challenge submission found","timestamp":"2026-03-27 14:24:50"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:24:50"}
+{"level":"info","message":"GET /v1/challenge-submission/e8bb094c-3915-4690-8c71-f306793816b3 211.438 ms","timestamp":"2026-03-27 14:24:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:25:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:25:03"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge submission fetch request received","timestamp":"2026-03-27 14:25:04","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"No Challenge submission found","timestamp":"2026-03-27 14:25:04"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:25:04"}
+{"level":"info","message":"GET /v1/challenge-submission/e8bb094c-3915-4690-8c71-f306793816b3 259.968 ms","timestamp":"2026-03-27 14:25:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:26:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:26:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:26:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:26:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:26:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:26:55"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 14:26:56"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 14:26:56","tokenId":"edc85f80-3092-4df4-bbc6-e60108071282"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 14:26:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 14:26:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 14:26:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","ip":"::1","level":"http","message":"Challenge submission fetch request received","timestamp":"2026-03-27 14:26:56","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"e8bb094c-3915-4690-8c71-f306793816b3","level":"warn","message":"No Challenge submission found","timestamp":"2026-03-27 14:26:56"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:26:56"}
+{"level":"info","message":"GET /v1/challenge-submission/e8bb094c-3915-4690-8c71-f306793816b3 221.966 ms","timestamp":"2026-03-27 14:26:56"}
+{"id":"d3abfb89-9dd0-4824-9e4b-85a683fdc43a","ip":"::1","level":"http","message":"Challenge submission fetch request received","timestamp":"2026-03-27 14:28:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"d3abfb89-9dd0-4824-9e4b-85a683fdc43a","level":"info","message":"Challenge submission fetched","timestamp":"2026-03-27 14:28:03"}
+{"level":"info","message":"GET /v1/challenge-submission/d3abfb89-9dd0-4824-9e4b-85a683fdc43a 66.492 ms","timestamp":"2026-03-27 14:28:03"}
+{"ip":"::1","level":"http","message":"Challenge Submission fetch all request received","timestamp":"2026-03-27 14:28:35","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge submission records found","timestamp":"2026-03-27 14:28:35"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:28:35"}
+{"level":"info","message":"GET /v1/challenge-submission/ 62.174 ms","timestamp":"2026-03-27 14:28:35"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:30:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:30:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:30:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:30:55"}
+{"ip":"::1","level":"http","message":"Challenge Submission fetch all request received","timestamp":"2026-03-27 14:31:00","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge submission records found","timestamp":"2026-03-27 14:31:01"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:31:01"}
+{"level":"info","message":"GET /v1/challenge-submission/ 204.404 ms","timestamp":"2026-03-27 14:31:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:31:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:31:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:31:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:31:47"}
+{"ip":"::1","level":"http","message":"Challenge Submission fetch all request received","timestamp":"2026-03-27 14:31:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"No Challenge submission records found","timestamp":"2026-03-27 14:31:49"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:31:49"}
+{"level":"info","message":"GET /v1/challenge-submission/ 305.906 ms","timestamp":"2026-03-27 14:31:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:32:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:32:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:32:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:32:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:32:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:32:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:32:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:33:00"}
+{"ip":"::1","level":"http","message":"Challenge Submission fetch all request received","timestamp":"2026-03-27 14:33:03","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Challenge submission records fetched","timestamp":"2026-03-27 14:33:03"}
+{"level":"info","message":"GET /v1/challenge-submission/ 222.681 ms","timestamp":"2026-03-27 14:33:03"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-27 14:34:14"}
+{"level":"info","message":"DELETE /v1/challenge-submission/d3abfb89-9dd0-4824-9e4b-85a683fdc43a 8.864 ms","timestamp":"2026-03-27 14:34:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:34:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:34:30"}
+{"id":"d3abfb89-9dd0-4824-9e4b-85a683fdc43a","ip":"::1","level":"http","message":"Challenge submission delete request received","timestamp":"2026-03-27 14:34:38","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'flag')","timestamp":"2026-03-27 14:34:38"}
+{"level":"info","message":"DELETE /v1/challenge-submission/d3abfb89-9dd0-4824-9e4b-85a683fdc43a 19.143 ms","timestamp":"2026-03-27 14:34:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:35:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:35:31"}
+{"id":"d3abfb89-9dd0-4824-9e4b-85a683fdc43a","ip":"::1","level":"http","message":"Challenge submission delete request received","timestamp":"2026-03-27 14:35:33","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'flag')","timestamp":"2026-03-27 14:35:33"}
+{"level":"info","message":"DELETE /v1/challenge-submission/d3abfb89-9dd0-4824-9e4b-85a683fdc43a 14.237 ms","timestamp":"2026-03-27 14:35:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:35:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:35:44"}
+{"id":"d3abfb89-9dd0-4824-9e4b-85a683fdc43a","ip":"::1","level":"http","message":"Challenge submission delete request received","timestamp":"2026-03-27 14:35:46","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"d3abfb89-9dd0-4824-9e4b-85a683fdc43a","level":"info","message":"Challenge submission record hard deleted","timestamp":"2026-03-27 14:35:46"}
+{"level":"info","message":"DELETE /v1/challenge-submission/d3abfb89-9dd0-4824-9e4b-85a683fdc43a 353.257 ms","timestamp":"2026-03-27 14:35:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:47:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:47:55"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 14:49:25"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 14:49:25","tokenId":"eb0b4f58-c3e6-4405-a0a1-353b730571d9"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 14:49:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 14:49:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 14:49:25","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 14:49:25"}
+{"level":"info","message":"GET /v1/like/ 188.896 ms","timestamp":"2026-03-27 14:49:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:50:10"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:50:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:51:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:51:43"}
+{"ip":"::1","level":"http","message":"Like fetch all request received","timestamp":"2026-03-27 14:51:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Like records fetched","timestamp":"2026-03-27 14:51:45"}
+{"level":"info","message":"GET /v1/like/ 343.599 ms","timestamp":"2026-03-27 14:51:45"}
+{"level":"info","message":"GET /v1/interaction/like/62b269d1-0272-4730-b28f-2c1793790e70 3.299 ms","timestamp":"2026-03-27 14:52:28"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Like fetch request received","timestamp":"2026-03-27 14:52:34","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","level":"warn","message":"No Like found","timestamp":"2026-03-27 14:52:34"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:52:34"}
+{"level":"info","message":"GET /v1/like/62b269d1-0272-4730-b28f-2c1793790e70 76.559 ms","timestamp":"2026-03-27 14:52:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:53:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:53:45"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:53:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:53:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:54:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:54:08"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"Like fetch request received","timestamp":"2026-03-27 14:54:13","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","level":"warn","message":"No Like found","timestamp":"2026-03-27 14:54:14"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 14:54:14"}
+{"level":"info","message":"GET /v1/like/62b269d1-0272-4730-b28f-2c1793790e70 188.894 ms","timestamp":"2026-03-27 14:54:14"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 14:54:29"}
+{"level":"info","message":"GET /v1/like/count/62b269d1-0272-4730-b28f-2c1793790e70 4.301 ms","timestamp":"2026-03-27 14:54:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:55:19"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:55:20"}
+{"ip":"::1","level":"http","message":"Fetch reel likes count request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 14:55:21"}
+{"level":"info","message":"Reel likes count fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 14:55:22"}
+{"level":"info","message":"GET /v1/like/count/62b269d1-0272-4730-b28f-2c1793790e70 219.353 ms","timestamp":"2026-03-27 14:55:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 14:55:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 14:55:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:22:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:22:41"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 15:22:44"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 15:22:45","tokenId":"982fb6f4-ff52-44f7-adfe-b88342847643"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 15:22:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 15:22:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 15:22:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 15:22:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","level":"info","message":"Skill roadmap created","timestamp":"2026-03-27 15:22:45"}
+{"level":"info","message":"POST /v1/skill-roadmap 239.176 ms","timestamp":"2026-03-27 15:22:45"}
+{"ip":"::1","level":"http","message":"Skill roadmap fetch all request received","timestamp":"2026-03-27 15:22:59","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Skill roadmap records fetched","timestamp":"2026-03-27 15:22:59"}
+{"level":"info","message":"GET /v1/skill-roadmap 30.100 ms","timestamp":"2026-03-27 15:22:59"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","ip":"::1","level":"http","message":"Skill roadmap fetch request received","timestamp":"2026-03-27 15:23:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","level":"info","message":"Skill roadmap fetched","timestamp":"2026-03-27 15:23:40"}
+{"level":"info","message":"GET /v1/skill-roadmap/66e7a0bf-2d0d-446f-9b9c-51b864ccef66 57.544 ms","timestamp":"2026-03-27 15:23:40"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","ip":"::1","level":"http","message":"Skill roadmap update request received","timestamp":"2026-03-27 15:24:35","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","level":"info","message":"Skill roadmap record updated","timestamp":"2026-03-27 15:24:35"}
+{"level":"info","message":"PATCH /v1/skill-roadmap/66e7a0bf-2d0d-446f-9b9c-51b864ccef66 50.415 ms","timestamp":"2026-03-27 15:24:35"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-03-27 15:25:29"}
+{"level":"info","message":"DELETE /v1/skill-roadmap/66e7a0bf-2d0d-446f-9b9c-51b864ccef66 4.354 ms","timestamp":"2026-03-27 15:25:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:25:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:25:43"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","ip":"::1","level":"http","message":"Skill roadmap delete request received","timestamp":"2026-03-27 15:25:45","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"66e7a0bf-2d0d-446f-9b9c-51b864ccef66","level":"info","message":"Skill roadmap record hard deleted","timestamp":"2026-03-27 15:25:45"}
+{"level":"info","message":"DELETE /v1/skill-roadmap/66e7a0bf-2d0d-446f-9b9c-51b864ccef66 219.871 ms","timestamp":"2026-03-27 15:25:45"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-03-27 15:26:23","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"22ccbc30-49e5-41b7-b591-9380bd049ff6","level":"info","message":"Skill roadmap step created","timestamp":"2026-03-27 15:26:23"}
+{"level":"info","message":"POST /v1/skill-roadmap-step 101.018 ms","timestamp":"2026-03-27 15:26:23"}
+{"ip":"::1","level":"http","message":"Skill roadmap fetch all request received","timestamp":"2026-03-27 15:26:37","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Skill roadmap step records fetched","timestamp":"2026-03-27 15:26:37"}
+{"level":"info","message":"GET /v1/skill-roadmap-step 30.659 ms","timestamp":"2026-03-27 15:26:37"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 15:28:14"}
+{"level":"info","message":"GET /v1/skill-roadmap-step/22ccbc30-49e5-41b7-b591-9380bd049ff6 2.975 ms","timestamp":"2026-03-27 15:28:14"}
+{"ip":"::1","level":"http","message":"Skill roadmap fetch all request received","timestamp":"2026-03-27 15:29:38","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"Skill roadmap step records fetched","timestamp":"2026-03-27 15:29:38"}
+{"level":"info","message":"GET /v1/skill-roadmap-step 75.825 ms","timestamp":"2026-03-27 15:29:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:30:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:30:10"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-27 15:30:13"}
+{"level":"info","message":"GET /v1/skill-roadmap-step/22ccbc30-49e5-41b7-b591-9380bd049ff6 13.241 ms","timestamp":"2026-03-27 15:30:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:32:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:32:22"}
+{"id":"22ccbc30-49e5-41b7-b591-9380bd049ff6","ip":"::1","level":"http","message":"Skill roadmap fetch request received","timestamp":"2026-03-27 15:32:23","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"22ccbc30-49e5-41b7-b591-9380bd049ff6","level":"info","message":"Skill roadmap step fetched","timestamp":"2026-03-27 15:32:23"}
+{"level":"info","message":"GET /v1/skill-roadmap-step/22ccbc30-49e5-41b7-b591-9380bd049ff6 178.072 ms","timestamp":"2026-03-27 15:32:23"}
+{"id":"22ccbc30-49e5-41b7-b591-9380bd049ff6","ip":"::1","level":"http","message":"Skill roadmap update request received","timestamp":"2026-03-27 15:33:22","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"22ccbc30-49e5-41b7-b591-9380bd049ff6","level":"info","message":"Skill roadmap step record updated","timestamp":"2026-03-27 15:33:22"}
+{"level":"info","message":"PATCH /v1/skill-roadmap-step/22ccbc30-49e5-41b7-b591-9380bd049ff6 107.429 ms","timestamp":"2026-03-27 15:33:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:43:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:43:47"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 15:43:49"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 15:43:49","tokenId":"ffde053c-9e4f-40ce-aa89-b99080ba9087"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 15:43:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 15:43:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 15:43:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"http","message":"User fetch all request received","timestamp":"2026-03-27 15:43:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"User records fetched","timestamp":"2026-03-27 15:43:49"}
+{"level":"info","message":"GET /v1/user/ 241.980 ms","timestamp":"2026-03-27 15:43:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:53:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:53:36"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 15:53:39","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"View record not found","timestamp":"2026-03-27 15:53:39","viewId":"62b269d1-0272-4730-b28f-2c1793790e70"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 15:53:39"}
+{"level":"info","message":"GET /v1/view/62b269d1-0272-4730-b28f-2c1793790e70 226.179 ms","timestamp":"2026-03-27 15:53:39"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 15:54:17","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"View record not found","timestamp":"2026-03-27 15:54:17","viewId":"62b269d1-0272-4730-b28f-2c1793790e70"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 15:54:17"}
+{"level":"info","message":"GET /v1/view/62b269d1-0272-4730-b28f-2c1793790e70 58.593 ms","timestamp":"2026-03-27 15:54:17"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:55:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:55:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:55:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:55:38"}
+{"id":"62b269d1-0272-4730-b28f-2c1793790e70","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 15:55:40","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"warn","message":"View record not found","timestamp":"2026-03-27 15:55:41","viewId":"62b269d1-0272-4730-b28f-2c1793790e70"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-27 15:55:41"}
+{"level":"info","message":"GET /v1/view/62b269d1-0272-4730-b28f-2c1793790e70 283.553 ms","timestamp":"2026-03-27 15:55:41"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 15:55:51"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 15:55:51"}
+{"level":"info","message":"GET /v1/view/count/62b269d1-0272-4730-b28f-2c1793790e70 37.876 ms","timestamp":"2026-03-27 15:55:51"}
+{"ip":"::1","level":"http","message":"View fetch all request received","timestamp":"2026-03-27 15:56:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"View records fetched","timestamp":"2026-03-27 15:56:31"}
+{"level":"info","message":"GET /v1/view 73.782 ms","timestamp":"2026-03-27 15:56:31"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 15:56:42","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"View record fetched","timestamp":"2026-03-27 15:56:42","viewId":"af4efc8c-8157-405b-a4e4-b8519ac8b565"}
+{"level":"info","message":"GET /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 7.262 ms","timestamp":"2026-03-27 15:56:42"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View delete request received","timestamp":"2026-03-27 15:57:49","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.reels.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\view.repository.ts:112:28\n\n  109  */\n  110 deleteView = async (id: string, reelId: string): Promise<View> => {\n  111     return await prisma.$transaction(async (tx) => {\n→ 112         await tx.reels.update({\n                where: {\n                  id: true,\n                      ~~~~\n                  deletedAt: null\n                },\n                data: {\n                  views: {\n                    decrement: 1\n                  }\n                }\n              })\n\nArgument `id`: Invalid value provided. Expected String, provided Boolean.","timestamp":"2026-03-27 15:57:49"}
+{"level":"info","message":"DELETE /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 132.121 ms","timestamp":"2026-03-27 15:57:49"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:59:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:59:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:59:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:59:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 15:59:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 15:59:45"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:00:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:00:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:00:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:00:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:19"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:24"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:01:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:01:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:02:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:02:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:02:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:02:07"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:02:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:02:35"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:02:41"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:02:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:03:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:03:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:03:10"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:03:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:03:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:03:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:03:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:03:57"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-03-27 16:04:06"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-03-27 16:04:06","tokenId":"73dba591-3b47-4dba-801a-8c558f938447"}
+{"familyId":"fe8dcf68-6242-4a20-a580-dd223ab19234","level":"info","message":"Token rotation successfull","timestamp":"2026-03-27 16:04:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-03-27 16:04:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-03-27 16:04:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 16:04:06","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"this.methods.fetch is not a function","timestamp":"2026-03-27 16:04:06"}
+{"level":"info","message":"GET /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 197.876 ms","timestamp":"2026-03-27 16:04:06"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:04:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:04:50"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 16:04:52","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"ip":"::1","level":"error","message":"this.methods.fetch is not a function","timestamp":"2026-03-27 16:04:52"}
+{"level":"info","message":"GET /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 16.531 ms","timestamp":"2026-03-27 16:04:52"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:05:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:05:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:02"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:19"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:20"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:06:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:06:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-03-27 16:07:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-03-27 16:07:10"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View fetch request received","timestamp":"2026-03-27 16:07:14","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","level":"info","message":"View fetched","timestamp":"2026-03-27 16:07:14"}
+{"level":"info","message":"GET /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 329.323 ms","timestamp":"2026-03-27 16:07:14"}
+{"ip":"::1","level":"http","message":"Fetch views for reel request received","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 16:07:23"}
+{"level":"info","message":"Total views for a reel fetched","reelId":"62b269d1-0272-4730-b28f-2c1793790e70","timestamp":"2026-03-27 16:07:23"}
+{"level":"info","message":"GET /v1/view/count/62b269d1-0272-4730-b28f-2c1793790e70 20.170 ms","timestamp":"2026-03-27 16:07:23"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","ip":"::1","level":"http","message":"View delete request received","timestamp":"2026-03-27 16:07:31","userId":"51e2f245-89b1-40a7-807e-2b95385114ed"}
+{"id":"af4efc8c-8157-405b-a4e4-b8519ac8b565","level":"info","message":"View record hard deleted","timestamp":"2026-03-27 16:07:31"}
+{"level":"info","message":"DELETE /v1/view/af4efc8c-8157-405b-a4e4-b8519ac8b565 23.714 ms","timestamp":"2026-03-27 16:07:31"}

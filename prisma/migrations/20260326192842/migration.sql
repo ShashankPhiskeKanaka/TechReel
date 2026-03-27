@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "reels" ALTER COLUMN "status" SET DEFAULT 'PENDING';

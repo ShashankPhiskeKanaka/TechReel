@@ -1,10 +1,9 @@
 interface PaginationData {
-    limit?: number
-    search?: string
-    sort?: string
-    lastCreatedAt?: Date
-    lastId?: string
-    filters?: {}
+    limit: number | undefined
+    search: string | undefined
+    sort: string | undefined
+    lastCreatedAt: Date | undefined
+    lastId: string | undefined
 }
 
 const PaginationConstants = {

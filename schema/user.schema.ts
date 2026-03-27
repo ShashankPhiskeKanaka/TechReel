@@ -21,4 +21,12 @@ const VerifyMailSchema = z.object({
     })
 });
 
-export { UserSchema, VerifyMailSchema }
+const UpdateUserData = z.object({
+    body: z.object({
+        email: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
+        username: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
+        role: z.string({ error: errorMessage.INVALIDDATA.message }).optional()
+    })
+})
+
+export { UserSchema, VerifyMailSchema, UpdateUserData }

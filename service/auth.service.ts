@@ -18,7 +18,7 @@ class AuthService {
      * @returns { accessToken, refreshToken }
      */
     login = async (username : string, password: string) => {
-        const user = await this.UserMethods.getByUsername(username);
+        const user = await this.UserMethods.fetchByUsername(username);
         if(!user.id || !user.verified){
             logger.warn("Login failed: User not found or unverified", { username });
             throw new serverError(errorMessage.INVALIDDATA);

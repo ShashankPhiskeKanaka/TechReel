@@ -14,32 +14,53 @@ class ServerUtils {
 
         return value;
     }
+    buildWhere = (baseWhere: any, filters: any, data: PaginationData, searchFields: string[]) => {
+        // 1. Initialize AND with your existing baseWhere conditions (like deletedAt: null)
+        const AND: any[] = [{ ...baseWhere }];
 
-    buildWhere = (where: any, filters: {}, data: PaginationData) => {
-        Object.entries(filters).forEach(([key, value]) => {
-            if (value != undefined && value != null) {
-                where[key] = this.parseFilterValue(value);
+        // Move existing baseWhere keys into the AND array to keep them safe
+        Object.entries(baseWhere).forEach(([key, value]) => {
+            AND.push({ [key]: value });
+        });
+
+        // 2. Add dynamic filters (like reelId, userId)
+        Object.entries(filters || {}).forEach(([key, value]) => {
+            if (value != null && value !== 'undefined' && value !== "") {
+                AND.push({ [key]: this.parseFilterValue(value) });
             }
-        })
+        });
 
-        where.AND.push({
-            ...(data.lastCreatedAt && data.lastId ? [
-                {
-                    OR: [
-                        {
-                            createdAt: { lt: data.lastCreatedAt },
-                        },
-                        {
-                            createdAt: data.lastCreatedAt,
-                            id: { lt: data.lastId }
-                        }
-                    ]
-                }
-            ] : []),
-        })
+        // 3. Add Search logic (Wrapped in its own OR)
+        if (data.search && searchFields.length > 0) {
+            AND.push({
+                OR: searchFields.map((field) => ({
+                    [field]: {
+                        contains: data.search,
+                        mode: "insensitive"
+                    }
+                }))
+            });
+        }
 
-        return where;
-    }
+        // 4. Add Cursor Pagination logic
+        if (data.lastCreatedAt && data.lastId) {
+            AND.push({
+                OR: [
+                    { createdAt: { lt: data.lastCreatedAt } },
+                    {
+                        AND: [
+                            { createdAt: data.lastCreatedAt },
+                            { id: { lt: data.lastId } }
+                        ]
+                    }
+                ]
+            });
+        }
+
+        // Return a fresh object with the unified AND array
+        return { AND };
+    };
+
 }
 
 const serverUtils = new ServerUtils();

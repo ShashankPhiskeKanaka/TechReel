@@ -17,11 +17,20 @@ class XpRepository {
             data
         });
 
-        await client.$executeRaw`
-            UPDATE user_profiles 
-            SET xp = GREATEST(0, xp + ${data.amount})
-            WHERE user_id = ${data.userId} 
-        `;
+        await client.user_profiles.upsert({
+            where: { userId: data.userId },
+            update: {
+                xp: {
+                    increment: data.amount
+                }
+            },
+            create: {
+                userId: data.userId,
+                xp: data.amount,
+                interests: []
+            }
+        });
+
 
         return xp;
     }
@@ -50,13 +59,12 @@ class XpRepository {
      * @param {string} [userId] - Optional filter to fetch XP history for a specific user.
      * @returns {Promise<Xp[]>} A list of matching XP records.
      */
-    fetchAll = async (data: PaginationData, filters: {}, userId?: string): Promise<Xp[]> => {
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<Xp[]> => {
         let where: any = {
-            ...(userId ? {userId} : {}),
             AND: []
         }
 
-        where = serverUtils.buildWhere(where, filters, data);
+        where = serverUtils.buildWhere(where, filters, data, searchFields);
 
         const xpRecords = await prisma.xp_ledger.findMany({
             take: data.limit ?? PaginationConstants.limit,

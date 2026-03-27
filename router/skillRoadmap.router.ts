@@ -19,6 +19,6 @@ router.get("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandl
 router.use(authenticateAdmin);
 router.post("/", errorHandler.controllerWrapper(validate(CreateSkillRoadmap)), errorHandler.controllerWrapper(controller.create));
 router.patch("/:id", errorHandler.controllerWrapper(validate(UpdateSkillRoadmap)), errorHandler.controllerWrapper(controller.update));
-router.delete("/:id", errorHandler.controllerWrapper(validate(DeleteData)), errorHandler.controllerWrapper(controller.delete));
+router.delete("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.delete));
 
 export { router as SkillRoadmapRouter };

@@ -4,8 +4,13 @@ import type { TokenLedger, TokenLedgerData } from "../dto/token.dto.js";
 import { TransactionType } from "../generated/prisma/enums.js";
 import { logger } from "../utils/logger.js";
 import { serverUtils } from "../utils/server.utils.js";
+import { BaseRepository } from "./base.repository.js";
 
-class TokenLedgerRepository {
+class TokenLedgerRepository extends BaseRepository<TokenLedger, TokenLedgerData, any> {
+
+    constructor() {
+        super(prisma.token_ledger, "Token ledger");
+    }
 
     /**
      * Awards tokens to a user by creating a ledger entry and updating their balance.
@@ -53,47 +58,46 @@ class TokenLedgerRepository {
         return tokenLedger;
     }
 
-    /**
-      * Retrieves a specific token ledger entry by its unique ID.
-      * @param {string} id - The ID of the ledger entry.
-      * @returns {Promise<TokenLedger>} The ledger record or an empty object if not found.
-      */
-    fetch = async (id: string, userId?: string): Promise<TokenLedger> => {
-        const tokenLedger = await prisma.token_ledger.findFirst({
-            where: {
-                id,
-                ...(userId ? {userId} : {})
-            }
-        });
+    // /**
+    //   * Retrieves a specific token ledger entry by its unique ID.
+    //   * @param {string} id - The ID of the ledger entry.
+    //   * @returns {Promise<TokenLedger>} The ledger record or an empty object if not found.
+    //   */
+    // fetch = async (id: string, userId?: string): Promise<TokenLedger> => {
+    //     const tokenLedger = await prisma.token_ledger.findFirst({
+    //         where: {
+    //             id,
+    //             ...(userId ? {userId} : {})
+    //         }
+    //     });
 
-        return tokenLedger ?? <TokenLedger>{};
-    }
+    //     return tokenLedger ?? <TokenLedger>{};
+    // }
 
-    /**
-     * Retrieves a paginated list of token ledger entries based on filters.
-     * @param {PaginationData} data - Pagination and sorting settings.
-     * @param {Object} filters - Key-value pairs for filtering.
-     * @returns {Promise<TokenLedger[]>} A list of ledger records.
-     */
-    fetchAll = async (data: PaginationData, filters: {}, userId?: string): Promise<TokenLedger[]> => {
-        let where: any = {
-            ...(userId ? {userId} : {}),
-            AND: []
-        }
+    // /**
+    //  * Retrieves a paginated list of token ledger entries based on filters.
+    //  * @param {PaginationData} data - Pagination and sorting settings.
+    //  * @param {Object} filters - Key-value pairs for filtering.
+    //  * @returns {Promise<TokenLedger[]>} A list of ledger records.
+    //  */
+    // fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<TokenLedger[]> => {
+    //     let where: any = {
+    //         AND: []
+    //     }
 
-        where = serverUtils.buildWhere(where, filters, data);
+    //     where = serverUtils.buildWhere(where, filters, data, searchFields);
 
-        const tokenLedgers = await prisma.token_ledger.findMany({
-            take: data.limit ?? PaginationConstants.limit,
-            where,
-            orderBy: [
-                {createdAt: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc'},
-                {id: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' }
-            ]
-        });
+    //     const tokenLedgers = await prisma.token_ledger.findMany({
+    //         take: data.limit ?? PaginationConstants.limit,
+    //         where,
+    //         orderBy: [
+    //             {createdAt: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc'},
+    //             {id: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' }
+    //         ]
+    //     });
 
-        return tokenLedgers;
-    }
+    //     return tokenLedgers;
+    // }
 
     /**
      * Calculates the total token balance for a user using raw SQL.
@@ -113,20 +117,20 @@ class TokenLedgerRepository {
         return tokens[0].balance ?? 0;
     }
 
-    /**
-     * Permanently deletes a token ledger entry from the database.
-     * @param {string} id - The ID of the entry to remove.
-     * @returns {Promise<TokenLedger>} The deleted ledger record.
-     */
-    delete = async (id: string) => {
-        const token = await prisma.token_ledger.delete({
-            where: {
-                id: id
-            }
-        });
+    // /**
+    //  * Permanently deletes a token ledger entry from the database.
+    //  * @param {string} id - The ID of the entry to remove.
+    //  * @returns {Promise<TokenLedger>} The deleted ledger record.
+    //  */
+    // delete = async (id: string) => {
+    //     const token = await prisma.token_ledger.delete({
+    //         where: {
+    //             id: id
+    //         }
+    //     });
 
-        return token;
-    }
+    //     return token;
+    // }
 }
 
 export { TokenLedgerRepository }

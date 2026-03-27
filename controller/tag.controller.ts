@@ -2,45 +2,52 @@ import type { Request, Response } from "express";
 import type { TagService } from "../service/tag.service.js";
 import { logger } from "../utils/logger.js";
 import { ApiResponse } from "../utils/api.utils.js";
+import { ControllerMessages } from "../constants/controller.messages.js";
+import { BaseController } from "./base.controller.js";
+import type { Tag } from "../dto/tags.dto.js";
 
-class TagController {
-    constructor ( private TagService : TagService ) {}
+const controllerMessages = new ControllerMessages("Tag");
 
-    create = async (req: Request, res: Response) => {
-        logger.http("Tag creation request received", {
-            ip: req.ip,
-            userId: req.user?.id ?? "NA"
-        });
-
-        const tag = await this.TagService.create(req.body.name);
-
-        return ApiResponse.success(res, "Tag created", tag);
+class TagController extends BaseController<TagService> {
+    constructor ( service : TagService ) {
+        super(service, "Tag");
     }
 
-    get = async (req: Request, res: Response) => {
+    // create = async (req: Request, res: Response) => {
+    //     logger.http(controllerMessages.CREATE.req, {
+    //         ip: req.ip,
+    //         userId: req.user?.id ?? "NA"
+    //     });
 
-        logger.http("Tag fetch request received", {
-            ip: req.ip,
-            userId: req.user?.id ?? "NA"
-        });
+    //     const tag = await this.TagService.create(req.body.name);
+
+    //     return ApiResponse.success(res, controllerMessages.CREATE.res, tag);
+    // }
+
+    // fetch = async (req: Request, res: Response) => {
+
+    //     logger.http(controllerMessages.FETCH.req, {
+    //         ip: req.ip,
+    //         userId: req.user?.id ?? "NA"
+    //     });
 
 
-        const tag = await this.TagService.get(req.params.id?.toString() ?? "");
+    //     const tag = await this.TagService.fetch(req.params.id?.toString() ?? "");
 
-        return ApiResponse.success(res, "Tag fetched", tag);
-    }
+    //     return ApiResponse.success(res, controllerMessages.FETCH.res, tag);
+    // }
 
-    delete = async (req: Request, res: Response) => {
-        logger.http("Tag deletion request received", {
-            ip: req.ip,
-            userId: req.user?.id ?? "NA"
-        });
+    // delete = async (req: Request, res: Response) => {
+    //     logger.http(controllerMessages.DELETE.req, {
+    //         ip: req.ip,
+    //         userId: req.user?.id ?? "NA"
+    //     });
 
 
-        const tag = await this.TagService.delete(req.params.id?.toString() ?? "");
+    //     const tag = await this.TagService.delete(req.params.id?.toString() ?? "");
 
-        return ApiResponse.success(res, "Tag deleted", tag);
-    }
+    //     return ApiResponse.success(res, controllerMessages.DELETE.res, tag);
+    // }
 }
 
 export { TagController }

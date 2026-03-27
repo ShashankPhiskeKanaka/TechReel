@@ -3,28 +3,33 @@ import { serverError } from "../../utils/error.utils.js";
 import { prisma } from "../../db/prisma.js";
 import { logger } from "../../utils/logger.js";
 import { errorMessage } from "../../constants/error.messages.js";
-import { ChallengeService } from "../../service/challenge.service.js";
 import { ChallengeSubmissionRepository } from "../../repository/challengeSubmission.repository.js";
-import { GamificationService } from "../../service/gamification.service.js";
 import { XpRepository } from "../../repository/xp.repository.js";
-import { TokenRepository } from "../../repository/token.repository.js";
 import { TokenLedgerRepository } from "../../repository/tokenLedger.repository.js";
-import { UserRoadmapStepsRepository } from "../../repository/userRoadmapStep.repository.js";
 import { UserBadgesRepository } from "../../repository/userBadge.repository.js";
-import { GamificationFactory } from "../../factory/gamification.factory.js";
 import { ControllerFactory } from "../../factory/general.factory.js";
+import { XpService } from "../../service/xp.service.js";
+import { UserRoadmapStepRepository } from "../../repository/userRoadmapStep.repository.js";
+import { UserRoadmapStepService } from "../../service/userRoadmapStep.service.js";
+import { UserBadgeService } from "../../service/userBadge.service.js";
+import { TokenLedgerService } from "../../service/tokenLedger.service.js";
+import { ChallengeSubmissionService } from "../../service/challengeSubmission.service.js";
+import { redisConfig } from "../../config/redis.config.js";
 
-const gamificationService = GamificationFactory.createService(ChallengeSubmissionRepository, XpRepository, TokenLedgerRepository, UserRoadmapStepsRepository, UserBadgesRepository, GamificationService)
-const ChallengeService = ControllerFactory.createService(ChallengeS)
+const challengeSubmissionService = ControllerFactory.createService(ChallengeSubmissionRepository, ChallengeSubmissionService);
+const xpService = ControllerFactory.createService(XpRepository, XpService);
+const userRoadmapStepService = ControllerFactory.createService(UserRoadmapStepRepository, UserRoadmapStepService);
+const userBadgeService = ControllerFactory.createService(UserBadgesRepository, UserBadgeService);
+const tokenLedgerService = ControllerFactory.createService(TokenLedgerRepository, TokenLedgerService);
 
 const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
     const { data } = job.data;
 
     try {
         return await prisma.$transaction(async (tx) => {
-            const challengeData = await gamificationService.submitChallenge(data, tx);
+            const challengeData = await challengeSubmissionService.submit(data, tx);
 
-            if (!challengeData) {
+            if (!challengeData.id) {
                 logger.warn("Challenge submission chances exhausted", {
                     userId: data.userId,
                     challengeId: data.challengeId
@@ -33,7 +38,7 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
                 throw new serverError(errorMessage.EXHAUSTED);
             }
 
-            await gamificationService.awardXp({
+            await xpService.awardXp({
                 userId: data.userId,
                 amount: challengeData.score,
                 source: "CHALLENGE_SUBMISSION",
@@ -45,13 +50,14 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
             if (challengeData.score == 10 && data.roadmapStepId) {
                 let amount = 1;
 
-                const { currentStep, highestStep } = await gamificationService.createUserRoadmapStep({
+                const { currentStep, highestStep } = await userRoadmapStepService.createUserRoadmapStep({
                     userId: data.userId,
-                    roadmapStepId: data.roadmapStepId
+                    roadmapStepId: data.roadmapStepId,
+                    stepOrder: data.stepOrder
                 }, tx)
 
                 if (highestStep?.stepOrder == currentStep.stepOrder) {
-                    await gamificationService.awardBadge({
+                    await userBadgeService.awardBadge({
                         userId: data.userId,
                         skillId: currentStep.roadmap.skillId
                     }, tx)
@@ -59,7 +65,7 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
                     amount++;
                 }
 
-                await gamificationService.awardToken({
+                await tokenLedgerService.awardToken({
                     userId: data.userId,
                     amount,
                     source: "CHALLENGE_SUBMISSION",
@@ -72,6 +78,13 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
     } catch (err: any) {
         throw new serverError(err);
     }
+}, {
+    connection: redisConfig,
+    concurrency: 10
 })
+
+gamificationWorker.on("failed", (job: any, err) => {
+    logger.warn(`Job ${job.id} failed: ${err.message}`);
+});
 
 export { gamificationWorker }

@@ -15,41 +15,4 @@ interface Skill {
     deletedAt: Date | null
 }
 
-interface SkillRoadmap {
-    id: string
-    skillId: string
-    difficultyLevel: Difficulty
-    title: string
-    description: string
-    createdAt: Date
-    tokenId: string
-}
-
-interface SkillRoadmapData {
-    skillId: string
-    difficultyLevel: Difficulty
-    title: string
-    description: string
-    tokenId: string
-}
-
-interface SkillRoadmapStep {
-    id: string
-    roadmapId: string
-    reelId: string
-    challengeId: string
-    stepOrder: number
-    title: string
-    description: string | null
-}
-
-interface SkillRoadmapStepData {
-    roadmapId: string
-    reelId: string
-    challengeId: string
-    stepOrder: number
-    title: string
-    description: string | null
-}
-
-export type { Skill, SkillData, SkillRoadmap, SkillRoadmapData, SkillRoadmapStep, SkillRoadmapStepData };
+export type { Skill, SkillData };

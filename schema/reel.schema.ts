@@ -14,12 +14,14 @@ const ReelSchema = z.object({
 
 const UpdateReelSchema = z.object({
     body: z.object({
-        id: z.string({ error: errorMessage.INVALIDDATA.message }),
         title: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
         description: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
         difficulty_level: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
         tags: z.object({ error: errorMessage.INVALIDDATA.message }).optional(),
         is_bonus: z.boolean({ error: errorMessage.INVALIDDATA.message }).optional()
+    }),
+    params: z.object({
+        id: z.string({ error: errorMessage.INVALIDDATA.message })
     })
 });
 

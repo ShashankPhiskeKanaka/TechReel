@@ -1,48 +1,70 @@
 import { errorMessage } from "../constants/error.messages.js";
+import { ServiceMessages } from "../constants/service.messages.js";
+import type { PaginationData } from "../dto/pagination.dto.js";
 import type { TagRepository } from "../repository/tag.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
+import { BaseService } from "./base.service.js";
+import type { Tag } from "../dto/tags.dto.js";
 
-class TagService {
-    constructor ( private TagMethods : TagRepository ) {}
+const serviceMessages = new ServiceMessages("Tag"); 
 
-    create = async (name: string) => {
-        const tag = await this.TagMethods.create(name);
-
-        logger.info("New tag created", {
-            tagId: tag.id
-        });
-
-        return tag;
+class TagService extends BaseService<Tag, any, any> {
+    constructor ( methods : TagRepository ) {
+        super(methods, "Tag");
     }
 
-    get = async (id: string) => {
-        const tag = await this.TagMethods.get(id);
+    // create = async (name: string) => {
+    //     const tag = await this.TagMethods.create(name);
 
-        if(!tag.id) {
-            logger.warn("Tag fetch failed: No tag found with the id", {
-                tagId: id
-            });
+    //     logger.info(serviceMessages.CREATE.message, {
+    //         tagId: tag.id
+    //     });
 
-            throw new serverError(errorMessage.NOTFOUND);
-        }
+    //     return tag;
+    // }
 
-        logger.info("Tag fetched", {
-            tagId: tag.id
-        });
+    // fetch = async (id: string) => {
+    //     const tag = await this.TagMethods.fetch(id);
 
-        return tag;
-    }
+    //     if(!tag.id) {
+    //         logger.warn(serviceMessages.FETCH.error, {
+    //             tagId: id
+    //         });
 
-    delete = async (id: string) => {
-        const tag = await this.TagMethods.delete(id);
+    //         throw new serverError(errorMessage.NOTFOUND);
+    //     }
 
-        logger.info("Tag deleted", {
-            tagId: tag.id
-        });
+    //     logger.info(serviceMessages.FETCH.message, {
+    //         tagId: tag.id
+    //     });
 
-        return tag;
-    }
+    //     return tag;
+    // }
+
+    // fetchAll = async (data: PaginationData, filters: {}) => {
+    //     const tags = await this.TagMethods.fetchAll(data, filters);
+
+    //     if(tags.length == 0) {
+    //         logger.warn(serviceMessages.FETCHALL.error);
+
+    //         throw new serverError(errorMessage.NOTFOUND);
+    //     }
+
+    //     logger.info(serviceMessages.FETCHALL.message);
+
+    //     return tags;
+    // }
+
+    // delete = async (id: string) => {
+    //     const tag = await this.TagMethods.delete(id);
+
+    //     logger.info(serviceMessages.DELETE.hardDelete, {
+    //         tagId: tag.id
+    //     });
+
+    //     return tag;
+    // }
 }
 
 export { TagService };

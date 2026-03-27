@@ -46,12 +46,12 @@ class StreakRepository {
      * @param {Object} filters - Key-value pairs for filtering the results.
      * @returns {Promise<Streak[]>} A list of streaks matching the criteria.
      */
-    fetchAll = async (data: PaginationData, filters: {}): Promise<Streak[]> => {
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<Streak[]> => {
         let where: any = {
             AND:[]
         }
 
-        where = serverUtils.buildWhere(where, filters, data);
+        where = serverUtils.buildWhere(where, filters, data, searchFields);
 
         const streaks = await prisma.streaks.findMany({
             take: data.limit ?? PaginationConstants.limit,

@@ -28,6 +28,7 @@ import { SkillRoadmapRouter } from "./router/skillRoadmap.router.js";
 import { SkillRoadmapStepRouter } from "./router/skillRoadmapStep.router.js";
 import { UserProfileRouter } from "./router/userProfile.router.js";
 import { AdminRouter } from "./router/admin.router.js";
+import { UserRoadmapStepRouter } from "./router/userRoadmapStep.router.js";
 
 dotenv.config();
 
@@ -36,11 +37,10 @@ const app = express();
 configurePassport();
 
 const corsOptions = {
-    // Allows any origin while still supporting credentials/cookies
     origin: "*",
     methods: 'GET,POST,PUT,PATCH,DELETE',
     credentials: true,
-    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+    optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -82,6 +82,7 @@ app.use("/v1/challenge-submission", ChallengeSubmissionRouter);
 
 app.use("/v1/skill-roadmap", SkillRoadmapRouter);
 app.use("/v1/skill-roadmap-step", SkillRoadmapStepRouter);
+app.use("/v1/user-roadmap-step", UserRoadmapStepRouter);
 
 app.use("/v1/view", ViewRouter);
 app.use("/v1/like", LikeRouter);

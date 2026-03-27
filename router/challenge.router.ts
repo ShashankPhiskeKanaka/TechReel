@@ -7,7 +7,7 @@ import { authenticate, authenticateAdmin } from "../middleware/authenticate.midd
 import { errorHandler } from "../factory/auth.factory.js";
 import { validate } from "../middleware/zod.middleware.js";
 import { DeleteData, GetData } from "../schema/general.schema.js";
-import { ChallengeData, ChallengeUpdateData } from "../schema/challenge.schema.js";
+import { CreateChallengeData, UpdateChallengeData } from "../schema/challenge.schema.js";
 
 const router = express.Router();
 const controller = ControllerFactory.create(ChallengeRepository, ChallengeService, ChallengeController);
@@ -15,13 +15,13 @@ const controller = ControllerFactory.create(ChallengeRepository, ChallengeServic
 router.use(authenticate);
 
 router.get("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetch));
-router.get("/reel/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetchByReel));
+router.get("/", errorHandler.controllerWrapper(controller.fetchAll));
 
 router.post("/submit", errorHandler.controllerWrapper(controller.createChallengeSubmissionJob));
 
 router.use(authenticateAdmin);
-router.post("/", errorHandler.controllerWrapper(validate(ChallengeData)), errorHandler.controllerWrapper(controller.create));
-router.patch("/:id", errorHandler.controllerWrapper(validate(ChallengeUpdateData)), errorHandler.controllerWrapper(controller.update));
+router.post("/", errorHandler.controllerWrapper(CreateChallengeData), errorHandler.controllerWrapper(controller.create));
+router.patch("/:id", errorHandler.controllerWrapper(validate(UpdateChallengeData)), errorHandler.controllerWrapper(controller.update));
 router.delete("/:id", errorHandler.controllerWrapper(validate(DeleteData)), errorHandler.controllerWrapper(controller.delete));
 
 

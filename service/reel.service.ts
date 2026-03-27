@@ -10,6 +10,7 @@ import { errorMessage } from "../constants/error.messages.js";
 import { uuidv4 } from "zod";
 import { redisUtils } from "../utils/redis.utils.js";
 import { Resource } from "../dto/redis.dto.js";
+import type { PaginationData } from "../dto/pagination.dto.js";
 
 class ReelService {
 
@@ -112,8 +113,8 @@ class ReelService {
      * @throws {ServerError} 404 if missing or soft-deleted.
      */
 
-    get = async (id: string) => {
-        const reel = await this.ReelMethods.get(id);
+    fetch = async (id: string) => {
+        const reel = await this.ReelMethods.fetch(id);
 
         if(!reel.id) {
             logger.warn("No reel with the id found", {
@@ -130,6 +131,14 @@ class ReelService {
         return reel;
     }
 
+    fetchAll = async (data: PaginationData, filters: {}, saerchFields: string[]) => {
+        const reels = await this.ReelMethods.fetchAll(data, filters, saerchFields);
+
+        logger.info("Reels fetched");
+
+        return reels;
+    }
+
     /**
      * Removes reel metadata and triggers cleanup for related S3 assets and caches.
      * 
@@ -137,7 +146,7 @@ class ReelService {
      * @param {string} id - The unique Reel ID.
      */
 
-    delete = async (flag: boolean, id: string) => {
+    delete = async (id: string, flag: boolean) => {
         let reel;
         if(flag) {
             reel = await this.ReelMethods.hardDelete(id);

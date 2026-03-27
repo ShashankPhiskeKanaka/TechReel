@@ -2,8 +2,13 @@ import { prisma } from "../db/prisma.js";
 import type { Like, LikeData } from "../dto/like.dto.js";
 import { PaginationConstants, type PaginationData } from "../dto/pagination.dto.js";
 import { serverUtils } from "../utils/server.utils.js";
+import { BaseRepository } from "./base.repository.js";
 
-class LikeRepository {
+class LikeRepository extends BaseRepository<Like, LikeData, any> {
+
+    constructor() {
+        super(prisma.reel_likes, "Like");
+    }
 
     /**
      * Atomically creates a like record and increments the reel's like counter.
@@ -33,58 +38,56 @@ class LikeRepository {
             return like;
         });
     }
-    /**
-     * Retrieves a specific like record for a user-reel pair.
-     * 
-     * @param {string} reelId - The unique identifier of the reel.
-     * @param {string} userId - The unique identifier of the user.
-     * @returns {Promise<Like>} The matching like record or an empty object if not found.
-     * @note Uses findFirst to locate the record based on the composite criteria.
-     */
-    fetch = async (reelId: string, userId: string) : Promise<Like> => {
-        const like = await prisma.reel_likes.findFirst({
-            where: {
-                reelId,
-                userId
-            }
-        });
+    // /**
+    //  * Retrieves a specific like record for a user-reel pair.
+    //  * 
+    //  * @param {string} reelId - The unique identifier of the reel.
+    //  * @param {string} userId - The unique identifier of the user.
+    //  * @returns {Promise<Like>} The matching like record or an empty object if not found.
+    //  * @note Uses findFirst to locate the record based on the composite criteria.
+    //  */
+    // fetch = async (reelId: string, userId: string) : Promise<Like> => {
+    //     const like = await prisma.reel_likes.findFirst({
+    //         where: {
+    //             reelId,
+    //             userId
+    //         }
+    //     });
 
-        return like ?? <Like>{};
-    }
+    //     return like ?? <Like>{};
+    // }
 
-    /**
-     * Retrieves a paginated list of reel likes with flexible scoping.
-     * 
-     * @description Supports multi-dimensional filtering by user, reel, or both. 
-     * Implements keyset pagination (id + createdAt) to ensure stable ordering 
-     * across high-volume interaction data.
-     * 
-     * @param {PaginationData} data - Pagination metadata including limit, sort, and cursors.
-     * @param {string} [userId] - Optional ID to filter likes by a specific user.
-     * @param {string} [reelId] - Optional ID to filter likes for a specific reel.
-     * @returns {Promise<Like[]>} A collection of like records matching the criteria.
-     */
-    fetchLikes = async (data: PaginationData, filters: {}, userId?: string, reelId?: string): Promise<Like[]> => {
+    // /**
+    //  * Retrieves a paginated list of reel likes with flexible scoping.
+    //  * 
+    //  * @description Supports multi-dimensional filtering by user, reel, or both. 
+    //  * Implements keyset pagination (id + createdAt) to ensure stable ordering 
+    //  * across high-volume interaction data.
+    //  * 
+    //  * @param {PaginationData} data - Pagination metadata including limit, sort, and cursors.
+    //  * @param {string} [userId] - Optional ID to filter likes by a specific user.
+    //  * @param {string} [reelId] - Optional ID to filter likes for a specific reel.
+    //  * @returns {Promise<Like[]>} A collection of like records matching the criteria.
+    //  */
+    // fetchLikes = async (data: PaginationData, filters: {}, searchFields: string[]): Promise<Like[]> => {
 
-        let where: any = {
-            ...(userId ? { userId } : {}),
-            ...(reelId ? { reelId } : {}),
-            AND:[]
-        }
+    //     let where: any = {
+    //         AND:[]
+    //     }
 
-        where = serverUtils.buildWhere(where, filters, data);
+    //     where = serverUtils.buildWhere(where, filters, data, searchFields);
 
-        const likes = await prisma.reel_likes.findMany({
-            take: data.limit ?? PaginationConstants.limit,
-            where,
-            orderBy: [
-                { id: data.sort as 'asc' | 'desc' },
-                { createdAt: data.sort as 'asc' | 'desc' }
-            ]
-        });
+    //     const likes = await prisma.reel_likes.findMany({
+    //         take: data.limit ?? PaginationConstants.limit,
+    //         where,
+    //         orderBy: [
+    //             { id: data.sort as 'asc' | 'desc' },
+    //             { createdAt: data.sort as 'asc' | 'desc' }
+    //         ]
+    //     });
 
-        return likes;
-    }
+    //     return likes;
+    // }
 
     /**
      * Retrieves the denormalized likes count from the reels table.
@@ -93,7 +96,7 @@ class LikeRepository {
      * @returns {Promise<number>} The total number of likes, or 0 if the reel is not found/deleted.
      * @note This is more performant than counting the reel_likes table for high-traffic feeds.
      */
-    fetchLikesCount = async (reelId: string) => {
+    fetchLikeCount = async (reelId: string) => {
         const reel = await prisma.reels.findUnique({
             where: {
                 id: reelId,

@@ -23,7 +23,7 @@ router.get("/", errorHandler.controllerWrapper(controller.fetchAll));
 router.post("/submit", errorHandler.controllerWrapper(controller.createChallengeSubmissionJob));
 
 router.use(authenticateAdmin);
-router.post("/", errorHandler.controllerWrapper(CreateChallengeData), errorHandler.controllerWrapper(controller.create));
+router.post("/", errorHandler.controllerWrapper(validate(CreateChallengeData)), errorHandler.controllerWrapper(controller.create));
 router.patch("/:id", errorHandler.controllerWrapper(validate(UpdateChallengeData)), errorHandler.controllerWrapper(controller.update));
 router.delete("/:id", errorHandler.controllerWrapper(validate(DeleteData)), errorHandler.controllerWrapper(controller.delete));
 

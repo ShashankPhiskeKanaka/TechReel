@@ -34,6 +34,7 @@ import { FeedRouter } from "./router/feed.router.js";
 
 import { interactionWorker } from "./jobs/workers/interaction.worker.js";
 import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
+import { StreakRouter } from "./router/streak.router.js";
 
 dotenv.config();
 
@@ -95,10 +96,12 @@ app.use("/v1/user-roadmap-step", UserRoadmapStepRouter);
 
 app.use("/v1/view", ViewRouter);
 app.use("/v1/like", LikeRouter);
+app.use("/v1/streak", StreakRouter);
 
 app.use("/v1/badge", BadgeRouter);
 
 app.use("/v1/feed", FeedRouter);
+
 
 app.use(authenticate);
 app.get("/", (req, res) => {

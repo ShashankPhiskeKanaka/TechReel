@@ -79,6 +79,15 @@ class UserService {
 
         return user;
     }
+
+    /**
+     * Retrieves a paginated list of user records based on filters and search criteria.
+     * @param data - Pagination parameters (page, limit, skip).
+     * @param filters - Key-value pairs for filtering (e.g., status, role).
+     * @param searchFields - Array of fields to apply the search term against.
+     * @returns A promise resolving to an array of user records.
+     * @throws {serverError} If no records match the criteria.
+     */
     fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]) => {
         const records = await this.UserMethods.fetchAll(data, filters, searchFields);
 
@@ -93,6 +102,13 @@ class UserService {
         return records;
     }
 
+    /**
+     * Updates an existing user's profile information.
+     * @param data - The partial user data to be updated.
+     * @param id - The unique UUID of the user.
+     * @returns The updated user record.
+     * @throws {Error} If the update fails or the user does not exist.
+     */
     update = async (data: UserUpdateData, id: string) => {
         const user = await this.UserMethods.update(data, id);
 

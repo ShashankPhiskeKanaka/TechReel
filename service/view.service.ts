@@ -92,6 +92,12 @@ class ViewService extends BaseService<View, ViewData, any> {
     //     return view;
     // }
 
+    /**
+     * Offloads the update of a video view record (rewatch) to a background worker.
+     * @param data - Metadata for the view (userId, reelId, watchedSeconds, etc).
+     * @returns Promise<void> - Returns immediately after the task is queued.
+     * @throws {Error} If the task cannot be added to the Redis queue.
+     */
     updateView = async (data: ViewData) => {
         await addInteractionTask({ ...data, process: "REWATCHED" }, "VIEW");
 

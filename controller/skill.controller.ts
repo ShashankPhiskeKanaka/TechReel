@@ -37,6 +37,12 @@ class SkillController extends BaseController<SkillService> {
     //     return ApiResponse.success(res, controllerMessage.FETCH.res, skill);
     // }
 
+    /**
+     * Handles the retrieval of all available skill records with pagination and category filtering.
+     * Searches across 'name' and 'category' fields using the repository search logic.
+     * @param req - Express Request (query: page, limit, category)
+     * @param res - Express Response (json: paginated skill records)
+     */
     fetchAll = async (req: Request, res: Response) => {
         logger.http(controllerMessage.FETCHALL.req, {
             ip: req.ip,

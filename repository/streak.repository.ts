@@ -57,7 +57,7 @@ class StreakRepository {
             take: data.limit ?? PaginationConstants.limit,
             where,
             orderBy: [
-                {lastActive: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc'},
+                {createdAt: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc'},
                 {id: (data.sort ?? PaginationConstants.sort) as 'asc' | 'desc' }
             ]
         });
@@ -75,7 +75,10 @@ class StreakRepository {
         return await prisma.$transaction(async (tx) => {
             const updatedStreak = await tx.streaks.update({
                 where: {
-                    userId
+                    userId,
+                    createdAt: {
+                        lte: new Date()
+                    }
                 },
                 data: {
                     currentStreak: {
@@ -85,7 +88,7 @@ class StreakRepository {
             });
 
             if(updatedStreak.currentStreak > updatedStreak.longestStreak) {
-                await tx.streaks.update({
+                const streak = await tx.streaks.update({
                     where: {
                         userId
                     },
@@ -93,7 +96,10 @@ class StreakRepository {
                         longestStreak: updatedStreak.currentStreak
                     }
                 });
+
+                return streak;
             }
+            return updatedStreak;
         })
     }
 

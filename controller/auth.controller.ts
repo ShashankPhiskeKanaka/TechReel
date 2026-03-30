@@ -92,6 +92,12 @@ class AuthController {
         return ApiResponse.success(res, "Logged out");
     }
 
+    /**
+     * Handles the initial "forgot password" request.
+     * Extracts the email from URL parameters and generates a reset token via AuthService.
+     * @param req - Express Request (params: email)
+     * @param res - Express Response (json: reset token)
+     */
     forgetPass = async (req: Request, res: Response) => {
         
         logger.http("Forget password request received", {
@@ -104,6 +110,12 @@ class AuthController {
         return ApiResponse.success(res, "Forget password token generated", token);
     }
 
+    /**
+     * Handles the password reset completion.
+     * Validates the provided token and updates the user's password with the new payload.
+     * @param req - Express Request (params: token, body: password)
+     * @param res - Express Response (json: success message)
+     */
     changePass = async (req: Request, res: Response) => {
         logger.http("Change password request recieved", {
             ip: req.ip

@@ -2,7 +2,6 @@ interface StreakData {
     userId: string
     currentStreak: number
     longestStreak: number
-    lastActive: Date
 }
 
 interface Streak {
@@ -10,7 +9,7 @@ interface Streak {
     userId: string
     currentStreak: number
     longestStreak: number
-    lastActive: Date
+    createdAt: Date
 }
 
 export type { Streak, StreakData }

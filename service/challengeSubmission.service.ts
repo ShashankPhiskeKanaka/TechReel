@@ -29,8 +29,19 @@ class ChallengeSubmissionService extends BaseService<ChallengeSubmission, Challe
         return;
     }
 
+    /**
+     * Processes and stores a new challenge submission.
+     * @param data - The submission payload (form data, answers, or files).
+     * @param client - The submitting entity (user_id or client_metadata).
+     * @returns The newly created challenge submission record.
+     * @throws {Error} If the submission fails validation or persistence.
+     */
     submit = async (data: any, client: any) => {
         const challengeData = await this.methods.submit(data, client);
+
+        logger.info("New challenge submission record created", {
+            challengeSubmissionId: challengeData.id
+        })
 
         return challengeData;
     }

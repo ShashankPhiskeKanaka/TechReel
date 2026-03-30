@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "streaks" ALTER COLUMN "last_active" SET DEFAULT CURRENT_TIMESTAMP;

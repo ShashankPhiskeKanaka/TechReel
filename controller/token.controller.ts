@@ -12,7 +12,12 @@ class TokenController extends BaseController<TokenService>  {
         super(service, "Token");
     }
 
-
+    /**
+     * Handles the retrieval of all token-related records (e.g., token definitions or ledger entries).
+     * Implements pagination and supports searching across the 'name' field.
+     * @param req - Express Request (query: page, limit, search)
+     * @param res - Express Response (json: paginated token records)
+     */
     fetchAll = async (req: Request, res: Response) => {
         logger.http(controllerMessages.FETCHALL.req, {
             ip: req.ip,

@@ -13,6 +13,12 @@ class SkillRoadmapStepController extends BaseController<SkillRoadmapStepService>
         super(service, "Skill roadmap");
     }
 
+    /**
+     * Retrieves all steps associated with specific skill roadmaps.
+     * Supports pagination and filtering by roadmap category or name.
+     * @param req - Express Request (query: page, limit, category)
+     * @param res - Express Response (json: paginated roadmap step records)
+     */
     fetchAll = async (req: Request, res: Response) => {
         logger.http(controllerMessages.FETCHALL.req, {
             ip: req.ip,

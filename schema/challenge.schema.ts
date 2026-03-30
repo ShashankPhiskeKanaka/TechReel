@@ -8,7 +8,7 @@ const CreateChallengeData = z.object({
         language: z.string({ error: errorMessage.INVALIDDATA.message }),
         challengeType: z.string({ error: errorMessage.INVALIDDATA.message }),
         answer: z.string({ error: errorMessage.INVALIDDATA.message }),
-        difficutlyLevel: z.string({ error: errorMessage.INVALIDDATA.message }),
+        difficultyLevel: z.string({ error: errorMessage.INVALIDDATA.message }),
         options: z.array(
             z.object({
                 option: z.string({ error: errorMessage.INVALIDDATA.message }),

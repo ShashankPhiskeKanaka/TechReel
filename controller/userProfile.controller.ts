@@ -12,6 +12,12 @@ class UserProfileController extends BaseController<UserProfileService> {
         super(service, "User profile");
     }
 
+    /**
+     * Retrieves a paginated list of user profiles.
+     * Supports search functionality across 'name' and 'bio' fields.
+     * @param req - Express Request (query: page, limit, search)
+     * @param res - Express Response (json: paginated profiles)
+     */
     fetchAll = async (req: Request, res: Response) => {
         logger.http(controllerMessages.FETCHALL.req, {
             ip: req.ip,
@@ -31,6 +37,14 @@ class UserProfileController extends BaseController<UserProfileService> {
         return ApiResponse.success(res, controllerMessages.FETCHALL.res, userProfiles);
     }
 
+    /**
+     * Updates a specific user profile.
+     * Includes an authorization check to ensure only Admins or the profile 
+     * owner can modify the data.
+     * @param req - Express Request (params: id, body: updateData, user: identity/role)
+     * @param res - Express Response (json: updated profile)
+     * @throws {unauthorizedError} If a non-admin attempts to update another user's profile.
+     */
     update = async (req: Request, res: Response) => {
         const id = req.params.id?.toString() ?? "";
         this.logRequest(req, this.messages.UPDATE.req, { id });
@@ -47,6 +61,11 @@ class UserProfileController extends BaseController<UserProfileService> {
         return ApiResponse.success(res, this.messages.UPDATE.res, result);
     }
 
+    /**
+     * Performs a soft or hard delete of a user profile record.
+     * @param req - Express Request (params: id)
+     * @param res - Express Response (json: deletion status)
+     */
     delete = async (req: Request, res: Response) => {
         const id = req.params.id?.toString() ?? "";
         this.logRequest(req, this.messages.DELETE.req, { id });

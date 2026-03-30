@@ -6,6 +6,12 @@ import { BaseService } from "./base.service.js";
 class FeedService {
     constructor(private methods: FeedRepository) {}
 
+    /**
+     * Retrieves a single reel record or a collection of reels associated with the ID.
+     * @param id - The unique identifier for the reel or the user owning the reels.
+     * @returns A promise resolving to the reel data found in the database.
+     * @throws {Error} If the database query fails.
+     */
     fetch = async (id: string) => {
         const reels = await this.methods.fetch(id);
 

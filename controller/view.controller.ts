@@ -91,6 +91,12 @@ class ViewController extends BaseController<ViewService> {
     //     return ApiResponse.success(res, controllerMessages.FETCH.res, view);
     // }
 
+    /**
+     * Retrieves a paginated list of video view records.
+     * Supports specific filtering by user ID or reel ID to track consumption history.
+     * @param req - Express Request (query: page, limit, userId, reelId)
+     * @param res - Express Response (json: paginated view records)
+     */
     fetchAll = async (req: Request, res: Response) => {
         logger.http(controllerMessages.FETCHALL.req, {
             ip: req.ip,

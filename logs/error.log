@@ -173,3 +173,15 @@
 {"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42883`. Message: `operator does not exist: text = text[]`","timestamp":"2026-03-30 01:00:08"}
 {"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42703`. Message: `column r.createdAt does not exist`","timestamp":"2026-03-30 01:00:57"}
 {"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-30 10:10:00"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-30 10:22:20"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-30 10:25:37"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-30 10:27:47"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-30 10:28:58"}
+{"ip":"::1","level":"error","message":"\nInvalid `this.model.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\base.repository.ts:36:33\n\n  33 }\n  34 \n  35 create = async (data: TCreateData): Promise<T> => {\n→ 36     return await this.model.create(\nUnique constraint failed on the fields: (`name`)","timestamp":"2026-03-30 10:30:23"}
+{"ip":"::1","level":"error","message":"fn is not a function","timestamp":"2026-03-30 10:31:03"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.user_profiles.upsert()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\userProfile.repository.ts:28:52\n\n  25         interests: data.interests\n  26     }).filter(([_, value]) => value !== undefined)\n  27 );\n→ 28 const profile = await prisma.user_profiles.upsert(\nForeign key constraint violated on the constraint: `user_profiles_user_id_fkey`","timestamp":"2026-03-30 11:11:57"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-30 11:38:24"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-30 11:38:36"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-30 11:39:04"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.streaks.create()` invocation:\n\n{\n  data: {\n    userId: \"51e2f245-89b1-40a7-807e-2b95385114ed\",\n    currentStreak: 1,\n    longestStreak: 1,\n+   lastActive: DateTime\n  }\n}\n\nArgument `lastActive` is missing.","timestamp":"2026-03-30 11:41:35"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.streaks.update()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\repository\\streak.repository.ts:76:52\n\n  73  */\n  74 update = async (userId: string) => {\n  75     return await prisma.$transaction(async (tx) => {\n→ 76         const updatedStreak = await tx.streaks.update(\nThe column `(not available)` does not exist in the current database.","timestamp":"2026-03-30 11:48:36"}

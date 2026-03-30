@@ -25,7 +25,7 @@ router.use(authenticateAdmin);
 // router.use(idempotencyMiddleware);
 
 router.post("/", errorHandler.controllerWrapper(validate(SkillsSchema)), errorHandler.controllerWrapper(controller.create));
-router.patch("/", errorHandler.controllerWrapper(validate(UpdateSkillData)), errorHandler.controllerWrapper(controller.update));
-router.delete("/:flag", errorHandler.controllerWrapper(validate(DeleteData)), errorHandler.controllerWrapper(controller.delete));
+router.patch("/:id", errorHandler.controllerWrapper(validate(UpdateSkillData)), errorHandler.controllerWrapper(controller.update));
+router.delete("/:id", errorHandler.controllerWrapper(validate(DeleteData)), errorHandler.controllerWrapper(controller.delete));
 
 export { router as SkillRouter };

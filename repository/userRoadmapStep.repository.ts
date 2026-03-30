@@ -59,7 +59,7 @@ class UserRoadmapStepRepository {
             throw new serverError(errorMessage.INVALIDDATA);
         }
 
-        await client.user_roadmap_steps.create({
+        const newUserRoadmapStep = await client.user_roadmap_steps.create({
             data: {
                 userId: data.userId,
                 roadmapStepId: data.roadmapStepId,
@@ -68,7 +68,7 @@ class UserRoadmapStepRepository {
             }
         });
 
-        return { currentStep, highestStep };
+        return { currentStep, highestStep, newUserRoadmapStep };
     }
 
     /**

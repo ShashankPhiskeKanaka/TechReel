@@ -45,6 +45,13 @@ class ChallengeSubmissionController extends BaseController<ChallengeSubmissionSe
     //     return ApiResponse.success(res, controllerMessages.FETCH.res, challengeSubmission);
     // }
 
+    /**
+     * Handles the retrieval of challenge submissions.
+     * Implements role-based visibility: Admins can fetch any record, 
+     * while standard users are restricted to their own data.
+     * @param req - Express Request (params: id, user: role/id)
+     * @param res - Express Response (json: submission data)
+     */
     fetch = async (req: Request, res: Response) => {
         const id = req.params.id?.toString() ?? "";
         this.logRequest(req, this.messages.FETCH.req, { id });

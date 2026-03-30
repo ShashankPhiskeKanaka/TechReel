@@ -252,7 +252,7 @@ model streaks {
   userId        String   @unique @map("user_id") @db.Uuid
   currentStreak Int      @map("current_streak")
   longestStreak Int      @map("longest_streak")
-  lastActive    DateTime @map("last_active") @db.Timestamptz
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
 
   user users @relation(fields: [userId], references: [id], onDelete: Cascade)
 

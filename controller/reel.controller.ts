@@ -14,6 +14,11 @@ class ReelController extends BaseController<ReelService> {
         super(service, "Reel");
     }
 
+    /**
+     * Initiates the reel upload process by generating a pre-signed S3 URL.
+     * @param req - Express Request (body: metadata, user: id)
+     * @param res - Express Response (json: pre-signed URL & reel record)
+     */
     create = async (req: Request, res: Response) => {
 
         logger.http(controllerMessage.CREATE.req, {
@@ -29,6 +34,12 @@ class ReelController extends BaseController<ReelService> {
         return ApiResponse.success(res, controllerMessage.CREATE.res, data);
     }
 
+    /**
+     * Webhook/Callback handler to update a reel's status (e.g., from AWS Lambda).
+     * Validates the incoming status update and persists metadata changes.
+     * @param req - Express Request (body: status, reelId, metadata)
+     * @param res - Express Response (200 OK)
+     */
     updateStatus = async (req: Request, res: Response) => {
 
         logger.http("Updating reel metadata record request from aws received", {

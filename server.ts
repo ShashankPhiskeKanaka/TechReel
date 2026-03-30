@@ -29,10 +29,17 @@ import { SkillRoadmapStepRouter } from "./router/skillRoadmapStep.router.js";
 import { UserProfileRouter } from "./router/userProfile.router.js";
 import { AdminRouter } from "./router/admin.router.js";
 import { UserRoadmapStepRouter } from "./router/userRoadmapStep.router.js";
+import { idempotencyMiddleware } from "./middleware/idempotency.middleware.js";
+import { FeedRouter } from "./router/feed.router.js";
+
+import { interactionWorker } from "./jobs/workers/interaction.worker.js";
+import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
 
 dotenv.config();
 
 const app = express();
+
+app.set('trust proxy', true); 
 
 configurePassport();
 
@@ -57,6 +64,8 @@ const stream = {
 }
 
 app.use(morgan(`:method :url :response-time ms`, { stream }));
+
+// app.use(idempotencyMiddleware);
 
 app.use("/v1/admin", AdminRouter);
 
@@ -88,6 +97,8 @@ app.use("/v1/view", ViewRouter);
 app.use("/v1/like", LikeRouter);
 
 app.use("/v1/badge", BadgeRouter);
+
+app.use("/v1/feed", FeedRouter);
 
 app.use(authenticate);
 app.get("/", (req, res) => {

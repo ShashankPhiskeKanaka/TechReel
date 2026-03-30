@@ -91,6 +91,28 @@ class AuthController {
 
         return ApiResponse.success(res, "Logged out");
     }
+
+    forgetPass = async (req: Request, res: Response) => {
+        
+        logger.http("Forget password request received", {
+            ip: req.ip,
+            email: req.params.email?.toString()
+        });
+
+        const token = await this.AuthService.forgetPass(req.params.email?.toString() ?? "");
+
+        return ApiResponse.success(res, "Forget password token generated", token);
+    }
+
+    changePass = async (req: Request, res: Response) => {
+        logger.http("Change password request recieved", {
+            ip: req.ip
+        });
+
+        await this.AuthService.changePass(req.params.token?.toString() ?? "", req.body.password);
+
+        return ApiResponse.success(res, "Password changed successfully");
+    }
 }
 
 export { AuthController }

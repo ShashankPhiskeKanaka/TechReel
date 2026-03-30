@@ -99,6 +99,40 @@ class AuthService {
 
         return;
     }
+
+    forgetPass = async (email: string) => {
+
+        const user = await this.UserMethods.fetchByEmail(email);
+
+        if(!user.id) {
+            logger.warn("User does not exist", {
+                email
+            });
+
+            throw new serverError(errorMessage.INVALIDDATA);
+        }
+
+        const token = authUtils.generateForgetToken(user.id);
+
+        logger.info("Forget password token generated",{
+            email
+        });
+
+        return token;
+    }
+
+    changePass = async (token: string, password: string) => {
+        const hashedPassword = await authUtils.hashPassword(password);
+        const { id } = authUtils.decodeForgetToken(token);
+
+        await this.UserMethods.update({password: hashedPassword}, id);
+
+        logger.info("Password changed", {
+            userId: id
+        });
+
+        return;
+    }
 }
 
 export { AuthService }

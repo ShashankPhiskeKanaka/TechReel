@@ -23,7 +23,7 @@ class ReelController extends BaseController<ReelService> {
 
         const data = await this.service.createPresignedUrl({
             ...req.body,
-            creator_id: req.user?.id ?? ""
+            creatorId: req.user?.id ?? ""
         });
 
         return ApiResponse.success(res, controllerMessage.CREATE.res, data);

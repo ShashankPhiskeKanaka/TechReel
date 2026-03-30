@@ -3,8 +3,8 @@ import { errorMessage } from "../constants/error.messages.js";
 
 const UserSchema = z.object({
     body: z.object({
-        username: z.string({ error: errorMessage.INVALIDDATA.message }),
         email: z.email({ error: errorMessage.INVALIDDATA.message }),
+        username: z.string({ error: errorMessage.INVALIDDATA.message }),
         password: z.string({ error: errorMessage.INVALIDDATA.message })
         .min(8, "Password must have atleast 8 characters")
         .max(32, "Password is too long")

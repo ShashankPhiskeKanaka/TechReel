@@ -24,6 +24,7 @@ interface UserUpdateData {
     authProvider?: string
     role?: Role
     verified?: boolean
+    password?: string
 }
 
 export type { User, Role, UserData, UserUpdateData };

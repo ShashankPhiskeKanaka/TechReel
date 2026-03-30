@@ -8,21 +8,20 @@ class IdempotencyMiddleware {
 
     handle = (ttl: number) => {
         return async (req: Request, res: Response, next: NextFunction) => {
-            const key = req.headers['idempotency-key'] as string;
             if(req.method == 'GET') return next();
+            const key = req.headers['x-idempotency-key'];
 
-            if(!key) {
-                logger.warn("No request key provided", {
-                    ip: req.ip
-                });
-
+            if (!key || typeof key !== 'string' || key.trim().length === 0) {
+                logger.warn("Missing or invalid idempotency key", { ip: req.ip });
                 return res.status(400).json({
                     success: false,
-                    message: "Invalid request"
+                    message: "Idempotency key is required for this request"
                 });
             }
 
-            const redisKey = `idem:${key}`;
+            const userId = req.user?.id || 'PUBLIC';
+            const redisKey = `idem:${userId}:${key.trim()}`;
+
 
             const requestHash = redisUtils.generatePayloadHash(req);
 
@@ -87,6 +86,6 @@ class IdempotencyMiddleware {
 }
 
 const idempotency = new IdempotencyMiddleware(client);
-const idempotencyMiddleware = idempotency.handle(Number(process.env.CACHE_TTL_LONG) ?? 86400);
+const idempotencyMiddleware = idempotency.handle(Number(process.env.CACHE_TTL_MEDIUM) ?? 3600);
 
 export { idempotencyMiddleware };

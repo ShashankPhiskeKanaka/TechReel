@@ -20,4 +20,13 @@ const LogoutSchema = z.object({
     })
 });
 
-export { LoginSchema, LogoutSchema };
+const ChangePasswordSchema = z.object({
+    body: z.object({
+        password: z.string({ error: errorMessage.INVALIDDATA.message })
+    }),
+    params: z.object({
+        token: z.string({ error: errorMessage.INVALIDDATA.message })
+    })
+});
+
+export { LoginSchema, LogoutSchema, ChangePasswordSchema };

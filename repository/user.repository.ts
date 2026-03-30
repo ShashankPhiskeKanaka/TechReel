@@ -59,6 +59,17 @@ class UserRepository {
         return user[0] ?? <User>{};
     }
 
+    fetchByEmail = async (email: string): Promise<User> => {
+        const user = await prisma.users.findUnique({
+            where: {
+                email,
+                deletedAt: null
+            }
+        });
+
+        return user ?? <User>{};
+    }
+
     /**
      * fetches user based on id, performs soft delete check and includes user profile when fetching data
      * 
@@ -151,6 +162,7 @@ class UserRepository {
 
         return user;
     }
+
     /**
      * Marks an user as deleted by setting a timestamp without removing the record.
      * 

@@ -156,3 +156,20 @@
 {"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:42:47"}
 {"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:44:05"}
 {"ip":"::1","level":"error","message":"this.cacheClient.setEx is not a function","timestamp":"2026-03-27 16:46:02"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-03-29 17:21:58"}
+{"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-03-30 00:43:37"}
+{"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-03-30 00:43:44"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-30 00:44:00"}
+{"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-03-30 00:45:55"}
+{"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-03-30 00:46:29"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42601`. Message: `syntax error at or near \"text_relevacne\"`","timestamp":"2026-03-30 00:47:59"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42601`. Message: `syntax error at or near \"text_relevance\"`","timestamp":"2026-03-30 00:48:33"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42883`. Message: `function unnest(jsonb) does not exist`","timestamp":"2026-03-30 00:49:52"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `22P02`. Message: `invalid input syntax for type uuid: \"\"`","timestamp":"2026-03-30 00:50:51"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `22P02`. Message: `invalid input syntax for type uuid: \"\"`","timestamp":"2026-03-30 00:51:56"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `22P02`. Message: `invalid input syntax for type uuid: \"\"`","timestamp":"2026-03-30 00:52:37"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `22023`. Message: `cannot extract elements from an object`","timestamp":"2026-03-30 00:53:36"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `22023`. Message: `cannot extract elements from an object`","timestamp":"2026-03-30 00:56:26"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42883`. Message: `operator does not exist: text = text[]`","timestamp":"2026-03-30 01:00:08"}
+{"ip":"::1","level":"error","message":"\nInvalid `prisma.$queryRaw()` invocation:\n\n\nRaw query failed. Code: `42703`. Message: `column r.createdAt does not exist`","timestamp":"2026-03-30 01:00:57"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-03-30 10:10:00"}

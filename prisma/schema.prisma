@@ -61,7 +61,7 @@ model user_profiles {
   avatarUrl     String? @map("avatar_url") // Mapped
   skillsSummary String? @map("skills_summary") // Mapped
   xp            Int     @default(0)
-  interests     Json
+  interests     Json    @default("[]")
   createdAt     DateTime @default(now()) @map("createdAt") @db.Timestamptz
 
   user          users   @relation(fields: [userId], references: [id], onDelete: Cascade)

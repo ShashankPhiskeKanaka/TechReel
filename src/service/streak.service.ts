@@ -1,0 +1,131 @@
+import { errorMessage } from "../constants/error.messages.js";
+import { ServiceMessages } from "../constants/service.messages.js";
+import type { PaginationData } from "../dto/pagination.dto.js";
+import type { StreakData } from "../dto/streak.dto.js";
+import type { StreakRepository } from "../repository/streak.repository.js";
+import { serverError } from "../utils/error.utils.js";
+import { logger } from "../utils/logger.js";
+import { redisUtils } from "../utils/redis.utils.js";
+import { BaseService } from "./base.service.js";
+
+const serviceMessage = new ServiceMessages("Streak");
+
+class StreakService {
+    constructor(private methods: StreakRepository) { }
+
+    /**
+     * Creates a new streak record for a user.
+     * 
+     * @param data - Initial streak metrics (userId, currentCount, etc.)
+     * @returns The newly created streak object.
+     */
+    create = async (data: StreakData) => {
+        const streak = await this.methods.create(data);
+
+        logger.info(serviceMessage.CREATE.message, {
+            streakId: streak.id
+        });
+
+        return streak;
+    }
+
+    /**
+     * Triggers the logic to increment, maintain, or reset a user's streak.
+     * 
+     * @param userId - The unique identifier of the user.
+     * @returns The updated streak record after processing daily activity.
+     */
+    update = async (userId: string) => {
+        const streak = await this.methods.update(userId);
+
+        logger.info(serviceMessage.UPDATE.message, {
+            userId,
+            streakId: streak.id
+        });
+
+        return streak;
+    }
+
+    /**
+     * Retrieves a single streak record.
+     * 
+     * @param id - The streak record identifier.
+     * @returns The found streak record.
+     * @throws {serverError} 404 if the streak does not exist.
+     */
+    fetch = async (id: string) => {
+        const streak = await this.methods.fetch(id);
+
+        if (!streak.id) {
+            logger.warn(serviceMessage.FETCH.error, {
+                streakId: id
+            });
+
+            throw new serverError(errorMessage.NOTFOUND);
+        }
+
+        logger.info(serviceMessage.FETCH.message);
+
+        return streak;
+    }
+
+    /**
+     * Retrieves a list of streak records using cursor-based pagination.
+     * @param data - Pagination parameters including limit and cursor info.
+     * @param filters - Specific filtering criteria (e.g., userId).
+     * @param searchFields - Fields enabled for text-based searching.
+     * @returns Object containing the records and the cursor for the next page.
+     * @throws {serverError} 404 if no records match the criteria.
+     */
+    fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]) => {
+
+        const records = await this.methods.fetchAll(data, filters, searchFields);
+
+        if (records.length == 0) {
+            logger.warn(serviceMessage.FETCHALL.error);
+
+            throw new serverError(errorMessage.NOTFOUND);
+        }
+
+        const lastRecord = records[records.length - 1] as any;
+
+        logger.warn(serviceMessage.FETCHALL.message);
+
+        return {
+            records, nextCursor: {
+                lastId: lastRecord.id,
+                lastCreatedAt: lastRecord.createdAt
+            }
+        };
+    }
+
+    /**
+     * Removes a streak record from the database.
+     * Includes logic for cache invalidation upon successful deletion.
+     * @param id - The ID of the streak to delete.
+     * @param flag - Boolean determining hard delete (true) or soft delete (false).
+     * @returns The deleted record metadata.
+     */
+    delete = async (id: string, flag: boolean) => {
+        let record;
+        if (flag) {
+            //@ts-ignore
+            record = await this.methods.hardDelete(id);
+            logger.info(serviceMessage.DELETE.hardDelete, {
+                id
+            });
+        } else {
+            //@ts-ignore
+            record = await this.methods.softDelete(id);
+            logger.info(serviceMessage.DELETE.softDelete, {
+                id
+            });
+        }
+
+        redisUtils.invalidateKey(record.userId ? record.userId : "PUBLIC", "Steak", "UPDATE");
+
+        return record;
+    }
+}
+
+export { StreakService }

@@ -1,5 +1,5 @@
-import {z} from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { z } from "zod";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const UpdateSkillRoadmap = z.object({
     params: z.object({

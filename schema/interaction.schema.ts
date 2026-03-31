@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const CreateViewRecord = z.object({
-    body : z.object({
+    body: z.object({
         reelId: z.string({ error: errorMessage.INVALIDDATA.message }),
         completed: z.boolean({ error: errorMessage.INVALIDDATA.message }),
         watchedSeconds: z.number({ error: errorMessage.INVALIDDATA.message })
@@ -16,4 +16,4 @@ const DeleteViewRecord = z.object({
     })
 })
 
-export {CreateViewRecord, DeleteViewRecord }
+export { CreateViewRecord, DeleteViewRecord }

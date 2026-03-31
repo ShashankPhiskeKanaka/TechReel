@@ -3,44 +3,47 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectPrisma } from "./db/prisma.js";
-import { UserRouter } from "./router/user.router.js";
-import { AuthRouter } from "./router/auth.router.js";
+import { UserRouter } from "./src/router/user.router.js";
+import { AuthRouter } from "./src/router/auth.router.js";
 import { globalErrorHandler } from "./factory/auth.factory.js";
-import { logger } from "./utils/logger.js";
+import { logger } from "./src/utils/logger.js";
 import morgan from "morgan";
-import { authenticate, AuthService } from "./middleware/authenticate.middleware.js";
+import { authenticate, AuthService } from "./src/middleware/authenticate.middleware.js";
 import expressSession from "express-session"
 import passport from "passport"
-import { configurePassport } from "./config/passport.config.js";
-import { GoogleRouter } from "./router/google.router.js";
-import { GithubRouter } from "./router/github.router.js";
-import { TokenRouter } from "./router/token.router.js";
-import { SkillRouter } from "./router/skill.router.js";
-import { TagRouter } from "./router/tag.router.js";
-import { ReelRouter } from "./router/reel.router.js";
-import { ChallengeRouter } from "./router/challenge.router.js";
-import { ChallengeOptionRouter } from "./router/challengeOption.router.js";
-import { ViewRouter } from "./router/view.router.js";
-import { LikeRouter } from "./router/like.router.js";
-import { BadgeRouter } from "./router/badge.router.js";
-import { ChallengeSubmissionRouter } from "./router/challengeSubmission.router.js";
-import { SkillRoadmapRouter } from "./router/skillRoadmap.router.js";
-import { SkillRoadmapStepRouter } from "./router/skillRoadmapStep.router.js";
-import { UserProfileRouter } from "./router/userProfile.router.js";
-import { AdminRouter } from "./router/admin.router.js";
-import { UserRoadmapStepRouter } from "./router/userRoadmapStep.router.js";
-import { idempotencyMiddleware } from "./middleware/idempotency.middleware.js";
-import { FeedRouter } from "./router/feed.router.js";
+import { configurePassport } from "./src/config/passport.config.js";
+import { GoogleRouter } from "./src/router/google.router.js";
+import { GithubRouter } from "./src/router/github.router.js";
+import { TokenRouter } from "./src/router/token.router.js";
+import { SkillRouter } from "./src/router/skill.router.js";
+import { TagRouter } from "./src/router/tag.router.js";
+import { ReelRouter } from "./src/router/reel.router.js";
+import { ChallengeRouter } from "./src/router/challenge.router.js";
+import { ChallengeOptionRouter } from "./src/router/challengeOption.router.js";
+import { ViewRouter } from "./src/router/view.router.js";
+import { LikeRouter } from "./src/router/like.router.js";
+import { BadgeRouter } from "./src/router/badge.router.js";
+import { ChallengeSubmissionRouter } from "./src/router/challengeSubmission.router.js";
+import { SkillRoadmapRouter } from "./src/router/skillRoadmap.router.js";
+import { SkillRoadmapStepRouter } from "./src/router/skillRoadmapStep.router.js";
+import { UserProfileRouter } from "./src/router/userProfile.router.js";
+import { AdminRouter } from "./src/router/admin.router.js";
+import { UserRoadmapStepRouter } from "./src/router/userRoadmapStep.router.js";
+import { idempotencyMiddleware } from "./src/middleware/idempotency.middleware.js";
+import { FeedRouter } from "./src/router/feed.router.js";
 
 import { interactionWorker } from "./jobs/workers/interaction.worker.js";
 import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
-import { StreakRouter } from "./router/streak.router.js";
+import { StreakRouter } from "./src/router/streak.router.js";
+import swaggerUi from "swagger-ui-express";
+import { specs } from "./swagger/swagger.config.js";
+import { rateLimiter } from "./src/middleware/rateLimiter.middleware.js";
 
 dotenv.config();
 
 const app = express();
 
-app.set('trust proxy', true); 
+app.set('trust proxy', true);
 
 configurePassport();
 
@@ -65,6 +68,10 @@ const stream = {
 }
 
 app.use(morgan(`:method :url :response-time ms`, { stream }));
+
+app.use(rateLimiter);
+
+app.use("/v1/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 // app.use(idempotencyMiddleware);
 

@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const CreateSkillRoadmapSteps = z.object({
     body: z.object({
-        roadmapId : z.string({ error: errorMessage.INVALIDDATA.message }),
+        roadmapId: z.string({ error: errorMessage.INVALIDDATA.message }),
         reelId: z.string({ error: errorMessage.INVALIDDATA.message }),
         challengeId: z.string({ error: errorMessage.INVALIDDATA.message }),
         stepOrder: z.number({ error: errorMessage.INVALIDDATA.message }),

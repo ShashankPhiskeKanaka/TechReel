@@ -1,23 +1,23 @@
 import type { NextFunction, Request, Response } from "express"
-import { redisUtils } from "../utils/redis.utils.js";
-import { logger } from "../utils/logger.js";
-import { serverError } from "../utils/error.utils.js";
+import { redisUtils } from "../src/utils/redis.utils.js";
+import { logger } from "../src/utils/logger.js";
+import { serverError } from "../src/utils/error.utils.js";
 
 class CacheMiddlewareClass {
-    constructor ( private cacheClient: any ) {}
+    constructor(private cacheClient: any) { }
 
     cacheRequest = (ttl: number, type: "PUBLIC" | "PRIVATE" = "PUBLIC") => {
         return async (req: Request, res: Response, next: NextFunction) => {
-            if(req.method != "GET") {
+            if (req.method != "GET") {
                 return next();
             }
 
             const key = redisUtils.generateKey(req, type);
 
-            try{
+            try {
                 const cachedResponse = await this.cacheClient.get(key);
 
-                if(cachedResponse) {
+                if (cachedResponse) {
                     logger.info("Cache 'Hit' for key", {
                         key
                     });
@@ -38,7 +38,7 @@ class CacheMiddlewareClass {
                 };
 
                 return next();
-            }catch (err: any) {
+            } catch (err: any) {
                 logger.error("Error while caching request", {
                     message: err.message,
                     status: err.status

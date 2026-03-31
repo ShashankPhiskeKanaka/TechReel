@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const CreateUserProfileSchema = z.object({
     body: z.object({
@@ -26,7 +26,7 @@ const UpdateUserProfileData = z.object({
         interests: z.array(
             z.string({ error: errorMessage.INVALIDDATA.message })
         ).optional(),
-   
+
     })
 });
 

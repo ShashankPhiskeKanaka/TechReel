@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const TokenData = z.object({
     body: z.object({
@@ -11,7 +11,7 @@ const TokenData = z.object({
 
 const GetToken = z.object({
     params: z.object({
-        id: z.string({  error: errorMessage.INVALIDDATA.message })
+        id: z.string({ error: errorMessage.INVALIDDATA.message })
     })
 })
 

@@ -1,8 +1,8 @@
 import { Worker, Job, increaseMaxListeners } from "bullmq";
-import { redisConfig } from "../../config/redis.config.js";
+import { redisConfig } from "../../src/config/redis.config.js";
 import { prisma } from "../../db/prisma.js";
-import { serverError } from "../../utils/error.utils.js";
-import { logger } from "../../utils/logger.js";
+import { serverError } from "../../src/utils/error.utils.js";
+import { logger } from "../../src/utils/logger.js";
 
 const interactionWorker = new Worker('REEL_INTERACTION', async (job: Job) => {
     const { data, type } = job.data;

@@ -1,20 +1,22 @@
 import { Worker, type Job } from "bullmq";
-import { serverError } from "../../utils/error.utils.js";
+import { serverError } from "../../src/utils/error.utils.js";
 import { prisma } from "../../db/prisma.js";
-import { logger } from "../../utils/logger.js";
-import { errorMessage } from "../../constants/error.messages.js";
-import { ChallengeSubmissionRepository } from "../../repository/challengeSubmission.repository.js";
-import { XpRepository } from "../../repository/xp.repository.js";
-import { TokenLedgerRepository } from "../../repository/tokenLedger.repository.js";
-import { UserBadgesRepository } from "../../repository/userBadge.repository.js";
+import { logger } from "../../src/utils/logger.js";
+import { errorMessage } from "../../src/constants/error.messages.js";
+import { ChallengeSubmissionRepository } from "../../src/repository/challengeSubmission.repository.js";
+import { XpRepository } from "../../src/repository/xp.repository.js";
+import { TokenLedgerRepository } from "../../src/repository/tokenLedger.repository.js";
+import { UserBadgesRepository } from "../../src/repository/userBadge.repository.js";
 import { ControllerFactory } from "../../factory/general.factory.js";
-import { XpService } from "../../service/xp.service.js";
-import { UserRoadmapStepRepository } from "../../repository/userRoadmapStep.repository.js";
-import { UserRoadmapStepService } from "../../service/userRoadmapStep.service.js";
-import { UserBadgeService } from "../../service/userBadge.service.js";
-import { TokenLedgerService } from "../../service/tokenLedger.service.js";
-import { ChallengeSubmissionService } from "../../service/challengeSubmission.service.js";
-import { redisConfig } from "../../config/redis.config.js";
+import { XpService } from "../../src/service/xp.service.js";
+import { UserRoadmapStepRepository } from "../../src/repository/userRoadmapStep.repository.js";
+import { UserRoadmapStepService } from "../../src/service/userRoadmapStep.service.js";
+import { UserBadgeService } from "../../src/service/userBadge.service.js";
+import { TokenLedgerService } from "../../src/service/tokenLedger.service.js";
+import { ChallengeSubmissionService } from "../../src/service/challengeSubmission.service.js";
+import { redisConfig } from "../../src/config/redis.config.js";
+import { redisUtils } from "../../src/utils/redis.utils.js";
+import { Resource } from "../../src/dto/redis.dto.js";
 
 const challengeSubmissionService = ControllerFactory.createService(ChallengeSubmissionRepository, ChallengeSubmissionService);
 const xpService = ControllerFactory.createService(XpRepository, XpService);
@@ -72,10 +74,13 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
 
             await xpService.awardXp({
                 userId: data.userId,
-                amount: challengeData.score,
+                amount: xpScore < 0 ? 0 : xpScore,
                 source: "CHALLENGE_SUBMISSION",
                 type: xpScore < 0 ? "DEBIT" : "CREDIT"
             }, tx);
+
+            await redisUtils.invalidateKey(data.userId, Resource.USER, "UPDATE");
+            await redisUtils.invalidateKey(data.userId, Resource.USER_PROFILE, "UPDATE");
         })
     } catch (err: any) {
         throw new serverError(err);

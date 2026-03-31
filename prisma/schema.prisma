@@ -201,14 +201,14 @@ enum TransactionType{
 model token_ledger {
   id        String          @id @default(uuid()) @db.Uuid
   userId    String          @map("user_id") @db.Uuid
-  tokenId   String          @map("token_id") @db.Uuid
+  tokenId   String?         @map("token_id") @db.Uuid
   amount    Int
   source    String
   createdAt DateTime        @default(now()) @map("created_at") @db.Timestamptz
   type      TransactionType
 
   user  users  @relation(fields: [userId], references: [id])
-  token tokens @relation(fields: [tokenId], references: [id])
+  token tokens? @relation(fields: [tokenId], references: [id], onDelete: SetNull)
 
   @@map("token_ledger")
   @@index([id, createdAt])
@@ -218,12 +218,12 @@ model token_ledger {
 model user_token_balance {
   id        String   @id @default(uuid()) @db.Uuid
   userId    String   @unique @map("user_id") @db.Uuid
-  tokenId   String   @map("token_id") @db.Uuid
+  tokenId   String?   @map("token_id") @db.Uuid
   amount    Int      @default(0)
   createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
 
   user  users  @relation(fields: [userId], references: [id])
-  token tokens @relation(fields: [tokenId], references: [id])
+  token tokens? @relation(fields: [tokenId], references: [id], onDelete: SetNull)
 
   @@map("user_token_balance")
   @@index([id, createdAt])
@@ -252,12 +252,12 @@ model streaks {
   userId        String   @unique @map("user_id") @db.Uuid
   currentStreak Int      @map("current_streak")
   longestStreak Int      @map("longest_streak")
-  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
 
   user users @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("streaks")
-  @@index([userId])
+  @@index([id, createdAt])
 }
 
 model user_skills {

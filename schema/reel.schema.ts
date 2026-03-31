@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const ReelSchema = z.object({
     body: z.object({
@@ -7,7 +7,9 @@ const ReelSchema = z.object({
         description: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
         skillId: z.string({ error: errorMessage.INVALIDDATA.message }),
         difficultyLevel: z.string({ error: errorMessage.INVALIDDATA.message }),
-        tags: z.object({ error: errorMessage.INVALIDDATA.message }).optional(),
+        tags: z.array(
+            z.string({ error: errorMessage.INVALIDDATA.message })
+        ).optional(),
         isBonus: z.boolean({ error: errorMessage.INVALIDDATA.message })
     })
 });

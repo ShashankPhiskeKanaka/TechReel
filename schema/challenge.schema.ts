@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { errorMessage } from "../constants/error.messages.js";
+import { errorMessage } from "../src/constants/error.messages.js";
 
 const CreateChallengeData = z.object({
     body: z.object({

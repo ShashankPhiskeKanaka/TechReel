@@ -1,0 +1,12 @@
+FROM node:20-alpine
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install && npm install pm2 -g
+COPY . .
+
+RUN npx prisma generate
+RUN npx tsc
+
+EXPOSE 3000
+
+CMD ["pm2-runtime", "start", "server.js", "-i", "max"]

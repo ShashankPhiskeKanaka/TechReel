@@ -9,4 +9,4 @@ RUN npx tsc
 
 EXPOSE 3000
 
-CMD ["pm2-runtime", "start", "server.js", "-i", "max"]
+CMD ["pm2-runtime", "start", "server.js"]

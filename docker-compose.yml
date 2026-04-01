@@ -1,11 +1,17 @@
+version: '3.8'
+
 services:
   node-app:
     build:
       context: .
-      dockerfile: DockerFile
+      dockerfile: DockerFile # Ensure this matches your filename exactly
     environment:
       - PORT=3000
       - REDIS_URL=redis://redis:6379
+    deploy:
+      replicas: 2
+    networks:
+      - backend
 
   nginx-lb:
     image: nginx:latest
@@ -16,6 +22,14 @@ services:
     depends_on:
       - node-app
       - redis
+    networks:
+      - backend
 
   redis:
     image: redis:alpine
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

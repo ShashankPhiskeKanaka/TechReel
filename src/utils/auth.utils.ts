@@ -4,6 +4,7 @@ import type { Role } from "../dto/user.dto.js";
 import { logger } from "./logger.js";
 import { serverError } from "./error.utils.js";
 import { errorMessage } from "../constants/error.messages.js";
+import { config } from "../config/index.js";
 
 class AuthUtilsClass {
     comparePasswords = async (password: string, hashedPassword: string) => {
@@ -11,16 +12,16 @@ class AuthUtilsClass {
     }
 
     generateAccessToken = (id: string, role: string) => {
-        return jwt.sign({ id, role }, process.env.JWTSECRET as string, { expiresIn: "15m" });
+        return jwt.sign({ id, role }, config.jwtSecret as string, { expiresIn: "15m" });
     }
 
     generateForgetToken = (id: string) => {
-        return jwt.sign({ id }, process.env.JWTSECRET as string, { expiresIn: "15m" });
+        return jwt.sign({ id }, config.jwtSecret as string, { expiresIn: "15m" });
     }
 
     decodeForgetToken = (token: string) => {
         try {
-            return jwt.verify(token, process.env.JWTSECRET as string) as { id: string }
+            return jwt.verify(token, config.jwtSecret as string) as { id: string }
         } catch (err) {
             logger.warn("Invalid token provided", {
                 token: token
@@ -33,7 +34,7 @@ class AuthUtilsClass {
 
     decodeAccesstoken = (token: string) => {
         try {
-            return jwt.verify(token, process.env.JWTSECRET as string) as { id: string, role: Role }
+            return jwt.verify(token, config.jwtSecret as string) as { id: string, role: Role }
         } catch (err) {
             logger.warn("Invalid token provided", {
                 token: token

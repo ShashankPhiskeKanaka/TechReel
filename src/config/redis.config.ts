@@ -1,7 +1,8 @@
 import type { ConnectionOptions } from "bullmq";
+import { config } from "./index.js";
 
 const redisConfig: ConnectionOptions = {
-    url: process.env.REDIS_URL || "",
+    url: config.redisUrl,
     maxRetriesPerRequest: null
 }
 

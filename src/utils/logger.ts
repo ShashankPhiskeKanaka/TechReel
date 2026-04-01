@@ -1,6 +1,5 @@
 import { createLogger, format, transports, addColors } from 'winston';
 
-// Define standard levels and their colors
 const levels = {
     error: 0,
     warn: 1,
@@ -17,11 +16,9 @@ const colors = {
     debug: 'blue',
 };
 
-// Tell Winston to use these colors
 addColors(colors);
 
 const logger = createLogger({
-    // Set to 'http' (3) or 'debug' (4) so you can call all methods
     level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
     levels,
     format: format.combine(
@@ -31,11 +28,11 @@ const logger = createLogger({
         format.json()
     ),
     transports: [
-        // 1. Critical Errors only
+        // Critical Errors only
         new transports.File({ filename: 'logs/error.log', level: 'error' }),
-        // 2. Everything from the global level and above
+        // Everything from the global level and above
         new transports.File({ filename: 'logs/combined.log' }),
-        // 3. Readable Console for Development
+        // Readable Console for Development
         new transports.Console({
             format: format.combine(
                 format.colorize({ all: true }),

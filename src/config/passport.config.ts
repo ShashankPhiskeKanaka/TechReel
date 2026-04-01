@@ -5,11 +5,12 @@ import { prisma } from "../../db/prisma.js";
 import { serverError } from "../utils/error.utils.js";
 import { errorMessage } from "../constants/error.messages.js";
 import { Role } from "../../generated/prisma/enums.js";
+import { config } from "./index.js";
 
 export const configurePassport = () => {
     passport.use(new GoogleStrategy({
-        clientID: process.env.GOOGLE_WEB_CLIENTID!,
-        clientSecret: process.env.GOOGLE_WEB_CLIENTSECRET!,
+        clientID: config.googleWebClientId,
+        clientSecret: config.googleWebClientSecret,
         callbackURL: "/v1/google/callback"
     }, async (accessToken, refreshToken, profile, done) => {
         try {
@@ -41,8 +42,8 @@ export const configurePassport = () => {
     }));
 
     passport.use(new GithubStrategy({
-        clientID: process.env.GITHUB_CLIENTID!,
-        clientSecret: process.env.GITHUB_CLIENTSECRET!,
+        clientID: config.githubClientId,
+        clientSecret: config.githubClientSecret,
         callbackURL: "/v1/github/callback",
         scope: ['user:email']
     }, async (accessToken: string, refreshToken: string, profile: any, done: any) => {

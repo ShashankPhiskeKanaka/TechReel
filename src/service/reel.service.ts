@@ -11,6 +11,7 @@ import { uuidv4 } from "zod";
 import { redisUtils } from "../utils/redis.utils.js";
 import { Resource } from "../dto/redis.dto.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
+import { config } from "../config/index.js";
 
 class ReelService {
 
@@ -37,12 +38,12 @@ class ReelService {
         const key = `uploads/${Date.now()}-${reel.id}-${data.title}`;
 
         const command = new PutObjectCommand({
-            Bucket: process.env.AWS_RAW_BUCKET,
+            Bucket: config.awsRawBucket,
             Key: key,
             ContentType: 'video/mp4',
             ChecksumAlgorithm: undefined,
             Metadata: {
-                reelId: reel.id
+                reelId: reel.id,
             }
         });
 

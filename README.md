@@ -227,6 +227,11 @@ npm run build
 npm run start
 ```
 
+### 7. Seed database
+To seed an admin user:
+```bash
+npx prisma db seed
+```
 ---
 
 ## 🐳 Docker Setup

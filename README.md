@@ -209,6 +209,9 @@ S3_BUCKET_HLS=hls-bucket
 CLOUDFRONT_DOMAIN=your-cdn-domain
 
 INTERNAL_SECRET=internal-api-key
+
+ADMIN_EMAIL=your-admin-mail
+ADMIN_PASSWORD=your-admin-password
 ```
 
 ### 4. Run Database Migrations

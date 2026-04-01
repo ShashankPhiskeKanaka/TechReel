@@ -8,6 +8,7 @@ import { ControllerMessages } from "../constants/controller.messages.js";
 import { BaseController } from "./base.controller.js";
 import crypto from "crypto";
 import { errorMessage } from "../constants/error.messages.js";
+import { config } from "../config/index.js";
 
 const controllerMessage = new ControllerMessages("Reel");
 
@@ -48,7 +49,7 @@ class ReelController extends BaseController<ReelService> {
         const payload = JSON.stringify(req.body);
 
 
-        const hmac = crypto.createHmac('sha256', process.env.INTERNAL_SECRET ?? "");
+        const hmac = crypto.createHmac('sha256', config.internalSecret ?? "");
         const digest = 'sha256=' + hmac.update(payload).digest("hex");
 
         if(!(signature && crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(digest)))){

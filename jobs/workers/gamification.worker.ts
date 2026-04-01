@@ -7,7 +7,7 @@ import { ChallengeSubmissionRepository } from "../../src/repository/challengeSub
 import { XpRepository } from "../../src/repository/xp.repository.js";
 import { TokenLedgerRepository } from "../../src/repository/tokenLedger.repository.js";
 import { UserBadgesRepository } from "../../src/repository/userBadge.repository.js";
-import { ControllerFactory } from "../../factory/general.factory.js";
+import { ControllerFactory } from "../../src/factory/general.factory.js";
 import { XpService } from "../../src/service/xp.service.js";
 import { UserRoadmapStepRepository } from "../../src/repository/userRoadmapStep.repository.js";
 import { UserRoadmapStepService } from "../../src/service/userRoadmapStep.service.js";
@@ -70,6 +70,29 @@ const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
                     tokenId: currentStep?.roadmap.tokenId ?? "NA"
                 }, tx)
 
+            } else if (data.roadmapStepId) {
+                const { currentStep, highestStep } = await userRoadmapStepService.createUserRoadmapStep({
+                    userId: data.userId,
+                    roadmapStepId: data.roadmapStepId,
+                    stepOrder: data.stepOrder
+                }, tx)
+
+                if (highestStep?.stepOrder == currentStep.stepOrder) {
+                    const badge = await userBadgeService.awardBadge({
+                        userId: data.userId,
+                        skillId: currentStep.roadmap.skillId
+                    }, tx)
+
+                    xpScore += badge.xpReward;
+
+                    await tokenLedgerService.awardToken({
+                        userId: data.userId,
+                        amount: 1,
+                        source: "ROADMAP_COMPLETED",
+                        type: "CREDIT",
+                        tokenId: currentStep?.roadmap.tokenId ?? "NA"
+                    }, tx)
+                }
             }
 
             await xpService.awardXp({

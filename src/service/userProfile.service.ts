@@ -8,7 +8,7 @@ import { BaseService } from "./base.service.js";
 class UserProfileService extends BaseService<UserProfile, UserProfileData, any> {
 
     constructor(methods: UserProfileRepository) {
-        super(methods, "User profile");
+        super(methods, "USER-PROFILE");
     }
 
     // /**

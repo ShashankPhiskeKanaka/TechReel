@@ -11,7 +11,7 @@ const serviceMessage = new ServiceMessages("Token");
 
 class TokenService extends BaseService<Token, TokenData, any> {
     constructor(methods: TokenRepository) {
-        super(methods, "Token");
+        super(methods, "TOKEN");
     }
 
     // create = async (data: TokenData) => {

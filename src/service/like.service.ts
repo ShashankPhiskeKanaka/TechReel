@@ -6,7 +6,7 @@ import type { Like, LikeData } from "../dto/like.dto.js";
 
 class LikeService extends BaseService<Like, LikeData, any> {
     constructor(methods: LikeRepository) {
-        super(methods, "Like");
+        super(methods, "LIKE");
     }
 
     /**

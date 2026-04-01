@@ -6,7 +6,7 @@ import { BaseService } from "./base.service.js";
 
 class SkillService extends BaseService<Skill, SkillData, any> {
     constructor(methods: SkillRepository) {
-        super(methods, "Skill");
+        super(methods, "SKILL");
     }
 
     // /**

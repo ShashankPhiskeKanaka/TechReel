@@ -4,7 +4,7 @@ import { BaseService } from "./base.service.js";
 
 class ChallengeService extends BaseService<Challenge, ChallengeData, any> {
     constructor(methods: ChallengeRepository) {
-        super(methods, "Challenge")
+        super(methods, "CHALLENGE")
     }
 
     // /**

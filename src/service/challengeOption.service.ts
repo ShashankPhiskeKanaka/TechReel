@@ -10,7 +10,7 @@ import { BaseService } from "./base.service.js";
 
 class ChallengeOptionService extends BaseService<ChallengeOption, ChallengeOptionData, any> {
     constructor(methods: ChallengeOptionsRepository) {
-        super(methods, "Challenge options");
+        super(methods, "CHALLENGE-OPTIONS");
     }
 
     // /**

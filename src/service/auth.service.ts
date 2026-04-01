@@ -1,6 +1,6 @@
 import { errorMessage } from "../constants/error.messages.js";
 import type { user } from "../dto/auth.dto.js";
-import { authUtils } from "../../factory/auth.factory.js";
+import { authUtils } from "../factory/auth.factory.js";
 import type { AuthRepository } from "../repository/auth.repository.js";
 import type { UserRepository } from "../repository/user.repository.js";
 import { serverError } from "../utils/error.utils.js";

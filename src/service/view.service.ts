@@ -12,7 +12,7 @@ const serviceMessages = new ServiceMessages("View");
 
 class ViewService extends BaseService<View, ViewData, any> {
     constructor(methods: ViewRepository) {
-        super(methods, "View");
+        super(methods, "VIEW");
     }
 
     /**

@@ -6,7 +6,7 @@ import { BaseService } from "./base.service.js";
 class SkillRoadmapStepService extends BaseService<SkillRoadmapStep, SkillRoadmapStepData, any> {
 
     constructor(methods: SkillRoadmapStepRepository) {
-        super(methods, "Skill roadmap step");
+        super(methods, "SKILL-ROADMAP-STEP");
     }
 
     // create = async (data: SkillRoadmapStepData) => {

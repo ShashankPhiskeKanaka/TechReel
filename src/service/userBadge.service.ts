@@ -5,7 +5,7 @@ import { BaseService } from "./base.service.js";
 
 class UserBadgeService extends BaseService<UserBadge, UserBadgeData, any> {
     constructor(methods: UserBadgesRepository) {
-        super(methods, "User badge");
+        super(methods, "USER-BADGE");
     }
 
     /**

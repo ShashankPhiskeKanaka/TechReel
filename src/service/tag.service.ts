@@ -11,7 +11,7 @@ const serviceMessages = new ServiceMessages("Tag");
 
 class TagService extends BaseService<Tag, any, any> {
     constructor(methods: TagRepository) {
-        super(methods, "Tag");
+        super(methods, "TAG");
     }
 
     // create = async (name: string) => {

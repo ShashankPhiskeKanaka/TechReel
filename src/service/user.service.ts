@@ -3,11 +3,12 @@ import { ServiceMessages } from "../constants/service.messages.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
 import { Action, Resource } from "../dto/redis.dto.js";
 import type { UserUpdateData } from "../dto/user.dto.js";
-import { authUtils } from "../../factory/auth.factory.js";
+import { authUtils } from "../factory/auth.factory.js";
 import type { UserRepository } from "../repository/user.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 import { redisUtils } from "../utils/redis.utils.js";
+import { PublicUser } from "../dto/user.dto.js";
 
 const serviceMessages = new ServiceMessages("User");
 
@@ -37,7 +38,7 @@ class UserService {
 
         await redisUtils.invalidateKey(user.id, Resource.USER, Action.CREATE);
 
-        return { user, emailToken };
+        return { user: new PublicUser(user), emailToken };
     }
 
     /**
@@ -77,7 +78,7 @@ class UserService {
             userId: id
         });
 
-        return user;
+        return new PublicUser(user);
     }
 
     /**
@@ -91,15 +92,14 @@ class UserService {
     fetchAll = async (data: PaginationData, filters: {}, searchFields: string[]) => {
         const records = await this.UserMethods.fetchAll(data, filters, searchFields);
 
-        if (records.length == 0) {
+        if (records.length === 0) {
             logger.warn(`No user records found`);
-
             throw new serverError(errorMessage.NOTFOUND);
         }
 
         logger.info(`User records fetched`);
 
-        return records;
+        return records.map((user) => new PublicUser(user));
     }
 
     /**
@@ -116,7 +116,7 @@ class UserService {
             userId: id
         });
 
-        return user;
+        return new PublicUser(user);
     }
 
     /**
@@ -144,7 +144,7 @@ class UserService {
 
         await redisUtils.invalidateKey(user.id, Resource.USER, Action.DELETE);
 
-        return user;
+        return new PublicUser(user);
     }
 }
 

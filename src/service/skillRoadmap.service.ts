@@ -4,7 +4,7 @@ import { BaseService } from "./base.service.js";
 
 class SkillRoadmapService extends BaseService<SkillRoadmap, SkillRoadmapData, any> {
     constructor(methods: SkillRoadmapRepository) {
-        super(methods, "Skill roadmap");
+        super(methods, "SKILL-ROADMAP");
     }
 
     // /**

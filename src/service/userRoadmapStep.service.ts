@@ -5,7 +5,7 @@ import type { UserRoadmapStep, UserRoadmapStepData } from "../dto/userRoadmapSte
 
 class UserRoadmapStepService extends BaseService<UserRoadmapStep, UserRoadmapStepData, any> {
     constructor(methods: UserRoadmapStepRepository) {
-        super(methods, "User roadmap step");
+        super(methods, "USER-ROADMAP-STEP");
     }
 
     /**

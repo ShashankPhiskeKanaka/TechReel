@@ -25,11 +25,11 @@ Client (Mobile/Web)
         ↓
 NGINX Gateway (Reverse Proxy + LB)
         ↓
-Node.js API (PM2 Cluster Mode)
+Node.js API
         ↓
 ┌───────────────┬───────────────┐
-│ PostgreSQL     │ Redis         │
-│ (Prisma ORM)   │ (Caching/RL)  │
+│ PostgreSQL    │ Redis         │
+│ (Prisma ORM)  │ (Caching/RL)  │
 └───────────────┴───────────────┘
         ↓
 AWS S3 (Raw Uploads)
@@ -78,6 +78,7 @@ HLS Output (S3 + CDN)
 ### 📊 Engagement System
 - Views tracking (watch time + completion)
 - Likes system
+- Reporting reels
 - Reel analytics
 - Cursor-based pagination for feed
 
@@ -85,14 +86,15 @@ HLS Output (S3 + CDN)
 
 ### ⚡ Performance & Scalability
 - **NGINX Reverse Proxy + Load Balancer**
-- **PM2 Cluster Mode (multi-core scaling)**
 - **Redis caching + rate limiting**
 - **Cursor-based pagination (infinite scroll ready)**
+- **BullMQ for asynchronous task processing**
+- **Idempotent Api's**
 
 ---
 
 ### 🔐 Security
-- JWT-based authentication
+- JWT-based authentication (Access token and Refresh tokens)
 - Rate limiting (NGINX + Redis)
 - Internal API protection (API keys)
 - Input validation via DTOs
@@ -130,37 +132,46 @@ HLS Output (S3 + CDN)
 ## 📁 Project Structure
 
 ```
-.
-├── caching/
-├── db/
-├── generated/
-├── jobs/
-├── logs/
-├── nginx/
-├── prisma/
-├── schema/
-├── src/
-│   ├── config/
-│   ├── constants/
-│   ├── controller/
-│   ├── dto/
-│   ├── factory/
-│   ├── middleware/
-│   ├── repository/
-│   ├── router/
-│   ├── service/
-│   ├── types/
-│   └── utils/
-│
-├── swagger/
-├── server.ts
-├── Dockerfile
-├── docker-compose.yml
-├── nginx.conf
-├── prisma.config.ts
-├── package.json
-└── README.md
+/Tech_Reels/
+├── caching/           # Cache configurations and store connection logic (e.g., Redis)
+├── db/                # Database initialization
+├── generated/         # Auto-generated code (e.g., Prisma client, types)
+├── jobs/              # Background workers, task queues
+├── logs/              # Application logs for debugging and monitoring
+├── nginx/             # Nginx specific configuration files for deployment
+├── prisma/            # Database schema definitions and seeding scripts
+├── schema/            # Request/Response validation schemas (e.g., Zod or Joi)
+├── src/               # Application source code
+│   ├── config/        # Environment variable management and app configuration
+│   ├── constants/     # Reusable hardcoded strings and status codes
+│   ├── controller/    # Entry points: handles requests and returns responses
+│   ├── dto/           # Data Transfer Objects for input/output formatting
+│   ├── factory/       # Design pattern implementations for object creation
+│   ├── middleware/    # Request interceptors (Auth, Logging, Error handling)
+│   ├── repository/    # Direct database abstraction (Data Access Layer)
+│   ├── router/        # Route definitions and endpoint mapping
+│   ├── service/       # Business logic layer (orchestrates repositories)
+│   ├── types/         # TypeScript interfaces and type definitions
+│   └── utils/         # Generic helper functions and utility classes
+├── swagger/           # OpenAPI/Swagger documentation assets
+├── server.ts          # Application entry point and server initialization
+├── Dockerfile         # Containerization instructions for the app
+├── docker-compose.yml # Multi-container orchestration (App, DB, Redis)
+├── nginx.conf         # Load balancer and reverse proxy configuration
+├── prisma.config.ts   # Prisma ORM configuration
+├── package.json       # Project dependencies and scripts
+└── README.md          # Project documentation and setup guide
+
 ```
+
+---
+
+## 📦 Prerequisites
+- Node.js >= 18.x
+- npm or yarn
+- Docker and Docker Compose (for containerized setup)
+- PostgreSQL 16+ (or use Docker)
+- Redis (or use Docker)
 
 ---
 
@@ -168,7 +179,7 @@ HLS Output (S3 + CDN)
 
 ### 1. Clone Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ShashankPhiskeKanaka/TechReel.git
 cd techreel-backend
 ```
 
@@ -188,7 +199,7 @@ REDIS_URL=redis://localhost:6379
 
 JWT_SECRET=your_secret
 
-AWS_REGION=your-region
+AWS_REGION=eu-north-1
 AWS_ACCESS_KEY_ID=your-key
 AWS_SECRET_ACCESS_KEY=your-secret
 
@@ -256,7 +267,7 @@ docker-compose down
 ## 📚 API Docs
 
 ```
-http://localhost:3000/docs
+http://localhost:3000/api-docs
 ```
 
 ---
@@ -282,11 +293,27 @@ orderBy: [
 ## 📊 Modules
 
 - Users
+- User Badges
+- User Profiles
+- User Roadmap Steps
+- User Skills
+- User Token Balance
 - Reels
+- Reel Likes
+- Reel Views
+- Reel Reports
+- Reel Saves
 - Challenges
-- Submissions
+- Challenge Options
+- Challenge Submissions
+- Notification
+- Refresh Token
 - Roadmaps
-- Steps
+- Roadmap Steps
+- Tags
+- Token Ledger
+- Xp Ledger
+- Audit Logs
 - Likes
 - Views
 - Streaks
@@ -311,6 +338,7 @@ orderBy: [
 - API keys
 - DTO validation
 - Audit logs
+- HMAC validation for media webhooks
 
 ---
 

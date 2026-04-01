@@ -3,6 +3,7 @@ import { serverError } from "../src/utils/error.utils.js";
 import dotenv from "dotenv";
 import { logger } from "../src/utils/logger.js";
 import { Redis } from "ioredis";
+import { config } from "../src/config/index.js";
 
 dotenv.config();
 
@@ -11,7 +12,7 @@ const redisOptions = {
     enableReadyCheck: false
 }
 
-const client = new Redis(process.env.REDIS_URL || "", redisOptions);
+const client = new Redis(config.redisUrl, redisOptions);
 
 client.on("error", (err: any) => {
     logger.error(err.message);

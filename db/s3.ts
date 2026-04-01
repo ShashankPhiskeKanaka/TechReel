@@ -1,10 +1,11 @@
 import { S3Client } from "@aws-sdk/client-s3"
+import { config } from "../src/config/index.js";
 
 const s3Client = new S3Client({
-    region: process.env.AWS_BUCKET_REGION ?? "",
+    region: config.awsBucketRegion,
     credentials: {
-        accessKeyId: process.env.AWS_USER_ACCESSKEY!,
-        secretAccessKey: process.env.AWS_USER_SECRETKEY!
+        accessKeyId: config.awsUserAccessKey,
+        secretAccessKey: config.awsUserSecretKey
     }
 });
 

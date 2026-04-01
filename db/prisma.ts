@@ -2,11 +2,12 @@ import dotenv from "dotenv";
 import { PrismaClient } from "../generated/prisma/client.js";
 import pg from "pg";
 import { PrismaPg } from "@prisma/adapter-pg"
+import { config } from "../src/config/index.js";
 
 dotenv.config();
 
 const pool = new pg.Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: config.databaseUrl,
     max: 100,
     idleTimeoutMillis: 30000
 })

@@ -30,6 +30,14 @@ const errorMessage = {
     EXHAUSTED: {
         status: 400,
         message: "Retries exhausted"
+    },
+    ALREADYTAKEN: {
+        status: 409,
+        message: "The provided data is already taken"
+    },
+    IDEMPOTENCYKEYREUSED: {
+        status: 400,
+        message: "Idempotency key reused"
     }
 }
 

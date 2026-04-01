@@ -6,6 +6,8 @@ import { status } from "../../generated/prisma/enums.js";
 import { logger } from "../utils/logger.js";
 import { ControllerMessages } from "../constants/controller.messages.js";
 import { BaseController } from "./base.controller.js";
+import crypto from "crypto";
+import { errorMessage } from "../constants/error.messages.js";
 
 const controllerMessage = new ControllerMessages("Reel");
 
@@ -42,12 +44,19 @@ class ReelController extends BaseController<ReelService> {
      */
     updateStatus = async (req: Request, res: Response) => {
 
-        if (req.headers["x-api-key"] !== process.env.INTERNAL_SECRET) {
-            logger.warn("Unauthorized request", {
-                ip: req.ip
-            });
-            return ApiResponse.error(res, "Unauthorized request");
+        const signature = req.headers["x-hub-signature-256"]?.toString();
+        const payload = JSON.stringify(req.body);
+
+
+        const hmac = crypto.createHmac('sha256', process.env.INTERNAL_SECRET ?? "");
+        const digest = 'sha256=' + hmac.update(payload).digest("hex");
+
+        if(!(signature && crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(digest)))){
+            logger.warn(errorMessage.UNAUTHORIZED.message);
+
+            return ApiResponse.error(res, errorMessage.UNAUTHORIZED.message);
         }
+
 
         logger.http("Updating reel metadata record request from aws received", {
             ip: req.ip,

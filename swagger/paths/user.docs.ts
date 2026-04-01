@@ -1,5 +1,5 @@
 const userPaths = {
-    "/v1/user/": {
+    "/v1/user": {
         post: {
             summary: "Create new user",
             tags: ["User"],
@@ -36,6 +36,65 @@ const userPaths = {
                 },
                 400: {
                     description: "Please provide valid data",
+                    content: {
+                        "application/json": {
+                            schema: { $ref: "#/components/schemas/ErrorResponse" }
+                        }
+                    }
+                }
+            }
+        },
+        get: {
+            summary: "Fetch users",
+            tags: ["User"],
+            parameters: [
+                {
+                    name: "limit",
+                    in: "query",
+                    description: "How many users to return",
+                    required: false,
+                    schema: { type: "integer", default: 10 }
+                },
+                {
+                    name: "sort",
+                    in: "query",
+                    description: "Sorting order of data",
+                    required: false,
+                    schema: { type: "string", enum: ["asc", "desc"], default: "desc" }
+                },
+                {
+                    name: "search",
+                    in: "query",
+                    description: "Search for data",
+                    required: false,
+                    schema: { type: "string" }
+                },
+                {
+                    name: "lastId",
+                    in: "query",
+                    description: "cursor id",
+                    required: false,
+                    schema: { type: "string" }
+                },
+                {
+                    name: "lastCreatedAt",
+                    in: "query",
+                    description: "cursor date",
+                    required: false,
+                    schema: { type: "date" }
+                }
+            ],
+            responses: {
+                200: {
+                    description: "Users fetched",
+                    content: {
+                        "application/json": {
+                            schema: { $ref: "#/components/schemas/BaseResponse" }
+                        }
+                    }
+                },
+                400: {
+                    description: "Error",
                     content: {
                         "application/json": {
                             schema: { $ref: "#/components/schemas/ErrorResponse" }
@@ -185,67 +244,6 @@ const userPaths = {
             }
         }
     },
-    "/v1/user" : {
-        get: {
-            summary: "Fetch users",
-            tags: ["User"],
-            parameters: [
-                {
-                    name: "limit",
-                    in: "query",
-                    description: "How many users to return",
-                    required: false,
-                    schema: { type: "integer", default: 10 }
-                },
-                {
-                    name: "sort",
-                    in: "query",
-                    description: "Sorting order of data",
-                    required: false,
-                    schema: { type: "string", enum: ["asc", "desc"], default: "desc" }
-                },
-                {
-                    name: "search",
-                    in: "query",
-                    description: "Search for data",
-                    required: false,
-                    schema: { type: "string" }
-                },
-                {
-                    name: "lastId",
-                    in: "query",
-                    description: "cursor id",
-                    required: false,
-                    schema: { type: "string" }
-                },
-                {
-                    name: "lastCreatedAt",
-                    in: "query",
-                    description: "cursor date",
-                    required: false,
-                    schema: { type: "date" }
-                }
-            ],
-            responses: {
-                200: {
-                    description: "Users fetched",
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/BaseResponse" }
-                        }
-                    }
-                },
-                400: {
-                    description: "Error",
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 
 export { userPaths }

@@ -1,43 +1,25 @@
-const skillRoadmapDocs = {
-    "/v1/skill-roadmap": {
+const likeDocs = {
+    "/v1/like": {
         post: {
-            summary: "Create a new skill roadmap",
-            tags: ["SkillRoadmap"],
+            summary: "Like a reel",
+            tags: ["Like"],
             requestBody: {
                 required: true,
                 content: {
                     "application/json": {
                         schema: {
                             type: "object",
-                            required: [
-                                "skillId",
-                                "difficultyLevel",
-                                "title",
-                                "description",
-                                "tokenId"
-                            ],
+                            required: ["userId", "reelId"],
                             properties: {
-                                skillId: {
+                                userId: {
                                     type: "string",
                                     format: "uuid",
-                                    example: "skill-uuid"
+                                    example: "user-uuid"
                                 },
-                                difficultyLevel: {
-                                    type: "string",
-                                    example: "EASY"
-                                },
-                                title: {
-                                    type: "string",
-                                    example: "JavaScript Basics Roadmap"
-                                },
-                                description: {
-                                    type: "string",
-                                    example: "Covers fundamentals like variables, functions, closures"
-                                },
-                                tokenId: {
+                                reelId: {
                                     type: "string",
                                     format: "uuid",
-                                    example: "token-uuid"
+                                    example: "reel-uuid"
                                 }
                             }
                         }
@@ -46,15 +28,15 @@ const skillRoadmapDocs = {
             },
             responses: {
                 201: {
-                    description: "Skill roadmap created successfully",
+                    description: "Reel liked successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Skill roadmap created successfully" },
-                                    data: { $ref: "#/components/schemas/SkillRoadmap" }
+                                    message: { type: "string", example: "Reel liked successfully" },
+                                    data: { $ref: "#/components/schemas/Like" }
                                 }
                             }
                         }
@@ -68,19 +50,23 @@ const skillRoadmapDocs = {
                         }
                     }
                 },
-                500: {
-                    description: "Internal Server Error",
+                409: {
+                    description: "Already liked",
                     content: {
                         "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
+                            example: { success: false, message: "Reel already liked", data: null }
                         }
                     }
+                },
+                500: {
+                    description: "Internal Server Error"
                 }
             }
         },
+
         get: {
-            summary: "Fetch all skill roadmaps",
-            tags: ["SkillRoadmap"],
+            summary: "Fetch likes (user or reel based)",
+            tags: ["Like"],
             parameters: [
                 {
                     name: "limit",
@@ -98,50 +84,42 @@ const skillRoadmapDocs = {
                     schema: { type: "string", format: "date-time" }
                 },
                 {
-                    name: "skillId",
+                    name: "userId",
                     in: "query",
                     schema: { type: "string" }
                 },
                 {
-                    name: "difficultyLevel",
+                    name: "reelId",
                     in: "query",
-                    schema: { type: "string" }
-                },
-                {
-                    name: "tokenId",
-                    in: "query",
-                    schema: { type: "string" }
-                },
-                {
-                    name: "search",
-                    in: "query",
-                    description: "Search in title",
                     schema: { type: "string" }
                 }
             ],
             responses: {
                 200: {
-                    description: "Skill roadmaps fetched successfully",
+                    description: "Likes fetched successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Skill roadmaps fetched successfully" },
+                                    message: { type: "string", example: "Likes fetched successfully" },
                                     data: {
                                         type: "object",
                                         properties: {
                                             records: {
                                                 type: "array",
-                                                items: { $ref: "#/components/schemas/SkillRoadmap" }
+                                                items: { $ref: "#/components/schemas/Like" }
                                             },
                                             nextCursor: {
                                                 type: "object",
                                                 nullable: true,
                                                 properties: {
                                                     lastId: { type: "string" },
-                                                    lastCreatedAt: { type: "string", format: "date-time" }
+                                                    lastCreatedAt: {
+                                                        type: "string",
+                                                        format: "date-time"
+                                                    }
                                                 }
                                             }
                                         }
@@ -158,10 +136,10 @@ const skillRoadmapDocs = {
         }
     },
 
-    "/v1/skill-roadmap/{id}": {
+    "/v1/like/{id}": {
         get: {
-            summary: "Get skill roadmap by ID",
-            tags: ["SkillRoadmap"],
+            summary: "Get like by ID",
+            tags: ["Like"],
             parameters: [
                 {
                     name: "id",
@@ -172,48 +150,32 @@ const skillRoadmapDocs = {
             ],
             responses: {
                 200: {
-                    description: "Skill roadmap fetched successfully",
-                    content: {
-                        "application/json": {
-                            schema: {
-                                type: "object",
-                                properties: {
-                                    success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Skill roadmap fetched successfully" },
-                                    data: { $ref: "#/components/schemas/SkillRoadmap" }
-                                }
-                            }
-                        }
-                    }
+                    description: "Like fetched successfully"
                 },
                 404: {
                     description: "Not found"
                 }
             }
         },
-
-        patch: {
-            summary: "Update skill roadmap",
-            tags: ["SkillRoadmap"],
-            parameters: [
-                {
-                    name: "id",
-                    in: "path",
-                    required: true,
-                    schema: { type: "string", format: "uuid" }
-                }
-            ],
+        delete: {
+            summary: "Unlike a reel",
+            tags: ["Like"],
             requestBody: {
+                required: true,
                 content: {
                     "application/json": {
                         schema: {
                             type: "object",
+                            required: ["userId", "reelId"],
                             properties: {
-                                skillId: { type: "string" },
-                                difficultyLevel: { type: "string" },
-                                title: { type: "string" },
-                                description: { type: "string" },
-                                tokenId: { type: "string" }
+                                userId: {
+                                    type: "string",
+                                    format: "uuid"
+                                },
+                                reelId: {
+                                    type: "string",
+                                    format: "uuid"
+                                }
                             }
                         }
                     }
@@ -221,29 +183,69 @@ const skillRoadmapDocs = {
             },
             responses: {
                 200: {
-                    description: "Updated successfully"
+                    description: "Reel unliked successfully",
+                    content: {
+                        "application/json": {
+                            schema: {
+                                type: "object",
+                                properties: {
+                                    success: { type: "boolean", example: true },
+                                    message: { type: "string", example: "Reel unliked successfully" }
+                                }
+                            }
+                        }
+                    }
+                },
+                404: {
+                    description: "Like not found"
                 }
             }
         },
+    },
 
-        delete: {
-            summary: "Delete skill roadmap",
-            tags: ["SkillRoadmap"],
+    "/v1/like/count/{reelId}": {
+        get: {
+            summary: "Get total like count for a reel",
+            tags: ["Like"],
             parameters: [
                 {
-                    name: "id",
+                    name: "reelId",
                     in: "path",
                     required: true,
-                    schema: { type: "string", format: "uuid" }
+                    schema: {
+                        type: "string",
+                        format: "uuid"
+                    }
                 }
             ],
             responses: {
                 200: {
-                    description: "Deleted successfully"
+                    description: "Like count fetched successfully",
+                    content: {
+                        "application/json": {
+                            schema: {
+                                type: "object",
+                                properties: {
+                                    success: { type: "boolean", example: true },
+                                    message: { type: "string", example: "Like count fetched successfully" },
+                                    data: {
+                                        type: "object",
+                                        properties: {
+                                            reelId: { type: "string" },
+                                            likeCount: {
+                                                type: "integer",
+                                                example: 542
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 };
 
-export { skillRoadmapDocs };
+export { likeDocs };

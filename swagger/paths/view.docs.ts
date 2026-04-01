@@ -1,43 +1,35 @@
-const skillRoadmapDocs = {
-    "/v1/skill-roadmap": {
+const viewDocs = {
+    "/v1/view": {
         post: {
-            summary: "Create a new skill roadmap",
-            tags: ["SkillRoadmap"],
+            summary: "create a view record",
+            tags: ["View"],
             requestBody: {
                 required: true,
                 content: {
                     "application/json": {
                         schema: {
                             type: "object",
-                            required: [
-                                "skillId",
-                                "difficultyLevel",
-                                "title",
-                                "description",
-                                "tokenId"
-                            ],
+                            required: ["userId", "reelId", "watchedSeconds", "completed"],
                             properties: {
-                                skillId: {
+                                userId: {
                                     type: "string",
                                     format: "uuid",
-                                    example: "skill-uuid"
+                                    example: "user-uuid"
                                 },
-                                difficultyLevel: {
-                                    type: "string",
-                                    example: "EASY"
-                                },
-                                title: {
-                                    type: "string",
-                                    example: "JavaScript Basics Roadmap"
-                                },
-                                description: {
-                                    type: "string",
-                                    example: "Covers fundamentals like variables, functions, closures"
-                                },
-                                tokenId: {
+                                reelId: {
                                     type: "string",
                                     format: "uuid",
-                                    example: "token-uuid"
+                                    example: "reel-uuid"
+                                },
+                                watchedSeconds: {
+                                    type: "number",
+                                    example: 12.5,
+                                    description: "Total seconds watched"
+                                },
+                                completed: {
+                                    type: "boolean",
+                                    example: false,
+                                    description: "Whether user completed the reel"
                                 }
                             }
                         }
@@ -45,16 +37,16 @@ const skillRoadmapDocs = {
                 }
             },
             responses: {
-                201: {
-                    description: "Skill roadmap created successfully",
+                200: {
+                    description: "View tracked successfully (upsert behavior)",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Skill roadmap created successfully" },
-                                    data: { $ref: "#/components/schemas/SkillRoadmap" }
+                                    message: { type: "string", example: "View tracked successfully" },
+                                    data: { $ref: "#/components/schemas/View" }
                                 }
                             }
                         }
@@ -69,18 +61,13 @@ const skillRoadmapDocs = {
                     }
                 },
                 500: {
-                    description: "Internal Server Error",
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
-                        }
-                    }
+                    description: "Internal Server Error"
                 }
             }
         },
         get: {
-            summary: "Fetch all skill roadmaps",
-            tags: ["SkillRoadmap"],
+            summary: "Fetch views (analytics / history)",
+            tags: ["View"],
             parameters: [
                 {
                     name: "limit",
@@ -98,50 +85,47 @@ const skillRoadmapDocs = {
                     schema: { type: "string", format: "date-time" }
                 },
                 {
-                    name: "skillId",
+                    name: "userId",
                     in: "query",
                     schema: { type: "string" }
                 },
                 {
-                    name: "difficultyLevel",
+                    name: "reelId",
                     in: "query",
                     schema: { type: "string" }
                 },
                 {
-                    name: "tokenId",
+                    name: "completed",
                     in: "query",
-                    schema: { type: "string" }
-                },
-                {
-                    name: "search",
-                    in: "query",
-                    description: "Search in title",
-                    schema: { type: "string" }
+                    schema: { type: "boolean" }
                 }
             ],
             responses: {
                 200: {
-                    description: "Skill roadmaps fetched successfully",
+                    description: "Views fetched successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Skill roadmaps fetched successfully" },
+                                    message: { type: "string", example: "Views fetched successfully" },
                                     data: {
                                         type: "object",
                                         properties: {
                                             records: {
                                                 type: "array",
-                                                items: { $ref: "#/components/schemas/SkillRoadmap" }
+                                                items: { $ref: "#/components/schemas/View" }
                                             },
                                             nextCursor: {
                                                 type: "object",
                                                 nullable: true,
                                                 properties: {
                                                     lastId: { type: "string" },
-                                                    lastCreatedAt: { type: "string", format: "date-time" }
+                                                    lastCreatedAt: {
+                                                        type: "string",
+                                                        format: "date-time"
+                                                    }
                                                 }
                                             }
                                         }
@@ -158,10 +142,10 @@ const skillRoadmapDocs = {
         }
     },
 
-    "/v1/skill-roadmap/{id}": {
+    "/v1/view/{id}": {
         get: {
-            summary: "Get skill roadmap by ID",
-            tags: ["SkillRoadmap"],
+            summary: "Get view by ID",
+            tags: ["View"],
             parameters: [
                 {
                     name: "id",
@@ -172,15 +156,15 @@ const skillRoadmapDocs = {
             ],
             responses: {
                 200: {
-                    description: "Skill roadmap fetched successfully",
+                    description: "View fetched successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Skill roadmap fetched successfully" },
-                                    data: { $ref: "#/components/schemas/SkillRoadmap" }
+                                    message: { type: "string", example: "View fetched successfully" },
+                                    data: { $ref: "#/components/schemas/View" }
                                 }
                             }
                         }
@@ -192,43 +176,9 @@ const skillRoadmapDocs = {
             }
         },
 
-        patch: {
-            summary: "Update skill roadmap",
-            tags: ["SkillRoadmap"],
-            parameters: [
-                {
-                    name: "id",
-                    in: "path",
-                    required: true,
-                    schema: { type: "string", format: "uuid" }
-                }
-            ],
-            requestBody: {
-                content: {
-                    "application/json": {
-                        schema: {
-                            type: "object",
-                            properties: {
-                                skillId: { type: "string" },
-                                difficultyLevel: { type: "string" },
-                                title: { type: "string" },
-                                description: { type: "string" },
-                                tokenId: { type: "string" }
-                            }
-                        }
-                    }
-                }
-            },
-            responses: {
-                200: {
-                    description: "Updated successfully"
-                }
-            }
-        },
-
         delete: {
-            summary: "Delete skill roadmap",
-            tags: ["SkillRoadmap"],
+            summary: "Delete view record",
+            tags: ["View"],
             parameters: [
                 {
                     name: "id",
@@ -243,7 +193,76 @@ const skillRoadmapDocs = {
                 }
             }
         }
+    },
+    "/v1/view/count/{reelId}": {
+        get: {
+            summary: "Get total view count for a reel",
+            tags: ["View"],
+            parameters: [
+                {
+                    name: "reelId",
+                    in: "path",
+                    required: true,
+                    description: "The unique ID of the reel",
+                    schema: {
+                        type: "string",
+                        format: "uuid"
+                    }
+                }
+            ],
+            responses: {
+                200: {
+                    description: "View count fetched successfully",
+                    content: {
+                        "application/json": {
+                            schema: {
+                                type: "object",
+                                properties: {
+                                    success: { type: "boolean", example: true },
+                                    message: { type: "string", example: "View count fetched successfully" },
+                                    data: {
+                                        type: "object",
+                                        properties: {
+                                            reelId: {
+                                                type: "string",
+                                                format: "uuid",
+                                                example: "reel-uuid"
+                                            },
+                                            viewCount: {
+                                                type: "integer",
+                                                example: 1245,
+                                                description: "Total number of views for the reel"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                404: {
+                    description: "Reel not found",
+                    content: {
+                        "application/json": {
+                            example: {
+                                success: false,
+                                message: "Reel not found",
+                                data: null
+                            }
+                        }
+                    }
+                },
+                500: {
+                    description: "Internal Server Error",
+                    content: {
+                        "application/json": {
+                            schema: { $ref: "#/components/schemas/ErrorResponse" }
+                        }
+                    }
+                }
+            }
+        }
     }
 };
 
-export { skillRoadmapDocs };
+export { viewDocs };

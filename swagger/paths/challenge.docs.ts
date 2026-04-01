@@ -93,10 +93,7 @@ const challengeDocs = {
                     }
                 }
             }
-        }
-    },
-
-    "/v1/challenge/": {
+        },
         get: {
             summary: "Fetch all challenges",
             tags: ["Challenge"],
@@ -176,7 +173,6 @@ const challengeDocs = {
             }
         }
     },
-
     "/v1/challenge/{id}": {
         get: {
             summary: "Get challenge by ID",

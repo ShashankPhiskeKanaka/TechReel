@@ -64,10 +64,7 @@ const skillDocs = {
                     }
                 }
             }
-        }
-    },
-
-    "/v1/skill/": {
+        },
         get: {
             summary: "Fetch all skills",
             tags: ["Skill"],

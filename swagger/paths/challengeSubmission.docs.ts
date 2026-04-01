@@ -1,42 +1,38 @@
-const badgeDocs = {
-    "/v1/badge": {
+const challengeSubmissionDocs = {
+    "/v1/challenge-submission": {
         post: {
-            summary: "Create a new badge",
-            tags: ["Badge"],
+            summary: "Submit a challenge answer",
+            tags: ["ChallengeSubmission"],
             requestBody: {
                 required: true,
                 content: {
                     "application/json": {
                         schema: {
                             type: "object",
-                            required: ["skillId", "name", "xpReward"],
+                            required: [
+                                "userId",
+                                "challengeId",
+                                "answer"
+                            ],
                             properties: {
-                                skillId: {
+                                userId: {
                                     type: "string",
                                     format: "uuid",
-                                    example: "skill-uuid",
-                                    description: "Associated skill ID"
+                                    example: "user-uuid"
                                 },
-                                name: {
+                                challengeId: {
                                     type: "string",
-                                    example: "React Beginner",
-                                    description: "Name of the badge"
+                                    format: "uuid",
+                                    example: "challenge-uuid"
                                 },
-                                description: {
+                                answer: {
                                     type: "string",
-                                    nullable: true,
-                                    example: "Awarded for completing beginner challenges"
+                                    example: "function sum(a, b) { return a + b; }"
                                 },
-                                iconUrl: {
+                                roadmapStepId: {
                                     type: "string",
-                                    format: "uri",
-                                    nullable: true,
-                                    example: "https://cdn.com/badges/react.png"
-                                },
-                                xpReward: {
-                                    type: "number",
-                                    example: 100,
-                                    description: "XP reward for earning this badge"
+                                    format: "uuid",
+                                    nullable: true
                                 }
                             }
                         }
@@ -45,15 +41,15 @@ const badgeDocs = {
             },
             responses: {
                 201: {
-                    description: "Badge created successfully",
+                    description: "Challenge submitted successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Badge created successfully" },
-                                    data: { $ref: "#/components/schemas/Badge" }
+                                    message: { type: "string", example: "Submission successful" },
+                                    data: { $ref: "#/components/schemas/ChallengeSubmission" }
                                 }
                             }
                         }
@@ -67,9 +63,10 @@ const badgeDocs = {
                 }
             }
         },
+
         get: {
-            summary: "Fetch all badges",
-            tags: ["Badge"],
+            summary: "Fetch all challenge submissions",
+            tags: ["ChallengeSubmission"],
             parameters: [
                 {
                     name: "limit",
@@ -79,7 +76,7 @@ const badgeDocs = {
                 {
                     name: "lastId",
                     in: "query",
-                    schema: { type: "string", format: "uuid" }
+                    schema: { type: "string" }
                 },
                 {
                     name: "lastCreatedAt",
@@ -87,50 +84,52 @@ const badgeDocs = {
                     schema: { type: "string", format: "date-time" }
                 },
                 {
-                    name: "search",
+                    name: "userId",
                     in: "query",
-                    schema: { type: "string" },
-                    description: "Search across name/description"
+                    schema: { type: "string" }
                 },
                 {
-                    name: "skillId",
+                    name: "challengeId",
                     in: "query",
-                    schema: { type: "string", format: "uuid" }
+                    schema: { type: "string" }
                 },
                 {
-                    name: "minXp",
+                    name: "roadmapStepId",
                     in: "query",
-                    schema: { type: "number" }
+                    schema: { type: "string" }
                 },
                 {
-                    name: "maxXp",
+                    name: "isCorrect",
                     in: "query",
-                    schema: { type: "number" }
+                    schema: { type: "boolean" }
                 }
             ],
             responses: {
                 200: {
-                    description: "Badges fetched successfully",
+                    description: "Submissions fetched successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Badges fetched successfully" },
+                                    message: { type: "string", example: "Submissions fetched successfully" },
                                     data: {
                                         type: "object",
                                         properties: {
                                             records: {
                                                 type: "array",
-                                                items: { $ref: "#/components/schemas/Badge" }
+                                                items: { $ref: "#/components/schemas/ChallengeSubmission" }
                                             },
                                             nextCursor: {
                                                 type: "object",
                                                 nullable: true,
                                                 properties: {
-                                                    lastId: { type: "string", format: "uuid" },
-                                                    lastCreatedAt: { type: "string", format: "date-time" }
+                                                    lastId: { type: "string" },
+                                                    lastCreatedAt: {
+                                                        type: "string",
+                                                        format: "date-time"
+                                                    }
                                                 }
                                             }
                                         }
@@ -144,10 +143,10 @@ const badgeDocs = {
         }
     },
 
-    "/v1/badge/{id}": {
+    "/v1/challenge-submission/{id}": {
         get: {
-            summary: "Get badge by ID",
-            tags: ["Badge"],
+            summary: "Get challenge submission by ID",
+            tags: ["ChallengeSubmission"],
             parameters: [
                 {
                     name: "id",
@@ -158,63 +157,29 @@ const badgeDocs = {
             ],
             responses: {
                 200: {
-                    description: "Badge fetched successfully",
+                    description: "Submission fetched successfully",
                     content: {
                         "application/json": {
                             schema: {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Badge fetched successfully" },
-                                    data: { $ref: "#/components/schemas/Badge" }
+                                    message: { type: "string", example: "Submission fetched successfully" },
+                                    data: { $ref: "#/components/schemas/ChallengeSubmission" }
                                 }
                             }
                         }
                     }
                 },
                 404: {
-                    description: "Badge not found"
-                }
-            }
-        },
-
-        patch: {
-            summary: "Update badge",
-            tags: ["Badge"],
-            parameters: [
-                {
-                    name: "id",
-                    in: "path",
-                    required: true,
-                    schema: { type: "string", format: "uuid" }
-                }
-            ],
-            requestBody: {
-                content: {
-                    "application/json": {
-                        schema: {
-                            type: "object",
-                            properties: {
-                                skillId: { type: "string", format: "uuid" },
-                                name: { type: "string" },
-                                description: { type: "string" },
-                                iconUrl: { type: "string", format: "uri" },
-                                xpReward: { type: "number" }
-                            }
-                        }
-                    }
-                }
-            },
-            responses: {
-                200: {
-                    description: "Badge updated successfully"
+                    description: "Submission not found"
                 }
             }
         },
 
         delete: {
-            summary: "Delete badge",
-            tags: ["Badge"],
+            summary: "Delete challenge submission",
+            tags: ["ChallengeSubmission"],
             parameters: [
                 {
                     name: "id",
@@ -225,11 +190,14 @@ const badgeDocs = {
             ],
             responses: {
                 200: {
-                    description: "Badge deleted successfully"
+                    description: "Submission deleted successfully"
+                },
+                404: {
+                    description: "Submission not found"
                 }
             }
         }
     }
 };
 
-export { badgeDocs };
+export { challengeSubmissionDocs };

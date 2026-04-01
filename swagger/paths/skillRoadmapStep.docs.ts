@@ -79,10 +79,7 @@ const skillRoadmapStepDocs = {
                     description: "Internal Server Error"
                 }
             }
-        }
-    },
-
-    "/v1/skill-roadmap-step/": {
+        },
         get: {
             summary: "Fetch all skill roadmap steps",
             tags: ["SkillRoadmapStep"],
@@ -162,6 +159,7 @@ const skillRoadmapStepDocs = {
             }
         }
     },
+
 
     "/v1/skill-roadmap-step/{id}": {
         get: {

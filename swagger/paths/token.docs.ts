@@ -62,9 +62,7 @@ const tokenDocs = {
                     }
                 }
             }
-        }
-    },
-    "/v1/token/": {
+        },
         get: {
             summary: "Fetch all tokens",
             tags: ["Token"],

@@ -16,6 +16,16 @@ import { SkillRoadmapSchema } from "./schemas/skillRoadmap.schema.js";
 import { skillRoadmapDocs } from "./paths/skillRoadmap.docs.js";
 import { skillRoadmapStepDocs } from "./paths/skillRoadmapStep.docs.js";
 import { SkillRoadmapStepSchema } from "./schemas/skillRoadmapStep.schema.js";
+import { ViewSchema } from "./schemas/view.schema.js";
+import { viewDocs } from "./paths/view.docs.js";
+import { likeDocs } from "./paths/like.docs.js";
+import { LikeSchema } from "./schemas/like.schema.js";
+import { StreakSchema } from "./schemas/streak.schema.js";
+import { streakDocs } from "./paths/streak.docs.js";
+import { challengeSubmissionDocs } from "./paths/challengeSubmission.docs.js";
+import { ChallengeSubmissionSchema } from "./schemas/challengeSubmission.schema.js";
+import { ChallengeOptionSchema } from "./schemas/challengeOption.schema.js";
+import { challengeOptionDocs } from "./paths/challengeOption.docs.js";
 
 const options: swaggerJsdoc.Options = {
     definition: {
@@ -40,7 +50,12 @@ const options: swaggerJsdoc.Options = {
                 ...BadgeSchema,
                 ...ChallengeSchema,
                 ...SkillRoadmapSchema,
-                ...SkillRoadmapStepSchema
+                ...SkillRoadmapStepSchema,
+                ...ViewSchema,
+                ...LikeSchema,
+                ...StreakSchema,
+                ...ChallengeSubmissionSchema,
+                ...ChallengeOptionSchema
             },
             securitySchemas: {
                 accessToken: {
@@ -70,7 +85,12 @@ const options: swaggerJsdoc.Options = {
             ...badgeDocs,
             ...challengeDocs,
             ...skillRoadmapDocs,
-            ...skillRoadmapStepDocs
+            ...skillRoadmapStepDocs,
+            ...viewDocs,
+            ...likeDocs,
+            ...streakDocs,
+            ...challengeSubmissionDocs,
+            ...challengeOptionDocs
         }
     },
     apis: ['./routes/*.ts', './controller/*.ts'],

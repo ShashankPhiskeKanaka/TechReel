@@ -19,22 +19,25 @@ TechReel is designed as a **content + learning + engagement platform**, where us
 ---
 
 ## 🧱 Architecture
+
+```
 Client (Mobile/Web)
-↓
+        ↓
 NGINX Gateway (Reverse Proxy + LB)
-↓
+        ↓
 Node.js API (PM2 Cluster Mode)
-↓
+        ↓
 ┌───────────────┬───────────────┐
-│ PostgreSQL │ Redis │
-│ (Prisma ORM) │ (Caching/RL) │
+│ PostgreSQL     │ Redis         │
+│ (Prisma ORM)   │ (Caching/RL)  │
 └───────────────┴───────────────┘
-↓
+        ↓
 AWS S3 (Raw Uploads)
-↓
+        ↓
 AWS Lambda (FFmpeg Processing)
-↓
+        ↓
 HLS Output (S3 + CDN)
+```
 
 ---
 
@@ -125,37 +128,39 @@ HLS Output (S3 + CDN)
 ---
 
 ## 📁 Project Structure
+
+```
 .
-├── caching/ # Redis logic & caching utilities
-├── db/ # DB connection setup
-├── generated/ # Prisma generated files
-├── jobs/ # Background jobs (queues, workers)
-├── logs/ # Application logs
-├── nginx/ # NGINX configs
-├── prisma/ # Prisma schema & migrations
-├── schema/ # Additional DB schema files
+├── caching/
+├── db/
+├── generated/
+├── jobs/
+├── logs/
+├── nginx/
+├── prisma/
+├── schema/
 ├── src/
-│ ├── config/ # App configuration
-│ ├── constants/ # Global constants
-│ ├── controller/ # Route controllers
-│ ├── dto/ # Request/response DTOs
-│ ├── factory/ # Factory patterns
-│ ├── middleware/ # Express middlewares
-│ ├── repository/ # DB access layer
-│ ├── router/ # Route definitions
-│ ├── service/ # Business logic layer
-│ ├── types/ # TypeScript types/interfaces
-│ └── utils/ # Utility functions
+│   ├── config/
+│   ├── constants/
+│   ├── controller/
+│   ├── dto/
+│   ├── factory/
+│   ├── middleware/
+│   ├── repository/
+│   ├── router/
+│   ├── service/
+│   ├── types/
+│   └── utils/
 │
-├── swagger/ # Swagger docs config
-├── server.ts # Entry point
+├── swagger/
+├── server.ts
 ├── Dockerfile
 ├── docker-compose.yml
 ├── nginx.conf
 ├── prisma.config.ts
 ├── package.json
 └── README.md
-
+```
 
 ---
 
@@ -173,7 +178,8 @@ npm install
 ```
 
 ### 3. Environment Variables
-Create .env
+
+```env
 PORT=3000
 
 DATABASE_URL=postgresql://user:password@localhost:5432/techreel
@@ -192,6 +198,7 @@ S3_BUCKET_HLS=hls-bucket
 CLOUDFRONT_DOMAIN=your-cdn-domain
 
 INTERNAL_SECRET=internal-api-key
+```
 
 ### 4. Run Database Migrations
 ```bash
@@ -209,101 +216,113 @@ npm run build
 npm run start
 ```
 
+---
+
 ## 🐳 Docker Setup
 
-### Start All Services
+### Start
 ```bash
 docker-compose up -d
 ```
 
-### Stop Services
+### Stop
 ```bash
 docker-compose down
 ```
+
+---
+
 ## 🌐 API Gateway (NGINX)
+
 - Single entry point → http://localhost
-- Handles:
-    - Load balancing
-    - WebSocket upgrades
-    - Rate limiting
-    - Reverse proxy to Node cluster
+- Load balancing
+- WebSocket support
+- Rate limiting
+- Reverse proxy
+
+---
 
 ## 🎬 Video Processing Flow
-- User uploads video → S3 (raw)
-- Event triggers AWS Lambda
-- Lambda:
-    - Downloads video
-    - Converts to HLS (FFmpeg)
-    - Generates thumbnail
-    - Uploads:
-        - .m3u8 + .ts → HLS bucket
-        - CDN serves video globally
-        - Backend updates reel status
 
-## 📚 API Documentation
+- Upload → S3
+- Trigger → Lambda
+- Process → FFmpeg (HLS)
+- Store → S3
+- Serve → CDN
+- Update → Backend
 
-### Swagger available at:
-```bash
+---
+
+## 📚 API Docs
+
+```
 http://localhost:3000/docs
 ```
 
-## 🔁 Pagination Strategy
+---
 
-### Uses Cursor Based Pagination
-```bash
+## 🔁 Pagination
+
+```ts
 orderBy: [
   { createdAt: 'desc' },
   { id: 'desc' }
 ]
 ```
 
-### Cursor
-```bash
+```ts
 {
   lastId,
   lastCreatedAt
 }
 ```
 
-## 📊 Key Modules
+---
+
+## 📊 Modules
+
 - Users
 - Reels
 - Challenges
-- Challenge Options
-- Challenge Submissions
-- Skill Roadmaps
-- Roadmap Steps
+- Submissions
+- Roadmaps
+- Steps
 - Likes
 - Views
 - Streaks
 - Badges
 
-## 🧠 Design Principles
-- Separation of Concerns
-    - Controller → Service → Repository
-- Scalability First
-    - Stateless APIs
-    - Externalized caching (Redis)
-- Performance
-    - Indexed queries
-    - Cursor pagination
-    - CDN for media
-- Extensibility
-    - Factory pattern for services
-    - Modular folder structure
+---
 
-## 🔐 Security Practices
-- JWT Authentication
-- API key for internal services
-- Rate limiting (NGINX + Redis)
-- Input validation (DTOs)
-- Audit logging (DB triggers)
+## 🧠 Principles
 
-## 📌 Future Improvements
-- Recommendation engine
-- WebSocket SSE based real-time updates
-- Notification System
-- Environment specific configuration
+- Controller → Service → Repository
+- Stateless APIs
+- Redis caching
+- Indexed queries
+- Modular design
+
+---
+
+## 🔐 Security
+
+- JWT
+- Rate limiting
+- API keys
+- DTO validation
+- Audit logs
+
+---
+
+## 📌 Future
+
+- Recommendations
+- Real-time updates
+- Notifications
+- Env configs
+
+---
 
 ## 👨‍💻 Author
-- Shashank Phiske
+
+Shashank Phiske

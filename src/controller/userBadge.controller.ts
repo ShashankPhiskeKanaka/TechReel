@@ -35,7 +35,7 @@ class UserBadgeController extends BaseController<UserBadgeService> {
         )
 
         return ApiResponse.success(res, controllerMessages.FETCHALL.res, userProfiles);
-    }  
+    }
 }
 
 export { UserBadgeController }

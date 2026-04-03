@@ -43,6 +43,7 @@ model users {
   reelLikes    reel_likes[]
   reelReport   reel_reports[]
   reelSaves    reel_saves[]
+  reelFolder   reel_folders[]
 
   badges       user_badges[]
   challengeSubmissions challenge_submissions[]
@@ -58,7 +59,6 @@ model user_profiles {
   userId        String  @unique @map("user_id") @db.Uuid // Mapped
   name          String?
   bio           String?
-  avatarUrl     String? @map("avatar_url") // Mapped
   skillsSummary String? @map("skills_summary") // Mapped
   xp            Int     @default(0)
   interests     Json    @default("[]")
@@ -327,19 +327,34 @@ model reel_likes {
   @@index([id, createdAt])
 }
 
+model reel_folders {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid @map("user_id")
+  name String
+  createdAt DateTime @default(now()) @db.Timestamptz @map("created_at") 
+
+  user users @relation(fields: [userId], references: [id])
+
+  saved reel_saves[]
+
+  @@index([id, createdAt])
+  @@unique([userId, name])
+}
+
 model reel_saves {
   id         String   @id @default(uuid()) @db.Uuid
   userId     String   @map("user_id") @db.Uuid
   reelId     String   @map("reel_id") @db.Uuid
-  folderName String   @map("folder_name")
+  folderId   String   @map("folder_id") @db.Uuid
   savedAt    DateTime @default(now()) @map("saved_at") @db.Timestamptz
 
   user users @relation(fields: [userId], references: [id], onDelete: Cascade)
   reel reels @relation(fields: [reelId], references: [id], onDelete: Cascade)
+  folder reel_folders @relation(fields: [folderId], references: [id], onDelete: Cascade)
 
   @@map("reel_saves")
   @@unique([reelId, userId])
-  @@index([folderName])
+  @@index([folderId])
   @@index([id, savedAt])
 }
 
@@ -470,7 +485,7 @@ model user_roadmap_steps {
 model challenge_submissions {
   id            String         @id @default(uuid()) @db.Uuid
   userId        String         @map("user_id") @db.Uuid
-  challengeId   String         @map("challenge_id") @db.Uuid
+  challengeId   String?         @map("challenge_id") @db.Uuid
   answer        String
   isCorrect     Boolean        @map("is_correct")
   score         Int
@@ -478,7 +493,7 @@ model challenge_submissions {
   roadmapStepId String?        @map("roadmap_step_id") @db.Uuid
 
   user        users          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  challenge   challenges     @relation(fields: [challengeId], references: [id])
+  challenge   challenges?     @relation(fields: [challengeId], references: [id])
   roadmapStep roadmap_steps? @relation(fields: [roadmapStepId], references: [id])
 
   @@map("challenge_submissions")
@@ -495,4 +510,20 @@ model challenge_options {
   challenge   challenges @relation(fields: [challengeId], references: [id], onDelete: Cascade)
 
   @@map("challenge_options")
+}
+
+enum ImageType {
+  USER
+  TOKEN
+}
+
+model images {
+  id String @id @default(uuid()) @db.Uuid
+  url String
+  type ImageType
+  resourceId String @db.Uuid @map("resource_id")
+  createdAt DateTime @default(now()) @db.Timestamptz @map("created_at")
+
+  @@index([resourceId, type])
+  @@index([id, createdAt])
 }

@@ -15,6 +15,7 @@ interface BadgeData {
     description: string | null
     iconUrl: string | null
     xpReward: number
+    imageType?: string
 }
 
 interface BadgeUpdateData {
@@ -23,6 +24,7 @@ interface BadgeUpdateData {
     description?: string
     iconUrl?: string
     xpReward?: number
+    imageType?: string
 }
 
 interface UserBadge {

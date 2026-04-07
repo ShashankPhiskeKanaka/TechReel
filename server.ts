@@ -38,6 +38,7 @@ import { StreakRouter } from "./src/router/streak.router.js";
 import swaggerUi from "swagger-ui-express";
 import { specs } from "./swagger/swagger.config.js";
 import { rateLimiter } from "./src/middleware/rateLimiter.middleware.js";
+import { Imagerouter } from "./src/router/image.router.js";
 
 dotenv.config();
 
@@ -108,6 +109,8 @@ app.use("/v1/streak", StreakRouter);
 app.use("/v1/badge", BadgeRouter);
 
 app.use("/v1/feed", FeedRouter);
+
+app.use("/v1/images", Imagerouter);
 
 
 app.use(authenticate);

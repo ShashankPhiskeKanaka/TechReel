@@ -19,7 +19,7 @@ router.use(cacheMiddleware.cacheRequest(Number(process.env.CACHE_TTL_SHORT), "PR
 
 router.get("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.fetch));
 router.post("/", errorHandler.controllerWrapper(validate(CreateUserProfileSchema)), errorHandler.controllerWrapper(controller.create));
-router.patch("/:id", errorHandler.controllerWrapper(validate(UpdateUserProfileData)), errorHandler.controllerWrapper(controller.update));
+router.patch("/", errorHandler.controllerWrapper(validate(UpdateUserProfileData)), errorHandler.controllerWrapper(controller.update));
 router.delete("/:id", errorHandler.controllerWrapper(validate(GetData)), errorHandler.controllerWrapper(controller.delete));
 
 router.use(authenticateAdmin);

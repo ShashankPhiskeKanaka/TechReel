@@ -1,4 +1,6 @@
+import { errorMessage } from "../constants/error.messages.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
+import { logger } from "./logger.js";
 
 class ServerUtils {
 
@@ -51,6 +53,20 @@ class ServerUtils {
         }
         return { AND };
     };
+
+    generateSignedUrl = async (data: any) => {
+        const allowedType = ["image/jpeg", "image/jpg", "image/png"];
+
+        if(!allowedType.includes(data.imageType)) {
+            logger.warn("Invalid image format", {
+
+            })
+        }
+
+        const key = `uploads/${Date.now()}-${data.id}-${data.name}`;
+
+        
+    }
 
 }
 

@@ -1,10 +1,79 @@
 import { prisma } from "../../db/prisma.js";
-import type { Badge, BadgeData } from "../dto/badge.dto.js";
+import type { Badge, BadgeData, BadgeUpdateData } from "../dto/badge.dto.js";
 import { BaseRepository } from "./base.repository.js";
 
 class BadgeRepository extends BaseRepository<Badge, BadgeData, any> {
     constructor() {
         super(prisma.badges, "Badge");
+    }
+
+    create = async (data: BadgeData): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const badge = await tx.badges.create({
+                data
+            });
+
+            const imageRecord = await tx.images.create({
+                data: {
+                    imageType: data.imageType ?? "image/png",
+                    resourceType: "BADGE",
+                    resourceId: badge.id
+                }
+            });
+
+            return { badge, imageRecord }
+        });
+    }
+
+    update = async (data: BadgeUpdateData, id: string): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const badge = await tx.badges.update({
+                where: {
+                    id
+                },
+                data
+            });
+
+            let imageRecord;
+            let oldImageRecord;
+
+            if(data.imageType) {
+                oldImageRecord = await tx.images.findFirst({
+                    where: {
+                        resourceId: badge.id
+                    }
+                });
+
+                imageRecord = await tx.images.update({
+                    where: {
+                        resourceId: badge.id
+                    },
+                    data: {
+                        imageType: data.imageType
+                    }
+                });
+            }
+
+            return { badge, imageRecord, oldImageRecord }
+        });
+    }
+
+    hardDelete = async (id: string): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const badge = await tx.badges.delete({
+                where:{
+                    id
+                }
+            });
+
+            const imageRecord = await tx.images.delete({
+                where: {
+                    resourceId: badge.id
+                }
+            });
+
+            return { badge, imageRecord };
+        });
     }
     // /**
     //  * Creates a new badge record.
@@ -19,21 +88,26 @@ class BadgeRepository extends BaseRepository<Badge, BadgeData, any> {
     //     return badge ?? <Badge>{};
     // }
 
-    // /**
-    //  * Retrieves a single active badge by its ID.
-    //  * @param {string} id - The unique identifier of the badge.
-    //  * @returns {Promise<Badge>} The badge object, or an empty object if not found or deleted.
-    //  */
-    // fetch = async (id: string): Promise<Badge> => {
-    //     const badge = await prisma.badges.findFirst({
-    //         where: {
-    //             id,
-    //             deletedAt: null
-    //         }
-    //     });
+    /**
+     * Retrieves a single active badge by its ID.
+     * @param {string} id - The unique identifier of the badge.
+     * @returns {Promise<Badge>} The badge object, or an empty object if not found or deleted.
+     */
+    fetch = async (id: string): Promise<any> => {
+        const data: any = await prisma.$queryRaw`        
+            SELECT
+                b.*,
+                i.id AS "imageId",
+                i.url AS "url",
+                i.type AS "imageType"
+            FROM badges b
+            LEFT JOIN images i ON i.resource_id = b.id AND i.resource_type = 'BADGE'
+            WHERE b.id = ${id}::uuid AND b.deleted_at IS NULL
+            LIMIT 1;
+        `;
 
-    //     return badge ?? <Badge>{};
-    // }
+        return data[0] || null;
+    }
 
     // /**
     //  * Fetches a paginated list of badges with search and sorting support.

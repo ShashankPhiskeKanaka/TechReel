@@ -46,17 +46,9 @@ class UserProfileController extends BaseController<UserProfileService> {
      * @throws {unauthorizedError} If a non-admin attempts to update another user's profile.
      */
     update = async (req: Request, res: Response) => {
-        const id = req.params.id?.toString() ?? "";
-        this.logRequest(req, this.messages.UPDATE.req, { id });
+        this.logRequest(req, this.messages.UPDATE.req, { userId: req.user?.id });
 
-        if (req.user?.role != "ADMIN" && id != req.user?.id) {
-            logger.warn("Unauthorized request", {
-                ip: req.ip,
-                userId: req.user?.id
-            })
-        }
-
-        const result = await this.service.update(req.body, id);
+        const result = await this.service.update(req.body, req.user?.id ?? "");
 
         return ApiResponse.success(res, this.messages.UPDATE.res, result);
     }

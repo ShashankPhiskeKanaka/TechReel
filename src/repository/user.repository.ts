@@ -191,14 +191,28 @@ class UserRepository {
      * @returns {Promise<User>} The deleted user record metadata.
      * @throws {PrismaClientKnownRequestError} P2025 if the record does not exist.
      */
-    hardDelete = async (id: string): Promise<User> => {
-        const user = await prisma.users.delete({
-            where: {
-                id
-            }
-        });
+    hardDelete = async (id: string): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const user = await tx.users.delete({
+                where: {
+                    id
+                }
+            });
 
-        return user;
+            let imageRecord;
+
+            try {
+                imageRecord = await tx.images.delete({
+                    where: {
+                        resourceId: user.id
+                    }
+                });
+            }catch (err) {
+                logger.info("Now image record found");
+            }
+
+            return { user, imageRecord }
+        })
     }
 }
 

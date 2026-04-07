@@ -11,6 +11,7 @@ interface Token {
 interface TokenData {
     name: string,
     tokenUrl?: string,
+    imageType: string
 }
 
 interface TokenLedger {

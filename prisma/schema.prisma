@@ -512,18 +512,21 @@ model challenge_options {
   @@map("challenge_options")
 }
 
-enum ImageType {
+enum ResourceType {
   USER
   TOKEN
+  BADGE
 }
 
 model images {
   id String @id @default(uuid()) @db.Uuid
-  url String
-  type ImageType
-  resourceId String @db.Uuid @map("resource_id")
+  url String?
+  key String?
+  imageType String @map("image_type")
+  resourceType ResourceType @map("resource_type")
+  resourceId String @db.Uuid @map("resource_id") @unique
   createdAt DateTime @default(now()) @db.Timestamptz @map("created_at")
 
-  @@index([resourceId, type])
+  @@index([resourceId, resourceType])
   @@index([id, createdAt])
 }

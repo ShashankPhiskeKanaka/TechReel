@@ -1,11 +1,89 @@
+import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import type { Badge, BadgeData } from "../dto/badge.dto.js";
 import type { BadgeRepository } from "../repository/badge.repository.js";
+import { logger } from "../utils/logger.js";
+import { redisUtils } from "../utils/redis.utils.js";
 import { BaseService } from "./base.service.js";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { s3Client } from "../../db/s3.js";
+import { config } from "../config/index.js";
 
 class BadgeService extends BaseService<Badge, BadgeData, BadgeRepository> {
 
     constructor(methods: BadgeRepository) {
         super(methods, "BADGE");
+    }
+
+    create = async (badgeData: BadgeData): Promise<any> => {
+        const { badge, imageRecord } = await this.methods.create(badgeData);
+
+        logger.info("New badge created", {
+            badgeId: badge.id
+        });
+
+        redisUtils.invalidateKey(badge.userId ? badge.userId : "PUBLIC", this.modelName, "CREATE")
+
+        const key = await `uploads/${Date.now()}-${imageRecord.id}`;
+
+        const command = new PutObjectCommand({
+            Bucket: config.awsImageBucket,
+            Key: key,
+            ContentType: imageRecord.imageType,
+            ChecksumAlgorithm: undefined,
+            Metadata: {
+                imageId: imageRecord.id,
+            }
+        });
+
+        const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+
+        return { badge, uploadUrl };   
+    }
+
+    update = async (badgeData: BadgeData): Promise<any> => {
+        const { badge, imageRecord, oldImageRecord } = await this.methods.create(badgeData);
+
+        logger.info("Badge updated", {
+            badgeId: badge.id
+        });
+
+        redisUtils.invalidateKey(badge.userId ? badge.userId : "PUBLIC", this.modelName, "UPDATE")
+
+        await s3Client.send(new DeleteObjectCommand({
+            Bucket: config.awsImageBucket,
+            Key: oldImageRecord.key
+        }));
+
+        const key = await `uploads/${Date.now()}-${imageRecord.id}`;
+
+        const command = new PutObjectCommand({
+            Bucket: config.awsImageBucket,
+            Key: key,
+            ContentType: imageRecord.imageType,
+            ChecksumAlgorithm: undefined,
+            Metadata: {
+                imageId: imageRecord.id,
+            }
+        });
+
+        const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+
+        return { badge, uploadUrl };
+    }
+
+    delete = async (id: string): Promise<Badge> => {
+        const { badge, imageRecord } = await this.methods.hardDelete(id);
+
+        logger.info("Badge deleted", {
+            badgeId: badge.id
+        });
+
+        await s3Client.send(new DeleteObjectCommand({
+            Bucket: config.awsImageBucket,
+            Key: imageRecord.key
+        }));
+
+        return badge;
     }
 
     // /**

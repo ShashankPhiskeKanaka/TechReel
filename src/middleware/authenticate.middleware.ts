@@ -12,7 +12,6 @@ const userRepo = new UserRepository();
 const service = new AuthService(repo, userRepo);
 
 const authenticate = async (req: Request, res: Response, next: NextFunction) => {
-    4
 
     if (req.isAuthenticated && req.isAuthenticated()) {
         return next();

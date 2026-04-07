@@ -9,6 +9,9 @@ import { serverError } from "../utils/error.utils.js";
 import { logger } from "../utils/logger.js";
 import { redisUtils } from "../utils/redis.utils.js";
 import { PublicUser } from "../dto/user.dto.js";
+import { s3Client } from "../../db/s3.js";
+import { DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { config } from "../config/index.js";
 
 const serviceMessages = new ServiceMessages("User");
 
@@ -129,9 +132,12 @@ class UserService {
      */
     delete = async (flag: boolean, id: string) => {
         let user;
+        let imageRecord;
 
         if (flag) {
-            user = await this.UserMethods.hardDelete(id);
+            const data = await this.UserMethods.hardDelete(id);
+            user = data.user;
+            imageRecord = data.imageRecord;
             logger.info("User hard deleted successfully", {
                 userId: id
             });
@@ -144,6 +150,13 @@ class UserService {
 
         await redisUtils.invalidateKey(user.id, Resource.USER, Action.DELETE);
 
+        if(imageRecord) {
+            await s3Client.send(new DeleteObjectCommand({
+                Bucket: config.awsImageBucket,
+                Key: imageRecord.key
+            }));
+        }
+        
         return new PublicUser(user);
     }
 }

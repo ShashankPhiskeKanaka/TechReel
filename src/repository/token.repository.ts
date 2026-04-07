@@ -8,36 +8,89 @@ class TokenRepository extends BaseRepository<Token, TokenData, any> {
         super(prisma.tokens, "Token");
     }
 
-    // /**
-    //  * Creates a new token record.
-    //  * @param {TokenData} data - The token data to persist.
-    //  * @returns {Promise<Token>} The newly created token.
-    //  */
-    // create = async (data: TokenData): Promise<Token> => {
-    //     const token = await prisma.tokens.create({
-    //         data
-    //     });
+    /**
+     * Creates a new token record.
+     * @param {TokenData} data - The token data to persist.
+     * @returns {Promise<Token>} The newly created token.
+     */
+    create = async (data: TokenData): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const token = await tx.tokens.create({
+                data
+            });
 
-    //     return token;
-    // }
+            let imageRecord;
 
-    // /**
-    //  * Updates an existing active token.
-    //  * @param {TokenData} data - The updated data fields.
-    //  * @param {string} id - The ID of the token to update.
-    //  * @returns {Promise<Token>} The updated token record.
-    //  */
-    // update = async (data: TokenData, id: string): Promise<Token> => {
-    //     const token = await prisma.tokens.update({
-    //         where: {
-    //             id: id,
-    //             deleted_at: null
-    //         },
-    //         data: data
-    //     });
+            if(data.imageType) {
+                imageRecord = await tx.images.create({
+                    data: {
+                        resourceId: token.id,
+                        resourceType: "TOKEN",
+                        imageType: data.imageType
+                    }
+                });
+            }
 
-    //     return token;
-    // }
+            return { token, imageRecord }; 
+        })
+    }
+
+    /**
+     * Updates an existing active token.
+     * @param {TokenData} data - The updated data fields.
+     * @param {string} id - The ID of the token to update.
+     * @returns {Promise<Token>} The updated token record.
+     */
+    update = async (data: TokenData, id: string): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const token = await tx.tokens.update({
+                where: {
+                    id: id,
+                    deleted_at: null
+                },
+                data: data
+            });
+
+            let imageRecord;
+
+            if(data.imageType) {
+                imageRecord = await tx.images.update({
+                    where: {
+                        resourceId: token.id
+                    },
+                    data: {
+                        imageType: data.imageType
+                    }
+                });
+            }
+
+            return {token, imageRecord};
+        })
+    }
+
+    /**
+     * Permanently removes a token record from the database.
+     * @param {string} id - The ID of the token to delete.
+     * @returns {Promise<Token>} The deleted token record.
+     */
+    hardDelete = async (id: string): Promise<any> => {
+        return await prisma.$transaction(async (tx) => {
+            const token = await tx.tokens.delete({
+                where: {
+                    id: id
+                }
+            });
+
+            let imageRecord = await tx.images.delete({
+                where: {
+                    resourceId: token.id
+                }
+            });
+
+            return {token, imageRecord};
+
+        })
+    }
 
     // /**
     //  * Retrieves a single active token by its ID.
@@ -102,21 +155,6 @@ class TokenRepository extends BaseRepository<Token, TokenData, any> {
     //         },
     //         data: {
     //             deleted_at: new Date()
-    //         }
-    //     });
-
-    //     return token;
-    // }
-
-    // /**
-    //  * Permanently removes a token record from the database.
-    //  * @param {string} id - The ID of the token to delete.
-    //  * @returns {Promise<Token>} The deleted token record.
-    //  */
-    // hardDelete = async (id: string): Promise<Token> => {
-    //     const token = await prisma.tokens.delete({
-    //         where: {
-    //             id: id
     //         }
     //     });
 

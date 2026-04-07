@@ -24,6 +24,7 @@ interface Config {
     awsUserAccessKey: string;
     awsBucketRegion: string;
     awsRawBucket: string;
+    awsImageBucket: string;
     internalSecret: string;
 }
 
@@ -46,6 +47,7 @@ const config: Config = {
     awsUserAccessKey: process.env.AWS_USER_ACCESSKEY || "",
     awsBucketRegion: process.env.AWS_BUCKET_REGION || "",
     awsRawBucket: process.env.AWS_RAW_BUCKET || "",
-    internalSecret: process.env.INTERNAL_SECRET || "",
+    awsImageBucket: process.env.AWS_IMAGE_BUCKET || "",
+    internalSecret: process.env.INTERNAL_SECRET || ""
 }
 export { config };

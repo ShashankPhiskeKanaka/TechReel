@@ -10,14 +10,11 @@ const CreateUserProfileSchema = z.object({
         interests: z.array(
             z.string({ error: errorMessage.INVALIDDATA.message })
         ),
-
+        imageType: z.string({ error: errorMessage.INVALIDDATA.message }).optional()
     })
 })
 
 const UpdateUserProfileData = z.object({
-    params: z.object({
-        id: z.string({ error: errorMessage.INVALIDDATA.message })
-    }),
     body: z.object({
         name: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
         bio: z.string({ error: errorMessage.INVALIDDATA.message }).optional(),
@@ -26,7 +23,7 @@ const UpdateUserProfileData = z.object({
         interests: z.array(
             z.string({ error: errorMessage.INVALIDDATA.message })
         ).optional(),
-
+        imageType: z.string({ error: errorMessage.INVALIDDATA.message }).optional()
     })
 });
 

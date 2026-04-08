@@ -5,6 +5,17 @@ import { authUtils } from '../../factory/auth.factory.js';
 import { redisUtils } from '../../utils/redis.utils.js';
 import { logger } from '../../utils/logger.js';
 import { AuthUtilsClass } from '../../utils/auth.utils.js';
+import { s3Client } from '../../../db/s3.js';
+
+vi.mock('../../../db/s3.js', () => ({
+    s3Client: {
+        send: vi.fn()
+    }
+}));
+
+vi.mock('@aws-sdk/s3-request-presigner', () => ({
+    getSignedUrl: vi.fn().mockResolvedValue('http://mock-url.com'),
+}));
 
 vi.mock('../../utils/auth.utils.js', () => {
     class MockAuthUtilsClass {

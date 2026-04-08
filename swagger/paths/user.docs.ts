@@ -9,8 +9,9 @@ const userPaths = {
                     "application/json": {
                         schema: {
                             type: "object",
+                            required: ["email", "username", "password"],
                             properties: {
-                                email: { type: "string", example: "abc@gmail.com" },
+                                email: { type: "string", format: "email", example: "abc@gmail.com" },
                                 username: { type: "string", example: "username" },
                                 password: { type: "string", example: "Sample@1234" }
                             }
@@ -19,7 +20,7 @@ const userPaths = {
                 }
             },
             responses: {
-                200: {
+                201: {
                     description: "User created successfully",
                     content: {
                         "application/json": {
@@ -27,20 +28,16 @@ const userPaths = {
                                 type: "object",
                                 properties: {
                                     success: { type: "boolean", example: true },
-                                    message: { type: "string", example: "Password changed successfully" },
-                                    data: { type: "object", nullable: true }
+                                    message: { type: "string", example: "User created successfully" },
+                                    data: { $ref: "#/components/schemas/User" }
                                 }
                             }
                         }
                     },
                 },
                 400: {
-                    description: "Please provide valid data",
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
-                        }
-                    }
+                    description: "Error",
+                    content: { "application/json": { schema: { $ref: "#/components/schemas/ErrorResponse" } } }
                 }
             }
         },
@@ -48,149 +45,73 @@ const userPaths = {
             summary: "Fetch users",
             tags: ["User"],
             parameters: [
-                {
-                    name: "limit",
-                    in: "query",
-                    description: "How many users to return",
-                    required: false,
-                    schema: { type: "integer", default: 10 }
-                },
-                {
-                    name: "sort",
-                    in: "query",
-                    description: "Sorting order of data",
-                    required: false,
-                    schema: { type: "string", enum: ["asc", "desc"], default: "desc" }
-                },
-                {
-                    name: "search",
-                    in: "query",
-                    description: "Search for data",
-                    required: false,
-                    schema: { type: "string" }
-                },
-                {
-                    name: "lastId",
-                    in: "query",
-                    description: "cursor id",
-                    required: false,
-                    schema: { type: "string" }
-                },
-                {
-                    name: "lastCreatedAt",
-                    in: "query",
-                    description: "cursor date",
-                    required: false,
-                    schema: { type: "date" }
-                }
+                { name: "limit", in: "query", schema: { type: "integer", default: 10 } },
+                { name: "sort", in: "query", schema: { type: "string", enum: ["asc", "desc"] } },
+                { name: "search", in: "query", schema: { type: "string" } },
+                { name: "lastId", in: "query", schema: { type: "string", format: "uuid" } },
+                { name: "lastCreatedAt", in: "query", schema: { type: "string", format: "date-time" } }
             ],
             responses: {
                 200: {
                     description: "Users fetched",
                     content: {
                         "application/json": {
-                            schema: { $ref: "#/components/schemas/BaseResponse" }
-                        }
-                    }
-                },
-                400: {
-                    description: "Error",
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "/v1/user/:token": {
-        get: {
-            summary: "Verify user email",
-            tags: ["User"],
-            parameters: [
-                {
-                    name: "token",
-                    in: "path",
-                    required: true,
-                    schema: { type: "boolean" },
-                    description: ""
-                }
-            ],
-            responses: {
-                200: {
-                    description: "User email verified",
-                    content: {
-                        "application/json" : {
-                            schema: { $ref: "#/components/schemas/BaseSchema" }
-                        }
-                    }
-                },
-                400: {
-                    description: "Error",
-                    content: {
-                        "application/json": {
-                            schema: {$ref : "#/components/schemas/ErrorSchema"}
+                            schema: {
+                                type: "object",
+                                properties: {
+                                    success: { type: "boolean", example: true },
+                                    data: {
+                                        type: "array",
+                                        items: { $ref: "#/components/schemas/User" }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     },
-    "/v1/user/:id": {
+    "/v1/user/{id}": {
         get: {
-            summary: "Fetch user",
+            summary: "Fetch user by ID",
             tags: ["User"],
             parameters: [
-                {
-                    name: "id",
-                    in: "path",
-                    required: true,
-                    schema: { type: "boolean" },
-                    description: "uuid of user"
-                }
+                { name: "id", in: "path", required: true, schema: { type: "string", format: "uuid" } }
             ],
             responses: {
                 200: {
                     description: "User fetched",
                     content: {
-                        "application/json" : {
-                            schema: { $ref: '#/components/schemas/BaseSchema' }
-                        }
-                    }
-                },
-                400: {
-                    description: "Error",
-                    content: {
                         "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorSchema" }
+                            schema: {
+                                type: "object",
+                                properties: {
+                                    success: { type: "boolean", example: true },
+                                    data: { $ref: "#/components/schemas/User" } 
+                                }
+                            }
                         }
                     }
                 }
             }
         },
         patch: {
-            summary: "Update users",
+            summary: "Update user",
             tags: ["User"],
             parameters: [
-                {
-                    name: "id",
-                    in: "query",
-                    description: "uuid of user",
-                    required: true,
-                    schema: { type: "string" }
-                }
+                { name: "id", in: "path", required: true, schema: { type: "string", format: "uuid" } }
             ],
             requestBody: {
                 required: true,
                 content: {
                     "application/json": {
-                        schema : {
-                            type: "object", 
+                        schema: {
+                            type: "object",
                             properties: {
-                                username: { type: "string", required: false },
-                                email: { type: "string", required: false },
-                                role: { type: "string", required: false}
+                                username: { type: "string" },
+                                email: { type: "string", format: "email" },
+                                role: { type: "string", enum: ["USER", "ADMIN", "CREATOR"] }
                             }
                         }
                     }
@@ -200,50 +121,20 @@ const userPaths = {
                 200: {
                     description: "User updated",
                     content: {
-                        "application/json" : {
-                            schema: { $ref: "#/components/schemas/BaseResponse" }
-                        }
-                    }
-                },
-                400: {
-                    content: {
                         "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
-                        }
-                    }
-                }
-            }
-        },
-        delete: {
-            summary: "Delete user",
-            tags: ["User"],
-            parameters: [
-                {
-                    name: "id",
-                    in: "path",
-                    required: true,
-                    schema: { type: "string" },
-                    description: "uuid of user",
-                }
-            ],
-            responses: {
-                200: {
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/BaseResponse" }
-                        }
-                    }
-                },
-                400: {
-                    content: {
-                        "application/json": {
-                            schema: { $ref: "#/components/schemas/ErrorResponse" }
+                            schema: {
+                                type: "object",
+                                properties: {
+                                    success: { type: "boolean", example: true },
+                                    data: { $ref: "#/components/schemas/User" } 
+                                }
+                            }
                         }
                     }
                 }
             }
         }
-    },
+    }
 }
 
-export { userPaths }
+export { userPaths };

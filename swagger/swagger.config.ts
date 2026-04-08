@@ -26,6 +26,21 @@ import { challengeSubmissionDocs } from "./paths/challengeSubmission.docs.js";
 import { ChallengeSubmissionSchema } from "./schemas/challengeSubmission.schema.js";
 import { ChallengeOptionSchema } from "./schemas/challengeOption.schema.js";
 import { challengeOptionDocs } from "./paths/challengeOption.docs.js";
+import { feedDocs } from "./paths/feed.docs.js";
+import { leaderboardDocs } from "./paths/leaderboard.docs.js";
+import { xpDocs } from "./paths/xp.docs.js";
+import { XpSchema } from "./schemas/xp.schema.js";
+import { UserBadgeSchema } from "./schemas/userBadge.schema.js";
+import { userBadgeDocs } from "./paths/userBadge.docs.js";
+import { userRoadmapStepDocs } from "./paths/userRoadmapStep.docs.js";
+import { UserRoadmapStepSchema } from "./schemas/userRoadmapStep.schema.js";
+import { FolderSchema } from "./schemas/folder.schema.js";
+import { folderDocs } from "./paths/folder.docs.js";
+import { reelSaveDocs } from "./paths/reelSave.docs.js";
+import { reelDocs } from "./paths/reel.docs.js";
+import { ReelSchema } from "./schemas/reel.schema.js";
+import { adminDocs } from "./paths/admin.docs.js";
+import { UserSchema } from "../schema/user.schema.js";
 
 const options: swaggerJsdoc.Options = {
     definition: {
@@ -55,7 +70,13 @@ const options: swaggerJsdoc.Options = {
                 ...LikeSchema,
                 ...StreakSchema,
                 ...ChallengeSubmissionSchema,
-                ...ChallengeOptionSchema
+                ...ChallengeOptionSchema,
+                ...XpSchema,
+                ...UserBadgeSchema,
+                ...UserRoadmapStepSchema,
+                ...FolderSchema,
+                ...ReelSchema,
+                ...UserSchema
             },
             securitySchemas: {
                 accessToken: {
@@ -90,10 +111,21 @@ const options: swaggerJsdoc.Options = {
             ...likeDocs,
             ...streakDocs,
             ...challengeSubmissionDocs,
-            ...challengeOptionDocs
+            ...challengeOptionDocs,
+            ...feedDocs,
+            ...leaderboardDocs,
+            ...xpDocs,
+            ...userBadgeDocs,
+            ...userRoadmapStepDocs,
+            ...folderDocs,
+            ...reelSaveDocs,
+            ...reelDocs,
+            ...adminDocs
         }
     },
     apis: ['./routes/*.ts', './controller/*.ts'],
 };
 
 export const specs = swaggerJsdoc(options);
+
+export { options }

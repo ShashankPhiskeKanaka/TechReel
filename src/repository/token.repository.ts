@@ -16,7 +16,10 @@ class TokenRepository extends BaseRepository<Token, TokenData, any> {
     create = async (data: TokenData): Promise<any> => {
         return await prisma.$transaction(async (tx) => {
             const token = await tx.tokens.create({
-                data
+                data: {
+                    name: data.name,
+                    tokenUrl: data.tokenUrl ?? null
+                }
             });
 
             let imageRecord;
@@ -43,12 +46,16 @@ class TokenRepository extends BaseRepository<Token, TokenData, any> {
      */
     update = async (data: TokenData, id: string): Promise<any> => {
         return await prisma.$transaction(async (tx) => {
+            
             const token = await tx.tokens.update({
                 where: {
                     id: id,
                     deleted_at: null
                 },
-                data: data
+                data: {
+                    name: data.name,
+                    tokenUrl: data.tokenUrl ?? null
+                }
             });
 
             let imageRecord;

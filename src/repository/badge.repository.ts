@@ -7,6 +7,13 @@ class BadgeRepository extends BaseRepository<Badge, BadgeData, any> {
         super(prisma.badges, "Badge");
     }
 
+    /**
+     * Creates a new Badge and its associated polymorphic image record.
+     * 
+     * @param {BadgeData} data - The badge details and initial image configuration.
+     * @returns {Promise<{ badge: any, imageRecord: any }>} The created badge and image metadata.
+     * @throws {PrismaClientKnownRequestError} If the badge creation or image link fails.
+     */
     create = async (data: BadgeData): Promise<any> => {
         return await prisma.$transaction(async (tx) => {
             const badge = await tx.badges.create({
@@ -25,6 +32,15 @@ class BadgeRepository extends BaseRepository<Badge, BadgeData, any> {
         });
     }
 
+    /**
+     * Updates a Badge record and conditionally refreshes its image metadata.
+     * 
+     * @param {BadgeUpdateData} data - The partial data to update. If imageType is provided, 
+     *                                 the image record is updated and the previous state is returned.
+     * @param {string} id - The unique identifier of the badge.
+     * @returns {Promise<{ badge: any, imageRecord?: any, oldImageRecord?: any }>} The updated results.
+     * @note If imageType is updated, you should use 'oldImageRecord' to clean up S3 storage.
+     */
     update = async (data: BadgeUpdateData, id: string): Promise<any> => {
         return await prisma.$transaction(async (tx) => {
             const badge = await tx.badges.update({
@@ -58,6 +74,15 @@ class BadgeRepository extends BaseRepository<Badge, BadgeData, any> {
         });
     }
 
+
+    /**
+     * Permanently removes a Badge and its associated image from the database.
+     * 
+     * @param {string} id - The unique identifier of the badge to be deleted.
+     * @returns {Promise<{ badge: any, imageRecord: any }>} The deleted records.
+     * @important This is an atomic hard delete. Ensure associated S3 assets are 
+     *            handled after this transaction succeeds.
+     */
     hardDelete = async (id: string): Promise<any> => {
         return await prisma.$transaction(async (tx) => {
             const badge = await tx.badges.delete({

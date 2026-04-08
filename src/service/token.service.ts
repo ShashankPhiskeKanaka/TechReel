@@ -19,6 +19,14 @@ class TokenService extends BaseService<Token, TokenData, any> {
         super(methods, "TOKEN");
     }
 
+    /**
+     * Handles the creation of a new Token and its associated image metadata.
+     * Orchestrates database persistence, cache invalidation for public feeds, 
+     * and conditionally generates an S3 presigned URL if image data is provided.
+     * 
+     * @param {TokenData} data - The token properties including optional image metadata.
+     * @returns {Promise<{token: any, uploadUrl?: string}>} The created token and a temporary S3 upload link.
+     */
     create = async (data: TokenData): Promise<any> => {
         const { token, imageRecord } = await this.methods.create(data);
 
@@ -49,6 +57,16 @@ class TokenService extends BaseService<Token, TokenData, any> {
         return {token, uploadUrl};
     }
 
+    /**
+     * Updates an existing Token and rotates its S3 asset.
+     * Synchronously deletes the previous S3 object to prevent storage bloat 
+     * and generates a fresh presigned URL for the updated image.
+     * 
+     * @param {TokenData} data - The partial token data to update.
+     * @param {string} id - The unique identifier of the token.
+     * @returns {Promise<{token: any, uploadUrl: string}>} The updated token and a new S3 upload link.
+     * @throws {Error} If the S3 deletion or presigned URL generation fails.
+     */
     update = async (data: TokenData, id : string): Promise<any> => {
         const {token, imageRecord} = await this.methods.update(data, id);
 
@@ -84,6 +102,14 @@ class TokenService extends BaseService<Token, TokenData, any> {
         return {token, uploadUrl};
     }
 
+    /**
+     * Permanently removes a Token and its linked S3 resources.
+     * Performs a hard delete in the database followed by a physical removal 
+     * of the associated file in AWS S3.
+     * 
+     * @param {string} id - The unique identifier of the token to be purged.
+     * @returns {Promise<any>} The deleted token record data.
+     */
     hardDelete = async (id: string) => {
         const { token, imageRecord} = await this.methods.delete(id);
 
@@ -100,56 +126,6 @@ class TokenService extends BaseService<Token, TokenData, any> {
 
         return token;
     }
-
-    // fetch = async (id: string) => {
-    //     const token = await this.TokenMethods.fetch(id);
-
-    //     if(!token.id) {
-    //         logger.warn(serviceMessage.FETCH.error, {
-    //             tokenId: id
-    //         });
-
-    //         throw new serverError(errorMessage.NOTFOUND);
-    //     }
-
-    //     logger.info(serviceMessage.FETCH.message, {
-    //         tokenId: id
-    //     });
-
-    //     return token;
-    // }
-
-    // fetchAll = async (data: PaginationData, filters: {}) => {
-    //     const tokens = await this.TokenMethods.fetchAll(data, filters);
-
-    //     if(tokens.length == 0) {
-    //         logger.warn(serviceMessage.FETCHALL.error);
-
-    //         throw new serverError(errorMessage.NOTFOUND);
-    //     }
-
-    //     logger.info(serviceMessage.FETCHALL.message);
-
-    //     return tokens;
-    // }
-
-    // delete = async (id: string, flag: boolean) => {
-    //     let token;
-    //     if(flag) {
-    //         token = await this.TokenMethods.hardDelete(id);
-    //         logger.info(serviceMessage.DELETE.hardDelete, {
-    //             tokenId: id
-    //         });
-    //     }else{
-    //         token = await this.TokenMethods.softDelete(id);
-    //         logger.info(serviceMessage.DELETE.softDelete, {
-    //             tokenId: id
-    //         });
-    //     }
-
-    //     return token;
-    // }
-
 }
 
 export { TokenService }

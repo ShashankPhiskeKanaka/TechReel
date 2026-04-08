@@ -109,7 +109,6 @@ enum TokenType {
 model tokens {
   id        String    @id @default(uuid()) @db.Uuid
   name      String    @unique
-  tokenUrl  String?   @map("token_url") // Mapped
   createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz // Mapped
   deletedAt DateTime? @map("deleted_at") @db.Timestamptz // Mapped
 

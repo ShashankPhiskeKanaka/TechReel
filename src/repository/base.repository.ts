@@ -67,6 +67,16 @@ export abstract class BaseRepository<T, TCreateData, TUpdateData> {
         instance.model = txModel;
         return instance;
     }
+    
+    attachImage = async (resourceId: string, client: any) => {
+        const image = await client.images.findFirst({
+            where: {
+                resourceId
+            }
+        });
+
+        return image;
+    }
 
     /**
      * Creates a new record in the database.
@@ -90,18 +100,22 @@ export abstract class BaseRepository<T, TCreateData, TUpdateData> {
      */
     fetch = async (id: string, userId?: string): Promise<T> => {
 
-        const where: any = {
-            [this.config.primaryKey]: id,
-            ...(userId ? { userId } : {})
-        };
+        return await this.model.$transaction(async (tx: any) => {
+            const where: any = {
+                [this.config.primaryKey]: id,
+                ...(userId ? { userId } : {})
+            };
 
-        if (this.config.statusField) {
-            where[this.config.statusField] = null;
-        }
-        const record = await this.model.findFirst({
-            where
-        });
-        return record ?? ({} as T);
+            if (this.config.statusField) {
+                where[this.config.statusField] = null;
+            }
+            const record = await tx.findFirst({
+                where
+            });
+            
+            return record ?? ({} as T);
+        })
+
     };
 
     /**

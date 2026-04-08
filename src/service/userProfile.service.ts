@@ -47,6 +47,20 @@ class UserProfileService extends BaseService<UserProfile, UserProfileData, any> 
         return  { profile, uploadUrl };
     }
 
+    /**
+     * Updates a User Profile and manages the rotation of its S3 image assets.
+     * 
+     * If a new image is provided, this method orchestrates:
+     * 1. Database persistence via a transaction.
+     * 2. Invalidation of user-specific or public cache keys.
+     * 3. Physical deletion of the previous S3 object to prevent storage leaks.
+     * 4. Generation of a new 1-hour presigned URL for the updated asset.
+     * 
+     * @param {any} data - The partial profile data and image metadata.
+     * @param {string} id - The unique identifier (UUID) of the profile to update.
+     * @returns {Promise<{ profile: any, uploadUrl: string }>} The updated profile and new S3 upload link.
+     * @throws {Error} If the S3 cleanup or signed URL generation fails.
+     */
     update = async (data: any, id: string): Promise<any> => {
         const { profile, imageRecord, oldImageRecord } = await this.methods.update(data, id);
         logger.info(`${this.modelName} created`, {
@@ -78,25 +92,6 @@ class UserProfileService extends BaseService<UserProfile, UserProfileData, any> 
 
         return { profile, uploadUrl };
     }
-    // /**
-    //  * updates profile data
-    //  * 
-    //  * @param id 
-    //  * @param data 
-    //  * @returns 
-    //  */
-    // updateProfile = async (id: string, data: any) => {
-    //     const profile = await this.UserProfileMethods.updateProfile(id, data);
-
-    //     logger.info("User profile updated successfully", {
-    //         userId: id,
-    //         profileId: profile.id
-    //     });
-
-    //     await redisUtils.invalidateKey(id, Resource.USER, Action.UPDATE);
-
-    //     return profile;
-    // }
 
 }
 

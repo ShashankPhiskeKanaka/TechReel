@@ -109,6 +109,13 @@ const processGamificationJob = async (job: Job) => {
                 redisUtils.invalidateKey(data.userId, Resource.USER, "UPDATE"),
                 redisUtils.invalidateKey(data.userId, Resource.USER_PROFILE, "UPDATE")
             ]);
+
+            await redisUtils.sendNotification(data.userId, {
+                message: "Challenge processed",
+                awardedXp: xpScore,
+                tokenAwarded: tokensToAward
+            });
+
         });
     } catch (err: any) {
         logger.error("Gamification job transaction failed", { error: err.message, data })

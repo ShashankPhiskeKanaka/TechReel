@@ -9,6 +9,7 @@ import { BaseController } from "./base.controller.js";
 import crypto from "crypto";
 import { errorMessage } from "../constants/error.messages.js";
 import { config } from "../config/index.js";
+import { redisUtils } from "../utils/redis.utils.js";
 
 const controllerMessage = new ControllerMessages("Reel");
 

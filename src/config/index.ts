@@ -33,7 +33,7 @@ const config: Config = {
     databaseUrl: process.env.DATABASE_URL || "",
     adminEmail: process.env.ADMIN_EMAIL || "",
     adminPassword: process.env.ADMIN_PASSWORD || "",
-    jwtSecret: process.env.JWTSECRET || "",
+    jwtSecret: process.env.JWTSECRET || "development",
     redisUrl: process.env.REDIS_URL || "",
     googleWebClientId: process.env.GOOGLE_WEB_CLIENTID || "",
     googleWebClientSecret: process.env.GOOGLE_WEB_CLIENTSECRET || "",
@@ -45,7 +45,7 @@ const config: Config = {
     ttlLong: Number(process.env.CACHE_TTLE_LONG) || 86400,
     awsUserSecretKey: process.env.AWS_USER_SECRETKEY || "",
     awsUserAccessKey: process.env.AWS_USER_ACCESSKEY || "",
-    awsBucketRegion: process.env.AWS_BUCKET_REGION || "",
+    awsBucketRegion: process.env.AWS_BUCKET_REGION || "eu-north-1",
     awsRawBucket: process.env.AWS_RAW_BUCKET || "",
     awsImageBucket: process.env.AWS_IMAGE_BUCKET || "",
     internalSecret: process.env.INTERNAL_SECRET || ""

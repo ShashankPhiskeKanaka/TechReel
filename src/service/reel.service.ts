@@ -84,6 +84,16 @@ class ReelService {
             reelId: id
         });
 
+        logger.info("Reel upload notification sent", {
+            reelId: reel.id,
+            creatorId: reel.creatorId
+        });
+
+        await redisUtils.sendNotification(reel.creatorId, {
+            message: "Reel uploaded and processed successfully",
+            reelId: reel.id
+        });
+
         return reel;
     }
 

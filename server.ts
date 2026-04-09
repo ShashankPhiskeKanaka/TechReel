@@ -43,6 +43,7 @@ import { Imagerouter } from "./src/router/image.router.js";
 import swStats from "swagger-stats";
 import { LeaderboardRouter } from "./src/router/leaderboard.router.js";
 import { client } from "./caching/redis.client.js";
+import { NotificationRouter } from "./src/router/notification.router.js";
 
 dotenv.config();
 
@@ -127,6 +128,7 @@ app.use("/v1/images", Imagerouter);
 
 app.use("/v1/leaderboard", LeaderboardRouter);
 
+app.use("/v1/notification", NotificationRouter);
 
 app.use(authenticate);
 app.get("/", (req, res) => {

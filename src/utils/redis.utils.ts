@@ -1,5 +1,5 @@
 import type { Request } from "express";
-import { client } from "../../caching/redis.client.js";
+import { client, pubClient } from "../../caching/redis.client.js";
 import { logger } from "./logger.js";
 import crypto from "crypto";
 import { serverError } from "./error.utils.js";
@@ -90,6 +90,11 @@ class RedisUtilsClass {
             client.zincrby(dailyKey, amount, userId),
             client.zincrby(monthlyKey, amount, userId)
         ]);
+    }
+
+    sendNotification = async (userId: string, data: object) => {
+        const channel = `notifications:${userId}`;
+        await pubClient.publish(channel, JSON.stringify(data));
     }
 }
 

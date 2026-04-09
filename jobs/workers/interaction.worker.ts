@@ -3,6 +3,7 @@ import { redisConfig } from "../../src/config/redis.config.js";
 import { prisma } from "../../db/prisma.js";
 import { serverError } from "../../src/utils/error.utils.js";
 import { logger } from "../../src/utils/logger.js";
+import { redisUtils } from "../../src/utils/redis.utils.js";
 
 const interactionWorker = new Worker('REEL_INTERACTION', async (job: Job) => {
     const { data, type } = job.data;
@@ -53,6 +54,10 @@ const interactionWorker = new Worker('REEL_INTERACTION', async (job: Job) => {
                         });
                     }
 
+                    await redisUtils.sendNotification(data.userId, {
+                        message: data.process == "INCREMENT" ? "Liked reel" : "Unliked reel",
+                        reelId: data.reelId
+                    });
 
                 });
 
@@ -100,6 +105,11 @@ const interactionWorker = new Worker('REEL_INTERACTION', async (job: Job) => {
                             }
                         });
                     }
+
+                    await redisUtils.sendNotification(data.userId, {
+                        message: "View persisted successfully",
+                        reelId: data.reelId
+                    });
                 });
             default:
                 logger.warn("Unhandles interaction type", {

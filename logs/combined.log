@@ -20901,3 +20901,834 @@
 {"id":"31237f68-2c66-40a6-8868-b293bb83a1e0","level":"info","message":"USER-PROFILE created","timestamp":"2026-04-07 11:40:14"}
 {"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:1a35b946-3923-4b52-ae28-a293bd56d7fa:USER-PROFILE:*","resource":"USER-PROFILE","timestamp":"2026-04-07 11:40:14","userId":"1a35b946-3923-4b52-ae28-a293bd56d7fa"}
 {"level":"info","message":"PATCH /v1/user-profile 2842.825 ms","timestamp":"2026-04-07 11:40:17"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 09:52:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 09:52:29"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 09:54:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 09:54:17"}
+{"level":"http","message":"Login request received","timestamp":"2026-04-08 09:54:34","username":"Super Admin"}
+{"level":"warn","message":"Login attempted when already authenticated","timestamp":"2026-04-08 09:54:34","username":"Super Admin"}
+{"level":"info","message":"POST /v1/auth/ 27.308 ms","timestamp":"2026-04-08 09:54:34"}
+{"level":"http","message":"Login request received","timestamp":"2026-04-08 09:54:42","username":"Super Admin"}
+{"level":"warn","message":"Login failed: Incorrect password","timestamp":"2026-04-08 09:54:43","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"error","message":"Invalid login credentials","status":401,"timestamp":"2026-04-08 09:54:43"}
+{"level":"info","message":"POST /v1/auth/ 532.413 ms","timestamp":"2026-04-08 09:54:43"}
+{"level":"http","message":"Login request received","timestamp":"2026-04-08 09:55:04","username":"Super Admin"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-04-08 09:55:04","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-04-08 09:55:04","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/auth/ 396.416 ms","timestamp":"2026-04-08 09:55:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 09:56:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 09:56:50"}
+{"ip":"::1","level":"http","message":"Token create request received","timestamp":"2026-04-08 09:57:28","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.tokens.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\token.repository.ts:18:43\n\n  15  */\n  16 create = async (data: TokenData): Promise<any> => {\n  17     return await prisma.$transaction(async (tx) => {\n→ 18         const token = await tx.tokens.create({\n               data: {\n                 name: \"Recommendation system novice\",\n                 imageType: \"image/jpeg\",\n                 ~~~~~~~~~\n             ?   id?: String,\n             ?   tokenUrl?: String | Null,\n             ?   createdAt?: DateTime,\n             ?   deletedAt?: DateTime | Null,\n             ?   tokenLedger?: token_ledgerCreateNestedManyWithoutTokenInput,\n             ?   userTokenBalance?: user_token_balanceCreateNestedManyWithoutTokenInput,\n             ?   skillRoadmap?: skill_roadmapsCreateNestedManyWithoutTokenInput\n               }\n             })\n\nUnknown argument `imageType`. Available options are marked with ?.","timestamp":"2026-04-08 09:57:28"}
+{"level":"info","message":"POST /v1/token 340.618 ms","timestamp":"2026-04-08 09:57:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:00:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:00:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:00:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:00:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:00:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:00:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:01:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:01:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:01:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:01:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:01:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:01:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:01:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:01:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:01:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:01:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:02:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:02:15"}
+{"ip":"::1","level":"http","message":"Token create request received","timestamp":"2026-04-08 10:02:25","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.tokens.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\token.repository.ts:18:43\n\n  15  */\n  16 create = async (data: TokenData): Promise<any> => {\n  17     return await prisma.$transaction(async (tx) => {\n→ 18         const token = await tx.tokens.create({\n               data: {\n                 name: \"Recommendation system novice\",\n                 imageType: \"image/jpeg\",\n                 ~~~~~~~~~\n             ?   id?: String,\n             ?   tokenUrl?: String | Null,\n             ?   createdAt?: DateTime,\n             ?   deletedAt?: DateTime | Null,\n             ?   tokenLedger?: token_ledgerCreateNestedManyWithoutTokenInput,\n             ?   userTokenBalance?: user_token_balanceCreateNestedManyWithoutTokenInput,\n             ?   skillRoadmap?: skill_roadmapsCreateNestedManyWithoutTokenInput\n               }\n             })\n\nUnknown argument `imageType`. Available options are marked with ?.","timestamp":"2026-04-08 10:02:25"}
+{"level":"info","message":"POST /v1/token 475.925 ms","timestamp":"2026-04-08 10:02:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:04:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:04:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:04:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:04:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:04:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:04:29"}
+{"ip":"::1","level":"http","message":"Token create request received","timestamp":"2026-04-08 10:04:30","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"Token record created","timestamp":"2026-04-08 10:04:31","tokenId":"56c202bb-efdf-4668-a243-998d31e41e9e"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:TOKEN:*","resource":"TOKEN","timestamp":"2026-04-08 10:04:31","userId":"PUBLIC"}
+{"level":"info","message":"POST /v1/token 340.554 ms","timestamp":"2026-04-08 10:04:31"}
+{"ip":"51.20.181.171","level":"http","message":"Callback from AWS received","timestamp":"2026-04-08 10:05:11"}
+{"id":"f798756e-d3a9-4a38-8d6f-7fa72036ceb5","level":"info","message":"IMAGE record updated","timestamp":"2026-04-08 10:05:11"}
+{"level":"info","message":"PATCH /v1/images/aws 84.797 ms","timestamp":"2026-04-08 10:05:11"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:IMAGE:*","resource":"IMAGE","timestamp":"2026-04-08 10:05:11","userId":"PUBLIC"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 10:06:25"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 10:06:26"}
+{"key":"v1:cache:PUBLIC:TOKEN:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-08 10:06:42"}
+{"ip":"::1","level":"http","message":"Token fetch all request received","timestamp":"2026-04-08 10:06:42","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"TOKEN records fetched","timestamp":"2026-04-08 10:06:42"}
+{"level":"info","message":"GET /v1/token/ 291.752 ms","timestamp":"2026-04-08 10:06:42"}
+{"key":"v1:cache:PUBLIC:TOKEN:/56c202bb-efdf-4668-a243-998d31e41e9e:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-08 10:06:56"}
+{"id":"56c202bb-efdf-4668-a243-998d31e41e9e","ip":"::1","level":"http","message":"Token fetch request received","timestamp":"2026-04-08 10:06:56","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"id":"56c202bb-efdf-4668-a243-998d31e41e9e","level":"info","message":"TOKEN fetched","timestamp":"2026-04-08 10:06:56"}
+{"level":"info","message":"GET /v1/token/56c202bb-efdf-4668-a243-998d31e41e9e 39.477 ms","timestamp":"2026-04-08 10:06:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 12:34:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 12:34:47"}
+{"level":"info","message":"GET /v1/api-docs/ 79.461 ms","timestamp":"2026-04-08 12:34:47"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-init.js 363.212 ms","timestamp":"2026-04-08 12:34:47"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui.css 376.058 ms","timestamp":"2026-04-08 12:34:47"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-bundle.js 372.809 ms","timestamp":"2026-04-08 12:34:47"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-standalone-preset.js 372.991 ms","timestamp":"2026-04-08 12:34:47"}
+{"level":"info","message":"GET /v1/api-docs/favicon-32x32.png 1.753 ms","timestamp":"2026-04-08 12:34:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:11:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"GET /v1/api-docs/ 88.216 ms","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-init.js 5.293 ms","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui.css 17.751 ms","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-bundle.js 14.865 ms","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-standalone-preset.js 14.577 ms","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"GET /v1/api-docs/favicon-32x32.png 2.178 ms","timestamp":"2026-04-08 14:11:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:15:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:15:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:15:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:15:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:15:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:15:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:15:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:15:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:15:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:16:00"}
+{"level":"info","message":"GET /v1/api-docs/ 10.436 ms","timestamp":"2026-04-08 14:16:07"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui.css 2.791 ms","timestamp":"2026-04-08 14:16:07"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-init.js 3.066 ms","timestamp":"2026-04-08 14:16:07"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-bundle.js 8.979 ms","timestamp":"2026-04-08 14:16:07"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-standalone-preset.js 7.191 ms","timestamp":"2026-04-08 14:16:07"}
+{"level":"info","message":"GET /v1/api-docs/favicon-32x32.png 2.163 ms","timestamp":"2026-04-08 14:16:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:16:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:16:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:16:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:16:57"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:17:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:17:13"}
+{"level":"info","message":"GET /v1/api-docs/ 10.687 ms","timestamp":"2026-04-08 14:17:16"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui.css 5.275 ms","timestamp":"2026-04-08 14:17:16"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-init.js 2.641 ms","timestamp":"2026-04-08 14:17:16"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-bundle.js 8.724 ms","timestamp":"2026-04-08 14:17:16"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-standalone-preset.js 8.630 ms","timestamp":"2026-04-08 14:17:16"}
+{"level":"info","message":"GET /v1/api-docs/favicon-32x32.png 2.391 ms","timestamp":"2026-04-08 14:17:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:20:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:20:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:20:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:20:57"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:21:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:21:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:21:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:21:21"}
+{"level":"info","message":"GET /v1/api-docs/ 10.281 ms","timestamp":"2026-04-08 14:21:22"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui.css 9.392 ms","timestamp":"2026-04-08 14:21:22"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-bundle.js 6.508 ms","timestamp":"2026-04-08 14:21:22"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-standalone-preset.js 6.080 ms","timestamp":"2026-04-08 14:21:22"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-init.js 11.969 ms","timestamp":"2026-04-08 14:21:22"}
+{"level":"info","message":"GET /v1/api-docs/favicon-32x32.png 2.125 ms","timestamp":"2026-04-08 14:21:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:23:40"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:23:41"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:23:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:23:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:23:59"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:24:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:25:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:25:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:25:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:25:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:25:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:25:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:25:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:25:56"}
+{"level":"info","message":"GET /v1/api-docs/ 7.202 ms","timestamp":"2026-04-08 14:26:05"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui.css 3.877 ms","timestamp":"2026-04-08 14:26:05"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-init.js 2.811 ms","timestamp":"2026-04-08 14:26:05"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-bundle.js 9.435 ms","timestamp":"2026-04-08 14:26:05"}
+{"level":"info","message":"GET /v1/api-docs/swagger-ui-standalone-preset.js 9.150 ms","timestamp":"2026-04-08 14:26:05"}
+{"level":"info","message":"GET /v1/api-docs/favicon-32x32.png 5.395 ms","timestamp":"2026-04-08 14:26:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:33:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:33:23"}
+{"level":"info","message":"GET /swagger-stats 6.273 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/ 4.878 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/css/app.7787295f.css 1.806 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/css/chunk-vendors.3279446c.css 13.974 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/app.0edad8e8.js 13.164 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/chunk-2d0daf1e.b926a4bf.js 18.574 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/chunk-2d0de2f2.405bc743.js 20.874 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/chunk-2d0b90b4.fd2ddfbb.js 18.752 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/chunk-461883cd.3528d97a.js 9.662 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/chunk-vendors.f01bde19.js 14.245 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/stats 1.173 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/js/chunk-461883cd.3528d97a.js 2.669 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/stats?fields[]=timeline&fields[]=apidefs 3.712 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/fonts/KFOmCnqEu92Fr1Mu4mxM.60fa3c06.woff 3.249 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/fonts/KFOlCnqEu92Fr1MmEU9fBBc-.87284894.woff 4.662 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.47abd1b1.woff2 3.717 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/fonts/fa-solid-900.e8a427e1.woff2 1.951 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/favicon.png 0.999 ms","timestamp":"2026-04-08 14:33:37"}
+{"level":"info","message":"GET /swagger-stats/stats?fields[]=timeline&fields[]=apidefs 1.360 ms","timestamp":"2026-04-08 14:33:38"}
+{"level":"info","message":"GET /swagger-stats/stats?fields[]=timeline&fields[]=apidefs 0.962 ms","timestamp":"2026-04-08 14:33:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 14:33:47"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 14:33:48"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-04-08 14:33:49"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-08 14:33:49"}
+{"level":"info","message":"GET /swagger-stats/stats?fields[]=timeline&fields[]=apidefs 20.126 ms","timestamp":"2026-04-08 14:33:49"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-04-08 14:33:49"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-08 14:33:49"}
+{"level":"info","message":"GET /swagger-stats/logo.png 7.881 ms","timestamp":"2026-04-08 14:33:49"}
+{"level":"info","message":"GET /v1/swagger-stats/ 6.372 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/css/app.7787295f.css 2.050 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/css/chunk-vendors.3279446c.css 16.699 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/app.0edad8e8.js 13.418 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-2d0daf1e.b926a4bf.js 16.754 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-2d0de2f2.405bc743.js 19.013 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-2d0b90b4.fd2ddfbb.js 15.988 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-461883cd.3528d97a.js 9.036 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-vendors.f01bde19.js 16.613 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/stats 1.788 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-461883cd.3528d97a.js 2.290 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=timeline&fields[]=apidefs 1.045 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/fonts/KFOmCnqEu92Fr1Mu4mxM.60fa3c06.woff 5.827 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.47abd1b1.woff2 4.493 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/fonts/KFOlCnqEu92Fr1MmEU9fBBc-.87284894.woff 19.409 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/fonts/fa-solid-900.e8a427e1.woff2 4.013 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/favicon.png 1.799 ms","timestamp":"2026-04-08 14:33:51"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=timeline&fields[]=apidefs 1.309 ms","timestamp":"2026-04-08 14:33:52"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=timeline&fields[]=apidefs 1.139 ms","timestamp":"2026-04-08 14:33:57"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=timeline&fields[]=apidefs 0.931 ms","timestamp":"2026-04-08 14:34:02"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-2d0b90b4.fd2ddfbb.js 0.877 ms","timestamp":"2026-04-08 14:34:03"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=method 0.690 ms","timestamp":"2026-04-08 14:34:03"}
+{"level":"info","message":"GET /v1/swagger-stats/fonts/KFOlCnqEu92Fr1MmWUlfBBc-.adcde98f.woff 2.512 ms","timestamp":"2026-04-08 14:34:03"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-2d0de2f2.405bc743.js 1.456 ms","timestamp":"2026-04-08 14:34:03"}
+{"level":"info","message":"GET /v1/swagger-stats/js/chunk-2d0daf1e.b926a4bf.js 1.736 ms","timestamp":"2026-04-08 14:34:03"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=method 0.773 ms","timestamp":"2026-04-08 14:34:07"}
+{"level":"info","message":"GET /v1/swagger-stats/stats?fields[]=apidefs&fields[]=apistats 1.155 ms","timestamp":"2026-04-08 14:34:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 17:45:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 17:45:54"}
+{"level":"warn","message":"Worker working on job","timestamp":"2026-04-08 17:45:54","type":"VIEW"}
+{"level":"warn","message":"Worker working on job","timestamp":"2026-04-08 17:45:54","type":"VIEW"}
+{"level":"warn","message":"Job 23 failed: \nInvalid `tx.reel_views.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\jobs\\workers\\interaction.worker.ts:78:45\n\n  75         userId: data.userId\n  76     });\n  77 } else {\n→ 78     await tx.reel_views.create({\n           data: {\n             reelId: \"reel-123\",\n             userId: \"user-456\",\n             watchedSeconds: undefined,\n         +   completed: Boolean\n           }\n         })\n\nArgument `completed` is missing.","timestamp":"2026-04-08 17:45:54"}
+{"level":"warn","message":"Job 24 failed: \nInvalid `tx.reel_views.updateMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\jobs\\workers\\interaction.worker.ts:63:45\n\n  60 return await prisma.$transaction(async (tx) => {\n  61 \n  62     if (data.process == \"REWATCHED\") {\n→ 63         await tx.reel_views.updateMany(\nInvalid input value: invalid input syntax for type uuid: \"reel-123\"","timestamp":"2026-04-08 17:45:54"}
+{"level":"warn","message":"Worker working on job","timestamp":"2026-04-08 17:45:55","type":"VIEW"}
+{"level":"warn","message":"Worker working on job","timestamp":"2026-04-08 17:45:55","type":"VIEW"}
+{"level":"warn","message":"Job 23 failed: \nInvalid `tx.reel_views.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\jobs\\workers\\interaction.worker.ts:78:45\n\n  75         userId: data.userId\n  76     });\n  77 } else {\n→ 78     await tx.reel_views.create({\n           data: {\n             reelId: \"reel-123\",\n             userId: \"user-456\",\n             watchedSeconds: undefined,\n         +   completed: Boolean\n           }\n         })\n\nArgument `completed` is missing.","timestamp":"2026-04-08 17:45:55"}
+{"level":"warn","message":"Job 24 failed: \nInvalid `tx.reel_views.updateMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\jobs\\workers\\interaction.worker.ts:63:45\n\n  60 return await prisma.$transaction(async (tx) => {\n  61 \n  62     if (data.process == \"REWATCHED\") {\n→ 63         await tx.reel_views.updateMany(\nInvalid input value: invalid input syntax for type uuid: \"reel-123\"","timestamp":"2026-04-08 17:45:55"}
+{"level":"warn","message":"Worker working on job","timestamp":"2026-04-08 17:45:57","type":"VIEW"}
+{"level":"warn","message":"Worker working on job","timestamp":"2026-04-08 17:45:57","type":"VIEW"}
+{"level":"warn","message":"Job 23 failed: \nInvalid `tx.reel_views.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\jobs\\workers\\interaction.worker.ts:78:45\n\n  75         userId: data.userId\n  76     });\n  77 } else {\n→ 78     await tx.reel_views.create({\n           data: {\n             reelId: \"reel-123\",\n             userId: \"user-456\",\n             watchedSeconds: undefined,\n         +   completed: Boolean\n           }\n         })\n\nArgument `completed` is missing.","timestamp":"2026-04-08 17:45:57"}
+{"level":"warn","message":"Job 24 failed: \nInvalid `tx.reel_views.updateMany()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\jobs\\workers\\interaction.worker.ts:63:45\n\n  60 return await prisma.$transaction(async (tx) => {\n  61 \n  62     if (data.process == \"REWATCHED\") {\n→ 63         await tx.reel_views.updateMany(\nInvalid input value: invalid input syntax for type uuid: \"reel-123\"","timestamp":"2026-04-08 17:45:57"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 17:47:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 17:47:10"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-08 17:47:24","userId":"PUBLIC"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.users.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\user.repository.ts:21:41\n\n  18  */\n  19 create = async (data: UserData): Promise<User> => {\n  20     return await prisma.$transaction(async (tx) => {\n→ 21         const user = await tx.users.create(\nUnique constraint failed on the fields: (`email`)","timestamp":"2026-04-08 17:47:25"}
+{"level":"info","message":"POST /v1/user/ 484.776 ms","timestamp":"2026-04-08 17:47:25"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-08 17:47:49"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-08 17:47:49","tokenId":"39324611-a318-4e69-a150-c939dac79328"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-08 17:47:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-08 17:47:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-08 17:47:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"http","message":"Skill create request received","timestamp":"2026-04-08 17:47:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"id":"e87231c5-1ad9-432b-a68b-46849a13e96c","level":"info","message":"SKILL created","timestamp":"2026-04-08 17:47:49"}
+{"level":"info","message":"POST /v1/skill/ 115.244 ms","timestamp":"2026-04-08 17:47:49"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:SKILL:*","resource":"SKILL","timestamp":"2026-04-08 17:47:49","userId":"PUBLIC"}
+{"key":"v1:cache:PUBLIC:TOKEN:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-08 17:48:11"}
+{"ip":"::1","level":"http","message":"Token fetch all request received","timestamp":"2026-04-08 17:48:11","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"TOKEN records fetched","timestamp":"2026-04-08 17:48:11"}
+{"level":"info","message":"GET /v1/token/ 53.473 ms","timestamp":"2026-04-08 17:48:11"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-04-08 17:48:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"id":"baa7453a-c0aa-4b65-a66e-5d0dfa6aad0e","level":"info","message":"SKILL-ROADMAP created","timestamp":"2026-04-08 17:48:39"}
+{"level":"info","message":"POST /v1/skill-roadmap 17.248 ms","timestamp":"2026-04-08 17:48:39"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:SKILL-ROADMAP:*","resource":"SKILL-ROADMAP","timestamp":"2026-04-08 17:48:39","userId":"PUBLIC"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","ip":"::1","level":"http","message":"Reel create request received","timestamp":"2026-04-08 17:50:13"}
+{"ip":"::1","level":"error","message":"Please provide valid data","status":400,"timestamp":"2026-04-08 17:50:13"}
+{"level":"info","message":"POST /v1/reel/ 96.122 ms","timestamp":"2026-04-08 17:50:13"}
+{"key":"v1:cache:PUBLIC:SKILL:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-08 17:50:46"}
+{"ip":"::1","level":"http","message":"Skill fetch all request received","timestamp":"2026-04-08 17:50:46","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"SKILL records fetched","timestamp":"2026-04-08 17:50:46"}
+{"level":"info","message":"GET /v1/skill 59.252 ms","timestamp":"2026-04-08 17:50:46"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","ip":"::1","level":"http","message":"Reel create request received","timestamp":"2026-04-08 17:51:05"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel metadata record created","reelId":"8346361c-9cb9-4530-998d-6532cfd786b6","timestamp":"2026-04-08 17:51:05"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Pre signed url generated for uploading reel","reelId":"8346361c-9cb9-4530-998d-6532cfd786b6","timestamp":"2026-04-08 17:51:05"}
+{"level":"info","message":"POST /v1/reel/ 65.244 ms","timestamp":"2026-04-08 17:51:05"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:REEL:*","resource":"REEL","timestamp":"2026-04-08 17:51:05","userId":"PUBLIC"}
+{"ip":"51.20.79.241","level":"http","message":"Updating reel metadata record request from aws received","reelId":"8346361c-9cb9-4530-998d-6532cfd786b6","timestamp":"2026-04-08 17:53:13"}
+{"level":"info","message":"Reel metadata updated","reelId":"8346361c-9cb9-4530-998d-6532cfd786b6","timestamp":"2026-04-08 17:53:13"}
+{"key":"v1:cache:PUBLIC:REEL:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-08 17:53:39"}
+{"ip":"::1","level":"http","message":"Reel fetch all request received","timestamp":"2026-04-08 17:53:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"Reels fetched","timestamp":"2026-04-08 17:53:39"}
+{"level":"info","message":"GET /v1/reel 13.059 ms","timestamp":"2026-04-08 17:53:39"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-04-08 17:58:13"}
+{"ip":"::1","level":"http","message":"Challenge create request received","timestamp":"2026-04-08 18:00:23","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"id":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"CHALLENGE created","timestamp":"2026-04-08 18:00:23"}
+{"level":"info","message":"POST /v1/challenge/ 79.611 ms","timestamp":"2026-04-08 18:00:23"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:CHALLENGE:*","resource":"CHALLENGE","timestamp":"2026-04-08 18:00:23","userId":"PUBLIC"}
+{"ip":"::1","level":"http","message":"Skill roadmap create request received","timestamp":"2026-04-08 18:00:46","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"id":"e422acec-288f-419c-9ae3-3aa6eeef757d","level":"info","message":"SKILL-ROADMAP-STEP created","timestamp":"2026-04-08 18:00:46"}
+{"level":"info","message":"POST /v1/skill-roadmap-step 14.435 ms","timestamp":"2026-04-08 18:00:46"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:SKILL-ROADMAP-STEP:*","resource":"SKILL-ROADMAP-STEP","timestamp":"2026-04-08 18:00:46","userId":"PUBLIC"}
+{"level":"info","message":"GET /v1/leaderboard/ 3.529 ms","timestamp":"2026-04-08 18:01:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:01:42"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:01:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:01:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:01:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:01:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:01:59"}
+{"level":"info","message":"GET /v1/leaderboard/ 15.411 ms","timestamp":"2026-04-08 18:02:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:02:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:02:46"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-08 18:02:48"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'zrevrange')","timestamp":"2026-04-08 18:02:48"}
+{"level":"info","message":"GET /v1/leaderboard/ 24.273 ms","timestamp":"2026-04-08 18:02:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:03:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:03:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:03:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:03:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:04:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:04:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:04:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:04:56"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-08 18:05:00"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-08 18:05:00","tokenId":"26eeb424-0a22-43d1-a9dc-2bebfb3a75fa"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-08 18:05:00","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-08 18:05:00","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-08 18:05:00","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-08 18:05:00"}
+{"level":"info","message":"GET /v1/leaderboard/ 242.505 ms","timestamp":"2026-04-08 18:05:00"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-08 18:05:09"}
+{"level":"info","message":"GET /v1/leaderboard/ 8.805 ms","timestamp":"2026-04-08 18:05:09"}
+{"level":"error","message":"read ECONNRESET","timestamp":"2026-04-08 18:05:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:05:56"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:05:57"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-08 18:06:00"}
+{"level":"info","message":"GET /v1/leaderboard/ 12.999 ms","timestamp":"2026-04-08 18:06:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:06:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:06:28"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'zrevrange')","timestamp":"2026-04-08 18:06:31"}
+{"level":"info","message":"GET /v1/leaderboard/ 12.219 ms","timestamp":"2026-04-08 18:06:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-08 18:07:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-08 18:07:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:10:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:10:40"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 11:10:48"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 11:10:48","tokenId":"3014764f-1c82-404f-a81f-86b5846e6574"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 11:10:48","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 11:10:48","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 11:10:48","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"key":"v1:cache:PUBLIC:CHALLENGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 11:10:48"}
+{"ip":"::1","level":"http","message":"Challenge fetch all request received","timestamp":"2026-04-09 11:10:48","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"CHALLENGE records fetched","timestamp":"2026-04-09 11:10:48"}
+{"level":"info","message":"GET /v1/challenge/ 301.047 ms","timestamp":"2026-04-09 11:10:48"}
+{"key":"v1:cache:PUBLIC:SKILL-ROADMAP:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 11:11:04"}
+{"ip":"::1","level":"http","message":"Skill roadmap fetch all request received","timestamp":"2026-04-09 11:11:04","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"SKILL-ROADMAP records fetched","timestamp":"2026-04-09 11:11:04"}
+{"level":"info","message":"GET /v1/skill-roadmap 17.851 ms","timestamp":"2026-04-09 11:11:04"}
+{"key":"v1:cache:PUBLIC:SKILL-ROADMAP-STEP:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 11:11:16"}
+{"ip":"::1","level":"http","message":"Skill roadmap fetch all request received","timestamp":"2026-04-09 11:11:16","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"SKILL-ROADMAP-STEP records fetched","timestamp":"2026-04-09 11:11:16"}
+{"level":"info","message":"GET /v1/skill-roadmap-step/ 12.483 ms","timestamp":"2026-04-09 11:11:16"}
+{"key":"v1:cache:PUBLIC:SKILL-ROADMAP-STEP:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-09 11:12:28"}
+{"level":"info","message":"GET /v1/skill-roadmap-step/ 4.883 ms","timestamp":"2026-04-09 11:12:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:37:06"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:37:08"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 11:38:44"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 11:38:44","tokenId":"c305999c-57a9-4879-a6c3-c0aa25eed103"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 11:38:44","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 11:38:44","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 11:38:44","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-04-09 11:38:44"}
+{"level":"info","message":"POST /v1/challenge-submission/ 194.045 ms","timestamp":"2026-04-09 11:38:44"}
+{"level":"warn","message":"Invalid data provided","timestamp":"2026-04-09 11:38:53"}
+{"level":"info","message":"POST /v1/challenge-submission/ 5.437 ms","timestamp":"2026-04-09 11:38:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:39:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:39:27"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:39:29","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:39:29","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 32.521 ms","timestamp":"2026-04-09 11:39:29"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"challengeSubmissionService is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:39:29"}
+{"level":"warn","message":"Job 35 failed: challengeSubmissionService is not a function","timestamp":"2026-04-09 11:39:29"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"challengeSubmissionService is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:39:30"}
+{"level":"warn","message":"Job 35 failed: challengeSubmissionService is not a function","timestamp":"2026-04-09 11:39:30"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"challengeSubmissionService is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:39:32"}
+{"level":"warn","message":"Job 35 failed: challengeSubmissionService is not a function","timestamp":"2026-04-09 11:39:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:39:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:39:59"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:40:01","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:40:01","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 19.738 ms","timestamp":"2026-04-09 11:40:01"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:40:01"}
+{"level":"warn","message":"Job 36 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:40:01"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:40:02"}
+{"level":"warn","message":"Job 36 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:40:02"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:40:04"}
+{"level":"warn","message":"Job 36 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:40:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:43:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:43:36"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:43:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:43:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 30.290 ms","timestamp":"2026-04-09 11:43:49"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:43:50"}
+{"level":"warn","message":"Job 37 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:43:50"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:43:51"}
+{"level":"warn","message":"Job 37 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:43:51"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:43:53"}
+{"level":"warn","message":"Job 37 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:43:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:44:46"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:44:47"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:44:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:44:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 36.939 ms","timestamp":"2026-04-09 11:44:49"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:44:49"}
+{"level":"warn","message":"Job 38 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:44:49"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:44:50"}
+{"level":"warn","message":"Job 38 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:44:50"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:44:53"}
+{"level":"warn","message":"Job 38 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:44:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:45:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:45:05"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:45:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:45:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 20.184 ms","timestamp":"2026-04-09 11:45:08"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:45:08"}
+{"level":"warn","message":"Job 39 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:45:08"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:45:09"}
+{"level":"warn","message":"Job 39 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:45:09"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"this.methods.tx is not a function","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:45:11"}
+{"level":"warn","message":"Job 39 failed: this.methods.tx is not a function","timestamp":"2026-04-09 11:45:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:46:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:46:38"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:47:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:47:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:48:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:48:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:48:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:48:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:48:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:48:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:49:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:49:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:49:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:49:09"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:49:15"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:49:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:49:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:49:24"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:49:27","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:49:27","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 32.128 ms","timestamp":"2026-04-09 11:49:27"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"\nInvalid `client.challenge_submissions.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\challengeSubmission.repository.ts:33:70\n\n  30 if (!correctSubmission && submissions.length < 3) {\n  31     const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;\n  32 \n→ 33     const challengeData = await client.challenge_submissions.create({\n           data: {\n             userId: \"52eeab96-af47-4d34-a37b-577b1602eeba\",\n             challengeId: \"513e04a8-703f-4218-a613-c8da806d6b66\",\n             answer: \"sample\",\n             score: -1,\n             roadmapStepId: \"e422acec-288f-419c-9ae3-3aa6eeef757d\",\n         +   isCorrect: Boolean\n           }\n         })\n\nArgument `isCorrect` is missing.","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:49:28"}
+{"level":"warn","message":"Job 40 failed: \nInvalid `client.challenge_submissions.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\challengeSubmission.repository.ts:33:70\n\n  30 if (!correctSubmission && submissions.length < 3) {\n  31     const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;\n  32 \n→ 33     const challengeData = await client.challenge_submissions.create({\n           data: {\n             userId: \"52eeab96-af47-4d34-a37b-577b1602eeba\",\n             challengeId: \"513e04a8-703f-4218-a613-c8da806d6b66\",\n             answer: \"sample\",\n             score: -1,\n             roadmapStepId: \"e422acec-288f-419c-9ae3-3aa6eeef757d\",\n         +   isCorrect: Boolean\n           }\n         })\n\nArgument `isCorrect` is missing.","timestamp":"2026-04-09 11:49:28"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"\nInvalid `client.challenge_submissions.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\challengeSubmission.repository.ts:33:70\n\n  30 if (!correctSubmission && submissions.length < 3) {\n  31     const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;\n  32 \n→ 33     const challengeData = await client.challenge_submissions.create({\n           data: {\n             userId: \"52eeab96-af47-4d34-a37b-577b1602eeba\",\n             challengeId: \"513e04a8-703f-4218-a613-c8da806d6b66\",\n             answer: \"sample\",\n             score: -1,\n             roadmapStepId: \"e422acec-288f-419c-9ae3-3aa6eeef757d\",\n         +   isCorrect: Boolean\n           }\n         })\n\nArgument `isCorrect` is missing.","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:49:29"}
+{"level":"warn","message":"Job 40 failed: \nInvalid `client.challenge_submissions.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\challengeSubmission.repository.ts:33:70\n\n  30 if (!correctSubmission && submissions.length < 3) {\n  31     const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;\n  32 \n→ 33     const challengeData = await client.challenge_submissions.create({\n           data: {\n             userId: \"52eeab96-af47-4d34-a37b-577b1602eeba\",\n             challengeId: \"513e04a8-703f-4218-a613-c8da806d6b66\",\n             answer: \"sample\",\n             score: -1,\n             roadmapStepId: \"e422acec-288f-419c-9ae3-3aa6eeef757d\",\n         +   isCorrect: Boolean\n           }\n         })\n\nArgument `isCorrect` is missing.","timestamp":"2026-04-09 11:49:29"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"\nInvalid `client.challenge_submissions.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\challengeSubmission.repository.ts:33:70\n\n  30 if (!correctSubmission && submissions.length < 3) {\n  31     const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;\n  32 \n→ 33     const challengeData = await client.challenge_submissions.create({\n           data: {\n             userId: \"52eeab96-af47-4d34-a37b-577b1602eeba\",\n             challengeId: \"513e04a8-703f-4218-a613-c8da806d6b66\",\n             answer: \"sample\",\n             score: -1,\n             roadmapStepId: \"e422acec-288f-419c-9ae3-3aa6eeef757d\",\n         +   isCorrect: Boolean\n           }\n         })\n\nArgument `isCorrect` is missing.","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:49:31"}
+{"level":"warn","message":"Job 40 failed: \nInvalid `client.challenge_submissions.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\challengeSubmission.repository.ts:33:70\n\n  30 if (!correctSubmission && submissions.length < 3) {\n  31     const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;\n  32 \n→ 33     const challengeData = await client.challenge_submissions.create({\n           data: {\n             userId: \"52eeab96-af47-4d34-a37b-577b1602eeba\",\n             challengeId: \"513e04a8-703f-4218-a613-c8da806d6b66\",\n             answer: \"sample\",\n             score: -1,\n             roadmapStepId: \"e422acec-288f-419c-9ae3-3aa6eeef757d\",\n         +   isCorrect: Boolean\n           }\n         })\n\nArgument `isCorrect` is missing.","timestamp":"2026-04-09 11:49:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 11:56:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 11:56:33"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 11:56:35"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 11:56:35","tokenId":"1e9491f4-727c-4bb9-a17c-0ecf08cd4929"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 11:56:35","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 11:56:35","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 11:56:35","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 11:56:35","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 11:56:35","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 214.997 ms","timestamp":"2026-04-09 11:56:35"}
+{"challengeSubmissionId":"c428708d-6033-41dd-968b-e23aaf78557e","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 11:56:36"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 11:56:36","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"3f36a369-adec-4548-b77f-5af44718d1e7"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"\nInvalid `client.user_badges.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\userBadge.repository.ts:27:34\n\n  24     }\n  25 });\n  26 \n→ 27 await client.user_badges.create(\nInvalid input value: invalid input syntax for type uuid: \"NA\"","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:56:36"}
+{"level":"warn","message":"Job 41 failed: \nInvalid `client.user_badges.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\userBadge.repository.ts:27:34\n\n  24     }\n  25 });\n  26 \n→ 27 await client.user_badges.create(\nInvalid input value: invalid input syntax for type uuid: \"NA\"","timestamp":"2026-04-09 11:56:36"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 11:56:37"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 11:56:37","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:56:37"}
+{"level":"warn","message":"Job 41 failed: Retries exhausted","timestamp":"2026-04-09 11:56:37"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 11:56:39"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 11:56:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 11:56:39"}
+{"level":"warn","message":"Job 41 failed: Retries exhausted","timestamp":"2026-04-09 11:56:39"}
+{"key":"v1:cache:PUBLIC:BADGE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 11:57:57"}
+{"ip":"::1","level":"http","message":"Badge fetch all request received","timestamp":"2026-04-09 11:57:57","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"warn","message":"No BADGE records found","timestamp":"2026-04-09 11:57:57"}
+{"ip":"::1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-04-09 11:57:57"}
+{"level":"info","message":"GET /v1/badge/ 65.558 ms","timestamp":"2026-04-09 11:57:57"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-04-09 12:00:12","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"badgeId":"096ff19f-36c4-4ca8-980b-e98bac01c85c","level":"info","message":"New badge created","timestamp":"2026-04-09 12:00:12"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:BADGE:*","resource":"BADGE","timestamp":"2026-04-09 12:00:12","userId":"PUBLIC"}
+{"level":"info","message":"POST /v1/badge 286.336 ms","timestamp":"2026-04-09 12:00:12"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:00:28","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:00:28","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 7.679 ms","timestamp":"2026-04-09 12:00:28"}
+{"challengeSubmissionId":"7a1fe7f5-03b2-4223-aa67-34e44ba90773","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:00:28"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 12:00:28","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"6d15a144-e1b1-4b2c-89f0-97f256930694"}
+{"level":"info","message":"Badge awarded to user","timestamp":"2026-04-09 12:00:28","userBadgeId":"096ff19f-36c4-4ca8-980b-e98bac01c85c"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'xpReward')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:00:28"}
+{"level":"warn","message":"Job 42 failed: Cannot read properties of undefined (reading 'xpReward')","timestamp":"2026-04-09 12:00:28"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:00:29"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:00:29","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:00:29"}
+{"level":"warn","message":"Job 42 failed: Retries exhausted","timestamp":"2026-04-09 12:00:29"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:00:31"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:00:31","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:00:31"}
+{"level":"warn","message":"Job 42 failed: Retries exhausted","timestamp":"2026-04-09 12:00:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:03:28"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:03:29"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-04-09 12:03:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"badgeId":"233b72f9-3443-43d4-8379-2c33918bb69e","level":"info","message":"New badge created","timestamp":"2026-04-09 12:03:50"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:BADGE:*","resource":"BADGE","timestamp":"2026-04-09 12:03:50","userId":"PUBLIC"}
+{"level":"info","message":"POST /v1/badge 261.007 ms","timestamp":"2026-04-09 12:03:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:06:01"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:06:02"}
+{"ip":"::1","level":"http","message":"Badge create request received","timestamp":"2026-04-09 12:06:03","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"error","message":"\nInvalid `tx.badges.create()` invocation in\nC:\\Users\\kanaka\\Documents\\Training\\BACKEND\\TechReel\\backend\\src\\repository\\badge.repository.ts:19:43\n\n  16  */\n  17 create = async (data: BadgeData): Promise<any> => {\n  18     return await prisma.$transaction(async (tx) => {\n→ 19         const badge = await tx.badges.create(\nUnique constraint failed on the fields: (`name`, `skill_id`)","timestamp":"2026-04-09 12:06:03"}
+{"level":"info","message":"POST /v1/badge 272.129 ms","timestamp":"2026-04-09 12:06:03"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:06:09","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:06:09","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 23.093 ms","timestamp":"2026-04-09 12:06:09"}
+{"challengeSubmissionId":"07470e9b-06f0-4456-a17e-3afaf8645488","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:06:09"}
+{"level":"warn","message":"User skipped roadmap step","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","timestamp":"2026-04-09 12:06:09","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Please provide valid data","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:06:09"}
+{"level":"warn","message":"Job 43 failed: Please provide valid data","timestamp":"2026-04-09 12:06:09"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:06:10"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:06:10","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:06:10"}
+{"level":"warn","message":"Job 43 failed: Retries exhausted","timestamp":"2026-04-09 12:06:10"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:06:12"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:06:12","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:06:12"}
+{"level":"warn","message":"Job 43 failed: Retries exhausted","timestamp":"2026-04-09 12:06:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:09:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:09:13"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:10:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:10:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 23.657 ms","timestamp":"2026-04-09 12:10:08"}
+{"challengeSubmissionId":"a7f0b4eb-ae1e-4b1d-a8f6-5e595029e748","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:10:08"}
+{"level":"warn","message":"User skipped roadmap step","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","timestamp":"2026-04-09 12:10:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Please provide valid data","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:10:08"}
+{"level":"warn","message":"Job 44 failed: Please provide valid data","timestamp":"2026-04-09 12:10:08"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:10:09"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:10:09","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:10:09"}
+{"level":"warn","message":"Job 44 failed: Retries exhausted","timestamp":"2026-04-09 12:10:09"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:10:11"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:10:11","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:10:11"}
+{"level":"warn","message":"Job 44 failed: Retries exhausted","timestamp":"2026-04-09 12:10:11"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:11:06","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:11:06","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 9.311 ms","timestamp":"2026-04-09 12:11:06"}
+{"challengeSubmissionId":"0b09a426-ee17-435b-aa6e-44dbd5616311","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:11:06"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 12:11:07","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"77de67ca-4a97-4e84-9e26-10cad7ec7e5e"}
+{"level":"info","message":"Badge awarded to user","timestamp":"2026-04-09 12:11:07","userBadgeId":"096ff19f-36c4-4ca8-980b-e98bac01c85c"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'xpReward')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:11:07"}
+{"level":"warn","message":"Job 45 failed: Cannot read properties of undefined (reading 'xpReward')","timestamp":"2026-04-09 12:11:07"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:11:08"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:11:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:11:08"}
+{"level":"warn","message":"Job 45 failed: Retries exhausted","timestamp":"2026-04-09 12:11:08"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:11:10"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:11:10","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:11:10"}
+{"level":"warn","message":"Job 45 failed: Retries exhausted","timestamp":"2026-04-09 12:11:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:13:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:13:42"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 12:13:53"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 12:13:53","tokenId":"7e00ccd9-5676-4b32-a145-5fcd310a7b9a"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 12:13:53","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 12:13:53","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 12:13:53","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:13:53","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:13:53","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 692.882 ms","timestamp":"2026-04-09 12:13:53"}
+{"challengeSubmissionId":"53c0528f-c437-480c-9817-ec9b2455cb9f","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:13:54"}
+{"level":"warn","message":"User skipped roadmap step","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","timestamp":"2026-04-09 12:13:54","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Please provide valid data","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:13:54"}
+{"level":"warn","message":"Job 46 failed: Please provide valid data","timestamp":"2026-04-09 12:13:54"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:13:55"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:13:55","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:13:55"}
+{"level":"warn","message":"Job 46 failed: Retries exhausted","timestamp":"2026-04-09 12:13:55"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:13:57"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:13:57","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:13:57"}
+{"level":"warn","message":"Job 46 failed: Retries exhausted","timestamp":"2026-04-09 12:13:57"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:15:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:15:50"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:16:14"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:16:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:16:26"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:16:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:16:31"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:16:32"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:16:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:16:37"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:16:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:16:49","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 38.672 ms","timestamp":"2026-04-09 12:16:49"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'findMany')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:16:49"}
+{"level":"warn","message":"Job 47 failed: Cannot read properties of undefined (reading 'findMany')","timestamp":"2026-04-09 12:16:49"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'findMany')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:16:50"}
+{"level":"warn","message":"Job 47 failed: Cannot read properties of undefined (reading 'findMany')","timestamp":"2026-04-09 12:16:50"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'findMany')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:16:53"}
+{"level":"warn","message":"Job 47 failed: Cannot read properties of undefined (reading 'findMany')","timestamp":"2026-04-09 12:16:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:18:21"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:18:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:19:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:19:54"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:20:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:20:03"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:20:17","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:20:17","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 26.380 ms","timestamp":"2026-04-09 12:20:17"}
+{"challengeSubmissionId":"97bc52e7-ab1a-49ab-a73e-67c1bd53ceb7","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:20:18"}
+{"level":"warn","message":"User skipped roadmap step","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","timestamp":"2026-04-09 12:20:18","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Please provide valid data","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:20:18"}
+{"level":"warn","message":"Job 48 failed: Please provide valid data","timestamp":"2026-04-09 12:20:18"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:20:19"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:20:19","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:20:19"}
+{"level":"warn","message":"Job 48 failed: Retries exhausted","timestamp":"2026-04-09 12:20:19"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:20:21"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:20:21","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:20:21"}
+{"level":"warn","message":"Job 48 failed: Retries exhausted","timestamp":"2026-04-09 12:20:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:21:49"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:21:50"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:22:07","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:22:07","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 23.391 ms","timestamp":"2026-04-09 12:22:07"}
+{"challengeSubmissionId":"c97d5ca9-84b3-4890-a497-9f2ee16d4ce1","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:22:07"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 12:22:07","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"84c2c8b9-e448-44f9-a2fb-ca52b245a239"}
+{"level":"info","message":"Badge awarded to user","timestamp":"2026-04-09 12:22:07","userBadgeId":"096ff19f-36c4-4ca8-980b-e98bac01c85c"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'xpReward')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:22:07"}
+{"level":"warn","message":"Job 49 failed: Cannot read properties of undefined (reading 'xpReward')","timestamp":"2026-04-09 12:22:07"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:22:08"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:22:08","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:22:08"}
+{"level":"warn","message":"Job 49 failed: Retries exhausted","timestamp":"2026-04-09 12:22:08"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:22:10"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:22:10","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:22:10"}
+{"level":"warn","message":"Job 49 failed: Retries exhausted","timestamp":"2026-04-09 12:22:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:26:58"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:26:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:27:05"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:27:06"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:27:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:27:12"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:27:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:27:17"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:27:23"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:27:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:27:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:27:30"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 12:29:39"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 12:29:39","tokenId":"1b57ad88-ee07-48fe-9dba-974b54fd4be1"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 12:29:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 12:29:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 12:29:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:29:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:29:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 208.407 ms","timestamp":"2026-04-09 12:29:39"}
+{"challengeSubmissionId":"29b341d3-f43a-4bf2-b9e4-a391e544857b","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:29:39"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 12:29:39","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"c67180d0-5893-4d95-be67-862057382365"}
+{"level":"info","message":"Badge awarded to user","timestamp":"2026-04-09 12:29:39","userBadgeId":"096ff19f-36c4-4ca8-980b-e98bac01c85c"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Cannot read properties of undefined (reading 'xpReward')","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:29:39"}
+{"level":"warn","message":"Job 50 failed: Cannot read properties of undefined (reading 'xpReward')","timestamp":"2026-04-09 12:29:39"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:29:40"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:29:40","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:29:40"}
+{"level":"warn","message":"Job 50 failed: Retries exhausted","timestamp":"2026-04-09 12:29:40"}
+{"level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:29:42"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"warn","message":"Challenge submission chances exhausted","timestamp":"2026-04-09 12:29:42","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"data":{"answer":"sample","challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","roadmapStepId":"e422acec-288f-419c-9ae3-3aa6eeef757d","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"},"error":"Retries exhausted","level":"error","message":"Gamification job transaction failed","timestamp":"2026-04-09 12:29:42"}
+{"level":"warn","message":"Job 50 failed: Retries exhausted","timestamp":"2026-04-09 12:29:42"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:34:09"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:34:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:34:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:34:22"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:34:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:34:44"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 12:35:14","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 12:35:14","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 29.579 ms","timestamp":"2026-04-09 12:35:14"}
+{"challengeSubmissionId":"a28c6b2a-6150-41d4-9fa2-8f54631a7a05","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 12:35:14"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 12:35:14","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"621e7d77-4d54-4061-b1d8-9c0e197a857c"}
+{"level":"info","message":"Badge awarded to user","timestamp":"2026-04-09 12:35:14","userBadgeId":"156e3331-aaf8-48a4-80a7-6709a952d9f2","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"Token awarded to the user","timestamp":"2026-04-09 12:35:15","tokenLedgerId":"c545f1a4-5276-4315-8a7b-227c9d7ff84f","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"Xp awarded to the user","timestamp":"2026-04-09 12:35:15","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","xpId":"28222749-75b7-4c56-869e-fc5cfc886da7"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:52eeab96-af47-4d34-a37b-577b1602eeba:USER:*","resource":"USER","timestamp":"2026-04-09 12:35:15","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:52eeab96-af47-4d34-a37b-577b1602eeba:USER-PROFILE:*","resource":"USER-PROFILE","timestamp":"2026-04-09 12:35:15","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"key":"v1:cache:ADMIN:USER-PROFILE:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:35:27"}
+{"ip":"::1","level":"http","message":"User Profile fetch all request received","timestamp":"2026-04-09 12:35:27","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"USER-PROFILE records fetched","timestamp":"2026-04-09 12:35:27"}
+{"level":"info","message":"GET /v1/user-profile/ 129.274 ms","timestamp":"2026-04-09 12:35:27"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:41:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:41:57"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:41:57"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'zrevrange')","timestamp":"2026-04-09 12:41:57"}
+{"level":"info","message":"GET /v1/leaderboard/ 107.467 ms","timestamp":"2026-04-09 12:41:57"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-09 12:42:04"}
+{"level":"info","message":"GET /v1/leaderboard/ 9.688 ms","timestamp":"2026-04-09 12:42:04"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-09 12:42:16"}
+{"level":"info","message":"GET /v1/leaderboard/ 6.960 ms","timestamp":"2026-04-09 12:42:16"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/daily:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:42:25"}
+{"ip":"::1","level":"http","message":"Fetch top users request recieved","timestamp":"2026-04-09 12:42:25"}
+{"level":"info","message":"GET /v1/leaderboard/daily 13.907 ms","timestamp":"2026-04-09 12:42:25"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/monthly:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:43:43"}
+{"ip":"::1","level":"http","message":"Fetch top users request recieved","timestamp":"2026-04-09 12:43:43"}
+{"level":"info","message":"GET /v1/leaderboard/monthly 10.422 ms","timestamp":"2026-04-09 12:43:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:44:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:44:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:45:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:45:24"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 12:45:28"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 12:45:29","tokenId":"ec2eb232-c304-412f-8877-a64dbfc5e156"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 12:45:29","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 12:45:29","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 12:45:29","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/monthly:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:45:29"}
+{"ip":"::1","level":"http","message":"Fetch top users request recieved","timestamp":"2026-04-09 12:45:29"}
+{"level":"info","message":"GET /v1/leaderboard/monthly 412.495 ms","timestamp":"2026-04-09 12:45:29"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:45:51"}
+{"ip":"::1","level":"error","message":"Cannot read properties of undefined (reading 'zrevrange')","timestamp":"2026-04-09 12:45:51"}
+{"level":"info","message":"GET /v1/leaderboard/ 15.869 ms","timestamp":"2026-04-09 12:45:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:47:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:47:47"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Hit' for key","timestamp":"2026-04-09 12:47:57"}
+{"level":"info","message":"GET /v1/leaderboard/ 35.678 ms","timestamp":"2026-04-09 12:47:57"}
+{"level":"error","message":"read ECONNRESET","timestamp":"2026-04-09 12:48:11"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 12:48:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 12:48:33"}
+{"key":"v1:cache:PUBLIC:LEADERBOARD:/:","level":"info","message":"Cache 'Miss' for key","timestamp":"2026-04-09 12:48:38"}
+{"level":"info","message":"GET /v1/leaderboard/ 27.389 ms","timestamp":"2026-04-09 12:48:50"}
+{"level":"info","message":"Client disconnected from stream","timestamp":"2026-04-09 12:48:50"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 14:32:26","token":"ivalid_123_zca"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 14:33:14","token":"ivalid_123_zca"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 14:52:32","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:52:32"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 14:57:06","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:57:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:57:25"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:57:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:57:44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:57:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:58:59"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:59:31"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 14:59:40","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 14:59:41"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:12:44","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:12:46"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:17:55","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:17:56"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:21:57","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:21:59"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:22:00","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:22:01"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:22:57","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:22:59"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:23:00","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:23:02"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 15:23:17","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:23:18"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:43:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:43:07"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 15:43:34"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 15:43:34","tokenId":"fbf7c242-5765-4d62-97b6-942922aaae1b"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 15:43:34","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 15:43:34","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 15:43:34","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"GET /v1/notification 314.613 ms","timestamp":"2026-04-09 15:44:40"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:45:17"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:45:19"}
+{"level":"info","message":"GET /v1/notification/stream 25.495 ms","timestamp":"2026-04-09 15:45:21"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:52:08"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:52:08"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","ip":"::1","level":"http","message":"Reel create request received","timestamp":"2026-04-09 15:53:33"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel metadata record created","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:53:33"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Pre signed url generated for uploading reel","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:53:33"}
+{"level":"info","message":"POST /v1/reel/ 251.053 ms","timestamp":"2026-04-09 15:53:33"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:REEL:*","resource":"REEL","timestamp":"2026-04-09 15:53:33","userId":"PUBLIC"}
+{"ip":"16.16.26.4","level":"http","message":"Updating reel metadata record request from aws received","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:54:37"}
+{"level":"info","message":"Reel metadata updated","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:54:37"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:56:22"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:56:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:56:29"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:56:30"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:56:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:56:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:56:57"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:56:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:57:03"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:57:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:57:10"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:57:11"}
+{"ip":"16.16.26.4","level":"http","message":"Updating reel metadata record request from aws received","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:57:47"}
+{"level":"info","message":"Reel metadata updated","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:57:47"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 15:57:47"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 15:59:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 15:59:55"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:00:51"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:00:53"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:01:07"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:01:08"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:01:12"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:01:13"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:01:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:01:22"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 16:01:54"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 16:01:55","tokenId":"f7c175e1-5fc4-4b86-aff7-07850bf18368"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 16:01:55","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 16:01:55","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 16:01:55","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"error","message":"Redis is already connecting/connected","timestamp":"2026-04-09 16:01:55"}
+{"level":"info","message":"GET /v1/notification/stream 320.975 ms","timestamp":"2026-04-09 16:01:55"}
+{"ip":"16.16.26.4","level":"http","message":"Updating reel metadata record request from aws received","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:02:19"}
+{"level":"info","message":"Reel metadata updated","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:02:19"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:02:19"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:03:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:03:39"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:05:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:05:28"}
+{"ip":"::1","level":"error","message":"Redis is already connecting/connected","timestamp":"2026-04-09 16:05:40"}
+{"level":"info","message":"GET /v1/notification/stream 18.072 ms","timestamp":"2026-04-09 16:05:40"}
+{"ip":"16.16.26.4","level":"http","message":"Updating reel metadata record request from aws received","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:06:05"}
+{"level":"info","message":"Reel metadata updated","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:06:05"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:06:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:07:30"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:07:31"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:07:44"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:07:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:08:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:08:01"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:08:04"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:08:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:08:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:08:56"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:09:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:09:03"}
+{"ip":"16.16.26.4","level":"http","message":"Updating reel metadata record request from aws received","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:09:32"}
+{"level":"info","message":"Reel metadata updated","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:09:33"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:09:33"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:11:13"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:11:14"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:11:35"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:11:37"}
+{"ip":"51.21.161.213","level":"http","message":"Updating reel metadata record request from aws received","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:13:43"}
+{"level":"info","message":"Reel metadata updated","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:13:43"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"5039b899-5c9c-46be-a8bb-6b43d0b49123","timestamp":"2026-04-09 16:13:43"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:14:48"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:14:48"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:15:43"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-09 16:15:43"}
+{"ip":"::1","level":"info","message":"No access token found, creating new credentials","timestamp":"2026-04-09 16:17:05"}
+{"level":"debug","message":"Token Rotation: Old token marked as used","timestamp":"2026-04-09 16:17:05","tokenId":"0f280cb9-042f-49c0-b96e-ad15564002fb"}
+{"familyId":"1233a05f-0b76-4ed1-917e-bc00e2576a7a","level":"info","message":"Token rotation successfull","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"New refreshToken and accessToken created for user","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"ip":"::1","level":"info","message":"New user credentials generated","role":"ADMIN","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","ip":"::1","level":"http","message":"Challenge Submission create request received","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"challengeId":"513e04a8-703f-4218-a613-c8da806d6b66","level":"info","message":"Challenge submission job added to queue","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/challenge-submission/ 376.487 ms","timestamp":"2026-04-09 16:17:05"}
+{"challengeSubmissionId":"7b2ffdda-eb58-4089-89e9-363ecae7886b","level":"info","message":"New challenge submission record created","timestamp":"2026-04-09 16:17:05"}
+{"level":"info","message":"New user roadmap step created","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","userRoadmapStepId":"2f174ce3-28e6-4483-a9ad-a315b7dbbd59"}
+{"level":"info","message":"Badge awarded to user","timestamp":"2026-04-09 16:17:05","userBadgeId":"aa7ea029-b322-4728-a4cb-07a722269542","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"Token awarded to the user","timestamp":"2026-04-09 16:17:05","tokenLedgerId":"f98da20b-541d-404a-8189-3054ab2ad856","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"Xp awarded to the user","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba","xpId":"9ec7ce81-3a12-4d65-aa6c-ca044414afed"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:52eeab96-af47-4d34-a37b-577b1602eeba:USER:*","resource":"USER","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:52eeab96-af47-4d34-a37b-577b1602eeba:USER-PROFILE:*","resource":"USER-PROFILE","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"GET /v1/notification/stream 17.828 ms","timestamp":"2026-04-09 16:17:17"}

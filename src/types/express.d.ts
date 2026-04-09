@@ -1,6 +1,7 @@
 import type { Request } from "express";
 import * as express from "express-static-server-core"
 import type { Role } from "../dto/user.dto.ts";
+import { Redis } from "ioredis"
 
 declare global {
   namespace Express {
@@ -14,6 +15,7 @@ declare global {
     interface Request {
       // req.user is now strictly typed with id and role
       user?: User;
+      redis: Redis;
     }
   }
 }

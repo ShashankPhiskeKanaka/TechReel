@@ -51,7 +51,6 @@ class LeaderBoardController {
         subClient.on("message", onMessage);
 
         req.on("close", () => {
-
             subClient.removeListener("message", onMessage);
             logger.info("Client disconnected from stream");
         });

@@ -85,6 +85,12 @@ class RedisUtilsClass {
             throw new serverError(err);
         }
     }
+    updateLeaderboard = async (dailyKey: string, monthlyKey: string, amount: number, userId: string) => {
+        await Promise.all([
+            client.zincrby(dailyKey, amount, userId),
+            client.zincrby(monthlyKey, amount, userId)
+        ]);
+    }
 }
 
 const redisUtils = new RedisUtilsClass();

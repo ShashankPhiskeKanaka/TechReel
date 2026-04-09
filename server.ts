@@ -36,9 +36,13 @@ import { interactionWorker } from "./jobs/workers/interaction.worker.js";
 import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
 import { StreakRouter } from "./src/router/streak.router.js";
 import swaggerUi from "swagger-ui-express";
-import { specs } from "./swagger/swagger.config.js";
+import { options, specs } from "./swagger/swagger.config.js";
 import { rateLimiter } from "./src/middleware/rateLimiter.middleware.js";
 import { Imagerouter } from "./src/router/image.router.js";
+
+import swStats from "swagger-stats";
+import { LeaderboardRouter } from "./src/router/leaderboard.router.js";
+import { client } from "./caching/redis.client.js";
 
 dotenv.config();
 
@@ -69,6 +73,15 @@ const stream = {
 }
 
 app.use(morgan(`:method :url :response-time ms`, { stream }));
+app.use(swStats.getMiddleware({
+    swaggerSpec: specs,
+    uriPath: "/v1/swagger-stats"
+}))
+
+app.use((req, res, next) => {
+    req.redis = client;
+    next();
+})
 
 app.use(rateLimiter);
 
@@ -111,6 +124,8 @@ app.use("/v1/badge", BadgeRouter);
 app.use("/v1/feed", FeedRouter);
 
 app.use("/v1/images", Imagerouter);
+
+app.use("/v1/leaderboard", LeaderboardRouter);
 
 
 app.use(authenticate);

@@ -1,6 +1,10 @@
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { errorMessage } from "../constants/error.messages.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
 import { logger } from "./logger.js";
+import { config } from "../config/index.js";
+import { s3Client } from "../../db/s3.js";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 class ServerUtils {
 
@@ -65,7 +69,19 @@ class ServerUtils {
 
         const key = `uploads/${Date.now()}-${data.id}-${data.name}`;
 
-        
+        const command = new PutObjectCommand({
+            Bucket: config.awsImageBucket,
+            Key: key,
+            ContentType: data.imageType,
+            ChecksumAlgorithm: undefined,
+            Metadata: {
+                imageId: data.id,
+            }
+        });
+
+        const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+
+        return uploadUrl;  
     }
 
 }

@@ -54,7 +54,7 @@ class RedisUtilsClass {
     };
 
     generatePayloadHash = (req: Request) => {
-        crypto.createHash('sha256').update(JSON.stringify({
+        return crypto.createHash('sha256').update(JSON.stringify({
             body: req.body,
             url: req.originalUrl,
             method: req.method

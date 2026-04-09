@@ -1,5 +1,4 @@
 import type { NextFunction, Request, Response } from "express"
-import { logUtil, type logError } from "./log.utils.js";
 import { logger } from "./logger.js";
 import { ApiResponse } from "./api.utils.js";
 
@@ -30,7 +29,7 @@ class GlobalErrorHandlerClass {
 
 class serverError extends Error {
     public status : number;
-    constructor ( errorData : logError ) {
+    constructor ( errorData : { status: number, message: string } ) {
         super(errorData.message);
         this.status = errorData.status;
         this.message = errorData.message;

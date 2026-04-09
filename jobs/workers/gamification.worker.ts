@@ -17,104 +17,117 @@ import { ChallengeSubmissionService } from "../../src/service/challengeSubmissio
 import { redisConfig } from "../../src/config/redis.config.js";
 import { redisUtils } from "../../src/utils/redis.utils.js";
 import { Resource } from "../../src/dto/redis.dto.js";
+import { UserCertificateService } from "../../src/service/userCertificate.service.js";
+import { UserCertificateRepository } from "../../src/repository/userCertificate.repository.js";
 
 const challengeSubmissionService = ControllerFactory.createService(ChallengeSubmissionRepository, ChallengeSubmissionService);
 const xpService = ControllerFactory.createService(XpRepository, XpService);
 const userRoadmapStepService = ControllerFactory.createService(UserRoadmapStepRepository, UserRoadmapStepService);
 const userBadgeService = ControllerFactory.createService(UserBadgesRepository, UserBadgeService);
 const tokenLedgerService = ControllerFactory.createService(TokenLedgerRepository, TokenLedgerService);
+const userCertificateService = ControllerFactory.createService(UserCertificateService, UserCertificateRepository);
 
-const gamificationWorker = new Worker("GAMIFICATION", async (job: Job) => {
+/**
+ * Encapsulated Logic to allow for easier Unit Testing
+ */
+const processGamificationJob = async (job: Job) => {
     const { data } = job.data;
 
     try {
         return await prisma.$transaction(async (tx) => {
-            const challengeData = await challengeSubmissionService.submit(data, tx);
+            // Initialize scoped services
+            const challengeTx = challengeSubmissionService.tx(tx);
+            const roadmapTx = userRoadmapStepService.tx(tx);
+            const badgeTx = userBadgeService.tx(tx);
+            const tokenTx = tokenLedgerService.tx(tx);
+            const xpTx = xpService.tx(tx);
+            const certificateTx = userCertificateService.tx(tx);
 
-            if (!challengeData.id) {
+            // Initial Submission
+            const challenge = await challengeTx.submit(data, tx);
+
+            if (!challenge.id) {
                 logger.warn("Challenge submission chances exhausted", {
                     userId: data.userId,
                     challengeId: data.challengeId
                 });
-
                 throw new serverError(errorMessage.EXHAUSTED);
             }
 
-            let xpScore = challengeData.score;
+            // Score Accumulators
+            let xpScore = challenge.score;
+            let tokensToAward = challenge.score === 10 ? 1 : 0;
 
-            if (challengeData.score == 10 && data.roadmapStepId) {
-                let amount = 1;
-
-                const { currentStep, highestStep } = await userRoadmapStepService.createUserRoadmapStep({
+            // Roadmap & Badge Logic
+            if (data.roadmapStepId) {
+                const { currentStep, highestStep } = await roadmapTx.createUserRoadmapStep({
                     userId: data.userId,
                     roadmapStepId: data.roadmapStepId,
                     stepOrder: data.stepOrder
-                }, tx)
+                }, tx);
 
-                if (highestStep?.stepOrder == currentStep.stepOrder) {
-                    const badge = await userBadgeService.awardBadge({
+                // User progressed to a new highest step
+                if (highestStep?.stepOrder === currentStep.stepOrder) {
+                    const badge = await badgeTx.awardBadge({
                         userId: data.userId,
                         skillId: currentStep.roadmap.skillId
-                    }, tx)
+                    }, tx);
+                    xpScore += badge.xpReward;
+                    tokensToAward += 1;
 
-                    xpScore += badge.xpReward
-
-                    amount++;
+                    // Certificate Logic
+                    if (currentStep.roadmap.difficulty === "PROFICIENT") {
+                        await certificateTx.create({
+                            skillId: currentStep.roadmap.skillId,
+                            userId: data.userId
+                        });
+                    }
                 }
 
-                await tokenLedgerService.awardToken({
-                    userId: data.userId,
-                    amount,
-                    source: "CHALLENGE_SUBMISSION",
-                    type: "CREDIT",
-                    tokenId: currentStep?.roadmap.tokenId ?? "NA"
-                }, tx)
-
-            } else if (data.roadmapStepId) {
-                const { currentStep, highestStep } = await userRoadmapStepService.createUserRoadmapStep({
-                    userId: data.userId,
-                    roadmapStepId: data.roadmapStepId,
-                    stepOrder: data.stepOrder
-                }, tx)
-
-                if (highestStep?.stepOrder == currentStep.stepOrder) {
-                    const badge = await userBadgeService.awardBadge({
+                // Execute Token Awarding if applicable
+                if (tokensToAward > 0) {
+                    await tokenTx.awardToken({
                         userId: data.userId,
-                        skillId: currentStep.roadmap.skillId
-                    }, tx)
-
-                    xpScore += badge.xpReward;
-
-                    await tokenLedgerService.awardToken({
-                        userId: data.userId,
-                        amount: 1,
-                        source: "ROADMAP_COMPLETED",
+                        amount: tokensToAward,
+                        source: challenge.score === 10 ? "CHALLENGE_SUBMISSION" : "ROADMAP_COMPLETED",
                         type: "CREDIT",
                         tokenId: currentStep?.roadmap.tokenId ?? "NA"
-                    }, tx)
+                    }, tx);
                 }
             }
 
-            await xpService.awardXp({
+            // XP Awarding
+            await xpTx.awardXp({
                 userId: data.userId,
-                amount: xpScore < 0 ? 0 : xpScore,
+                amount: Math.max(0, xpScore),
                 source: "CHALLENGE_SUBMISSION",
                 type: xpScore < 0 ? "DEBIT" : "CREDIT"
             }, tx);
 
-            await redisUtils.invalidateKey(data.userId, Resource.USER, "UPDATE");
-            await redisUtils.invalidateKey(data.userId, Resource.USER_PROFILE, "UPDATE");
-        })
+            // Cache Invalidation
+            await Promise.all([
+                redisUtils.invalidateKey(data.userId, Resource.USER, "UPDATE"),
+                redisUtils.invalidateKey(data.userId, Resource.USER_PROFILE, "UPDATE")
+            ]);
+        });
     } catch (err: any) {
+        logger.error("Gamification job transaction failed", { error: err.message, data })
         throw new serverError(err);
-    }
-}, {
-    connection: redisConfig,
-    concurrency: 10
-})
 
-gamificationWorker.on("failed", (job: any, err) => {
-    logger.warn(`Job ${job.id} failed: ${err.message}`);
+    }
+};
+
+/**
+ * Worker Definition
+ */
+export const gamificationWorker = new Worker("GAMIFICATION", processGamificationJob, {
+    connection: redisConfig,
+    concurrency: 10,
+    // Ensure jobs are cleaned up to prevent Redis bloat
+    removeOnComplete: { count: 1000 },
+    removeOnFail: { count: 5000 }
 });
 
-export { gamificationWorker }
+gamificationWorker.on("failed", (job, err) => {
+    logger.warn(`Job ${job?.id} failed: ${err.message}`);
+});

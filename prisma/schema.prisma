@@ -50,6 +50,8 @@ model users {
 
   userRoadmapSteps user_roadmap_steps[]
 
+  certificates userCertificates[]
+
   @@map("users")
   @@index([id, createdAt])
 }
@@ -132,6 +134,8 @@ model skills {
   userSkills user_skills[]
   roadmap    skill_roadmaps[]
   badges     badges[]
+
+  certificates userCertificates[]
 
   @@map("skills")
   @@index([id, createdAt])
@@ -430,6 +434,7 @@ model badges {
 
   @@map("badges")
   @@index([id, createdAt])
+  @@unique([name, skillId])
 }
 
 model user_badges {
@@ -528,4 +533,17 @@ model images {
 
   @@index([resourceId, resourceType])
   @@index([id, createdAt])
+}
+
+model userCertificates {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  skillId String? @db.Uuid
+  createdAt DateTime @default(now()) @db.Timestamptz @map("created_at")
+
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill skills? @relation(fields: [skillId], references: [id])
+
+  @@index([id, createdAt])
+  @@map("user_certificates")
 }

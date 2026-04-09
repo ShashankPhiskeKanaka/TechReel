@@ -24,14 +24,14 @@ class UserBadgesRepository extends BaseRepository<UserBadge, UserBadgeData, any>
             }
         });
 
-        await client.user_badges.create({
+        const userBadge = await client.user_badges.create({
             data: {
                 userId: data.userId,
                 badgeId: badge?.id ?? "NA",
             }
         });
 
-        return badge;
+        return { badge, userBadge };
     }
 
     // /**

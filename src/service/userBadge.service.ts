@@ -16,14 +16,14 @@ class UserBadgeService extends BaseService<UserBadge, UserBadgeData, any> {
      * @throws {Error} If the badge assignment fails or the user is not found.
      */
     awardBadge = async (data: UserBadgeData, client: any) => {
-        const userBadge = await this.methods.awardBadge(data, client);
+        const {badge, userBadge} = await this.methods.awardBadge(data, client);
 
         logger.info("Badge awarded to user", {
             userBadgeId: userBadge.id,
             userId: userBadge.userId
         });
 
-        return;
+        return badge;
     }
 }
 

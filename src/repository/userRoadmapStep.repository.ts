@@ -9,6 +9,18 @@ import { serverUtils } from "../utils/server.utils.js";
 class UserRoadmapStepRepository {
 
     /**
+     * Swaps the current database model with a transaction-scoped client.
+     * @param txModel - The Prisma transaction delegate.
+     * @returns A new instance of the repository bound to the transaction.
+     */
+    tx(txModel: any): this {
+        const instance = Object.create(Object.getPrototypeOf(this));
+        Object.assign(instance, this);
+        instance.model = txModel;
+        return instance;
+    }
+
+    /**
      * Records a user's progress on a roadmap step after validating the sequence.
      * Ensures the user is not skipping steps by comparing the new step order with their previous progress.
      * @param {UserRoadmapStepData} data - The user ID and roadmap step ID to record.
@@ -50,7 +62,7 @@ class UserRoadmapStepRepository {
             })
         ]);
 
-        if (previousUserStep?.stepOrder ?? 0 + 1 != currentStep?.stepOrder) {
+        if ((previousUserStep?.stepOrder ?? 0) + 1 != currentStep?.stepOrder) {
             logger.warn("User skipped roadmap step", {
                 userId: data.userId,
                 roadmapStepId: data.roadmapStepId

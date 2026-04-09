@@ -64,7 +64,7 @@ export abstract class BaseRepository<T, TCreateData, TUpdateData> {
     tx(txModel: any): this {
         const instance = Object.create(Object.getPrototypeOf(this));
         Object.assign(instance, this);
-        instance.model = txModel;
+        instance.model = txModel.challenge_submissions;
         return instance;
     }
     

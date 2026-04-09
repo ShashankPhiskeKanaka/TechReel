@@ -6,8 +6,13 @@ import { BaseRepository } from "./base.repository.js";
 
 class ChallengeSubmissionRepository extends BaseRepository<ChallengeSubmission, ChallengeSubmissionData, any> {
 
-    constructor() {
-        super(prisma.challenge_submissions, "Challenge submission");
+    constructor(client: any = prisma) {
+        super(client, "Challenge submission");
+    }
+
+    tx(txClient: any): this {
+        // Create a new instance using the transaction client
+        return new ChallengeSubmissionRepository(txClient) as this;
     }
 
     /**
@@ -17,25 +22,33 @@ class ChallengeSubmissionRepository extends BaseRepository<ChallengeSubmission, 
      * @param {Prisma.TransactionClient} [client] - Optional Prisma client or transaction instance.
      * @returns {Promise<ChallengeSubmission>} The created submission record or an empty object if exhausted.
      */
-    submit = async (data: any, client: any = prisma): Promise<ChallengeSubmission> => {
-        const submissions = await client.challenge_submissions.findMany({
-            where: {
-                userId: data.userId,
-                challengeId: data.challengeId
-            }
-        });
+    submit = async (data: any ): Promise<ChallengeSubmission> => {
+        const [submissions, challenge ] = await Promise.all([
+            await this.model.challenge_submissions.findMany({
+                where: {
+                    userId: data.userId,
+                    challengeId: data.challengeId
+                }
+            }),
+
+            await this.model.challenges.findFirst({
+                where: {
+                    id: data.challengeId
+                }
+            })
+        ])
 
         const correctSubmission = submissions.some((s: ChallengeSubmission) => s.isCorrect);
 
         if (!correctSubmission && submissions.length < 3) {
-            const score = data.isCorrect ? 10 - (submissions.length * 2) : -1;
+            const score = challenge.answer == data.answer ? 10 - (submissions.length * 2) : -1;
 
-            const challengeData = await client.challenge_submissions.create({
+            const challengeData = await this.model.challenge_submissions.create({
                 data: {
                     userId: data.userId,
                     challengeId: data.challengeId,
                     answer: data.answer,
-                    isCorrect: data.isCorrect,
+                    isCorrect: challenge.answer == data.answer,
                     score,
                     roadmapStepId: data.roadmapStepId ?? "NA"
                 }

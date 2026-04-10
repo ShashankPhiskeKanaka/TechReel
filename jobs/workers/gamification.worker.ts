@@ -19,6 +19,7 @@ import { redisUtils } from "../../src/utils/redis.utils.js";
 import { Resource } from "../../src/dto/redis.dto.js";
 import { UserCertificateService } from "../../src/service/userCertificate.service.js";
 import { UserCertificateRepository } from "../../src/repository/userCertificate.repository.js";
+import { addNotificationTask } from "../producers/notification.producer.js";
 
 const challengeSubmissionService = ControllerFactory.createService(ChallengeSubmissionRepository, ChallengeSubmissionService);
 const xpService = ControllerFactory.createService(XpRepository, XpService);
@@ -109,12 +110,13 @@ const processGamificationJob = async (job: Job) => {
                 redisUtils.invalidateKey(data.userId, Resource.USER, "UPDATE"),
                 redisUtils.invalidateKey(data.userId, Resource.USER_PROFILE, "UPDATE")
             ]);
-
-            await redisUtils.sendNotification(data.userId, {
-                message: "Challenge processed",
+            
+            await addNotificationTask({
+                userId: data.userId,
+                message: "Challenge processes",
                 awardedXp: xpScore,
-                tokenAwarded: tokensToAward
-            });
+                tokensAwarded: tokensToAward
+            }, "GAMIFICATION");
 
         });
     } catch (err: any) {

@@ -12,6 +12,7 @@ import { redisUtils } from "../utils/redis.utils.js";
 import { Resource } from "../dto/redis.dto.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
 import { config } from "../config/index.js";
+import { addNotificationTask } from "../../jobs/producers/notification.producer.js";
 
 class ReelService {
 
@@ -84,14 +85,15 @@ class ReelService {
             reelId: id
         });
 
+        await addNotificationTask({
+            userId: reel.creatorId,
+            message: "Reel uploaded and processed successfully",
+            reelId: reel.id
+        }, "REEL");
+
         logger.info("Reel upload notification sent", {
             reelId: reel.id,
             creatorId: reel.creatorId
-        });
-
-        await redisUtils.sendNotification(reel.creatorId, {
-            message: "Reel uploaded and processed successfully",
-            reelId: reel.id
         });
 
         return reel;

@@ -6,6 +6,7 @@ import type { UserRepository } from "../repository/user.repository.js";
 import { serverError } from "../utils/error.utils.js";
 import crypto from "crypto";
 import { logger } from "../utils/logger.js";
+import { addMailTask } from "../../jobs/producers/mail.producer.js";
 
 class AuthService {
     constructor(private AuthMethods: AuthRepository, private UserMethods: UserRepository) { }
@@ -124,7 +125,12 @@ class AuthService {
             email
         });
 
-        return token;
+        await addMailTask({
+            email,
+            forgetToken: token
+        }, "FORGETPASS")
+
+        return;
     }
 
     /**

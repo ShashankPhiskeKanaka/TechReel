@@ -8,7 +8,7 @@ import { redisUtils } from "../../src/utils/redis.utils.js";
 const interactionWorker = new Worker('REEL_INTERACTION', async (job: Job) => {
     const { data, type } = job.data;
 
-    logger.warn("Worker working on job", {
+    logger.info("Worker working on job", {
         type
     })
 

@@ -26,6 +26,9 @@ interface Config {
     awsRawBucket: string;
     awsImageBucket: string;
     internalSecret: string;
+    mailPassword: string;
+    mailAccount: string;
+    exposedRoute: string;
 }
 
 const config: Config = {
@@ -48,6 +51,9 @@ const config: Config = {
     awsBucketRegion: process.env.AWS_BUCKET_REGION || "eu-north-1",
     awsRawBucket: process.env.AWS_RAW_BUCKET || "",
     awsImageBucket: process.env.AWS_IMAGE_BUCKET || "",
-    internalSecret: process.env.INTERNAL_SECRET || ""
+    internalSecret: process.env.INTERNAL_SECRET || "",
+    mailPassword: process.env.MAIL_PASSWORD || "",
+    mailAccount: process.env.MAIL_ACCOUNT || "",
+    exposedRoute: process.env.EXPOSED_ROUTE || ""
 }
 export { config };

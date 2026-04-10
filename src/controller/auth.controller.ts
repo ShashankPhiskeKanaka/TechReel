@@ -105,9 +105,9 @@ class AuthController {
             email: req.params.email?.toString()
         });
 
-        const token = await this.AuthService.forgetPass(req.params.email?.toString() ?? "");
+        await this.AuthService.forgetPass(req.params.email?.toString() ?? "");
 
-        return ApiResponse.success(res, "Forget password token generated", token);
+        return ApiResponse.success(res, "Forget password mail sent");
     }
 
     /**

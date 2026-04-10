@@ -21732,3 +21732,168 @@
 {"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:52eeab96-af47-4d34-a37b-577b1602eeba:USER:*","resource":"USER","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
 {"action":"UPDATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:52eeab96-af47-4d34-a37b-577b1602eeba:USER-PROFILE:*","resource":"USER-PROFILE","timestamp":"2026-04-09 16:17:05","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
 {"level":"info","message":"GET /v1/notification/stream 17.828 ms","timestamp":"2026-04-09 16:17:17"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 16:18:40","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:18:41"}
+{"level":"warn","message":"Invalid token provided","timestamp":"2026-04-09 16:47:14","token":"ivalid_123_zca"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-09 16:47:16"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:15:11"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:15:12"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 10:15:41","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 10:15:41","userId":"81f48c56-9283-4974-be01-33bf559faa44"}
+{"level":"info","message":"POST /v1/user/ 4077.710 ms","timestamp":"2026-04-10 10:15:45"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:81f48c56-9283-4974-be01-33bf559faa44:USER:*","resource":"USER","timestamp":"2026-04-10 10:15:45","userId":"81f48c56-9283-4974-be01-33bf559faa44"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:19:16"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:19:17"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 10:19:18","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 10:19:19","userId":"86765f68-954c-4124-acc3-098eef4ea886"}
+{"level":"info","message":"POST /v1/user/ 3326.886 ms","timestamp":"2026-04-10 10:19:22"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:86765f68-954c-4124-acc3-098eef4ea886:USER:*","resource":"USER","timestamp":"2026-04-10 10:19:22","userId":"86765f68-954c-4124-acc3-098eef4ea886"}
+{"idmepotencyKey":"NA","ip":"2409:40c2:1044:b937:8000::","level":"http","message":"Email verification request recieved","timestamp":"2026-04-10 10:19:35","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2NzY1ZjY4LTk1NGMtNDEyNC1hY2MzLTA5OGVlZjRlYTg4NiIsImlhdCI6MTc3NTc5NjU1OSwiZXhwIjoxNzc1Nzk3NDU5fQ.6Q0ntjiJN0fyhvDHiAstIXUSyIxabwF58W8sZjhhfVo"}
+{"level":"info","message":"Email verified successfully","timestamp":"2026-04-10 10:19:35","userId":"86765f68-954c-4124-acc3-098eef4ea886"}
+{"level":"info","message":"GET /v1/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2NzY1ZjY4LTk1NGMtNDEyNC1hY2MzLTA5OGVlZjRlYTg4NiIsImlhdCI6MTc3NTc5NjU1OSwiZXhwIjoxNzc1Nzk3NDU5fQ.6Q0ntjiJN0fyhvDHiAstIXUSyIxabwF58W8sZjhhfVo 47.169 ms","timestamp":"2026-04-10 10:19:35"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"warn","message":"User unauthorized","timestamp":"2026-04-10 10:19:36"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 10:19:36"}
+{"level":"info","message":"GET /favicon.ico 8.567 ms","timestamp":"2026-04-10 10:19:36"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:56:00"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:56:01"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 10:56:09","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 10:56:10","userId":"ae373a63-f5d5-4010-8c02-a12b458fc0e2"}
+{"level":"info","message":"POST /v1/user/ 551.880 ms","timestamp":"2026-04-10 10:56:10"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:ae373a63-f5d5-4010-8c02-a12b458fc0e2:USER:*","resource":"USER","timestamp":"2026-04-10 10:56:10","userId":"ae373a63-f5d5-4010-8c02-a12b458fc0e2"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 10:56:10"}
+{"level":"warn","message":"Invalid type","timestamp":"2026-04-10 10:56:10"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:56:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:56:37"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:56:53"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:56:54"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 10:57:05","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 10:57:05","userId":"62b2f938-f169-4a92-b360-41fbffec743c"}
+{"level":"info","message":"POST /v1/user/ 440.684 ms","timestamp":"2026-04-10 10:57:05"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:62b2f938-f169-4a92-b360-41fbffec743c:USER:*","resource":"USER","timestamp":"2026-04-10 10:57:05","userId":"62b2f938-f169-4a92-b360-41fbffec743c"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 10:57:05"}
+{"level":"warn","message":"Invalid type","timestamp":"2026-04-10 10:57:05"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:58:33"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:58:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:58:50"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:58:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 10:58:55"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 10:58:56"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 10:59:09","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 10:59:10","userId":"b44de727-97fa-4561-a793-608a4210de40"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 10:59:10","type":"WELCOME"}
+{"level":"info","message":"POST /v1/user/ 331.507 ms","timestamp":"2026-04-10 10:59:10"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:b44de727-97fa-4561-a793-608a4210de40:USER:*","resource":"USER","timestamp":"2026-04-10 10:59:10","userId":"b44de727-97fa-4561-a793-608a4210de40"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 10:59:14","type":"WELCOME"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 10:59:21","type":"WELCOME"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:00:52"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:00:53"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 11:01:05","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 11:01:05","userId":"e8afd40e-4ce0-40d0-beb0-1698fbfa63ec"}
+{"level":"info","message":"POST /v1/user/ 341.383 ms","timestamp":"2026-04-10 11:01:05"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:01:06","type":"WELCOME"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:e8afd40e-4ce0-40d0-beb0-1698fbfa63ec:USER:*","resource":"USER","timestamp":"2026-04-10 11:01:06","userId":"e8afd40e-4ce0-40d0-beb0-1698fbfa63ec"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:01:10","type":"WELCOME"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:01:17","type":"WELCOME"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:02:45"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:02:46"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:03:38"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:03:39"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 11:03:48","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 11:03:48","userId":"e417b187-949e-4eb6-bab7-63e8a9b19ddb"}
+{"level":"info","message":"POST /v1/user/ 314.819 ms","timestamp":"2026-04-10 11:03:48"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:e417b187-949e-4eb6-bab7-63e8a9b19ddb:USER:*","resource":"USER","timestamp":"2026-04-10 11:03:48","userId":"e417b187-949e-4eb6-bab7-63e8a9b19ddb"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:03:48","type":"WELCOME"}
+{"level":"warn","message":"Job 5 failed: No recipients defined","timestamp":"2026-04-10 11:03:49"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:03:52","type":"WELCOME"}
+{"level":"warn","message":"Job 5 failed: No recipients defined","timestamp":"2026-04-10 11:03:53"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:03:59","type":"WELCOME"}
+{"level":"warn","message":"Job 5 failed: No recipients defined","timestamp":"2026-04-10 11:04:00"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:04:37"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:04:37"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 11:04:47","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 11:04:48","userId":"6f5a4bea-125e-4238-a52a-9e231a5ceb89"}
+{"level":"info","message":"POST /v1/user/ 312.139 ms","timestamp":"2026-04-10 11:04:48"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:6f5a4bea-125e-4238-a52a-9e231a5ceb89:USER:*","resource":"USER","timestamp":"2026-04-10 11:04:48","userId":"6f5a4bea-125e-4238-a52a-9e231a5ceb89"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:04:48","type":"WELCOME"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:06:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:06:03"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:06:20"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:06:23"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:06:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:06:34"}
+{"ip":"::1","level":"http","message":"User create request received","timestamp":"2026-04-10 11:06:47","userId":"PUBLIC"}
+{"level":"info","message":"User record created","role":"USER","timestamp":"2026-04-10 11:06:48","userId":"f75a69a2-b52c-4a28-acad-923b8d05026f"}
+{"level":"info","message":"POST /v1/user/ 335.283 ms","timestamp":"2026-04-10 11:06:48"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:06:48","type":"WELCOME"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:f75a69a2-b52c-4a28-acad-923b8d05026f:USER:*","resource":"USER","timestamp":"2026-04-10 11:06:48","userId":"f75a69a2-b52c-4a28-acad-923b8d05026f"}
+{"idmepotencyKey":"NA","ip":"2409:40c2:1044:b937:8000::","level":"http","message":"Email verification request recieved","timestamp":"2026-04-10 11:07:04","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NWE2OWEyLWI1MmMtNGEyOC1hY2FkLTkyM2I4ZDA1MDI2ZiIsImlhdCI6MTc3NTc5OTQwOCwiZXhwIjoxNzc1ODAwMzA4fQ.PMt0ix66DnYSX-ODjAuDozUjQu75WlQZJGcPOXs0eBY"}
+{"level":"info","message":"Email verified successfully","timestamp":"2026-04-10 11:07:04","userId":"f75a69a2-b52c-4a28-acad-923b8d05026f"}
+{"level":"info","message":"GET /v1/user/verify/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NWE2OWEyLWI1MmMtNGEyOC1hY2FkLTkyM2I4ZDA1MDI2ZiIsImlhdCI6MTc3NTc5OTQwOCwiZXhwIjoxNzc1ODAwMzA4fQ.PMt0ix66DnYSX-ODjAuDozUjQu75WlQZJGcPOXs0eBY 30.694 ms","timestamp":"2026-04-10 11:07:04"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"warn","message":"User unauthorized","timestamp":"2026-04-10 11:07:04"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 11:07:04"}
+{"level":"info","message":"GET /favicon.ico 6.325 ms","timestamp":"2026-04-10 11:07:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:08:34"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:08:34"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:14:54"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:14:54"}
+{"email":"shashankphiske@gmail.com","ip":"::1","level":"http","message":"Forget password request received","timestamp":"2026-04-10 11:15:06"}
+{"email":"shashankphiske@gmail.com","level":"info","message":"Forget password token generated","timestamp":"2026-04-10 11:15:06"}
+{"level":"info","message":"GET /v1/auth/forget/shashankphiske@gmail.com 283.251 ms","timestamp":"2026-04-10 11:15:06"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:15:06","type":"FORGETPASS"}
+{"level":"warn","message":"Job 8 failed: Cannot access 'mail' before initialization","timestamp":"2026-04-10 11:15:06"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:15:09","type":"FORGETPASS"}
+{"level":"warn","message":"Job 8 failed: Cannot access 'mail' before initialization","timestamp":"2026-04-10 11:15:09"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:15:15","type":"FORGETPASS"}
+{"level":"warn","message":"Job 8 failed: Cannot access 'mail' before initialization","timestamp":"2026-04-10 11:15:15"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:15:27"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:15:28"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:15:32"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:15:32"}
+{"email":"shashankphiske@gmail.com","ip":"::1","level":"http","message":"Forget password request received","timestamp":"2026-04-10 11:15:36"}
+{"email":"shashankphiske@gmail.com","level":"info","message":"Forget password token generated","timestamp":"2026-04-10 11:15:36"}
+{"level":"info","message":"GET /v1/auth/forget/shashankphiske@gmail.com 256.003 ms","timestamp":"2026-04-10 11:15:36"}
+{"level":"info","message":"Working on mail job","timestamp":"2026-04-10 11:15:36","type":"FORGETPASS"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"http","message":"Logout request received","timestamp":"2026-04-10 11:15:57"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"warn","message":"User already logged out","timestamp":"2026-04-10 11:15:57"}
+{"level":"info","message":"GET /v1/auth/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NWE2OWEyLWI1MmMtNGEyOC1hY2FkLTkyM2I4ZDA1MDI2ZiIsImlhdCI6MTc3NTc5OTkzNiwiZXhwIjoxNzc1ODAwODM2fQ.l2E9v8uOgEz3ac70vbBCiDsOGLNyfaYG9JScSrDxqYc 9.317 ms","timestamp":"2026-04-10 11:15:57"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"warn","message":"User unauthorized","timestamp":"2026-04-10 11:15:58"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 11:15:58"}
+{"level":"info","message":"GET /favicon.ico 6.762 ms","timestamp":"2026-04-10 11:15:58"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 11:58:02"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 11:58:03"}
+{"ip":"::1","level":"warn","message":"User unauthorized","timestamp":"2026-04-10 11:58:41"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 11:58:41"}
+{"level":"info","message":"POST /v1/reel/ 13.300 ms","timestamp":"2026-04-10 11:58:41"}
+{"level":"http","message":"Login request received","timestamp":"2026-04-10 11:58:48","username":"Super Admin"}
+{"familyId":"330016a1-8a72-4261-bc7c-ae9e8281ea20","level":"debug","message":"DB: Refresh token record persisted","timestamp":"2026-04-10 11:58:48","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"User logged in successfully","role":"ADMIN","timestamp":"2026-04-10 11:58:48","userId":"52eeab96-af47-4d34-a37b-577b1602eeba"}
+{"level":"info","message":"POST /v1/auth/ 324.990 ms","timestamp":"2026-04-10 11:58:48"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","ip":"::1","level":"http","message":"Reel create request received","timestamp":"2026-04-10 11:58:54"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel metadata record created","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 11:58:54"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Pre signed url generated for uploading reel","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 11:58:54"}
+{"level":"info","message":"POST /v1/reel/ 56.215 ms","timestamp":"2026-04-10 11:58:54"}
+{"action":"CREATE","level":"info","message":"Redis cache invalidation completed","pattern":"v1:cache:PUBLIC:REEL:*","resource":"REEL","timestamp":"2026-04-10 11:58:54","userId":"PUBLIC"}
+{"ip":"13.48.137.222","level":"http","message":"Updating reel metadata record request from aws received","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 11:59:42"}
+{"level":"info","message":"Reel metadata updated","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 11:59:42"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 11:59:42"}
+{"level":"info","message":"Working on notification job","timestamp":"2026-04-10 11:59:42","type":"REEL"}
+{"level":"info","message":"Reel notification sent","timestamp":"2026-04-10 11:59:42"}
+{"level":"info","message":"GET /v1/notification/stream 3.499 ms","timestamp":"2026-04-10 11:59:57"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-04-10 12:04:42"}
+{"ip":"16.170.234.180","level":"http","message":"Updating reel metadata record request from aws received","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 12:04:42"}
+{"level":"info","message":"Reel metadata updated","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 12:04:42"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 12:04:42"}
+{"level":"info","message":"Working on notification job","timestamp":"2026-04-10 12:04:42","type":"REEL"}
+{"level":"info","message":"Reel notification sent","timestamp":"2026-04-10 12:04:42"}
+{"level":"info","message":"GET /v1/notification/stream 1.761 ms","timestamp":"2026-04-10 12:04:51"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 12:05:39"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 12:05:40"}
+{"ip":"16.170.234.180","level":"http","message":"Updating reel metadata record request from aws received","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 12:06:04"}
+{"level":"info","message":"Reel metadata updated","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 12:06:04"}
+{"creatorId":"52eeab96-af47-4d34-a37b-577b1602eeba","level":"info","message":"Reel upload notification sent","reelId":"ebe04435-f601-4225-a2be-bac8908a038b","timestamp":"2026-04-10 12:06:04"}
+{"level":"info","message":"Working on notification job","timestamp":"2026-04-10 12:06:04","type":"REEL"}
+{"level":"info","message":"Reel notification sent","timestamp":"2026-04-10 12:06:04"}
+{"level":"info","message":"GET /v1/notification/stream 14.658 ms","timestamp":"2026-04-10 12:06:15"}
+{"level":"info","message":"PATCH /v1/reel/status - ms","timestamp":"2026-04-10 12:11:04"}
+{"level":"info","message":"Redis connected","timestamp":"2026-04-10 12:13:36"}
+{"level":"info","message":"Server started on PORT : 3000","timestamp":"2026-04-10 12:13:36"}

@@ -12,6 +12,8 @@ import { PublicUser } from "../dto/user.dto.js";
 import { s3Client } from "../../db/s3.js";
 import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 import { config } from "../config/index.js";
+import { mailUtils } from "../utils/mail.utils.js";
+import { addMailTask } from "../../jobs/producers/mail.producer.js";
 
 const serviceMessages = new ServiceMessages("User");
 
@@ -39,9 +41,15 @@ class UserService {
             role: user.role
         });
 
+        await addMailTask({
+            name: user.username,
+            email: user.email,
+            emailToken
+        }, "WELCOME");
+
         await redisUtils.invalidateKey(user.id, Resource.USER, Action.CREATE);
 
-        return { user: new PublicUser(user), emailToken };
+        return { user: new PublicUser(user)};
     }
 
     /**

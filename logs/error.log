@@ -4165,3 +4165,7 @@
 {"level":"error","message":"read ECONNRESET","timestamp":"2026-04-09 12:48:11"}
 {"ip":"::1","level":"error","message":"Redis is already connecting/connected","timestamp":"2026-04-09 16:01:55"}
 {"ip":"::1","level":"error","message":"Redis is already connecting/connected","timestamp":"2026-04-09 16:05:40"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 10:19:36"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 11:07:04"}
+{"ip":"2409:40c2:1044:b937:8000::","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 11:15:58"}
+{"ip":"::1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-04-10 11:58:41"}

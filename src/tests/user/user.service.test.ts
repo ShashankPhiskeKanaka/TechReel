@@ -96,7 +96,6 @@ describe('UserService - CRUD', () => {
             expect(redisUtils.invalidateKey).toHaveBeenCalledWith('uuid-123', 'USER', 'CREATE');
 
             expect(result.user).not.toHaveProperty('password');
-            expect(result.emailToken).toBe(mockToken);
             expect(result.user.id).toBe('uuid-123');
         });
 

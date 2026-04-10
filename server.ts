@@ -34,6 +34,8 @@ import { FeedRouter } from "./src/router/feed.router.js";
 
 import { interactionWorker } from "./jobs/workers/interaction.worker.js";
 import { gamificationWorker } from "./jobs/workers/gamification.worker.js";
+import { mailWorker } from "./jobs/workers/mail.worker.js";
+import { notificationWorker } from "./jobs/workers/notification.worker.js";
 import { StreakRouter } from "./src/router/streak.router.js";
 import swaggerUi from "swagger-ui-express";
 import { options, specs } from "./swagger/swagger.config.js";

@@ -3,6 +3,17 @@ import { client, subClient } from "../../caching/redis.client.js";
 
 class NotificationController {
 
+    /**
+     * Establishes a Server-Sent Events (SSE) connection for real-time user notifications.
+     * 
+     * Subscribes to a unique Redis Pub/Sub channel based on the user's ID and streams 
+     * messages to the client. Includes a keep-alive heartbeat and handles cleanup 
+     * on connection close.
+     * 
+     * @param {Request} req - Express request object (expects req.user.id from auth middleware).
+     * @param {Response} res - Express response object.
+     * @returns {Promise<void>}
+     */
     notification = async (req: Request, res: Response) => {
         const userId = req.user?.id;
 
@@ -21,7 +32,7 @@ class NotificationController {
 
         subscriber.on("message", (channel, message) => {
             res.write(`data: ${message}\n\n`);
-        })
+        });
 
         const keepAlive = setInterval(() => {
             res.write(": keep-alive\n\n");
